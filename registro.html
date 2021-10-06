@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#00324a">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00324a">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#00324a">
+
+    <!-- implementacion de bibliotecas de bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- en este pequeño bloque se importo los elementos neceasrios de bootstrap -->
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+</head>
+
+<body>
+    <header>
+
+         <!-- Con esto se implementa Bootstrap 4 en el nav de este archivo como en login.html -->
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark text text-white">            
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.svg" alt="logo" class="logo">
+              </a>
+              <!-- a difrencia de los enlaces que tenia creamos un nav usando listas con ciertas clases para Bootstrap-->
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="navlink" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="navlink" href="login.html">Login</a>
+                </li>
+              </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- modifique container como contenedor ("deje container como clase de bootstrap") para que se vuelva responsive-design asi no hay problema -->
+        <div class="container contenedor pt-3">
+            <h3 class="title">Registro</h3>
+             <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
+            <form class="login-form container-fluid">
+                <span>Email</span>
+                <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                <div class="form-group mail-container ">
+                    <i class="icofont-ui-email"></i>
+                     <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal --> 
+                    <input class="form-control" type="email" placeholder="Ingrese su correo electrónico">
+                </div>
+                <span>Contraseña</span>
+                <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
+                <div class="form-group  mail-container">
+                    <i class="icofont-key"></i>
+                     <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
+                    <input class="form-control" type="password" placeholder="Ingrese su contraseña">
+                </div>
+                <span>Confirmar contraseña</span>
+                <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
+                <div class="mail-container form-group">
+                    <i class="icofont-key"></i>
+                    <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
+                    <input class="form-control" type="password" placeholder="Confirme su contraseña">
+                </div>
+                <div>
+                    <a class="formlink" href="login.html">¿Ya esta registrado? Ingrese aqui</a>
+                </div>
+                <div class="actions">
+                    <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
+                    <button class="btn btn-primary">REGISTRARSE</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

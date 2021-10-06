@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg
+    enable-background="new 0 0 128 128" id="Layer_1" version="1.1" viewBox="0 0 128 128" xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <circle cx="64" cy="64" fill="#9AC928" id="circle" r="64" />
+    <g id="icon">
+        <path
+            d="M92.8,34.9l-45.1-7.2L27.1,68.3l32.3,32.3L100.1,80L92.8,34.9z M67,58l-37,8.6l18.1-35.7   L67,58z M49.6,29.6l40.5,6.6L69,57.4L49.6,29.6z M67.9,59.9l-8.7,37.6L30.2,68.6L67.9,59.9z M69.7,60.8l27.1,18.9L61.1,97.8   L69.7,60.8z M98.2,78.2L70.4,58.8l21.2-21.2L98.2,78.2z"
+            fill="#22313F" id="pentagon" />
+        <circle cx="91.6" cy="36.8" fill="#E67E22" id="circle_7_" r="4" />
+        <circle cx="98.6" cy="79.2" fill="#26A65B" id="circle_6_" r="4" />
+        <circle cx="59.8" cy="98.3" fill="#E67E22" id="circle_5_" r="4" />
+        <circle cx="29.4" cy="67.9" fill="#26A65B" id="circle_4_" r="4" />
+        <circle cx="49.2" cy="29.7" fill="#E67E22" id="circle_2_" r="4" />
+        <circle cx="68" cy="59.7" fill="#22A7F0" id="circle_1_" r="8" />
+    </g>
+</svg>
