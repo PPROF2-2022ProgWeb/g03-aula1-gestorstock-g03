@@ -69,8 +69,12 @@ a:hover{
     text-decoration: none;
     font-size: medium;    
 }
-.btn btn-primary{
+.btn .btn-primary{
     background-color:#00324A !important;
+}
+
+.btn{
+    border-radius: 0;
 }
 
 /* Banner */
@@ -153,6 +157,10 @@ section.contenido {
 .title {
     font-size: 1.5rem bold;
     padding-bottom: 15px;
+}
+
+.contenedor .title{
+    text-align: center;
 }
 
 .sub-title {
