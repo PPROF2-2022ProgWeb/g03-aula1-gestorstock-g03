@@ -182,22 +182,22 @@ section.contenido {
     margin-top: 20px;
 }
 
-.mail-container {
+.input-container {
     display: flex;
     background-color: #00324A;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.mail-container i {
+.input-container i {
     color: #fff;
     margin: 0 7px;
-    font-size: 14px;
+    font-size: 16px;
     flex-grow: 0.2;
     text-align: center;
 }
 
-.mail-container input {
+.input-container input {
     flex-grow: 0.8;
     font-size: 14px;
     padding: 3px;
