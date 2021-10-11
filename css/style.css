@@ -63,7 +63,9 @@ body{
 .bg-primary{
     background-color:#00324A !important;
 }
+
 a:hover{
+    color: #fff;
     text-decoration: none;
     font-size: medium;    
 }
@@ -142,7 +144,7 @@ section.contenido {
 /* Empieza login y registro */
 .contenedor {
     background-color: #DCD2C5;
-    max-width: 600px;
+    max-width: 300px;
     margin: 50px auto;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.12);
     padding: 50px 30px;
@@ -151,7 +153,6 @@ section.contenido {
 .title {
     font-size: 1.5rem bold;
     padding-bottom: 15px;
-    text-align: center;
 }
 
 .sub-title {
@@ -186,7 +187,6 @@ section.contenido {
     background-color: #00324A;
     align-items: center;
     margin-bottom: 30px;
-    border-radius: 5px;
 }
 
 .mail-container i {
@@ -195,7 +195,6 @@ section.contenido {
     font-size: 14px;
     flex-grow: 0.2;
     text-align: center;
-    border-radius: 5px;
 }
 
 .mail-container input {
@@ -204,7 +203,7 @@ section.contenido {
     padding: 3px;
     max-width: 88.5%;
     outline: none;
-    border-radius: 5px;
+    border-radius: 0;
 }
 
 .formlink:link {

@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <link rel="stylesheet" href="icofont/icofont.css">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
     <main>
 
         <!-- modifique container como contenedor ("deje container como clase de bootstrap") para que se vuelva responsive-design asi no hay problema -->
-        <div class="container-sm contenedor pt-3">
+        <div class="container-lg contenedor pt-3">
             <h3 class="title">Login</h3>
             <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
             <form class="login-form container-fluid">
@@ -58,8 +58,9 @@
                     <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap --> 
                     <input class="form-control" type="email" placeholder="Ingrese su correo electrónico">
                 </div>
-                <span>Contraseña</span>
+                
                 <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
+                <span>Contraseña</span>
                 <div class="form-group mail-container">
                     <i class="icofont-key"></i>
                     <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
