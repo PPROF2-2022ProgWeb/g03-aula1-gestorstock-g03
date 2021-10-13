@@ -1,5 +1,5 @@
-# a1-g2-a1-g2
-a1-g2-a1-g2 created by GitHub Classroom
+# a1-g1-a1-g1
+a1-g1-a1-g1 created by GitHub Classroom
 
 Introducción 
 Este documento es una Especificación de Requisitos Software (ERS) para el Sistema de información para la gestión de caja, facturación y control de inventarios. Esta especificación se ha estructurado basándose en las directrices dadas por el estándar IEEE Práctica Recomendada para Especificaciones de Requisitos Software ANSI/IEEE 830, 1998.
