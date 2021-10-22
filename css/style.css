@@ -15,7 +15,7 @@
 }
 
 
-body{
+body#homeBody{
     height: 100vh;
     overflow: hidden;
 }
@@ -148,7 +148,6 @@ section.contenido {
 /* Empieza login y registro */
 .contenedor {
     background-color: #DCD2C5;
-    max-width: 300px;
     margin: 50px auto;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.12);
     padding: 50px 30px;
@@ -205,13 +204,12 @@ section.contenido {
     text-align: center;
 }
 
-.input-container input {
-    flex-grow: 0.8;
-    font-size: 14px;
-    padding: 3px;
-    max-width: 88.5%;
+.input-container input, .input-container select {
+    font-size: 0.9rem;
+    padding: 0.3rem;
     outline: none;
     border-radius: 0;
+    height: 2rem;
 }
 
 .formlink:link {
