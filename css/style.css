@@ -56,6 +56,10 @@ body#homeBody {
     transition: transform .3s ease;
 }
 
+.navlink::after {
+    display: none !important;
+}
+
 .navlink:hover::before {
     transform: scaleX(1);
     transform-origin: left;
