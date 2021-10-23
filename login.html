@@ -43,8 +43,15 @@
                     <li class="nav-item">
                         <a class="navlink" href="index.html">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="navlink" href="registro.html">Registro</a>
+                    <li class="nav-item dropdown">
+                        <a class="navlink dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Registrarse
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="registro-usuario.html">Para mí</a></li>
+                            <li><a class="dropdown-item" href="registro-empresa.html">Para empresa</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -80,8 +87,12 @@
                     <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
                     <input class="form-control" type="password" placeholder="Ingrese su codigo">
                 </div>
-                <div>
-                    <a class="formlink" href="registro.html">¿Todavia no esta registrado? Registrese</a>
+                <div class="link-container">
+                    <button class="formlink" type="button" onclick="toggleMenu('dropReg')">¿Todavia no esta registrado? Registrese</button>
+                    <div id="dropReg" class="drop-menu hidden">
+                        <a class="dropdown-item" href="registro-usuario.html">Para mí</a>
+                        <a class="dropdown-item" href="registro-empresa.html">Para empresa</a>
+                    </div>
                 </div>
                 <div class="actions">
                     <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
@@ -90,6 +101,8 @@
             </form>
         </div>
     </main>
+
+    <script src="js/dropmenu.js"></script>
 </body>
 
 </html>

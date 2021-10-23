@@ -3,7 +3,7 @@
     src: url('../fonts/VarelaRound-Regular.ttf');
 }
 
-:root{
+:root {
     --pripary-color: #00324A
 }
 
@@ -14,13 +14,15 @@
     font-family: 'VarelaRound';
 }
 
-
-body#homeBody{
+body#homeBody {
     height: 100vh;
     overflow: hidden;
 }
 
+
 /* Empieza pagina de inicio */
+
+
 /* Navbar */
 
 .navbar {
@@ -59,23 +61,27 @@ body#homeBody{
     transform-origin: left;
 }
 
+
 /* Sobreescritura para bootstrap 4*/
-.bg-primary{
-    background-color:#00324A !important;
+
+.bg-primary {
+    background-color: #00324A !important;
 }
 
-a:hover{
+a:hover {
     color: #fff;
     text-decoration: none;
-    font-size: medium;    
-}
-.btn .btn-primary{
-    background-color:#00324A !important;
+    font-size: medium;
 }
 
-.btn{
+.btn .btn-primary {
+    background-color: #00324A !important;
+}
+
+.btn {
     border-radius: 0;
 }
+
 
 /* Banner */
 
@@ -143,9 +149,12 @@ section.contenido {
     text-indent: 3px;
 }
 
+
 /* Termina pagina de inicio */
 
+
 /* Empieza login y registro */
+
 .contenedor {
     background-color: #DCD2C5;
     margin: 50px auto;
@@ -158,7 +167,7 @@ section.contenido {
     padding-bottom: 15px;
 }
 
-.contenedor .title{
+.contenedor .title {
     text-align: center;
 }
 
@@ -172,7 +181,7 @@ section.contenido {
     flex-flow: column;
 }
 
-.login-form button {
+.login-form .actions button {
     border: none;
     color: #fff;
     background-color: #00324A;
@@ -204,7 +213,8 @@ section.contenido {
     text-align: center;
 }
 
-.input-container input, .input-container select {
+.input-container input,
+.input-container select {
     font-size: 0.9rem;
     padding: 0.3rem;
     outline: none;
@@ -212,22 +222,47 @@ section.contenido {
     height: 2rem;
 }
 
-.formlink:link {
+.formlink {
+    background: none;
+    border: none;
     color: #00324A;
-    text-decoration: none;
+    text-align: left;
     font-weight: bold;
-    text-align: center;
-}
-
-.formlink:visited {
-    color: #00324A;
-    text-decoration: none;
+    outline: none!important;
 }
 
 .formlink:hover {
     color: gray;
-    text-decoration: underline;
 }
 
+.link-container {
+    position: relative;
+}
+
+.drop-menu {
+    position: absolute;
+    top: -8px;
+    right: -60%;
+    background-color: #fff;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.drop-menu::after {
+    content: " ";
+    position: absolute;
+    top: 30%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+
+.hidden{
+    display: none;
+}
 
 /* Termina login y registro */
