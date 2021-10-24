@@ -4,7 +4,7 @@
 }
 
 :root {
-    --pripary-color: #00324A
+    --pripary-color: #00324A;
 }
 
 * {
@@ -14,10 +14,6 @@
     font-family: 'VarelaRound';
 }
 
-body#homeBody {
-    height: 100vh;
-    overflow: hidden;
-}
 
 
 /* Empieza pagina de inicio */
@@ -93,6 +89,7 @@ section.banner {
     position: relative;
     overflow: hidden;
     height: calc(100vh - 70px);
+    min-height: 500px;
     background: linear-gradient(to right, #333 0%, #000000c2);
     display: flex;
     align-items: center;
@@ -114,6 +111,7 @@ section.banner {
     left: 0;
     width: 100%;
     height: 100vh;
+    min-height: 500px;
     object-fit: cover;
     float: left;
     z-index: -1;
@@ -185,7 +183,7 @@ section.contenido {
     flex-flow: column;
 }
 
-.login-form .actions button {
+.login-form .actions button, .action-button {
     border: none;
     color: #fff;
     background-color: #00324A;
@@ -270,3 +268,34 @@ section.contenido {
 }
 
 /* Termina login y registro */
+
+
+/* Footer */
+footer{
+    background-color: #222;
+    color: #fff;
+}
+
+footer #formContacto{
+    justify-self: flex-end;
+}
+
+.footer-legend{
+    text-align: center!important;
+}
+
+.footer-divider{
+    background-color: #555;
+}
+
+.contact-info{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-info span{
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}

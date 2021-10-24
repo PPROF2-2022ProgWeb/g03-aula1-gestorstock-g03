@@ -25,7 +25,7 @@
 
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="fonts/gs-icofont/style.css">
 </head>
 
 <body>
@@ -84,7 +84,7 @@
                 <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
                 <span>Codigo de administrador</span>
                 <div class="form-group input-container">
-                    <i class="icono-dna"></i>
+                    <i class="icono-adn"></i>
                     <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
                     <input class="form-control" type="password" placeholder="Ingrese su codigo">
                 </div>
@@ -102,6 +102,77 @@
             </form>
         </div>
     </main>
+
+    <footer id="piePagina" class="container-fluid d-flex flex-column">
+    <div class="row d-flex justify-content-around">
+      <div class="form-container col-4">
+        <form id="formContacto" class="pb-5 pt-5 container no-gutters">
+          <legend>Contactanos</legend>
+          <div class="row">
+            <div class="col-6">
+              <span>Nombre</span>
+              <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+              <div class="form-group input-container">
+                <i class="icono-user"></i>
+
+                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                <input class="form-control" type="text" required placeholder="Ingrese su nombre">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <span>Apellido</span>
+              <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+              <div class="form-group input-container ">
+                <i class="icono-user"></i>
+                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                <input class="form-control" type="text" required placeholder="Ingrese su apellido">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <span>Correo</span>
+              <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+              <div class="form-group input-container ">
+                <i class="icono-email"></i>
+                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                <input class="form-control" type="email" required placeholder="Ingrese su correo">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <span>Mensaje</span>
+              <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+              <div class="form-group input-container ">
+                <i class="icono-mensaje"></i>
+                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                <textarea class="form-control" type="email" required placeholder="Ingrese su mensaje"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="action-button col-12" type="submit">Enviar mensaje</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-info col-4 py-5">
+        <h3 class="titulo">Informacion de contacto</h3>
+
+        <span><i class="icono-home"></i> Argentina, Cordoba, Cordoba</span>
+        <span><i class="icono-mensaje"></i> gestor.stock@gmail.com</span>
+        <span><i class="icono-telefono"></i> +54 351 347 5441</span>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <span class="footer-legend">Sitio diseñado y desarrollado por Grupo1 PP TSDWAD ISPC Cohorte 2021©</span>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="js/dropmenu.js"></script>
