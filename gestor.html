@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#00324a">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00324a">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#00324a">
+
+    <!-- implementacion de bibliotecas de bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- en este pequeño bloque se importo los elementos neceasrios de bootstrap -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <link rel="stylesheet" href="css/style-gestor.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/gs-icofont/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="side-nav">
+            <div class="logo-container">
+                <i class="icono-logo"></i>
+                <span class="titulo">Gestor de Stock</span>
+            </div>
+
+            <ul class="option-container">
+                <li>
+                    <button id="bt-ventas" class="menuItem">
+                        <i class="icono-ventas"></i>
+                        <span>Ventas</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="bt-stock" class="menuItem">
+                        <i class="icono-stock"></i>
+                        <span>Stock</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="bt-caja" class="menuItem">
+                        <i class="icono-caja"></i>
+                        <span>Caja</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="bt-admin" class="menuItem active">
+                        <i class="icono-admin"></i>
+                        <span>Administración</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button id="btCambiarEmpleado" class="menuItem">
+                <i class="icono-change"></i>
+                <span>Cambiar empleado</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <button id="toggleMenuButton">
+            <i class="icono-menu"></i>
+        </button>
+
+        <section id="ventas" class="tab-container">
+
+        </section>
+
+        <section id="stock" class="tab-container">
+
+        </section>
+
+        <section id="caja" class="tab-container">
+            <div>
+                <div>
+                    <label class="dinerocaja">Dinero en caja - Comienzo del turno:</label>
+                    <input type="text" placeholder="cantidad de dinero">
+                </div>
+
+                <div">
+                    <label>Dinero en caja - Fin del turno:</label>
+                    <input type="text" placeholder="cantidad de dinero">
+            </div>
+            <div>
+
+                <div>
+                    <div>
+                        <label>Efectivo recibido:</label>
+                        <input type="text" placeholder="apertura de caja">
+                    </div>
+
+                    <div>
+                        <label>Pago a proveedores:</label>
+                        <input type="text" placeholder="Dinero">
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label>Debito recibido:</label>
+                        <input type="text" placeholder="cantidad de dinero">
+                    </div>
+
+                    <div>
+                        <label>Sueldos o bonos:</label>
+                        <input type="text" placeholder="efectivo - docs">
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label>Dinero a depositar:</label>
+                        <input type="text" placeholder="Cantidad a depositar">
+                    </div>
+
+                    <div>
+                        <label>Dinero a extraer:</label>
+                        <input type="text" placeholder="Cantidad a extraer">
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label>Dinero depositado:</label>
+                        <input type="text" placeholder="depositado">
+                    </div>
+
+                    <div>
+                        <label>Dinero extraido:</label>
+                        <input type="text" placeholder="extraido">
+                    </div>
+                </div>
+
+                <h2>Recaudacion Total</h2>
+                <p>$00.00</p>
+
+
+                <button> Finalizar Turno</button>
+        </section>
+
+        <section id="admin" class="tab-container">
+
+        </section>
+    </main>
+
+    <script src="js/sideNavController.js"></script>
+</body>
+
+</html>

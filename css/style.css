@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'VarelaRound';
+    src: url('../fonts/VarelaRound-Regular.ttf');
+}
+
+:root{
+    --pripary-color: #00324A
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VarelaRound';
+}
+
+
+body#homeBody{
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Empieza pagina de inicio */
+/* Navbar */
+
+.navbar {
+    background-color: var(--pripary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 2rem;
+}
+
+.logo {
+    width: 50px;
+}
+
+.navlink {
+    text-decoration: none;
+    position: relative;
+    margin-left: 15px;
+    color: #fff;
+}
+
+.navlink::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    background-color: #fff;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s ease;
+}
+
+.navlink:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Sobreescritura para bootstrap 4*/
+.bg-primary{
+    background-color:#00324A !important;
+}
+
+a:hover{
+    color: #fff;
+    text-decoration: none;
+    font-size: medium;    
+}
+.btn .btn-primary{
+    background-color:#00324A !important;
+}
+
+.btn{
+    border-radius: 0;
+}
+
+/* Banner */
+
+section.banner {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 70px);
+    background: linear-gradient(to right, #333 0%, #000000c2);
+    display: flex;
+    align-items: center;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    height: 40vh;
+    padding: 0 1rem;
+    background: linear-gradient(to right, #333 0%, #000000c2);
+    display: flex;
+    align-items: center;
+}
+
+.bgvideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    float: left;
+    z-index: -1;
+}
+
+.title-container {
+    position: relative;
+    align-self: center;
+    height: fit-content;
+    z-index: 3;
+    padding: 0 10%;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.title-container h1 {
+    font-weight: 800;
+    font-size: 10vw;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.title-container h1::first-line {
+    line-height: .8;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.title-container p {
+    font-size: 15px;
+    color: #DCD2C5
+}
+
+section.contenido {
+    padding: 0 2rem;
+    text-indent: 3px;
+}
+
+/* Termina pagina de inicio */
+
+/* Empieza login y registro */
+.contenedor {
+    background-color: #DCD2C5;
+    margin: 50px auto;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.12);
+    padding: 50px 30px;
+}
+
+.title {
+    font-size: 1.5rem bold;
+    padding-bottom: 15px;
+}
+
+.contenedor .title{
+    text-align: center;
+}
+
+.sub-title {
+    color: grey;
+    margin-bottom: 50px;
+}
+
+.login-form {
+    display: flex;
+    flex-flow: column;
+}
+
+.login-form button {
+    border: none;
+    color: #fff;
+    background-color: #00324A;
+    align-self: flex-end;
+    justify-self: end;
+    padding: 10px 20px;
+}
+
+.login-form .actions {
+    display: flex;
+    justify-self: end;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-container {
+    display: flex;
+    background-color: #00324A;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.input-container i {
+    color: #fff;
+    margin: 0 7px;
+    font-size: 16px;
+    flex-grow: 0.2;
+    text-align: center;
+}
+
+.input-container input, .input-container select {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    outline: none;
+    border-radius: 0;
+    height: 2rem;
+}
+
+.formlink:link {
+    color: #00324A;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.formlink:visited {
+    color: #00324A;
+    text-decoration: none;
+}
+
+.formlink:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+
+/* Termina login y registro */
