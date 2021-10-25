@@ -76,9 +76,44 @@
             <i class="icono-menu"></i>
         </button>
 
+        <!-- ACA EMPIEZA "CREAR VENTAS" -->
         <section id="ventas" class="tab-container">
 
+            <div class="container">  
+                <form name="buscador">
+                    <div> 
+                        <input type="search" class="form-control" placeholder="&#128269; Buscar Producto"> 
+                    </div> 
+                </form>
+            </div>
+        
+            <div style="position: relative; top: 100px">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                </table>
+                <table class="table table-striped">	
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio Unitario</th>
+                            <th>Precio Total</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div>
+                    <label>Total: $0</label>
+                </div>
+            </div>
+
         </section>
+        <!-- ACA TERMINA "CREAR VENTAS" -->
 
         <section id="stock" class="tab-container">
 
@@ -91,10 +126,10 @@
                     <input type="text" placeholder="cantidad de dinero">
                 </div>
 
-                <div">
+                <div>
                     <label>Dinero en caja - Fin del turno:</label>
                     <input type="text" placeholder="cantidad de dinero">
-            </div>
+                </div>
             <div>
 
                 <div>
