@@ -17,7 +17,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">  <!-- Iconos bootstrap para ventana modal VENTAS -->
     <!-- en este pequeño bloque se importo los elementos neceasrios de bootstrap -->
 
     <meta charset="UTF-8">
@@ -90,14 +89,14 @@
                             <div class="modal-body">
                                 <div>
                                     <div>
-                                        <i class="bi bi-cash"></i>
+                                        <i class="icono-billete"></i>
                                         <label>Efectivo</label>
                                         <input style="border: 0;" type="text" placeholder="Total: $">
                                     </div>
                                 </div>
                                 <div>
                                     <div>
-                                        <i class="bi bi-credit-card"></i>
+                                        <i class="icono-tarjeta"></i>
                                         <label>Debito</label>
                                         <label>Paga con:</label>
                                         <input style="border-top: 0; border-right: 0; border-bottom: 1; border-left: 0" type="text" placeholder="">
@@ -105,7 +104,7 @@
                                 </div>
                                 <div>
                                     <div>
-                                        <i class="bi bi-credit-card"></i>
+                                        <i class="icono-tarjeta"></i>
                                         <label>Credito</label>
                                         <input style="border: 0; font-weight: bold" type="text" placeholder="Vuelto: $">
                                     </div>
@@ -128,7 +127,7 @@
                     </div> 
                 </form>
             </div>
-        
+
             <div style="position: relative; top: 30px">
                 <table class="table table-striped">
                     <thead>
@@ -196,71 +195,7 @@
         </section>
 
         <section id="caja" class="tab-container">
-            <div>
-                <div>
-                    <label class="dinerocaja">Dinero en caja - Comienzo del turno:</label>
-                    <input type="text" placeholder="cantidad de dinero">
-                </div>
 
-                <div>
-                    <label>Dinero en caja - Fin del turno:</label>
-                    <input type="text" placeholder="cantidad de dinero">
-                </div>
-            <div>
-
-                <div>
-                    <div>
-                        <label>Efectivo recibido:</label>
-                        <input type="text" placeholder="apertura de caja">
-                    </div>
-
-                    <div>
-                        <label>Pago a proveedores:</label>
-                        <input type="text" placeholder="Dinero">
-                    </div>
-                </div>
-
-                <div>
-                    <div>
-                        <label>Debito recibido:</label>
-                        <input type="text" placeholder="cantidad de dinero">
-                    </div>
-
-                    <div>
-                        <label>Sueldos o bonos:</label>
-                        <input type="text" placeholder="efectivo - docs">
-                    </div>
-                </div>
-
-                <div>
-                    <div>
-                        <label>Dinero a depositar:</label>
-                        <input type="text" placeholder="Cantidad a depositar">
-                    </div>
-
-                    <div>
-                        <label>Dinero a extraer:</label>
-                        <input type="text" placeholder="Cantidad a extraer">
-                    </div>
-                </div>
-
-                <div>
-                    <div>
-                        <label>Dinero depositado:</label>
-                        <input type="text" placeholder="depositado">
-                    </div>
-
-                    <div>
-                        <label>Dinero extraido:</label>
-                        <input type="text" placeholder="extraido">
-                    </div>
-                </div>
-
-                <h2>Recaudacion Total</h2>
-                <p>$00.00</p>
-
-
-                <button> Finalizar Turno</button>
         </section>
 
         <section id="admin" class="tab-container">
