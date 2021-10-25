@@ -17,6 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">  <!-- Iconos bootstrap para ventana modal VENTAS -->
     <!-- en este pequeño bloque se importo los elementos neceasrios de bootstrap -->
 
     <meta charset="UTF-8">
@@ -79,6 +80,47 @@
         <!-- ACA EMPIEZA "CREAR VENTAS" -->
         <section id="ventas" class="tab-container">
 
+            <div class="container">
+                <div class="modal" tabindex="-1" id="modal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="justify-content: center">
+                                CREAR VENTA
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div>
+                                        <i class="bi bi-cash"></i>
+                                        <label>Efectivo</label>
+                                        <input style="border: 0;" type="text" placeholder="Total: $">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <i class="bi bi-credit-card"></i>
+                                        <label>Debito</label>
+                                        <label>Paga con:</label>
+                                        <input style="border-top: 0; border-right: 0; border-bottom: 1; border-left: 0" type="text" placeholder="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <i class="bi bi-credit-card"></i>
+                                        <label>Credito</label>
+                                        <input style="border: 0; font-weight: bold" type="text" placeholder="Vuelto: $">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="model-footer" style="display: flex; justify-content: center">
+                                    <button style="margin: 10px;">Cancelar</button>
+                                    <button style="margin: 10px;">Finalizar venta</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal1"></button>
+            </div>
+
             <div class="container">  
                 <form name="buscador">
                     <div> 
@@ -87,7 +129,7 @@
                 </form>
             </div>
         
-            <div style="position: relative; top: 100px">
+            <div style="position: relative; top: 30px">
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -95,8 +137,24 @@
                             <th>Producto</th>
                             <th>Precio</th>
                         </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Art 10</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Art 20</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>Art 30</td>
+                            <td>300</td>
+                        </tr>
                     </thead>
                 </table>
+                <br>
                 <table class="table table-striped">	
                     <thead>
                         <tr>
@@ -105,10 +163,28 @@
                             <th>Precio Unitario</th>
                             <th>Precio Total</th>
                         </tr>
+                        <tr>
+                            <td>Art 10</td>
+                            <td>1</td>
+                            <td>100</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Art 20</td>
+                            <td>1</td>
+                            <td>200</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Art 30</td>
+                            <td>1</td>
+                            <td>300</td>
+                            <td>300</td>
+                        </tr>
                     </thead>
                 </table>
                 <div>
-                    <label>Total: $0</label>
+                    <label>Total: $600</label>
                 </div>
             </div>
 
