@@ -131,3 +131,10 @@ main.active{
     bottom: 50px;
     outline: none;
 }
+
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    top: 30px;
+}
