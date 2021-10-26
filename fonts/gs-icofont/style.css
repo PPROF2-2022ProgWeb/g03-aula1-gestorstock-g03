@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'gs-icofont';
-  src:  url('fonts/gs-icofont.eot?s3bkah');
-  src:  url('fonts/gs-icofont.eot?s3bkah#iefix') format('embedded-opentype'),
-    url('fonts/gs-icofont.ttf?s3bkah') format('truetype'),
-    url('fonts/gs-icofont.woff?s3bkah') format('woff'),
-    url('fonts/gs-icofont.svg?s3bkah#gs-icofont') format('svg');
+  src:  url('fonts/gs-icofont.eot?4kvvls');
+  src:  url('fonts/gs-icofont.eot?4kvvls#iefix') format('embedded-opentype'),
+    url('fonts/gs-icofont.ttf?4kvvls') format('truetype'),
+    url('fonts/gs-icofont.woff?4kvvls') format('woff'),
+    url('fonts/gs-icofont.svg?4kvvls#gs-icofont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icono-lupa:before {
+  content: "\e918";
+}
 .icono-tarjeta:before {
   content: "\e913";
 }
