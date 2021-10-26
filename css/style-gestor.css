@@ -137,11 +137,10 @@ main.active{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
-    text-align: left;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    
-   
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+     
 }
 /** Revisar donde debo agregar **/
 .fondo {
@@ -153,9 +152,8 @@ main.active{
     -moz-box-shadow: 0px 5px 15px 0px rgba(128,128,128,1);
     box-shadow: 0px 5px 15px 0px rgba(128,128,128,1); 
     background-color: var(--blanco);
-    padding: 1.5rem;
-    width: 65rem;
-    height: 45rem;
+    padding: 2rem;
+    
     margin: 2rem;
     align-items: center;    
 }
@@ -165,5 +163,41 @@ main.active{
 }
 
 .boton {
-    margin-bottom: 4rem;
+    background-color: var(--color-primario);
+    color: var(--color-fuente-primario);          
+    padding: 1rem;
+    width: 20rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.input-caja {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin-left: .5rem;
+    outline: none;
+}
+
+#Recaudacion {
+    font-size: 3rem;
+    margin: 0 auto;
+}
+
+.recaudacion-boton {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 7rem;
+}
+
+.recaudacion-boton h2 {
+    font-size: 3.5rem;
+}
+
+.recaudacion-boton > div {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
 }
