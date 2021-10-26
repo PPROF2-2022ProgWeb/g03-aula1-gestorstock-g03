@@ -78,12 +78,12 @@
 
         <!-- ACA EMPIEZA "CREAR VENTAS" -->
         <section id="ventas" class="tab-container">
-
+            <!-- ACA EMPIEZA "VENTANA MODAL" -->
             <div class="container">
-                <div class="modal" tabindex="-1" id="modal1">
+                <div class="modal fade" tabindex="-1" id="modal1">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header" style="justify-content: center">
+                            <div class="modal-header cabecera-modal">
                                 CREAR VENTA
                             </div>
                             <div class="modal-body">
@@ -91,45 +91,46 @@
                                     <div>
                                         <i class="icono-billete"></i>
                                         <label>Efectivo</label>
-                                        <input style="border: 0;" type="text" placeholder="Total: $">
+                                        <input class="caja-efectivo" type="text" placeholder="Total: $">
                                     </div>
                                 </div>
                                 <div>
                                     <div>
                                         <i class="icono-tarjeta"></i>
                                         <label>Debito</label>
-                                        <label>Paga con:</label>
-                                        <input style="border-top: 0; border-right: 0; border-bottom: 1; border-left: 0" type="text" placeholder="">
+                                        <label style="margin-left: 60px;">Paga con:</label>
+                                        <input class="caja-debito" type="text" placeholder="">
                                     </div>
                                 </div>
                                 <div>
                                     <div>
                                         <i class="icono-tarjeta"></i>
                                         <label>Credito</label>
-                                        <input style="border: 0; font-weight: bold" type="text" placeholder="Vuelto: $">
+                                        <input class="caja-credito" type="text" placeholder="Vuelto: $">
                                     </div>
                                 </div>
                             </div>
-                            <div class="model-footer" style="display: flex; justify-content: center">
-                                    <button style="margin: 10px;">Cancelar</button>
-                                    <button style="margin: 10px;">Finalizar venta</button>
+                            <div class="model-footer div-btn-modal">
+                                    <button class="btn-modal" data-dismiss="modal">Cancelar</button>
+                                    <button class="btn-modal">Finalizar venta</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal1"></button>
             </div>
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal1">vm</button>
+            <!-- ACA TERMINA "VENTANA MODAL" -->
 
             <div class="container">  
                 <form name="buscador">
-                    <div>
-                        <i class="icono-lupa"></i> 
+                    <div class="buscador">
+                        <i style="margin: 10px;" class="icono-lupa"></i>
                         <input type="search" class="form-control" placeholder="Buscar Producto"> 
                     </div> 
                 </form>
             </div>
 
-            <div class="columnas">
+            <div class="tbls-ventas">
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -154,7 +155,7 @@
                         </tr>
                     </thead>
                 </table>                
-                <table class="table table-striped">	
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Producto</th>
@@ -183,8 +184,8 @@
                     </thead>
                 </table>                
             </div>
-            <div class="columnas">
-                <label>Total: $600</label>
+            <div>
+                <label class="label-prueba">Total: $600</label>
             </div>
         </section>
         <!-- ACA TERMINA "CREAR VENTAS" -->
