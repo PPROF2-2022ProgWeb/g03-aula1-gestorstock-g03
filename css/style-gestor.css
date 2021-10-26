@@ -132,6 +132,8 @@ main.active{
     outline: none;
 }
 
-.dinerocaja{
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
 }
