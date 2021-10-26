@@ -172,6 +172,7 @@ main.active{
     margin: 10px;
     background-color: var(--color-primario);
     color: white;
+    padding: 8px;
 }
 
 /* Fin Ventana Modal */
@@ -193,7 +194,7 @@ main.active{
 
 .label-prueba{
     margin-top: 30px; 
-    margin-left: 1000px; 
+    margin-left: 835px; 
     font-weight: bold; 
     font-size: 30px;
 }
