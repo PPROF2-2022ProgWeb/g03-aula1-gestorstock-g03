@@ -132,8 +132,38 @@ main.active{
     outline: none;
 }
 
+/** Caja **/
 .columnas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    text-align: left;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    
+   
+}
+/** Revisar donde debo agregar **/
+.fondo {
+    background-image: linear-gradient(to top, var (--link-hover-color) 0%, var(--blanco) 100%);
+}
 
+.contenedor-sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(128,128,128,1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(128,128,128,1);
+    box-shadow: 0px 5px 15px 0px rgba(128,128,128,1); 
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    width: 65rem;
+    height: 45rem;
+    margin: 2rem;
+    align-items: center;    
+}
+
+.contenedor-sombra h2 {
+    font-family: var(--fuente-primaria);
+}
+
+.boton {
+    margin-bottom: 4rem;
 }
