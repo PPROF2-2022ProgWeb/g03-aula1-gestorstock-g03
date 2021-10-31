@@ -1,17 +1,10 @@
 @import url('partials/variables.css');
 
-
 /* Menu Lateral */
-#toggleMenuButton{
-    margin-left: 20px;
-    margin-top: 20px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    font-size: 1.5rem;
-}
 
-nav.side-nav{
+
+
+nav.side-nav {
     position: fixed;
     background-color: var(--color-primario);
     color: var(--color-fuente-primario);
@@ -23,16 +16,15 @@ nav.side-nav{
     transition: width .5s;
 }
 
-nav.side-nav.active{
-    width: 5.2rem; 
+nav.side-nav.active {
+    width: 5.2rem;
 }
 
-.side-nav i{
+.side-nav i {
     font-size: 2.5rem;
 }
 
-
-.logo-container{
+.logo-container {
     display: flex;
     width: 17.5rem;
     align-items: center;
@@ -40,34 +32,35 @@ nav.side-nav.active{
     font-size: 1.2rem;
 }
 
-.logo-container .titulo{
+.logo-container .titulo {
     margin-left: 1.56rem;
 }
 
-.option-container *{
+.option-container * {
     outline: none !important;
 }
-.option-container{
+
+.option-container {
     margin-top: 3.75rem;
 }
 
-.option-container > li{
+.option-container>li {
     margin-bottom: 0.4rem;
     margin-right: 5px;
 }
 
-.menuItem i{
+.menuItem i {
     font-size: 1.5rem;
     margin: 1rem 1.56rem;
     margin-right: 2.2rem;
 }
 
-.menuItem span{
+.menuItem span {
     text-align: left;
     white-space: nowrap;
 }
 
-.menuItem{
+.menuItem {
     display: flex;
     position: relative;
     align-items: center;
@@ -80,12 +73,13 @@ nav.side-nav.active{
     outline: none;
 }
 
-.menuItem:hover, .menuItem.active{
+.menuItem:hover,
+.menuItem.active {
     color: var(--color-fuente-secundario);
     background-color: var(--blanco);
 }
 
-.menuItem.active::before{
+.menuItem.active::before {
     content: '';
     z-index: -1;
     position: absolute;
@@ -98,7 +92,7 @@ nav.side-nav.active{
     box-shadow: 1.51rem 1.8rem 0 .1rem var(--blanco);
 }
 
-.menuItem.active::after{
+.menuItem.active::after {
     content: '';
     z-index: -1;
     position: absolute;
@@ -110,8 +104,11 @@ nav.side-nav.active{
     background-color: transparent;
     box-shadow: 1.51rem -1.8rem 0 .1rem var(--blanco);
 }
+
+
 /* Fin menu lateral */
 
+/*Empieza Seccion principal*/
 main {
     height: 100vh;
     width: calc(100% - 17.5rem);
@@ -119,15 +116,69 @@ main {
     transition: .5s;
 }
 
-main.active{
+main.active {
     width: calc(100% - 5.2rem);
     margin-left: 5.2rem;
 }
 
-#btCambiarEmpleado{
+main .wrapper{
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+}
+
+#btCambiarEmpleado {
     position: absolute;
     margin-right: 5px;
     width: calc(100% - 10px);
     bottom: 50px;
     outline: none;
 }
+
+/*Cabecera*/
+#toggleMenuButton {
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    z-index: 9999;
+    margin: 0 .8rem;
+}
+#toggleMenuButton i {
+    z-index: inherit;
+}
+
+.cabecera-seccion{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    height: 3.5rem;
+}
+
+.cabecera-seccion::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    margin-left: 3rem;
+    width: calc(100% - 3.5rem);
+    height: 1px;
+    border-radius: 1px;
+    background-color: #000;
+}
+
+@media screen and (max-width: 768px){
+    .cabecera-seccion::before{
+        margin-left: 0;
+    }
+}
+
+
+.cabecera-seccion .titulo{
+    margin: 0;
+    margin-left: .5rem;
+}
+/* Fin cabecera */
+
+/* Termina seccion pincipal */
