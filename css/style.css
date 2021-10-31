@@ -3,10 +3,6 @@
     src: url('../fonts/VarelaRound-Regular.ttf');
 }
 
-:root{
-    --pripary-color: #00324A
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +20,7 @@ body#homeBody{
 /* Navbar */
 
 .navbar {
-    background-color: var(--pripary-color);
+    background-color: var(--color-primario);
     display: flex;
     align-items: center;
     justify-content: space-between;
