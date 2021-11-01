@@ -138,10 +138,8 @@ main .wrapper{
 #btCambiarEmpleado{
     margin-right: 5px;
     width: calc(100% - 10px);
-    bottom: 50px;
     outline: none;
 }
-
 /*Cabecera*/
 #toggleMenuButton {
     display: flex;
@@ -161,8 +159,10 @@ main .wrapper{
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: .5rem;
     height: 3.5rem;
+    width: 100%;
 }
 
 .cabecera-seccion::before{
@@ -186,6 +186,35 @@ main .wrapper{
 .cabecera-seccion .titulo{
     margin: 0;
     margin-left: .5rem;
+}
+
+
+#bt-usuario{
+    border: none;
+    border-radius: 1.25rem;
+    padding-right: 1rem;
+    justify-self: center;
+    margin-right: 2.5rem;
+    background-color: #ddd;
+}
+
+#bt-usuario:hover{
+    background-color: #aaa;
+}
+
+#bt-usuario img{
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+.cabecera-seccion .dropdown-menu{
+    transform: translateX(-1.2rem);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: var(--color-primario);
 }
 /* Fin cabecera */
 

@@ -9,4 +9,11 @@ function validarRegistro() {
     }
 }
 
-document.getElementById('btRegistrar').addEventListener('click', validarRegistro);
+document.getElementById('btRegistrar')?.addEventListener('click', validarRegistro);
+
+function cerrarSesion() {
+    console.log('Sesion cerrada');
+    window.location.replace('./index.html')
+}
+
+document.getElementById('bt-cerrarSesion')?.addEventListener('click', cerrarSesion)
