@@ -1,5 +1,9 @@
 @import url('variables.css');
 
+*, *::before, *::after {
+    outline: none!important;
+}
+
 .boton{
     background-color: var(--color-primario);
     color: var(--color-fuente-primario);
@@ -17,5 +21,5 @@
 
 .boton.active{
     background-color: var(--fondo-boton-activo);
-    color: var(--colot-fuente-boton-activo);
+    color: var(--color-fuente-boton-activo);
 }

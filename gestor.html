@@ -24,8 +24,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
 
-    <link rel="stylesheet" href="css/style-gestor.css">
+    <link rel="stylesheet" href="css/partials/globales.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-gestor.css">
     <link rel="stylesheet" href="fonts/gs-icofont/style.css">
 </head>
 
@@ -64,10 +65,11 @@
                     </li>
                 </ul>
 
-            <button id="btCambiarEmpleado" class="menuItem">
-                <i class="icono-change"></i>
-                <span>Cambiar empleado</span>
-            </button>
+                <button id="btCambiarEmpleado" class="menuItem" data-toggle="modal" data-target="#modalCambioEmpleado">
+                    <i class="icono-change"></i>
+                    <span>Cambiar empleado</span>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -98,17 +100,112 @@
             </div>
         </div>
 
-        <section id="ventas" class="tab-container">
+        <!-- Modal Cambio de empleado-->
+        <div class="modal fade" id="modalCambioEmpleado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cambiar de empleado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input class="form-control mb-2" type="password" placeholder="Ingrese su codigo">
+                        <!-- <a class="formlink" href="ayuda.html">¿Se encuentra desorientado? Pinche aqui</a> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Cambiar empleado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        </section>
+        <!-- Modal ingresar dinero a caja -->
+        <div class="modal fade" id="modalIngresarDinero" tabindex="-1" aria-labelledby="bt-ingresarDinero"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ingresar dinero a caja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="login-form container-fluid">
+                            <span>Cantidad</span>
+                            <div class="form-group input-container">
+                                <i class="icono-dinero"></i>
+                                <input class="form-control" type="email"
+                                    placeholder="Ingrese la cantidad de dinero a ingresar">
+                            </div>
 
-        <section id="stock" class="tab-container">
+                            <span>Razon</span>
+                            <div class="form-group input-container">
+                                <i class="icono-pregunta"></i>
+                                <input class="form-control" type="password" placeholder="Ingrese la razon del ingreso">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Ingresar dinero</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        </section>
+        <!-- Modal extraer dinero a caja -->
+        <div class="modal fade" id="modalExtraerDinero" tabindex="-1" aria-labelledby="bt-extraerDinero"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Extraer dinero de la caja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="login-form container-fluid">
+                            <span>Cantidad</span>
+                            <div class="form-group input-container">
+                                <i class="icono-dinero"></i>
+                                <input class="form-control" type="email"
+                                    placeholder="Ingrese la cantidad de dinero a extraer">
+                            </div>
 
-        <section id="caja" class="tab-container">
+                            <span>Razon</span>
+                            <div class="form-group input-container">
+                                <i class="icono-pregunta"></i>
+                                <input class="form-control" type="password"
+                                    placeholder="Ingrese la razon de la extraccion">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Extraer dinero</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        </section>
+        <div class="wrapper">
+            <section id="ventas" class="tab-container" data-title="Ventas">
+
+            </section>
+
+            <section id="stock" class="tab-container" data-title="Stock">
+
+            </section>
+
+            <section id="caja" class="tab-container" data-title="Caja">
+
+            </section>
 
             <section id="admin" class="tab-container" data-title="Administracion">
                 <div class="contenedor-periodos">
@@ -156,10 +253,15 @@
                 </div>
 
 
-        </section>
+            </section>
+        </div>
     </main>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js'></script>
+    <script src="js/graficos-administracion.js"></script>
     <script src="js/sideNavController.js"></script>
+    <script src="js/validarRegistro.js"></script>
+
 </body>
 
 </html>
