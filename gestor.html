@@ -81,22 +81,24 @@
                 </button>
                 <h2 class="titulo" id="titulo-seccion"></h2>
             </div>
-            <div class="dropdown">
-                <button id="bt-usuario" class="user-info" data-toggle="dropdown">
+            <div class="btn-group">
+                <button id="bt-usuario" class="user-info" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <img src="img/user.png" alt="Foto de perfil del usuario">
                     <span id="nombre-usuario">Usuario</span>
                 </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="bt-usuario">
-                    <li role="presentation">
-                        <button class="dropdown-item" role="menuitem" tabindex="-1" data-toggle="modal"
-                            data-target="#modalCambioEmpleado">
-                            <i class="icono-change mr-1"></i>Cambiar empleado</button>
-                    </li>
-                    <li role="presentation">
-                        <button id="bt-cerrarSesion" class="dropdown-item" role="menuitem" tabindex="-1"><i
-                                class="icono-logout mr-1"></i>Cerrar sesion</button>
-                    </li>
-                </ul>
+                <div class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="bt-usuario">
+
+                    <button class="dropdown-item" role="menuitem" tabindex="-1" data-toggle="modal"
+                        data-target="#modalCambioEmpleado">
+                        <i class="icono-change mr-1"></i>
+                        Cambiar empleado
+                    </button>
+                    <button id="bt-cerrarSesion" class="dropdown-item" role="menuitem" tabindex="-1">
+                        <i class="icono-logout mr-1"></i>
+                        Cerrar sesion
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -212,7 +214,7 @@
                     <button id="semanal" class="boton">Semanal</button>
                     <button id="mensual" class="boton">Mensual</button>
                 </div>
-                <div id="graf-ingresos" class="grafico-ganancias container col-lg-10">
+                <div id="graf-ingresos" class="grafico-ganancias mx-3">
                     <canvas id="chart"></canvas>
                 </div>
 
@@ -246,9 +248,9 @@
                     </div>
                 </div>
                 <div class="d-flex mt-4 ml-4">
-                    <button id="bt-ingresarDinero" class="boton mr-3" data-toggle="modal"
+                    <button id="bt-ingresarDinero" class="boton mb-3 mr-3" data-toggle="modal"
                         data-target="#modalIngresarDinero">Ingresar dinero a caja</button>
-                    <button id="bt-extraerDinero" class="boton" data-toggle="modal"
+                    <button id="bt-extraerDinero" class="boton mb-3" data-toggle="modal"
                         data-target="#modalExtraerDinero">Extraer dinero de caja</button>
                 </div>
 

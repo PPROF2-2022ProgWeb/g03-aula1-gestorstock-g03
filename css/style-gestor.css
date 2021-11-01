@@ -1,15 +1,18 @@
 @import url('partials/variables.css');
 
 /* Menu Lateral */
-
-
+body, main{
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
 
 nav.side-nav {
     position: fixed;
     background-color: var(--color-primario);
     color: var(--color-fuente-primario);
     width: 17.5rem;
-    height: 100vh;
+    height: 100%;
     padding-top: 20px;
     padding-left: 5px;
     overflow-x: hidden;
@@ -148,7 +151,6 @@ main .wrapper{
     outline: none;
     background-color: transparent;
     font-size: 1.5rem;
-    z-index: 9999;
     margin: 0 .8rem;
 }
 #toggleMenuButton i {
@@ -207,10 +209,6 @@ main .wrapper{
     border-radius: 50%;
 }
 
-.cabecera-seccion .dropdown-menu{
-    transform: translateX(-1.2rem);
-}
-
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
@@ -238,6 +236,7 @@ main .wrapper{
 .contenedor-ingresos{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .ingresos{
@@ -292,3 +291,35 @@ main .wrapper{
         height: 100%;
     }
 }
+
+
+/* Responsive */
+@media screen and (max-width: 800px){
+    nav.side-nav{
+        left: -17.5rem;
+        transition: left .5s;
+    }
+    main{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    main.active{
+        margin-left: 17.5rem;
+    }
+    nav.side-nav.active{
+        left: 0;
+        width: 17.5rem;
+    }
+    
+    #bt-usuario{
+        margin-right: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+    
+    #bt-usuario span{
+        display: none;
+    }
+}
+
