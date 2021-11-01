@@ -44,6 +44,15 @@ nav.side-nav.active {
     margin-top: 3.75rem;
 }
 
+
+.side-nav .actions{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 90%;
+}
+
+
 .option-container>li {
     margin-bottom: 0.4rem;
     margin-right: 5px;
@@ -126,8 +135,7 @@ main .wrapper{
     overflow: auto;
 }
 
-#btCambiarEmpleado {
-    position: absolute;
+#btCambiarEmpleado{
     margin-right: 5px;
     width: calc(100% - 10px);
     bottom: 50px;
