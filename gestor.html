@@ -110,7 +110,51 @@
 
         </section>
 
-        <section id="admin" class="tab-container">
+            <section id="admin" class="tab-container" data-title="Administracion">
+                <div class="contenedor-periodos">
+                    <button id="semanal" class="boton">Semanal</button>
+                    <button id="mensual" class="boton">Mensual</button>
+                </div>
+                <div id="graf-ingresos" class="grafico-ganancias container col-lg-10">
+                    <canvas id="chart"></canvas>
+                </div>
+
+                <div class="contenedor-ingresos">
+                    <div id="efectivo" class="ingresos">
+                        <div class="grafico">
+                            <canvas id="chart-efectivo"></canvas>
+                        </div>
+                        <div class="info">
+                            <span class="valor">$9.999.999</span>
+                            <p class="titulo">Efectivo</p>
+                        </div>
+                    </div>
+                    <div id="debito" class="ingresos">
+                        <div class="grafico">
+                            <canvas id="chart-debito"></canvas>
+                        </div>
+                        <div class="info">
+                            <span class="valor">$9.999.999</span>
+                            <p class="titulo">Debito</p>
+                        </div>
+                    </div>
+                    <div id="credito" class="ingresos">
+                        <div class="grafico">
+                            <canvas id="chart-credito"></canvas>
+                        </div>
+                        <div class="info">
+                            <span class="valor">$9.999.999</span>
+                            <p class="titulo">Credito</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 ml-4">
+                    <button id="bt-ingresarDinero" class="boton mr-3" data-toggle="modal"
+                        data-target="#modalIngresarDinero">Ingresar dinero a caja</button>
+                    <button id="bt-extraerDinero" class="boton" data-toggle="modal"
+                        data-target="#modalExtraerDinero">Extraer dinero de caja</button>
+                </div>
+
 
         </section>
     </main>

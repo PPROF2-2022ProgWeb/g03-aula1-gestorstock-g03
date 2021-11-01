@@ -219,3 +219,76 @@ main .wrapper{
 /* Fin cabecera */
 
 /* Termina seccion pincipal */
+
+
+/*Empieza seccion de admin*/
+.grafico-ganancias{
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    margin-top: 1rem;
+}
+
+.contenedor-periodos{
+    text-align: right;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contenedor-ingresos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.ingresos{
+    display: flex;
+    align-items: flex-end;
+    width: fit-content;
+}
+
+.ingresos .grafico{
+    position: relative;
+    width: 5rem;
+    margin-right: .5rem;
+    margin-top: 1rem;
+}
+.ingresos .valor{
+    font-size: 1.7rem;
+}
+
+.ingresos .titulo{
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Termina seccion de admin */
+
+
+
+@media screen and (max-height: 476px){
+    .logo-container{
+        display: none;
+    }
+
+    .side-nav{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    #btCambiarEmpleado{
+        position: relative;
+        margin-right: 5px;
+        width: calc(100% - 10px);
+        outline: none;
+    }
+
+    .option-container{
+        margin: 0;
+    }
+
+    .side-nav .actions{
+        justify-content: center;
+        height: 100%;
+    }
+}
