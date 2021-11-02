@@ -221,3 +221,39 @@ thead {
 
 
 /* Fin Buscador + Tablas (VENTA) */
+.buscador-stock {
+    margin-top: 10px;
+    width: 50%;
+    height: 3rem;
+    font-size: 24px;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+#grid-adicionales {
+    margin-top: 5rem;
+}
+
+.input-group {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+#botonAdicional{
+    margin-left: 1rem;
+}
+
+.contenedorBotonesStock{
+    margin-top: 5rem;
+    text-align: center;
+}
