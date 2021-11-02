@@ -163,7 +163,11 @@ main.active {
     padding-bottom: 1rem;
 }
 
-#botonProducto{
-    margin: auto;
+#botonAdicional{
+    margin-left: 1rem;
 }
 
+.contenedorBotonesStock{
+    margin-top: 5rem;
+    text-align: center;
+}

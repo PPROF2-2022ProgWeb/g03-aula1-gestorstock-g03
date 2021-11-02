@@ -186,17 +186,25 @@
                     </tbody>
                 </table>
             </div>
-            <!-- Boton ingresar producto. -->
-            <button id="botonProducto" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalProducto">
-                Ingresar Producto
-            </button>
-            <!-- Modal -->
+            <div class="contenedorBotonesStock">
+                <!-- Boton ingresar producto. -->
+                <button id="botonProducto" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#modalProducto">
+                    Ingresar Producto
+                </button>
+                <!-- Boton ingresar adicional. -->
+                <button id="botonAdicional" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#modalAdicional">
+                    Ingresar Adicional
+                </button>
+            </div>
+            <!-- Modal Producto -->
             <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="modalProductoTitle"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalInsumoTitle">Ingresar Adicional</h5>
+                            <h5 class="modal-title" id="modalInsumoTitle">Ingresar Producto</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -234,13 +242,9 @@
                     </div>
                 </div>
             </div>
-            <!-- Boton ingresar adicional. -->
-            <button id="botonAdicional" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdicional">
-                Ingresar Adicional
-            </button>
             <!-- Modal ingresar adicional-->
-            <div class="modal fade" id="modalAdicional" tabindex="-1" role="dialog" aria-labelledby="modalAdicionalTitle"
-                aria-hidden="true">
+            <div class="modal fade" id="modalAdicional" tabindex="-1" role="dialog"
+                aria-labelledby="modalAdicionalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
