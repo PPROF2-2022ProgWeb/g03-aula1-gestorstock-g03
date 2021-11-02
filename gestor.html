@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Gestor</title>
 
     <link rel="stylesheet" href="css/style-gestor.css">
     <link rel="stylesheet" href="css/style.css">
@@ -75,13 +75,544 @@
         <button id="toggleMenuButton">
             <i class="icono-menu"></i>
         </button>
+        <!-- ACA EMPIEZA "VENTANA MODAL VENTAS" -->
+
+        <div class="modal fade" tabindex="-1" id="modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header cabecera-modal">
+                        CREAR VENTA
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div>
+                                <i class="icono-billete"></i>
+                                <label>Efectivo</label>
+                                <input class="caja-efectivo" type="text" placeholder="Total: $">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <i class="icono-tarjeta"></i>
+                                <label>Debito</label>
+                                <label style="margin-left: 60px;">Paga con:</label>
+                                <input class="caja-debito" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <i class="icono-tarjeta"></i>
+                                <label>Credito</label>
+                                <input class="caja-credito" type="text" placeholder="Vuelto: $">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-footer div-btn-modal">
+                        <button class="btn-modal" data-dismiss="modal">Cancelar</button>
+                        <button class="btn-modal">Finalizar venta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ACA TERMINA "VENTANA MODAL VENTAS" -->
+
+        <!-- ACA EMPIEZA "CREAR VENTAS" -->
+        <section id="ventas" class="tab-container">
+
+            <div class="tablas row flex-wrap position-relative">
+                <div class="col-12 col-lg-4">
+                    <div class="col-12">
+                        <form name="buscador">
+                            <div class="buscador">
+                                <i style="margin: 10px;" class="icono-lupa"></i>
+                                <input type="search" class="form-control" placeholder="Buscar Producto">
+                            </div>
+                        </form>
+                    </div>
+                    <table id="" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>Art 10</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>Art 20</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>Art 30</td>
+                                <td>300</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-12 col-lg-8">
+                    <table id="tabla-venta" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Precio Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Art 10</td>
+                                <td>1</td>
+                                <td>100</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Art 20</td>
+                                <td>1</td>
+                                <td>200</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>Art 30</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>Art 10</td>
+                                <td>1</td>
+                                <td>100</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Art 20</td>
+                                <td>1</td>
+                                <td>200</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>Art 30</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>Art 10</td>
+                                <td>1</td>
+                                <td>100</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Art 20</td>
+                                <td>1</td>
+                                <td>200</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>Art 30</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>Art 10</td>
+                                <td>1</td>
+                                <td>100</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Art 20</td>
+                                <td>1</td>
+                                <td>200</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>Art 30</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>Art 10</td>
+                                <td>1</td>
+                                <td>100</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Art 20</td>
+                                <td>1</td>
+                                <td>200</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>Art 30</td>
+                                <td>1</td>
+                                <td>300</td>
+                                <td>300</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row controles-venta flex-column flex-lg-row p-2 justify-content-lg-between justify-content-md-center">
+                <label class="label-total-venta">Total: $600</label>
+                <button class="boton p-3" type="button" data-toggle="modal" data-target="#modal1">
+                    Finalizar venta
+                </button>
+            </div>
+        </section>
+        <!-- ACA TERMINA "CREAR VENTAS" -->
+
+        <section id="stock" class="tab-container">
+
+        </section>
 
         <section id="ventas" class="tab-container">
 
         </section>
 
         <section id="stock" class="tab-container">
-
+            <div class="container-fluid tex">
+                <input class="buscador-stock" placeholder="Buscar Producto">
+            </div>
+            <!-- Grid de objetos. -->
+            <div id="grid-productos" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio Unitario</th>
+                            <th scope="col">Unidad Medida</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>132485496</td>
+                            <td>Coca Cola 1.5Lts</td>
+                            <td>328</td>
+                            <td>150</td>
+                            <td>Unidad</td>
+                        </tr>
+                        <tr>
+                            <td>4567879</td>
+                            <td>Fideos Canale Tirabuzón 500g</td>
+                            <td>207</td>
+                            <td>56</td>
+                            <td>Unidad</td>
+                        </tr>
+                        <tr>
+                            <td>3213747695</td>
+                            <td>Cuerda Cáñamo</td>
+                            <td>760</td>
+                            <td>30</td>
+                            <td>Metro</td>
+                        </tr>
+                        <tr>
+                            <td>3246578721</td>
+                            <td>Cable Coaxil 50mm diam.</td>
+                            <td>200</td>
+                            <td>50</td>
+                            <td>Metro</td>
+                        </tr>
+                        <tr>
+                            <td>54968754</td>
+                            <td>Fernet Branca 1Lts</td>
+                            <td>178</td>
+                            <td>600</td>
+                            <td>Unidad</td>
+                        </tr>
+                        <tr>
+                            <td>13408749415</td>
+                            <td>Maní confitado</td>
+                            <td>220</td>
+                            <td>75</td>
+                            <td>Kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Grid de adicionales. -->
+            <div id="grid-adicionales" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>132485496</td>
+                            <td>Coca Cola 1.5Lts</td>
+                            <td>328</td>
+                        </tr>
+                        <tr>
+                            <td>4567879</td>
+                            <td>Fideos Canale Tirabuzón 500g</td>
+                            <td>207</td>
+                        </tr>
+                        <tr>
+                            <td>3213747695</td>
+                            <td>Cuerda Cáñamo</td>
+                            <td>760</td>
+                        </tr>
+                        <tr>
+                            <td>3246578721</td>
+                            <td>Cable Coaxil 50mm diam.</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>54968754</td>
+                            <td>Fernet Branca 1Lts</td>
+                            <td>178</td>
+                        </tr>
+                        <tr>
+                            <td>13408749415</td>
+                            <td>Maní confitado</td>
+                            <td>220</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contenedorBotonesStock">
+                <!-- Boton ingresar producto. -->
+                <button id="botonProducto" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#modalProducto">
+                    Ingresar Producto
+                </button>
+                <!-- Boton ingresar adicional. -->
+                <button id="botonAdicional" type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#modalAdicional">
+                    Ingresar Adicional
+                </button>
+            </div>
+            <!-- Modal Producto -->
+            <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="modalProductoTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalInsumoTitle">Ingresar Producto</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Nombre</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Cantidad</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">$</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Medida</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal ingresar adicional-->
+            <div class="modal fade" id="modalAdicional" tabindex="-1" role="dialog"
+                aria-labelledby="modalAdicionalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalInsumoTitle">Ingresar Adicional</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Nombre</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Cantidad</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="caja" class="tab-container">

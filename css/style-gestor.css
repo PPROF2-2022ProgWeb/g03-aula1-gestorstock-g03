@@ -1,8 +1,8 @@
 @import url('partials/variables.css');
 
-
 /* Menu Lateral */
-#toggleMenuButton{
+
+#toggleMenuButton {
     margin-left: 20px;
     margin-top: 20px;
     border: none;
@@ -11,7 +11,7 @@
     font-size: 1.5rem;
 }
 
-nav.side-nav{
+nav.side-nav {
     position: fixed;
     background-color: var(--color-primario);
     color: var(--color-fuente-primario);
@@ -23,16 +23,15 @@ nav.side-nav{
     transition: width .5s;
 }
 
-nav.side-nav.active{
-    width: 5.2rem; 
+nav.side-nav.active {
+    width: 5.2rem;
 }
 
-.side-nav i{
+.side-nav i {
     font-size: 2.5rem;
 }
 
-
-.logo-container{
+.logo-container {
     display: flex;
     width: 17.5rem;
     align-items: center;
@@ -40,34 +39,35 @@ nav.side-nav.active{
     font-size: 1.2rem;
 }
 
-.logo-container .titulo{
+.logo-container .titulo {
     margin-left: 1.56rem;
 }
 
-.option-container *{
+.option-container * {
     outline: none !important;
 }
-.option-container{
+
+.option-container {
     margin-top: 3.75rem;
 }
 
-.option-container > li{
+.option-container>li {
     margin-bottom: 0.4rem;
     margin-right: 5px;
 }
 
-.menuItem i{
+.menuItem i {
     font-size: 1.5rem;
     margin: 1rem 1.56rem;
     margin-right: 2.2rem;
 }
 
-.menuItem span{
+.menuItem span {
     text-align: left;
     white-space: nowrap;
 }
 
-.menuItem{
+.menuItem {
     display: flex;
     position: relative;
     align-items: center;
@@ -80,12 +80,13 @@ nav.side-nav.active{
     outline: none;
 }
 
-.menuItem:hover, .menuItem.active{
+.menuItem:hover,
+.menuItem.active {
     color: var(--color-fuente-secundario);
     background-color: var(--blanco);
 }
 
-.menuItem.active::before{
+.menuItem.active::before {
     content: '';
     z-index: -1;
     position: absolute;
@@ -98,7 +99,7 @@ nav.side-nav.active{
     box-shadow: 1.51rem 1.8rem 0 .1rem var(--blanco);
 }
 
-.menuItem.active::after{
+.menuItem.active::after {
     content: '';
     z-index: -1;
     position: absolute;
@@ -110,6 +111,8 @@ nav.side-nav.active{
     background-color: transparent;
     box-shadow: 1.51rem -1.8rem 0 .1rem var(--blanco);
 }
+
+
 /* Fin menu lateral */
 
 main {
@@ -119,12 +122,12 @@ main {
     transition: .5s;
 }
 
-main.active{
+main.active {
     width: calc(100% - 5.2rem);
     margin-left: 5.2rem;
 }
 
-#btCambiarEmpleado{
+#btCambiarEmpleado {
     position: absolute;
     margin-right: 5px;
     width: calc(100% - 10px);
@@ -132,7 +135,9 @@ main.active{
     outline: none;
 }
 
+
 /** Caja **/
+
 .columnas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -140,22 +145,23 @@ main.active{
     text-align: center;
     font-size: 1rem;
     margin-bottom: 3rem;
-     
 }
+
+
 /** Revisar donde debo agregar **/
+
 .fondo {
     background-image: linear-gradient(to top, var (--link-hover-color) 0%, var(--blanco) 100%);
 }
 
 .contenedor-sombra {
-    -webkit-box-shadow: 0px 5px 15px 0px rgba(128,128,128,1);
-    -moz-box-shadow: 0px 5px 15px 0px rgba(128,128,128,1);
-    box-shadow: 0px 5px 15px 0px rgba(128,128,128,1); 
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 1);
+    box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 1);
     background-color: var(--blanco);
     padding: 2rem;
-    
     margin: 2rem;
-    align-items: center;    
+    align-items: center;
 }
 
 .contenedor-sombra h2 {
@@ -164,7 +170,7 @@ main.active{
 
 .boton {
     background-color: var(--color-primario);
-    color: var(--color-fuente-primario);          
+    color: var(--color-fuente-primario);
     padding: 1rem;
     width: 20rem;
     font-size: 1.2rem;
@@ -196,8 +202,126 @@ main.active{
     font-size: 3.5rem;
 }
 
-.recaudacion-boton > div {
+.recaudacion-boton>div {
     display: flex;
     align-items: center;
     flex-flow: column;
+}
+
+
+/* Ventana Modal */
+
+.cabecera-modal {
+    justify-content: center;
+}
+
+.caja-efectivo {
+    margin-left: 50px;
+    border: 0;
+}
+
+.caja-debito {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1;
+    border-left: 0;
+}
+
+.caja-credito {
+    margin-left: 55px;
+    border: 0;
+    font-weight: bold;
+}
+
+.div-btn-modal {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-modal {
+    margin: 10px;
+    background-color: var(--color-primario);
+    color: white;
+    padding: 8px;
+}
+
+
+/* Fin Ventana Modal */
+
+
+/* Buscador + Tablas (VENTA) */
+
+#ventas {
+    padding: 15px;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+}
+
+.label-total-venta {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.tablas {
+    max-height: 70%;
+}
+
+tbody {
+    display: block;
+    max-height: 55vh;
+    overflow-y: auto;
+}
+
+thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead {
+    width: calc( 100% - 1em)
+}
+
+
+/* Fin Buscador + Tablas (VENTA) */
+
+.buscador-stock {
+    margin-top: 10px;
+    width: 50%;
+    height: 3rem;
+    font-size: 24px;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+#grid-adicionales {
+    margin-top: 5rem;
+}
+
+.input-group {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+#botonAdicional {
+    margin-left: 1rem;
+}
+
+.contenedorBotonesStock {
+    margin-top: 5rem;
+    text-align: center;
 }
