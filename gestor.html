@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Gestor</title>
 
     <link rel="stylesheet" href="css/style-gestor.css">
     <link rel="stylesheet" href="css/style.css">
@@ -81,7 +81,195 @@
         </section>
 
         <section id="stock" class="tab-container">
-
+            <div class="container-fluid tex">
+                <input class="buscador-stock" placeholder="Buscar Producto">
+            </div>
+            <!-- Grid de objetos. -->
+            <div id="grid-productos" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio Unitario</th>
+                            <th scope="col">Unidad Medida</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>132485496</td>
+                            <td>Coca Cola 1.5Lts</td>
+                            <td>328</td>
+                            <td>150</td>
+                            <td>Unidad</td>
+                        </tr>
+                        <tr>
+                            <td>4567879</td>
+                            <td>Fideos Canale Tirabuzón 500g</td>
+                            <td>207</td>
+                            <td>56</td>
+                            <td>Unidad</td>
+                        </tr>
+                        <tr>
+                            <td>3213747695</td>
+                            <td>Cuerda Cáñamo</td>
+                            <td>760</td>
+                            <td>30</td>
+                            <td>Metro</td>
+                        </tr>
+                        <tr>
+                            <td>3246578721</td>
+                            <td>Cable Coaxil 50mm diam.</td>
+                            <td>200</td>
+                            <td>50</td>
+                            <td>Metro</td>
+                        </tr>
+                        <tr>
+                            <td>54968754</td>
+                            <td>Fernet Branca 1Lts</td>
+                            <td>178</td>
+                            <td>600</td>
+                            <td>Unidad</td>
+                        </tr>
+                        <tr>
+                            <td>13408749415</td>
+                            <td>Maní confitado</td>
+                            <td>220</td>
+                            <td>75</td>
+                            <td>Kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Grid de adicionales. -->
+            <div id="grid-adicionales" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>132485496</td>
+                            <td>Coca Cola 1.5Lts</td>
+                            <td>328</td>
+                        </tr>
+                        <tr>
+                            <td>4567879</td>
+                            <td>Fideos Canale Tirabuzón 500g</td>
+                            <td>207</td>
+                        </tr>
+                        <tr>
+                            <td>3213747695</td>
+                            <td>Cuerda Cáñamo</td>
+                            <td>760</td>
+                        </tr>
+                        <tr>
+                            <td>3246578721</td>
+                            <td>Cable Coaxil 50mm diam.</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>54968754</td>
+                            <td>Fernet Branca 1Lts</td>
+                            <td>178</td>
+                        </tr>
+                        <tr>
+                            <td>13408749415</td>
+                            <td>Maní confitado</td>
+                            <td>220</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Boton ingresar producto. -->
+            <button id="botonProducto" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalProducto">
+                Ingresar Producto
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="modalProductoTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalInsumoTitle">Ingresar Adicional</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Nombre</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Cantidad</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">$</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Medida</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Boton ingresar adicional. -->
+            <button id="botonAdicional" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdicional">
+                Ingresar Adicional
+            </button>
+            <!-- Modal ingresar adicional-->
+            <div class="modal fade" id="modalAdicional" tabindex="-1" role="dialog" aria-labelledby="modalAdicionalTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalInsumoTitle">Ingresar Adicional</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Nombre</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Cantidad</span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="caja" class="tab-container">
