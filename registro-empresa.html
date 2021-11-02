@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#00324a">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00324a">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#00324a">
+
+    <!-- implementacion de bibliotecas de bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- en este pequeño bloque se importo los elementos neceasrios de bootstrap -->
+
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/gs-icofont/style.css">
+
+
+</head>
+
+<body>
+    <header>
+
+        <!-- Con esto se implementa Bootstrap 4 en el nav de este archivo como en login.html -->
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark text text-white">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.svg" alt="logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <!-- a difrencia de los enlaces que tenia creamos un nav usando listas con ciertas clases para Bootstrap-->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="navlink" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navlink" href="pag_info.html">Quiénes Somos?</a> <!--Se agrega el acceso a la pagina de informacion-->
+                      </li>
+                    <li class="nav-item">
+                        <a class="navlink" href="login.html">Ingresar</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- modifique container como contenedor ("deje container como clase de bootstrap") para que se vuelva responsive-design asi no hay problema -->
+        <div class="col-xl-7 container contenedor pt-3">
+            <h3 class="title">Registro</h3>
+            <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
+            <form name="formRegistro" class="login-form container-fluid">
+
+                <fieldset>
+                    <legend>Administrador</legend>
+                    <!-- Cambiar iconografia -->
+                    <div class="row">
+                        <div class="col-6">
+                            <span>Nombre</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container">
+                                <i class="icono-user"></i>
+
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="text" required placeholder="Ingrese su nombre">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <span>Apellido</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container ">
+                                <i class="icono-user"></i>
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="text" required placeholder="Ingrese su apellido">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <span>Correo</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container">
+                                <i class="icono-email"></i>
+
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="email" required
+                                    placeholder="Ingrese su correo electrónico">
+                            </div>
+                        </div>
+
+                        <!-- cambiar icono -->
+                        <div class="col-6">
+                            <span>Fecha de nacimiento</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container ">
+                                <i class="icono-calendar"></i>
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="date" required
+                                    placeholder="Ingrese su correo electrónico">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <span>Pais</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container">
+                                <i class="icono-world"></i>
+                                <select name="pais" id="dropPais" class="form-control" required>
+                                    <option value="" disabled selected>Seleccione un pais</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <span>Provincia</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container ">
+                                <i class="icono-world"></i>
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="text" required placeholder="Ingrese su provincia">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <span>Contraseña</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container">
+                                <i class="icono-key"></i>
+
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="password" required
+                                    placeholder="Ingrese su contraseña">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <span>Confirmar contraseña</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container ">
+                                <i class="icono-key"></i>
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="password" required
+                                    placeholder="Ingrese su contraseña nuevamente">
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Empresa</legend>
+                    <div class="row">
+                        <div class="col-6">
+                            <span>Nombre</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container">
+                                <i class="icono-empresa"></i>
+
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="text" required placeholder="Ingrese el nombre de la empresa">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <span>Descripcion</span>
+                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                            <div class="form-group input-container ">
+                                <i class="icono-empresa"></i>
+                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                                <input class="form-control" type="text" required placeholder="Ingrese la descripcion de la empresa">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="text-center">
+                    <a class="formlink" href="login.html">¿Ya esta registrado? Ingrese aqui</a>
+                </div>
+                <div class="actions">
+                    <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
+                    <button id="btRegistrar" class="btn btn-primary">REGISTRARSE</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer id="piePagina" class="container-fluid d-flex flex-column">
+        <div class="row d-flex justify-content-around">
+          <div class="form-container col-4">
+            <form id="formContacto" class="pb-5 pt-5 container no-gutters">
+              <legend>Contactanos</legend>
+              <div class="row">
+                <div class="col-6">
+                  <span>Nombre</span>
+                  <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                  <div class="form-group input-container">
+                    <i class="icono-user"></i>
+    
+                    <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                    <input class="form-control" type="text" required placeholder="Ingrese su nombre">
+                  </div>
+                </div>
+    
+                <div class="col-6">
+                  <span>Apellido</span>
+                  <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                  <div class="form-group input-container ">
+                    <i class="icono-user"></i>
+                    <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                    <input class="form-control" type="text" required placeholder="Ingrese su apellido">
+                  </div>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-12">
+                  <span>Correo</span>
+                  <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                  <div class="form-group input-container ">
+                    <i class="icono-email"></i>
+                    <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                    <input class="form-control" type="email" required placeholder="Ingrese su correo">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <span>Mensaje</span>
+                  <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+                  <div class="form-group input-container ">
+                    <i class="icono-mensaje"></i>
+                    <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
+                    <textarea class="form-control" type="email" required placeholder="Ingrese su mensaje"></textarea>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-12">
+                  <button class="action-button col-12" type="submit">Enviar mensaje</button>
+                </div>
+              </div>
+            </form>
+          </div>
+    
+          <div class="contact-info col-4 py-5">
+            <h3 class="titulo">Informacion de contacto</h3>
+    
+            <span><i class="icono-home"></i> Argentina, Cordoba, Cordoba</span>
+            <span><i class="icono-mensaje"></i> gestor.stock@gmail.com</span>
+            <span><i class="icono-telefono"></i> +54 351 347 5441</span>
+          </div>
+        </div>
+        <hr class="footer-divider">
+        <span class="footer-legend">Sitio diseñado y desarrollado por Grupo1 PP TSDWAD ISPC Cohorte 2021©</span>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="js/countryDropdown.js"></script>
+</body>
+
+</html>
