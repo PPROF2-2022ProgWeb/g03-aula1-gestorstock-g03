@@ -1,0 +1,25 @@
+@import url('variables.css');
+
+*, *::before, *::after {
+    outline: none!important;
+}
+
+.boton{
+    background-color: var(--color-primario);
+    color: var(--color-fuente-primario);
+    border: 2px solid var(--color-primario);
+    border-radius: 5px;
+    padding: .3rem 1.2rem;
+    transition: box-shadow .5s ease;
+}
+
+.boton:hover{
+    background-color: var(--fondo-boton-activo);
+    color: var(--colot-fuente-boton-activo);
+    box-shadow: 5px 5px 10px rgba(50, 50, 50, .5);
+}
+
+.boton.active{
+    background-color: var(--fondo-boton-activo);
+    color: var(--color-fuente-boton-activo);
+}

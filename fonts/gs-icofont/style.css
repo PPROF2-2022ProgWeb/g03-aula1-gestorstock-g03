@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'gs-icofont';
-  src:  url('fonts/gs-icofont.eot?u0s0sr');
-  src:  url('fonts/gs-icofont.eot?u0s0sr#iefix') format('embedded-opentype'),
-    url('fonts/gs-icofont.ttf?u0s0sr') format('truetype'),
-    url('fonts/gs-icofont.woff?u0s0sr') format('woff'),
-    url('fonts/gs-icofont.svg?u0s0sr#gs-icofont') format('svg');
+  src:  url('fonts/gs-icofont.eot?83ws6d');
+  src:  url('fonts/gs-icofont.eot?83ws6d#iefix') format('embedded-opentype'),
+    url('fonts/gs-icofont.ttf?83ws6d') format('truetype'),
+    url('fonts/gs-icofont.woff?83ws6d') format('woff'),
+    url('fonts/gs-icofont.svg?83ws6d#gs-icofont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,30 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icono-dinero:before {
+  content: "\e919";
+}
+.icono-pregunta:before {
+  content: "\e91a";
+}
+.icono-lupa:before {
+  content: "\e918";
+}
+.icono-tarjeta:before {
+  content: "\e913";
+}
+.icono-twitter:before {
+  content: "\e914";
+}
+.icono-instagram:before {
+  content: "\e915";
+}
+.icono-billete:before {
+  content: "\e916";
+}
+.icono-facebook:before {
+  content: "\e917";
+}
 .icono-telefono:before {
   content: "\e912";
 }

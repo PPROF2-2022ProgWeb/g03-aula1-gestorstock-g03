@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#00324a">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00324a">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#00324a">
+
+    <!-- implementacion de bibliotecas de bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- en este pequeño bloque se importo los elementos neceasrios de bootstrap -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor</title>
+
+    <link rel="stylesheet" href="css/partials/globales.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-gestor.css">
+    <link rel="stylesheet" href="fonts/gs-icofont/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="side-nav">
+            <div class="logo-container">
+                <i class="icono-logo"></i>
+                <span class="titulo">Gestor de Stock</span>
+            </div>
+            <div class="actions">
+                <ul class="option-container">
+                    <li>
+                        <button id="bt-ventas" class="menuItem">
+                            <i class="icono-ventas"></i>
+                            <span>Ventas</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button id="bt-stock" class="menuItem">
+                            <i class="icono-stock"></i>
+                            <span>Stock</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button id="bt-caja" class="menuItem">
+                            <i class="icono-caja"></i>
+                            <span>Caja</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button id="bt-admin" class="menuItem active">
+                            <i class="icono-admin"></i>
+                            <span>Administración</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <button id="btCambiarEmpleado" class="menuItem" data-toggle="modal" data-target="#modalCambioEmpleado">
+                    <i class="icono-change"></i>
+                    <span>Cambiar empleado</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cabecera-seccion">
+            <div class="d-flex flex-row">
+                <button id="toggleMenuButton">
+                    <i class="icono-menu"></i>
+                </button>
+                <h2 class="titulo" id="titulo-seccion"></h2>
+            </div>
+            <div class="btn-group">
+                <button id="bt-usuario" class="user-info" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <img src="img/user.png" alt="Foto de perfil del usuario">
+                    <span id="nombre-usuario">Usuario</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="bt-usuario">
+
+                    <button class="dropdown-item" role="menuitem" tabindex="-1" data-toggle="modal"
+                        data-target="#modalCambioEmpleado">
+                        <i class="icono-change mr-1"></i>
+                        Cambiar empleado
+                    </button>
+                    <button id="bt-cerrarSesion" class="dropdown-item" role="menuitem" tabindex="-1">
+                        <i class="icono-logout mr-1"></i>
+                        Cerrar sesion
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Cambio de empleado-->
+        <div class="modal fade" id="modalCambioEmpleado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cambiar de empleado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input class="form-control mb-2" type="password" placeholder="Ingrese su codigo">
+                        <!-- <a class="formlink" href="ayuda.html">¿Se encuentra desorientado? Pinche aqui</a> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Cambiar empleado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal ingresar dinero a caja -->
+        <div class="modal fade" id="modalIngresarDinero" tabindex="-1" aria-labelledby="bt-ingresarDinero"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ingresar dinero a caja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="login-form container-fluid">
+                            <span>Cantidad</span>
+                            <div class="form-group input-container">
+                                <i class="icono-dinero"></i>
+                                <input class="form-control" type="email"
+                                    placeholder="Ingrese la cantidad de dinero a ingresar">
+                            </div>
+
+                            <span>Razon</span>
+                            <div class="form-group input-container">
+                                <i class="icono-pregunta"></i>
+                                <input class="form-control" type="password" placeholder="Ingrese la razon del ingreso">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Ingresar dinero</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal extraer dinero a caja -->
+        <div class="modal fade" id="modalExtraerDinero" tabindex="-1" aria-labelledby="bt-extraerDinero"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Extraer dinero de la caja</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="login-form container-fluid">
+                            <span>Cantidad</span>
+                            <div class="form-group input-container">
+                                <i class="icono-dinero"></i>
+                                <input class="form-control" type="email"
+                                    placeholder="Ingrese la cantidad de dinero a extraer">
+                            </div>
+
+                            <span>Razon</span>
+                            <div class="form-group input-container">
+                                <i class="icono-pregunta"></i>
+                                <input class="form-control" type="password"
+                                    placeholder="Ingrese la razon de la extraccion">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Extraer dinero</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACA EMPIEZA "VENTANA MODAL VENTAS" -->
+        <div class="modal fade" tabindex="-1" id="modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header cabecera-modal">
+                        CREAR VENTA
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div>
+                                <i class="icono-billete"></i>
+                                <label>Efectivo</label>
+                                <input class="caja-efectivo" type="text" placeholder="Total: $">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <i class="icono-tarjeta"></i>
+                                <label>Debito</label>
+                                <label style="margin-left: 60px;">Paga con:</label>
+                                <input class="caja-debito" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <i class="icono-tarjeta"></i>
+                                <label>Credito</label>
+                                <input class="caja-credito" type="text" placeholder="Vuelto: $">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-footer div-btn-modal">
+                        <button class="btn-modal" data-dismiss="modal">Cancelar</button>
+                        <button class="btn-modal">Finalizar venta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ACA TERMINA "VENTANA MODAL VENTAS" -->
+
+        <div class="wrapper">
+
+            <!-- ACA EMPIEZA "CREAR VENTAS" -->
+            <section id="ventas" class="tab-container" data-title="Ventas">
+
+                <div class="tablas row flex-wrap position-relative">
+                    <div class="col-12 col-lg-4">
+                        <div class="col-12">
+                            <form name="buscador">
+                                <div class="buscador">
+                                    <i style="margin: 10px;" class="icono-lupa"></i>
+                                    <input type="search" class="form-control" placeholder="Buscar Producto">
+                                </div>
+                            </form>
+                        </div>
+                        <table id="" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Art 10</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>Art 20</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>30</td>
+                                    <td>Art 30</td>
+                                    <td>300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-12 col-lg-8">
+                        <table id="tabla-venta" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Precio Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Art 10</td>
+                                    <td>1</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 20</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 30</td>
+                                    <td>1</td>
+                                    <td>300</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 10</td>
+                                    <td>1</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 20</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 30</td>
+                                    <td>1</td>
+                                    <td>300</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 10</td>
+                                    <td>1</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 20</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 30</td>
+                                    <td>1</td>
+                                    <td>300</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 10</td>
+                                    <td>1</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 20</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 30</td>
+                                    <td>1</td>
+                                    <td>300</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 10</td>
+                                    <td>1</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 20</td>
+                                    <td>1</td>
+                                    <td>200</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td>Art 30</td>
+                                    <td>1</td>
+                                    <td>300</td>
+                                    <td>300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div
+                    class="row controles-venta flex-column flex-lg-row p-2 justify-content-lg-between justify-content-md-center">
+                    <label class="label-total-venta">Total: $600</label>
+                    <button class="boton p-3" type="button" data-toggle="modal" data-target="#modal1">
+                        Finalizar venta
+                    </button>
+                </div>
+            </section>
+            <!-- ACA TERMINA "CREAR VENTAS" -->
+
+            <section id="stock" class="tab-container" data-title="Stock">
+                <div class="container-fluid tex">
+                    <input class="buscador-stock" placeholder="Buscar Producto">
+                </div>
+                <!-- Grid de objetos. -->
+                <div id="grid-productos" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-striped table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio Unitario</th>
+                                <th scope="col">Unidad Medida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>132485496</td>
+                                <td>Coca Cola 1.5Lts</td>
+                                <td>328</td>
+                                <td>150</td>
+                                <td>Unidad</td>
+                            </tr>
+                            <tr>
+                                <td>4567879</td>
+                                <td>Fideos Canale Tirabuzón 500g</td>
+                                <td>207</td>
+                                <td>56</td>
+                                <td>Unidad</td>
+                            </tr>
+                            <tr>
+                                <td>3213747695</td>
+                                <td>Cuerda Cáñamo</td>
+                                <td>760</td>
+                                <td>30</td>
+                                <td>Metro</td>
+                            </tr>
+                            <tr>
+                                <td>3246578721</td>
+                                <td>Cable Coaxil 50mm diam.</td>
+                                <td>200</td>
+                                <td>50</td>
+                                <td>Metro</td>
+                            </tr>
+                            <tr>
+                                <td>54968754</td>
+                                <td>Fernet Branca 1Lts</td>
+                                <td>178</td>
+                                <td>600</td>
+                                <td>Unidad</td>
+                            </tr>
+                            <tr>
+                                <td>13408749415</td>
+                                <td>Maní confitado</td>
+                                <td>220</td>
+                                <td>75</td>
+                                <td>Kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Grid de adicionales. -->
+                <div id="grid-adicionales" class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-striped table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>132485496</td>
+                                <td>Coca Cola 1.5Lts</td>
+                                <td>328</td>
+                            </tr>
+                            <tr>
+                                <td>4567879</td>
+                                <td>Fideos Canale Tirabuzón 500g</td>
+                                <td>207</td>
+                            </tr>
+                            <tr>
+                                <td>3213747695</td>
+                                <td>Cuerda Cáñamo</td>
+                                <td>760</td>
+                            </tr>
+                            <tr>
+                                <td>3246578721</td>
+                                <td>Cable Coaxil 50mm diam.</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>54968754</td>
+                                <td>Fernet Branca 1Lts</td>
+                                <td>178</td>
+                            </tr>
+                            <tr>
+                                <td>13408749415</td>
+                                <td>Maní confitado</td>
+                                <td>220</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="contenedorBotonesStock">
+                    <!-- Boton ingresar producto. -->
+                    <button id="botonProducto" type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#modalProducto">
+                        Ingresar Producto
+                    </button>
+                    <!-- Boton ingresar adicional. -->
+                    <button id="botonAdicional" type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#modalAdicional">
+                        Ingresar Adicional
+                    </button>
+                </div>
+                <!-- Modal Producto -->
+                <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog"
+                    aria-labelledby="modalProductoTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalInsumoTitle">Ingresar Producto</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">Nombre</span>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">Cantidad</span>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">$</span>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">Medida</span>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal ingresar adicional-->
+                <div class="modal fade" id="modalAdicional" tabindex="-1" role="dialog"
+                    aria-labelledby="modalAdicionalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalInsumoTitle">Ingresar Adicional</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">Nombre</span>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="">Cantidad</span>
+                                    </div>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="caja" class="tab-container" data-title="Caja">
+                <div class="contenedor-sombra">
+                    <div class="columnas">
+                        <div>
+                            <label>Dinero en caja - Apertura:</label>
+                            <input class="input-caja" type="text" placeholder="cantidad de dinero">
+                        </div>
+
+                        <div>
+                            <label>Dinero en caja - Cierre:</label>
+                            <input class="input-caja" type="text" placeholder="cantidad de dinero">
+                        </div>
+                    </div>
+
+                    <div class="columnas">
+                        <div>
+                            <label>Efectivo recibido:</label>
+                            <input class="input-caja" type="text" placeholder="apertura de caja">
+                        </div>
+
+                        <div>
+                            <label>Pago a proveedores:</label>
+                            <input class="input-caja" type="text" placeholder="dinero">
+                        </div>
+                    </div>
+
+                    <div class="columnas">
+                        <div>
+                            <label>Debito recibido:</label>
+                            <input class="input-caja" type="text" placeholder="cantidad de dinero">
+                        </div>
+
+                        <div>
+                            <label>Sueldos o bonos:</label>
+                            <input class="input-caja" type="text" placeholder="efectivo - docs">
+                        </div>
+                    </div>
+
+                    <div class="columnas">
+                        <div>
+                            <label>Dinero depositado:</label>
+                            <input class="input-caja" type="text" placeholder="depositado">
+                        </div>
+
+                        <div>
+                            <label>Dinero extraído:</label>
+                            <input class="input-caja" type="text" placeholder="extraido">
+                        </div>
+                    </div>
+
+                    <div class="recaudacion-boton">
+                        <div>
+                            <h2>Recaudacion Total</h2>
+                            <span id="Recaudacion">$00.00</span>
+                        </div>
+                        <div>
+                            <button class="boton boton-finalizar-turno"> Finalizar Turno</button>
+                        </div>
+                    </div>
+                </div> <!-- cierre clase contenedor sombra -->
+            </section>
+
+            <section id="admin" class="tab-container" data-title="Administracion">
+                <div class="contenedor-periodos">
+                    <button id="semanal" class="boton">Semanal</button>
+                    <button id="mensual" class="boton">Mensual</button>
+                </div>
+                <div id="graf-ingresos" class="grafico-ganancias mx-3">
+                    <canvas id="chart"></canvas>
+                </div>
+                <div class="contenedor-ingresos">
+                    <div id="efectivo" class="ingresos">
+                        <div class="grafico">
+                            <canvas id="chart-efectivo"></canvas>
+                        </div>
+                        <div class="info">
+                            <span class="valor">$9.999.999</span>
+                            <p class="titulo">Efectivo</p>
+                        </div>
+                    </div>
+                    <div id="debito" class="ingresos">
+                        <div class="grafico">
+                            <canvas id="chart-debito"></canvas>
+                        </div>
+                        <div class="info">
+                            <span class="valor">$9.999.999</span>
+                            <p class="titulo">Debito</p>
+                        </div>
+                    </div>
+                    <div id="credito" class="ingresos">
+                        <div class="grafico">
+                            <canvas id="chart-credito"></canvas>
+                        </div>
+                        <div class="info">
+                            <span class="valor">$9.999.999</span>
+                            <p class="titulo">Credito</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex mt-4 ml-4">
+                    <button id="bt-ingresarDinero" class="boton mb-3 mr-3" data-toggle="modal"
+                        data-target="#modalIngresarDinero">Ingresar dinero a caja</button>
+                    <button id="bt-extraerDinero" class="boton mb-3" data-toggle="modal"
+                        data-target="#modalExtraerDinero">Extraer dinero de caja</button>
+                </div>
+
+
+            </section>
+        </div>
+    </main>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js'></script>
+    <script src="js/graficos-administracion.js"></script>
+    <script src="js/sideNavController.js"></script>
+    <script src="js/validarRegistro.js"></script>
+
+</body>
+
+</html>
