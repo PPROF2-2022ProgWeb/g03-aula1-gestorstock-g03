@@ -324,11 +324,77 @@ main .wrapper{
 }
 
 
+
+/** Caja **/
+
 .columnas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    position: relative;
-    top: 30px;
+    column-gap: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+
+/** Revisar donde debo agregar **/
+
+.fondo {
+    background-image: linear-gradient(to top, var (--link-hover-color) 0%, var(--blanco) 100%);
+}
+
+.contenedor-sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 1);
+    box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 1);
+    background-color: var(--blanco);
+    padding: 2rem;
+    margin: 2rem;
+    align-items: center;
+}
+
+.contenedor-sombra h2 {
+    font-family: var(--fuente-primaria);
+}
+
+.boton {
+    background-color: var(--color-primario);
+    color: var(--color-fuente-primario);
+    padding: 1rem;
+    width: 20rem;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.input-caja {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin-left: .5rem;
+    outline: none;
+}
+
+#Recaudacion {
+    font-size: 3rem;
+    margin: 0 auto;
+}
+
+.recaudacion-boton {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 7rem;
+}
+
+.recaudacion-boton h2 {
+    font-size: 3.5rem;
+}
+
+.recaudacion-boton>div {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
 }
 
 
@@ -387,6 +453,7 @@ main .wrapper{
     font-weight: bold;
     font-size: 30px;
 }
+
 .tablas {
     max-height: 70%;
 }
@@ -410,6 +477,7 @@ thead {
 
 
 /* Fin Buscador + Tablas (VENTA) */
+
 .buscador-stock {
     margin-top: 10px;
     width: 50%;
@@ -438,11 +506,11 @@ thead {
     padding-bottom: 1rem;
 }
 
-#botonAdicional{
+#botonAdicional {
     margin-left: 1rem;
 }
 
-.contenedorBotonesStock{
+.contenedorBotonesStock {
     margin-top: 5rem;
     text-align: center;
 }
