@@ -357,9 +357,7 @@ main .wrapper{
     font-family: var(--fuente-primaria);
 }
 
-.boton {
-    background-color: var(--color-primario);
-    color: var(--color-fuente-primario);
+.boton-finalizar-turno {
     padding: 1rem;
     width: 20rem;
     font-size: 1.2rem;
