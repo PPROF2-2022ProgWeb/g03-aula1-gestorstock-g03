@@ -135,6 +135,92 @@ main.active {
     outline: none;
 }
 
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    top: 30px;
+}
+
+
+/* Ventana Modal */
+
+.cabecera-modal {
+    justify-content: center;
+}
+
+.caja-efectivo {
+    margin-left: 50px;
+    border: 0;
+}
+
+.caja-debito {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1;
+    border-left: 0;
+}
+
+.caja-credito {
+    margin-left: 55px;
+    border: 0;
+    font-weight: bold;
+}
+
+.div-btn-modal {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-modal {
+    margin: 10px;
+    background-color: var(--color-primario);
+    color: white;
+    padding: 8px;
+}
+
+
+/* Fin Ventana Modal */
+
+
+/* Buscador + Tablas (VENTA) */
+
+#ventas {
+    padding: 15px;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+}
+
+.label-total-venta {
+    font-weight: bold;
+    font-size: 30px;
+}
+.tablas {
+    max-height: 70%;
+}
+
+tbody {
+    display: block;
+    max-height: 55vh;
+    overflow-y: auto;
+}
+
+thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead {
+    width: calc( 100% - 1em)
+}
+
+
+/* Fin Buscador + Tablas (VENTA) */
 .buscador-stock {
     margin-top: 10px;
     width: 50%;
