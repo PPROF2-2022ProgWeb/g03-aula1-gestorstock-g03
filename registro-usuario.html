@@ -76,7 +76,7 @@
                             <i class="icono-user"></i>    
                             
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="text" required placeholder="Ingrese su nombre">
+                            <input name="nombre" class="form-control" type="text" required placeholder="Ingrese su nombre" title="Debe contener mas de 2 caracteres">
                         </div>
                     </div>
                     
@@ -86,7 +86,7 @@
                         <div class="form-group input-container ">
                             <i class="icono-user"></i>
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="text" required placeholder="Ingrese su apellido">
+                            <input name="apellido" class="form-control" type="text" required placeholder="Ingrese su apellido" title="Debe contener mas de 2 caracteres">
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                             <i class="icono-email"></i>    
                             
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="email" required placeholder="Ingrese su correo electrónico">
+                            <input name="correo" class="form-control" type="email" required placeholder="Ingrese su correo electrónico" title="Debe contener mas de 2 caracteres">
                         </div>
                     </div>
                     
@@ -111,7 +111,7 @@
                         <div class="form-group input-container ">
                             <i class="icono-calendar"></i>
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="date" required placeholder="Ingrese su correo electrónico">
+                            <input name="fecha de nacimiento" class="form-control" type="date" required placeholder="Ingrese fecha de nacimiento" title="Debe contener 2 digitos para el dia, 2 para el mes y 4 para el año">
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                         <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
                         <div class="form-group input-container">
                             <i class="icono-world"></i>    
-                            <select name="pais" id="dropPais" class="form-control" required>
+                            <select name="pais" id="dropPais" class="form-control" required placeholder="Ingrese pais" title="Debe contener mas de 2 caracteres">
                                 <option value="" disabled selected>Seleccione un pais</option>
                             </select>
                         </div>
@@ -135,7 +135,7 @@
                         <div class="form-group input-container ">
                             <i class="icono-world"></i>
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="text" required placeholder="Ingrese su provincia">
+                            <input name="provincia" class="form-control" type="text" required placeholder="Ingrese su provincia" title="Debe contener mas de 2 caracteres">
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                             <i class="icono-key"></i>    
                             
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="password" required placeholder="Ingrese su contraseña">
+                            <input name="contraseña"class="form-control" type="password" required placeholder="Ingrese su contraseña" title="Contraseña Invalida">
                         </div>
                     </div>
                     
@@ -158,7 +158,7 @@
                         <div class="form-group input-container ">
                             <i class="icono-key"></i>
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="password" required placeholder="Ingrese su contraseña nuevamente">
+                            <input name="confirmacion contraseña" class="form-control" type="password" required placeholder="Ingrese su contraseña nuevamente" title="Contraseña Invalida">
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                             <i class="icono-empresa"></i>    
                             
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" type="password" required placeholder="Ingrese su codigo de empresa">
+                            <input name="codigo de empresa" class="form-control" type="password" required placeholder="Ingrese su codigo de empresa" title="Codigo Incorrecto">
                         </div>
                     </div>
                     
@@ -203,7 +203,7 @@
                     <i class="icono-user"></i>
     
                     <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                    <input class="form-control" type="text" required placeholder="Ingrese su nombre">
+                    <input name="nombre" class="form-control" type="text" required placeholder="Ingrese su nombre" title="Debe contener mas de 2 caracteres">
                   </div>
                 </div>
     
@@ -213,7 +213,7 @@
                   <div class="form-group input-container ">
                     <i class="icono-user"></i>
                     <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                    <input class="form-control" type="text" required placeholder="Ingrese su apellido">
+                    <input name="apellido" class="form-control" type="text" required placeholder="Ingrese su apellido" title="Debe contener mas de 2 caracteres">
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@
                   <div class="form-group input-container ">
                     <i class="icono-email"></i>
                     <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                    <input class="form-control" type="email" required placeholder="Ingrese su correo">
+                    <input name="correo" class="form-control" type="email" required placeholder="Ingrese su correo" title="Debe contener mas de 2 caracteres">
                   </div>
                 </div>
               </div>
