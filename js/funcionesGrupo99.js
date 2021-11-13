@@ -40,4 +40,11 @@ function restar(valor) {
 
 // COMIENZA EVENTO 2 //
 
+function cerrarSesion() {
+    console.log('Sesion cerrada');
+    window.location.replace('./index.html')
+}
+
+document.getElementById('bt-cerrarSesion')?.addEventListener('click', cerrarSesion)
+
 // TERMINA EVENTO 2 //
