@@ -255,4 +255,3 @@ var dropPais = document.getElementById('dropPais')
 for (i = 1; i <= countryList.length; i++) {
 	dropPais.options[i] = new Option(countryList[i-1]);
 }
-console.log(dropPais.options.length);
