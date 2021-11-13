@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
-    <link rel="manifest" href="./icons/site.webmanifest">
-    <link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#00324a">
-    <link rel="shortcut icon" href="./icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#00324a">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#00324a">
-    <meta name="msapplication-config" content="./icons/browserconfig.xml">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
     <meta name="theme-color" content="#00324a">
 
     <!-- implementacion de bibliotecas de bootstrap -->
@@ -65,7 +65,7 @@
         <div class="col-xl-7 container contenedor pt-3">
             <h3 class="title">Registro</h3>
             <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
-            <form id="formRegistroEmpresa" name="formRegistro" class="login-form container-fluid">
+            <form name="formRegistro" class="login-form container-fluid">
 
                 <fieldset>
                     <legend>Administrador</legend>
@@ -78,7 +78,7 @@
                                 <i class="icono-user"></i>
 
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="nombre" pattern="[^0-9]{3,}" title="El nombre debe contener mas 2 caracteres y no contener numeros" type="text" required placeholder="Ingrese su nombre">
+                                <input class="form-control" type="text" required placeholder="Ingrese su nombre">
                             </div>
                         </div>
 
@@ -88,7 +88,7 @@
                             <div class="form-group input-container ">
                                 <i class="icono-user"></i>
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="apellido" pattern="[^0-9]{2,}" type="text" required placeholder="Ingrese su apellido">
+                                <input class="form-control" type="text" required placeholder="Ingrese su apellido">
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                                 <i class="icono-email"></i>
 
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="correo" type="email" required
+                                <input class="form-control" type="email" required
                                     placeholder="Ingrese su correo electrónico">
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                             <div class="form-group input-container ">
                                 <i class="icono-calendar"></i>
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="nacimiento" type="date" required
+                                <input class="form-control" type="date" required
                                     placeholder="Ingrese su correo electrónico">
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                             <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
                             <div class="form-group input-container">
                                 <i class="icono-world"></i>
-                                <select name="pais" id="dropPais" name="pais" class="form-control" required>
+                                <select name="pais" id="dropPais" class="form-control" required>
                                     <option value="" disabled selected>Seleccione un pais</option>
                                 </select>
                             </div>
@@ -139,7 +139,7 @@
                             <div class="form-group input-container ">
                                 <i class="icono-world"></i>
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="provincia" type="text" required placeholder="Ingrese su provincia">
+                                <input class="form-control" type="text" required placeholder="Ingrese su provincia">
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                             <div class="form-group input-container ">
                                 <i class="icono-key"></i>
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="password" type="password" required
+                                <input class="form-control" type="password" required
                                     placeholder="Ingrese su contraseña nuevamente">
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                                 <i class="icono-empresa"></i>
 
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="empresa-nombre" type="text" required placeholder="Ingrese el nombre de la empresa">
+                                <input class="form-control" type="text" required placeholder="Ingrese el nombre de la empresa">
                             </div>
                         </div>
 
@@ -191,7 +191,7 @@
                             <div class="form-group input-container ">
                                 <i class="icono-empresa"></i>
                                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="empresa-descripcion" type="text" required placeholder="Ingrese la descripcion de la empresa">
+                                <input class="form-control" type="text" required placeholder="Ingrese la descripcion de la empresa">
                             </div>
                         </div>
                     </div>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="actions">
                     <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
-                    <button id="btRegistrar" type="submit" class="btn btn-primary">REGISTRARSE</button>
+                    <button id="btRegistrar" class="btn btn-primary">REGISTRARSE</button>
                 </div>
             </form>
         </div>
@@ -282,8 +282,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="./js/countryDropdown.js"></script>
-    <script src="./js/funcionesGrupo1.js"></script>
+    <script src="js/countryDropdown.js"></script>
 </body>
 
 </html>
