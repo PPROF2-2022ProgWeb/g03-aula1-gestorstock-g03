@@ -735,55 +735,55 @@
                     <div class="columnas">
                         <div>
                             <label>Dinero en caja - Apertura:</label>
-                            <input class="input-caja" type="text" placeholder="cantidad de dinero">
+                            <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="sumar(this.value);"> 
                         </div>
 
                         <div>
                             <label>Dinero en caja - Cierre:</label>
-                            <input class="input-caja" type="text" placeholder="cantidad de dinero">
+                            <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="restar(this.value);">
                         </div>
                     </div>
 
                     <div class="columnas">
                         <div>
                             <label>Efectivo recibido:</label>
-                            <input class="input-caja" type="text" placeholder="apertura de caja">
+                            <input class="input-caja" type="number" placeholder="apertura de caja" onchange="sumar(this.value);">
                         </div>
 
                         <div>
                             <label>Pago a proveedores:</label>
-                            <input class="input-caja" type="text" placeholder="dinero">
+                            <input class="input-caja" type="number" placeholder="dinero" onchange="restar(this.value);">
                         </div>
                     </div>
 
                     <div class="columnas">
                         <div>
-                            <label>Debito recibido:</label>
-                            <input class="input-caja" type="text" placeholder="cantidad de dinero">
+                            <label>Débito/Crédito recibido:</label>
+                            <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="sumar(this.value);">
                         </div>
 
                         <div>
                             <label>Sueldos o bonos:</label>
-                            <input class="input-caja" type="text" placeholder="efectivo - docs">
+                            <input class="input-caja" type="number" placeholder="efectivo - docs" onchange="restar(this.value);">
                         </div>
                     </div>
 
                     <div class="columnas">
                         <div>
                             <label>Dinero depositado:</label>
-                            <input class="input-caja" type="text" placeholder="depositado">
+                            <input class="input-caja" type="number" placeholder="depositado" onchange="sumar(this.value);">
                         </div>
 
                         <div>
                             <label>Dinero extraído:</label>
-                            <input class="input-caja" type="text" placeholder="extraido">
+                            <input class="input-caja" type="number" placeholder="extraido" onchange="restar(this.value);">
                         </div>
                     </div>
 
                     <div class="recaudacion-boton">
                         <div>
                             <h2>Recaudacion Total</h2>
-                            <span id="Recaudacion">$00.00</span>
+                            <span id="Recaudacion"></span>
                         </div>
                         <div>
                             <button class="boton boton-finalizar-turno"> Finalizar Turno</button>
@@ -845,7 +845,7 @@
     <script src="js/graficos-administracion.js"></script>
     <script src="js/sideNavController.js"></script>
     <script src="js/validarRegistro.js"></script>
-
+    <script src="js/funcionesGrupo99.js"></script>
 </body>
 
 </html>
