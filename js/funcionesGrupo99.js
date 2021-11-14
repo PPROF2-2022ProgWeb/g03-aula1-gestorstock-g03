@@ -29,7 +29,7 @@ function restar(valor) {
     /* Esta es la resta. */
     total = (parseInt(total) - parseInt(valor));
 	
-    // Colocar el resultado de la suma en el control "span".
+    // Colocar el resultado de la resta en el control "span".
     document.getElementById('Recaudacion').innerHTML = total;
 }
 
