@@ -21,7 +21,7 @@ function restar(valor) {
     var total = 0;
     valor = parseInt(valor); // Convertir el valor a un entero (número).
 
-    total = document.getElementById('Recaudacion').innerHTML;
+    total = document.getElementById('Recaudacion')?.innerHTML;
 
     // Aquí valido si hay un valor previo, si no hay datos, le pongo un cero "0".
     total = (total == null || total == undefined || total == "") ? 0 : total;
@@ -48,7 +48,6 @@ document.getElementById('bt-cerrarSesion')?.addEventListener('click', cerrarSesi
 
 // EMPIEZA CALCULO DE EDAD //
 const fechaNacimiento = document.getElementById("fechaNacimiento");
-const edad = document.getElementById("edad");
 
 const calcularEdad = (fechaNacimiento) => {
     const fechaActual = new Date();
@@ -74,9 +73,15 @@ const calcularEdad = (fechaNacimiento) => {
 
 window.addEventListener('load', function () {
 
+    fechaNacimiento?.setAttribute('max', new Date().toISOString().split('T')[0])
     fechaNacimiento?.addEventListener('change', function () {
-        if (this.value) {
-            console.log(`La edad es: ${calcularEdad(this.value)} años`)
+        if (this.value && calcularEdad(this.value) >= 18) {
+            this.classList.add('is-valid')
+            this.classList.remove('is-invalid')
+        }
+        else{
+            this.classList.add('is-invalid')
+            this.classList.remove('is-valid')
         }
     });
 
@@ -86,21 +91,22 @@ window.addEventListener('load', function () {
 // EMPIEZA VALIDACION Y ENVIO DE FORMULARIO REGISTRO //
 function post(path, params, method = 'post') {
 
-    const form = document.createElement('form'); //crea un elemento (form) y lo coloca en HTML
+    const form = document.createElement('form');
+    
     form.method = method;
     form.action = path;
 
     for (const key in params) {
         if (params.hasOwnProperty(key)) {
             const hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden'; //Esconde los campos para no mostrar otro formulario extra con los datos cargados
+            hiddenField.type = 'hidden'; 
             hiddenField.name = key;
-            hiddenField.value = params[key]; //Lo asigna a una llave, donde la clave es el nombre del campo y el valor es lo que contiene campo por HTTP
+            hiddenField.value = params[key];
 
-            form.appendChild(hiddenField); //Meter el campo creado dentro del formulario
+            form.appendChild(hiddenField); 
         }
     }
-    document.body.appendChild(form); //Meter el campo creado dentro del formulario dentro del body
+    document.body.appendChild(form); 
     form.submit();
 }
 
@@ -109,7 +115,7 @@ function generarCodigoEmpresa() {
 }
 
 function validarRegistroEmpresa(idForm) {
-    document.getElementById(idForm).addEventListener('submit', (evt) => {
+    document.getElementById(idForm)?.addEventListener('submit', (evt) => {
         console.log('Form submiteado');
         evt.preventDefault();
         evt.stopPropagation();
@@ -125,12 +131,15 @@ function validarRegistroEmpresa(idForm) {
         });
 
         if (evt.currentTarget.checkValidity() && !error) {
+            alert('Operacion exitosa!')
             params['empresa-codigo'] = generarCodigoEmpresa();
             post('./info-procesada.php', params)
+        }
+        else{
+            alert('Error en los datos del formulario, por favor revise los datos ingresados')
         }
     });
 }
 
 validarRegistroEmpresa('formRegistroEmpresa')
-
 // TERMINA VALIDACION Y ENVIO DE FORMULARIO REGISTRO //
