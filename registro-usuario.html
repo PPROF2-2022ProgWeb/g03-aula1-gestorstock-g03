@@ -66,7 +66,7 @@
         <div class="col-xl-7 container contenedor pt-3">
             <h3 class="title">Registro</h3>
             <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
-            <form name="formRegistro" class="login-form container-fluid">
+            <form id="formRegistroUsuario" name="formRegistro" class="login-form container-fluid">
 
                 <!-- Cambiar iconografia -->
                 <div class="row">
@@ -77,8 +77,10 @@
                             <i class="icono-user"></i>
 
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="nombre" pattern="[^0-9]{2,40}" class="form-control" type="text" required
-                                placeholder="Ingrese su nombre" title="Debe contener mas de 2 caracteres">
+                            <input name="nombre" pattern="^[^0-9]{2,40}$" class="form-control" type="text" required
+                                placeholder="Ingrese su nombre" title="Debe contener mas de 2 caracteres y no contener numeros">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
 
@@ -88,8 +90,10 @@
                         <div class="form-group input-container ">
                             <i class="icono-user"></i>
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="apellido" pattern="[^0-9]{2,40}" class="form-control" type="text" required
-                                placeholder="Ingrese su apellido" title="Debe contener mas de 2 caracteres">
+                            <input name="apellido" pattern="^[^0-9]{2,40}$" class="form-control" type="text" required
+                                placeholder="Ingrese su apellido" title="Debe contener mas de 2 caracteres y no contener numeros">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
                 </div>
@@ -103,8 +107,10 @@
                             <i class="icono-email"></i>
 
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="correo" pattern="[^@]+@[^@]+" class="form-control" type="email" required
-                                placeholder="Ingrese su correo electrónico" title="Debe contener mas de 2 caracteres">
+                            <input name="correo" pattern="^[^@]+@[^@]+$" class="form-control" type="email" required
+                                placeholder="Ingrese su correo electrónico" title="Debe contener mas de @">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
 
@@ -117,10 +123,9 @@
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
                             <input name="fecha-nacimiento" class="form-control" type="date" id="fechaNacimiento"
                                 max="2016-12-31" required placeholder="Ingrese fecha de nacimiento"
-                                title="Debe contener 2 digitos para el dia, 2 para el mes y 4 para el año">
-                            <div class="invalid-tooltip">
-                                Debe ser mayor de 18 años
-                            </div>
+                                title="Debe ser mayor de 18 años">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
                 </div>
@@ -133,9 +138,11 @@
                         <div class="form-group input-container">
                             <i class="icono-world"></i>
                             <select name="pais" id="dropPais" class="form-control" required placeholder="Ingrese pais"
-                                title="Debe contener mas de 2 caracteres">
+                                title="Debe seleccionar un pais de la lista">
                                 <option value="" disabled selected>Seleccione un pais</option>
                             </select>
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
 
@@ -145,8 +152,10 @@
                         <div class="form-group input-container ">
                             <i class="icono-world"></i>
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="provincia" pattern="[^0-9]+" class="form-control" type="text" required
-                                placeholder="Ingrese su provincia" title="Debe contener mas de 2 caracteres">
+                            <input name="provincia" pattern="^[^0-9]+$" class="form-control" type="text" required
+                                placeholder="Ingrese su provincia" title="Debe contener mas de 1 caracter">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
                 </div>
@@ -159,8 +168,11 @@
                             <i class="icono-key"></i>
 
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="contraseña" pattern="[0-9a-z=A-Z]{4,256}" class="form-control" type="password"
-                                required placeholder="Ingrese su contraseña" title="Contraseña Invalida">
+                            <input name="contraseña" pattern="^[0-9a-z=A-Z]{4,256}$" class="form-control"
+                                type="password" required placeholder="Ingrese su contraseña"
+                                title="Debe contener entre 4 y 256 caracteres, letras mayusculas, minusculas y numeros">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
 
@@ -170,9 +182,11 @@
                         <div class="form-group input-container ">
                             <i class="icono-key"></i>
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="confirmacion-contraseña" pattern="[0-9a-zA-Z]{4,256}" class="form-control"
+                            <input name="confirmacion-contraseña" pattern="^[0-9a-zA-Z]{4,256}$" class="form-control"
                                 type="password" required placeholder="Ingrese su contraseña nuevamente"
-                                title="Contraseña Invalida">
+                                title="Debe contener entre 4 y 256 caracteres, letras mayusculas, minusculas y numeros">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
                 </div>
@@ -185,8 +199,10 @@
                             <i class="icono-empresa"></i>
 
                             <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="codigo-empresa" pattern="[a-z]{4+}" class="form-control" type="password"
-                                required placeholder="Ingrese su codigo de empresa" title="Codigo Incorrecto">
+                            <input name="codigo-empresa" pattern="^[a-z]{4,}$" class="form-control" type="password"
+                                required placeholder="Ingrese su codigo de empresa" title="Debe contener 4 o más letras y no contener numeros ni simbolos">
+                            <div class="invalid-tooltip"></div>
+
                         </div>
                     </div>
 

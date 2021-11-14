@@ -79,7 +79,7 @@ window.addEventListener('load', function () {
             this.classList.add('is-valid')
             this.classList.remove('is-invalid')
         }
-        else{
+        else {
             this.classList.add('is-invalid')
             this.classList.remove('is-valid')
         }
@@ -92,21 +92,21 @@ window.addEventListener('load', function () {
 function post(path, params, method = 'post') {
 
     const form = document.createElement('form');
-    
+
     form.method = method;
     form.action = path;
 
     for (const key in params) {
         if (params.hasOwnProperty(key)) {
             const hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden'; 
+            hiddenField.type = 'hidden';
             hiddenField.name = key;
             hiddenField.value = params[key];
 
-            form.appendChild(hiddenField); 
+            form.appendChild(hiddenField);
         }
     }
-    document.body.appendChild(form); 
+    document.body.appendChild(form);
     form.submit();
 }
 
@@ -135,7 +135,7 @@ function validarRegistroEmpresa(idForm) {
             params['empresa-codigo'] = generarCodigoEmpresa();
             post('./info-procesada.php', params)
         }
-        else{
+        else {
             alert('Error en los datos del formulario, por favor revise los datos ingresados')
         }
     });
@@ -143,3 +143,52 @@ function validarRegistroEmpresa(idForm) {
 
 validarRegistroEmpresa('formRegistroEmpresa')
 // TERMINA VALIDACION Y ENVIO DE FORMULARIO REGISTRO //
+
+// EMPIEZA VALIDACION INDIVIDUAL DE CAMPOS DE FORMULARIO //
+function validacionIndividualCampo(idFormulario) {
+    console.log(idFormulario + document.getElementById(idFormulario));
+    document.querySelectorAll(`#${idFormulario} input`).forEach(input => {
+        document.querySelector(`input[name=${input.getAttribute('name')}] ~ .invalid-tooltip`).textContent = input.getAttribute('title');
+        input?.addEventListener('input', () => {
+            var regex = new RegExp(input.getAttribute('pattern'));
+            console.log(regex);
+
+            if (regex.test(input.value)) {
+                console.log(regex.test(input.value));
+                input.classList.add('is-valid')
+                input.classList.remove('is-invalid')
+            }
+            else {
+                input.classList.add('is-invalid')
+                input.classList.remove('is-valid')
+            }
+        })
+    });
+}
+validacionIndividualCampo('formRegistroEmpresa')
+validacionIndividualCampo('formRegistroUsuario')
+// TERMINA VALIDACION INDIVIDUAL DE CAMPOS DE FORMULARIO //
+
+// EMPIEZA VALIDACION DE CONTRASEÑA //
+function validarPassword(idFormulario) {
+
+    var password = document.querySelector(`#${idFormulario} input[name="contraseña"]`);
+    var input = document.querySelector(`#${idFormulario} input[name="confirmacion-contraseña"]`);
+    var tooltip = document.querySelector(`#${idFormulario} input[name="confirmacion-contraseña"] ~ .invalid-tooltip`);
+    input?.addEventListener('input', () => {
+        console.log(`Pass: ${password.value} Conf: ${input.value}`);
+        if (input.value === password.value) {
+            input.classList.add('is-valid')
+            input.classList.remove('is-invalid')
+        }
+        else {
+            tooltip.textContent = 'Las contraseñas no coinciden'
+            input.classList.add('is-invalid')
+            input.classList.remove('is-valid')
+        }
+    })
+}
+
+validarPassword('formRegistroEmpresa')
+validarPassword('formRegistroUsuario')
+// TERMINA VALIDACION DE CONTRASEÑA //
