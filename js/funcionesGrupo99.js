@@ -1,5 +1,5 @@
 
-// COMIENZA EVENTO 1 //
+// COMIENZA EVENTO 1 (Implementado en gestor.html -> section caja)//
 
 function sumar(valor) {
     var total = 0;
@@ -35,7 +35,7 @@ function restar(valor) {
 
 // TERMINA EVENTO 1 //
 
-// COMIENZA EVENTO 2 //
+// COMIENZA EVENTO 2 (Implementado en gestor.html -> cabecera -> boton usuario)//
 
 function cerrarSesion() {
     console.log('Sesion cerrada');
@@ -46,7 +46,7 @@ document.getElementById('bt-cerrarSesion')?.addEventListener('click', cerrarSesi
 
 // TERMINA EVENTO 2 //
 
-// EMPIEZA CALCULO DE EDAD //
+// EMPIEZA CALCULO DE EDAD (Implementado en la validacion de fecha de nacimiento en formilarios de registro (usuario y empresa))//
 const fechaNacimiento = document.getElementById("fechaNacimiento");
 
 const calcularEdad = (fechaNacimiento) => {
@@ -55,7 +55,6 @@ const calcularEdad = (fechaNacimiento) => {
     const mesActual = parseInt(fechaActual.getMonth()) + 1;
     const diaActual = parseInt(fechaActual.getDate());
 
-    // 2016-07-11
     const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
     const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
     const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
@@ -88,7 +87,7 @@ window.addEventListener('load', function () {
 });
 // TERMINA CALCULO DE EDAD //
 
-// EMPIEZA VALIDACION Y ENVIO DE FORMULARIO REGISTRO //
+// EMPIEZA VALIDACION Y ENVIO DE FORMULARIO REGISTRO (Implementado en registro-usuario.html y registro-empresa.html)//
 function post(path, params, method = 'post') {
 
     const form = document.createElement('form');
@@ -144,7 +143,7 @@ function validarRegistroEmpresa(idForm) {
 validarRegistroEmpresa('formRegistroEmpresa')
 // TERMINA VALIDACION Y ENVIO DE FORMULARIO REGISTRO //
 
-// EMPIEZA VALIDACION INDIVIDUAL DE CAMPOS DE FORMULARIO //
+// EMPIEZA VALIDACION INDIVIDUAL DE CAMPOS DE FORMULARIO (Implementado en registro-usuario.html y registro-empresa.html) //
 function validacionIndividualCampo(idFormulario) {
     console.log(idFormulario + document.getElementById(idFormulario));
     document.querySelectorAll(`#${idFormulario} input`).forEach(input => {
@@ -169,7 +168,7 @@ validacionIndividualCampo('formRegistroEmpresa')
 validacionIndividualCampo('formRegistroUsuario')
 // TERMINA VALIDACION INDIVIDUAL DE CAMPOS DE FORMULARIO //
 
-// EMPIEZA VALIDACION DE CONTRASEÑA //
+// EMPIEZA VALIDACION DE CONTRASEÑA (Implementado en registro-usuario.html y registro-empresa.html) //
 function validarPassword(idFormulario) {
 
     var password = document.querySelector(`#${idFormulario} input[name="contraseña"]`);
