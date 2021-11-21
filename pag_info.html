@@ -15,6 +15,9 @@
 
     <!-- implementacion de bibliotecas de bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- en este pequeño bloque se importo los elementos neceasrios de bootstrap -->
 
     <meta name="msapplication-TileColor" content="#00324a">
@@ -28,7 +31,6 @@
 
 <body class="body">
     <header>
-
         <!-- Con esto se implementa Bootstrap 4 en el nav de este archivo -->
         <nav class="navbar navbar-expand-lg bg-primary navbar-dark text text-white justify-content-between">
             <a class="navbar-brand" href="index.html">
@@ -44,7 +46,8 @@
                         <a class="navlink" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                      <a class="navlink" href="login.html">Ingresar</a> <!--Se agrega el acceso a la pagina de informacion-->
+                        <a class="navlink" href="login.html">Ingresar</a>
+                        <!--Se agrega el acceso a la pagina de informacion-->
                     </li>
                     <li class="nav-item dropdown">
                         <a class="navlink dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -61,13 +64,13 @@
         </nav>
     </header>
 
+    <div class="banner container-fluid FondoFotos">
+        <div class="mascara_fondo"></div>
+        <video class="bgvideo" src="video/bgbanner.mp4" autoplay loop muted></video>
+    </div>
+    
     <main>
-        <!-- Se implementa Bootstrap 4 en el section con container-fluid de este archivo -->
-        <section class="banner container-fluid FondoFotos">
-            <div class="mascara_fondo"> </div>
-            <video class="bgvideo" src="video/bgbanner.mp4" autoplay loop muted></video>
-        </section>
-        <Section>
+        <section>
             <div class="container-fluid title-container d-flex flex-column justify-content-start">
                 <br>
                 <h1 class="title">Quiénes Somos?</h1>
@@ -89,75 +92,65 @@
             </div>
 
 
-            <div class="container-fluid pt-5 pl-5">
-                <div class="row col-12 py-2">
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src="img/imagenes/andres.png" class="card-img-top imgRedonda" alt="Foto de Andres">
-                        <div class="card-body">
-                            <h5 class="card-title">Osmar Andres Debegnach</h5>
-                            <p class="card-text">Líder Técnico/Desarrollador</p>
-                            <a href="mailto:andresdebegnach@gmail.com"
-                                class="btn btn-primary">andresdebegnach@gmail.com</a>
+            <div class="overflow-auto container-fluid d-flex justify-content-center flex-wrap pt-5 pl-5">
+                <div class="card flex-column flex-sm-row col-lg-6">
+                    <img src="img/imagenes/andres.png" class="card-img-top imgRedonda" alt="Foto de Andres">
+                    <div class="card-body">
+                        <h5 class="card-title">Osmar Andres Debegnach</h5>
+                        <p class="card-text">Líder Técnico/Desarrollador</p>
+                        <a href="mailto:andresdebegnach@gmail.com" class="btn btn-primary">andresdebegnach@gmail.com</a>
                         </div>
+                        </div>
+                <div class="card flex-column flex-sm-row col-lg-6">
+                    <img src="img/imagenes/fede.png" class="card-img-top imgRedonda" alt="Foto de Federico">
+                    <div class="card-body">
+                        <h5 class="card-title"> Federico Navarro</h5>
+                        <p class="card-text">Project Manager / Desarrollador</p>
+                        <a href="mailto:fnavarromugas@gmail.com" class="btn btn-primary">fnavarromugas@gmail.com</a>
                     </div>
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src="img/imagenes/fede.png" class="card-img-top imgRedonda" alt="Foto de Federico">
-                        <div class="card-body">
-                            <h5 class="card-title"> Federico Navarro</h5>
-                            <p class="card-text">Project Manager / Desarrollador</p>
-                            <a href="mailto:fnavarromugas@gmail.com" class="btn btn-primary">fnavarromugas@gmail.com</a>
-                        </div>
                     </div>
-                </div>
-                <div class="row col-12">
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src="img/imagenes/eri.png" class="card-img-top imgRedonda" alt="Foto de Erika">
-                        <div class="card-body">
-                            <h5 class="card-title">Erika Cologne</h5>
-                            <p class="card-text">Líder de Equipo/Desarrollador</p>
-                            <a href="mailto:erikac.ec80@gmail.com" class="btn btn-primary">erikac.ec80@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src="img/imagenes/juli.jpg.png" class="card-img-top imgRedonda" alt="Foto de Julieta">
-                        <div class="card-body">
-                            <h5 class="card-title">Julieta de los Ángeles Negrete</h5>
-                            <p class="card-text">Analista Funcional/Desarrollador</p>
-                            <a href="mailto:juliinegrete@gmail.com" class="btn btn-primary">juliinegrete@gmail.com</a>
-                        </div>
+                <div class="card flex-column flex-sm-row col-lg-6">
+                    <img src="img/imagenes/eri.png" class="card-img-top imgRedonda" alt="Foto de Erika">
+                    <div class="card-body">
+                        <h5 class="card-title">Erika Cologne</h5>
+                        <p class="card-text">Líder de Equipo/Desarrollador</p>
+                        <a href="mailto:erikac.ec80@gmail.com" class="btn btn-primary">erikac.ec80@gmail.com</a>
                     </div>
                 </div>
-                <div class="row col-12 py-2">
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src="img/imagenes/max.png" class="card-img-top imgRedonda" alt="Foto de Maximiliano">
-                        <div class="card-body">
-                            <h5 class="card-title">Maximiliano Escobar</h5>
-                            <p class="card-text">Desarrollador Full Stack</p>
-                            <a href="mailto:maxescobarubp@gmail.com" class="btn btn-primary">maxescobarubp@gmail.com</a>
-                        </div>
+                <div class="card flex-column flex-sm-row col-lg-6">
+                    <img src="img/imagenes/juli.jpg.png" class="card-img-top imgRedonda" alt="Foto de Julieta">
+                    <div class="card-body">
+                        <h5 class="card-title">Julieta de los Ángeles Negrete</h5>
+                        <p class="card-text">Analista Funcional/Desarrollador</p>
+                        <a href="mailto:juliinegrete@gmail.com" class="btn btn-primary">juliinegrete@gmail.com</a>
                     </div>
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src="img/imagenes/eze.png" class="card-img-top imgRedonda" alt="Foto de Ezequiel">
-                        <div class="card-body">
-                            <h5 class="card-title">Ezequiel Dominguez</h5>
-                            <p class="card-text">Desarrollador Full Stack.</p>
-                            <a href="mailto:ezequieldominguez1@hotmail.com"
-                                class="btn btn-primary">ezequieldominguez1@hotmail.com</a>
-                        </div>
+                    </div>
+                <div class="card flex-column flex-sm-row col-lg-6">
+                    <img src="img/imagenes/max.png" class="card-img-top imgRedonda" alt="Foto de Maximiliano">
+                    <div class="card-body">
+                        <h5 class="card-title">Maximiliano Escobar</h5>
+                        <p class="card-text">Desarrollador Full Stack</p>
+                        <a href="mailto:maxescobarubp@gmail.com" class="btn btn-primary">maxescobarubp@gmail.com</a>
                     </div>
                 </div>
-                <div class="row col-12">
-                    <div class="card col-6" style="width: 18rem;">
-                        <img src="img/imagenes/ana.png" class="card-img-top imgRedonda" alt="Foto de Ana">
-                        <div class="card-body">
-                            <h5 class="card-title">Ana Ochonga</h5>
-                            <p class="card-text">Desarrollador Full Stack</p>
-                            <a href="mailto:dochongajvg@gmail.com" class="btn btn-primary">dochongajvg@gmail.com</a>
+                <div class="card flex-column flex-sm-row col-lg-6">
+                    <img src="img/imagenes/eze.png" class="card-img-top imgRedonda" alt="Foto de Ezequiel">
+                    <div class="card-body">
+                        <h5 class="card-title">Ezequiel Dominguez</h5>
+                        <p class="card-text">Desarrollador Full Stack.</p>
+                        <a href="mailto:ezequieldominguez1@hotmail.com" class="btn btn-primary">ezequieldominguez1@hotmail.com</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </Section>
+                <div class="card flex-column flex-sm-row col-lg-6">
+                    <img src="img/imagenes/ana.png" class="card-img-top imgRedonda" alt="Foto de Ana">
+                    <div class="card-body">
+                        <h5 class="card-title">Ana Ochonga</h5>
+                        <p class="card-text">Desarrollador Full Stack</p>
+                        <a href="mailto:dochongajvg@gmail.com" class="btn btn-primary">dochongajvg@gmail.com</a>
+                    </div>
+                    </div>
+                    </div>
+        </section>
     </main>
     <footer id="piePagina" class="container-fluid d-flex flex-column">
         <div class="row d-flex flex-wrap justify-content-around">
