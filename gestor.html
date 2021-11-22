@@ -554,55 +554,55 @@
                                     <th>Cantidad</th>
                                     <th>Precio Unitario</th>
                                     <th>Unidad Medida</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>132485496</td>
+                                        <td>Coca Cola 1.5Lts</td>
+                                        <td>328</td>
+                                        <td>150</td>
+                                        <td>Unidad</td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>132485496</td>
-                                            <td>Coca Cola 1.5Lts</td>
-                                            <td>328</td>
-                                            <td>150</td>
-                                            <td>Unidad</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4567879</td>
-                                            <td>Fideos Canale Tirabuzón 500g</td>
-                                            <td>207</td>
-                                            <td>56</td>
-                                            <td>Unidad</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3213747695</td>
-                                            <td>Cuerda Cáñamo</td>
-                                            <td>760</td>
-                                            <td>30</td>
-                                            <td>Metro</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3246578721</td>
-                                            <td>Cable Coaxil 50mm diam.</td>
-                                            <td>200</td>
-                                            <td>50</td>
-                                            <td>Metro</td>
-                                        </tr>
-                                        <tr>
-                                            <td>54968754</td>
-                                            <td>Fernet Branca 1Lts</td>
-                                            <td>178</td>
-                                            <td>600</td>
-                                            <td>Unidad</td>
-                                        </tr>
-                                        <tr>
-                                            <td>13408749415</td>
-                                            <td>Maní confitado</td>
-                                            <td>220</td>
-                                            <td>75</td>
-                                            <td>Kg</td>
-                                        </tr>
-                                    </tbody>
-                                    </table>
-                                    </div>
-                                    <!-- Grid de adicionales. -->
+                                    <tr>
+                                        <td>4567879</td>
+                                        <td>Fideos Canale Tirabuzón 500g</td>
+                                        <td>207</td>
+                                        <td>56</td>
+                                        <td>Unidad</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3213747695</td>
+                                        <td>Cuerda Cáñamo</td>
+                                        <td>760</td>
+                                        <td>30</td>
+                                        <td>Metro</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3246578721</td>
+                                        <td>Cable Coaxil 50mm diam.</td>
+                                        <td>200</td>
+                                        <td>50</td>
+                                        <td>Metro</td>
+                                    </tr>
+                                    <tr>
+                                        <td>54968754</td>
+                                        <td>Fernet Branca 1Lts</td>
+                                        <td>178</td>
+                                        <td>600</td>
+                                        <td>Unidad</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13408749415</td>
+                                        <td>Maní confitado</td>
+                                        <td>220</td>
+                                        <td>75</td>
+                                        <td>Kg</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                </div>
+                                <!-- Grid de adicionales. -->
                     <div id="grid-adicionales" class="col-12 col-lg-4">
                         <table class="table table-striped table-hover table-sm">
                             <thead>
@@ -677,17 +677,17 @@
                                             <span class="input-group-text" id="">Nombre</span>
                                         </div>
                                         <input id="nombre" name="nombre" type="text" class="form-control" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="">Codigo</span>
                                         </div>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="">Codigo</span>
-                                            </div>
-                                            <input id="codigo" name="codigo" type="text" class="form-control" required>
+                                        <input id="codigo" name="codigo" type="text" class="form-control" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="">Cantidad</span>
                                         </div>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="">Cantidad</span>
-                                            </div>
                                         <input id="cantidad" name="cantidad" type="number" step="0.1" class="form-control" required>
                                         </div>
                                         <div class="input-group">
@@ -704,7 +704,7 @@
                                             <option value="1">Unidades</option>
                                             <option value="2">Peso (Kg)</option>
                                         </select>
-                                        </div>
+                                    </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
@@ -749,58 +749,50 @@
             </section>
 
             <section id="caja" class="tab-container" data-title="Caja">
-                <div class="contenedor-sombra">
-                    <div class="columnas">
-                        <div>
-                            <label>Dinero en caja - Apertura:</label>
-                            <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="sumar(this.value);">
+                <div class="contenedor-sombra d-flex flex-wrap">
+                    <div class="col-md-6 my-3">
+                        <label>Dinero en caja - Apertura:</label>
+                        <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="sumar(this.value);">
                         </div>
 
-                        <div>
-                            <label>Dinero en caja - Cierre:</label>
-                            <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="restar(this.value);">
-                        </div>
+                    <div class="col-md-6 my-3">
+                        <label>Dinero en caja - Cierre:</label>
+                        <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="restar(this.value);">
                     </div>
 
-                    <div class="columnas">
-                        <div>
-                            <label>Efectivo recibido:</label>
-                            <input class="input-caja" type="number" placeholder="apertura de caja" onchange="sumar(this.value);">
+                    <div class="col-md-6 my-3">
+                        <label>Efectivo recibido:</label>
+                        <input class="input-caja" type="number" placeholder="apertura de caja" onchange="sumar(this.value);">
                         </div>
 
-                        <div>
-                            <label>Pago a proveedores:</label>
-                            <input class="input-caja" type="number" placeholder="dinero" onchange="restar(this.value);">
-                        </div>
+                    <div class="col-md-6 my-3">
+                        <label>Pago a proveedores:</label>
+                        <input class="input-caja" type="number" placeholder="dinero" onchange="restar(this.value);">
                     </div>
 
-                    <div class="columnas">
-                        <div>
-                            <label>Débito/Crédito recibido:</label>
-                            <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="sumar(this.value);">
+                    <div class="col-md-6 my-3">
+                        <label>Débito/Crédito recibido:</label>
+                        <input class="input-caja" type="number" placeholder="cantidad de dinero" onchange="sumar(this.value);">
                         </div>
 
-                        <div>
-                            <label>Sueldos o bonos:</label>
-                            <input class="input-caja" type="number" placeholder="efectivo - docs" onchange="restar(this.value);">
-                        </div>
+                    <div class="col-md-6 my-3">
+                        <label>Sueldos o bonos:</label>
+                        <input class="input-caja" type="number" placeholder="efectivo - docs" onchange="restar(this.value);">
                     </div>
 
-                    <div class="columnas">
-                        <div>
-                            <label>Dinero depositado:</label>
-                            <input class="input-caja" type="number" placeholder="depositado" onchange="sumar(this.value);">
-                        </div>
-
-                        <div>
-                            <label>Dinero extraído:</label>
-                            <input class="input-caja" type="number" placeholder="extraido" onchange="restar(this.value);">
-                        </div>
+                    <div class="col-md-6 my-3">
+                        <label>Dinero depositado:</label>
+                        <input class="input-caja" type="number" placeholder="depositado" onchange="sumar(this.value);">
                     </div>
 
-                    <div class="recaudacion-boton">
+                    <div class="col-md-6 my-3">
+                        <label>Dinero extraído:</label>
+                        <input class="input-caja" type="number" placeholder="extraido" onchange="restar(this.value);">
+                    </div>
+
+                    <div class="recaudacion-boton d-flex flex-column flex-md-row">
                         <div>
-                            <h2>Recaudacion Total</h2>
+                            <h2 class="titulo-recaudacion">Recaudacion Total</h2>
                             <h2>$ <span id="Recaudacion"></span></h2>
                         </div>
                         <div>
