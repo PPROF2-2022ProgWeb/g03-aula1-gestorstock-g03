@@ -11,9 +11,9 @@ Esta especificación de requisitos está dirigida al usuario del sistema, emplea
 
 Personal involucrado
 
-Nombre Federico Navarro Rol Project Manager/Desarrollador Categoría Profesional Ingeniero Responsabilidad Se encargará de definir la estrategia para realizar el proyecto concreto y supervisar su ejecución. Información de contacto mailto:fnavarromugas@gmail.com
+Nombre Brenda Giselle Escobar Rol Project Manager/Desarrolladora C# - Back-end, Categoría Profesional Desarrollo Responsabilidad Se encargará de definir la estrategia para realizar el proyecto concreto y supervisar su ejecución. Información de contacto brenda.giselle.escobar2014@gmail.com
 
-Nombre Osmar Andres Debegnach Rol Líder Técnico/Desarrollador Categoría Profesional Ingeniero Responsabilidad Será responsable de definir, en conjunto con el Líder de Proyecto, las tareas de desarrollo e implementación del proyecto así como también la asignación del tiempo para cada una de las tareas y la asignación de estas tareas a cada recurso. Información de contacto mailto: andresdebegnach@gmail.com
+Nombre Osmar Andres Debegnach Rol Líder Técnico/Desarrollador Categoría Profesional Ingeniero Responsabilidad Será responsable de definir, en conjunto con el Líder de Proyecto, las tareas de desarrollo e implementación del proyecto, historias de usuario y distribucion de issues, así como también la asignación del tiempo para cada una de las tareas y la asignación de estas tareas a cada recurso. Información de contacto mailto: andresdebegnach@gmail.com
 
 Nombre Erika Cologne Rol Lider de Equipo / Desarrollador Categoría Profesional Ingeniera Responsabilidad Será responsable de saber a qué persona avocarse cuando necesita realizar una tarea específica del proyecto, así como conocer las limitaciones de su equipo y de los recursos para que sus estimaciones presentes y futuras sean lo más cercano posible a la realidad. Información de contacto erikac.ec80@gmail.com
 
