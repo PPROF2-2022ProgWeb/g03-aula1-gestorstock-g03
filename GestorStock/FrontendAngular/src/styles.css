@@ -4,6 +4,18 @@
   font-family: "Quicksand";
   src: url("assets/fonts/Quicksand-VariableFont_wght.ttf");
 }
+@font-face {
+  font-family: 'VarelaRound';
+  src: url('assets/fonts/VarelaRound-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'VarelaRound';
+}
+
 
 :root {
   --color-primario: #00324a;
@@ -45,3 +57,4 @@
   background-color: var(--fondo-boton-activo);
   color: var(--color-fuente-boton-activo);
 }
+
