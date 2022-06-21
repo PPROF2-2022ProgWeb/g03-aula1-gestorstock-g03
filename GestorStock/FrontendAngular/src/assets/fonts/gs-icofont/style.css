@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'gs-icofont';
+  src:  url('fonts/gs-icofont.eot?83ws6d');
+  src:  url('fonts/gs-icofont.eot?83ws6d#iefix') format('embedded-opentype'),
+    url('fonts/gs-icofont.ttf?83ws6d') format('truetype'),
+    url('fonts/gs-icofont.woff?83ws6d') format('woff'),
+    url('fonts/gs-icofont.svg?83ws6d#gs-icofont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'gs-icofont' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icono-dinero:before {
+  content: "\e919";
+}
+.icono-pregunta:before {
+  content: "\e91a";
+}
+.icono-lupa:before {
+  content: "\e918";
+}
+.icono-tarjeta:before {
+  content: "\e913";
+}
+.icono-twitter:before {
+  content: "\e914";
+}
+.icono-instagram:before {
+  content: "\e915";
+}
+.icono-billete:before {
+  content: "\e916";
+}
+.icono-facebook:before {
+  content: "\e917";
+}
+.icono-telefono:before {
+  content: "\e912";
+}
+.icono-mensaje:before {
+  content: "\e911";
+}
+.icono-empresa:before {
+  content: "\e910";
+}
+.icono-change:before {
+  content: "\e90f";
+}
+.icono-calendar:before {
+  content: "\e90c";
+}
+.icono-user:before {
+  content: "\e90d";
+}
+.icono-world:before {
+  content: "\e90e";
+}
+.icono-logo:before {
+  content: "\e90b";
+}
+.icono-adn:before {
+  content: "\e900";
+}
+.icono-caja:before {
+  content: "\e901";
+}
+.icono-email:before {
+  content: "\e902";
+}
+.icono-home:before {
+  content: "\e903";
+}
+.icono-key:before {
+  content: "\e904";
+}
+.icono-logout:before {
+  content: "\e905";
+}
+.icono-menu:before {
+  content: "\e906";
+}
+.icono-recibo:before {
+  content: "\e907";
+}
+.icono-stock:before {
+  content: "\e908";
+}
+.icono-ventas:before {
+  content: "\e909";
+}
+.icono-admin:before {
+  content: "\e90a";
+}
