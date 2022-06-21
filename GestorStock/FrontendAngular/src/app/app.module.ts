@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
+import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     LoginComponent,
     RegistroComponent,
     DashboardComponent,
-    TiendaComponent
+    TiendaComponent,
+    NoEncontradoComponent
   ],
   imports: [
     BrowserModule,
