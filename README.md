@@ -117,45 +117,45 @@ El alcance del proyecto es abierto a cualquier pyme, grandes y pequeñas.
 
 🔷Nombre: Osmar Andres Debegnach <br>
 🔷Rol: Líder Técnico <br>
-🔷Categoría Profesional: Desarrollador <br>
+🔷Categoría Profesional: Desarrollador especializado en Front-End <br>
 🔷Responsabilidad: Desarrollador Back-End / lider <br>
-🔷Programador Front-end- Desarrolladora JavaScript <br>
+🔷Programador Front-end- Desarrollador JavaScript <br>
 🔷Información de contacto : andresdebegnach@gmail.com <br>
 
 🔷Nombre: Brenda Giselle Escobar <br>
 🔷Rol:  Project Manager <br>
-🔷Categoría Profesional: Desarrollador <br>
+🔷Categoría Profesional: Desarrolladora back-end especializada en C# <br>
 🔷Responsabilidad: Co-Líder del proyecto <br>
 🔷Programador Back-end- Desarrolladora C# <br>
 🔷Información de contacto : brenda.giselle.escobar2014@gmail.com <br>
 
 🔷Nombre: Erika Cologne <br>
 🔷Rol: Desarrollador Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Front-End <br>
+🔷Categoría Profesional: Desarrolladora Front-End <br>
 🔷Responsabilidad: Asistente líder del proyecto <br>
 🔷Información de contacto : erikac.ec80@gmail.com <br>
 
 🔷Nombre: Julieta de los Ángeles Negrete <br>
 🔷Rol: Desarrolladora Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Full-Stack, gestión y representación del equipo. <br>
+🔷Categoría Profesional: Desarrolladora Full-Stack <br>
 🔷Responsabilidad: Será la responsable de realizar tareas de relevamiento, análisis y diseño de los sistemas informáticos
 🔷Información de contacto : juliinegrete@gmail.com <br>
 
 🔷Nombre: Escobar Maximiliano <br>
-🔷Rol: Desarrolladora Backe-end <br>
-🔷Categoría Profesional: Desarrollador Back-end, gestión y representación del equipo. <br>
+🔷Rol: Desarrollador Back-end <br>
+🔷Categoría Profesional: Desarrollador Back-end, especializado en Java. <br>
 🔷Responsabilidad: Desarrollador <br>
 🔷Información de contacto : maxescobarubp@gmail.com <br>
 
 🔷Nombre: Ezequiel Dominguez <br>
-🔷Rol: Desarrolladora Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Full-Stack, gestión y representación del equipo. <br>
+🔷Rol: Desarrollador Full-Stack <br>
+🔷Categoría Profesional: Desarrollador Full-Stack y Back-End. <br>
 🔷Responsabilidad: Categoría Profesional Programador-Back-End <br>
 🔷Información de contacto : ezequieldominguez1@hotmail.com <br>
 
 🔷Nombre: Ana Ochonga <br>
 🔷Rol: Desarrolladora Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Full-Stack, gestión y representación del equipo. <br>
+🔷Categoría Profesional: Desarrolladora Full-Stack y manejo de Base de Datos. <br>
 🔷Responsabilidad: Categoría Profesional Programador-Full-Stack <br>
 🔷Información de contacto : dochongajvg@gmail.com <br>
 
@@ -245,12 +245,7 @@ Recursos para crear el sitio: GitHub, Visual Studio Code. <br>
 
  📃 3. Requisitos específicos <br>
 	
-
-✏️ Product Backlog 
-
-*
-*
-*
+*https://docs.google.com/document/d/1fXyYKkt1AlqCC7e_ym8ttpuUlEp5y-aYPlNThL0zJmQ/edit
 
 <br>
 
@@ -271,5 +266,7 @@ Especificación de requisitos de software
  
 ✏️ Sprint Backlog:  <br>
 
-
-*https://docs.google.com/document/d/1fXyYKkt1AlqCC7e_ym8ttpuUlEp5y-aYPlNThL0zJmQ/edit
+	*Migración del index a SPA de Angular 
+	*Creación de Diagrama de clases para POO
+	*DER y Modelo relacional de la Base de datos
+	*✨ **Comienzo de proyecto** ✨
