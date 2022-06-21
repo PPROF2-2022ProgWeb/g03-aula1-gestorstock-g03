@@ -6,6 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  @Input() titulo: String = 'Titulo';
-  @Input() icono: String = 'icono-user';
+  @Input() title: String = 'Titulo';
+  @Input() icon: String = '';
+  @Input() required: Boolean = false; 
+  @Input() placeholder: String = 'Ingrese un valor';
+  @Input() type: String = 'text';
 }

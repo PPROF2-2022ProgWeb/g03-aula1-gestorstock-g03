@@ -5,13 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { InputComponent } from './components/input/input.component';
+import { InputComponent } from './components/form-controls/input/input.component';
 import { HomeComponent } from './components/home/home.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
+import { TextareaComponent } from './components/form-controls/textarea/textarea.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     RegistroComponent,
     DashboardComponent,
     TiendaComponent,
-    InputComponent
+    InputComponent,
+    TextareaComponent
   ],
   imports: [
     BrowserModule,
