@@ -105,5 +105,10 @@
       }
     }
   },
-  "defaultProject": "FrontendAngular"
+  "defaultProject": "FrontendAngular",
+  "cli": {
+    "warnings": {
+      "versionMismatch": false
+    }
+  }
 }
