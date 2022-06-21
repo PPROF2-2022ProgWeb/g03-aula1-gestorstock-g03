@@ -1,0 +1,49 @@
+.navbar {
+  background-color: var(--color-primario);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 2rem;
+  width: 100vw;
+}
+
+.logo {
+  width: 50px;
+}
+
+.navlink {
+  text-decoration: none;
+  position: relative;
+  margin-left: 15px;
+  color: #fff;
+}
+
+.navlink::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  background-color: #fff;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navlink::after {
+  display: none !important;
+}
+
+.navlink:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+i {
+  color: #fff;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+	border: none;
+}
