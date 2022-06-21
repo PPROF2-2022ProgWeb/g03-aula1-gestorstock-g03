@@ -1,0 +1,30 @@
+
+footer {
+    background-color: #222;
+    color: #fff;
+}
+
+footer #formContacto {
+    justify-self: flex-end;
+}
+
+.footer-legend {
+    text-align: center!important;
+}
+
+.footer-divider {
+    background-color: #555;
+}
+
+.contact-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info span {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
