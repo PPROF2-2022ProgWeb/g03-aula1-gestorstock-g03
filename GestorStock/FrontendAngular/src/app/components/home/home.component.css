@@ -1,0 +1,70 @@
+/* Banner */
+@import url("");
+section.banner {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 70px);
+    min-height: 500px;
+    background: linear-gradient(to right, #333 0%, #000000c2);
+    display: flex;
+    align-items: center;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    height: 40vh;
+    padding: 0 1rem;
+    background: linear-gradient(to right, #333 0%, #000000c2);
+    display: flex;
+    align-items: center;
+}
+
+.bgvideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    object-fit: cover;
+    float: left;
+    z-index: -1;
+}
+
+.title-container {
+    position: relative;
+    align-self: center;
+    height: fit-content;
+    z-index: 3;
+    padding: 0 10%;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.title-container h1 {
+    font-weight: 800;
+    font-size: 10vw;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.title-container h1::first-line {
+    line-height: .8;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.title-container p {
+    font-size: 15px;
+    color: #DCD2C5
+}
+
+section.contenido {
+    padding: 0 2rem;
+    text-indent: 3px;
+}
+
+
+/* Termina pagina de inicio */

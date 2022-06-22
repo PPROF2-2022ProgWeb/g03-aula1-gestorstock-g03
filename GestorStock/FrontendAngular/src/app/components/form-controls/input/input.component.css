@@ -1,0 +1,24 @@
+.input-container {
+  position: relative;
+  display: flex;
+  background-color: #00324a;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.input-container i {
+  color: #fff;
+  margin: 0 7px;
+  font-size: 16px;
+  flex-grow: 0.2;
+  text-align: center;
+}
+
+.input-container input,
+.input-container select {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  outline: none;
+  border-radius: 0;
+  height: 2rem;
+}

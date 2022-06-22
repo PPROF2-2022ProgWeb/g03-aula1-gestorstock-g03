@@ -1,0 +1,60 @@
+@import url("assets/fonts/gs-icofont/style.css");
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("assets/fonts/Quicksand-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: 'VarelaRound';
+  src: url('assets/fonts/VarelaRound-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'VarelaRound';
+}
+
+
+:root {
+  --color-primario: #00324a;
+  --color-secundario: #dcd2d5;
+  --blanco: #fff;
+
+  --fondo-boton-activo: #fff;
+  --colot-fuente-boton-activo: #00324a;
+
+  --fuente-primaria: "Quicksand";
+  --color-fuente-primario: #fff;
+  --color-fuente-secundario: #00324a;
+  --link-hover-color: gray;
+}
+
+*,
+*::before,
+*::after {
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+.boton {
+  background-color: var(--color-primario);
+  color: var(--color-fuente-primario);
+  border: 2px solid var(--color-primario);
+  border-radius: 5px;
+  padding: 0.3rem 1.2rem;
+  transition: box-shadow 0.5s ease;
+}
+
+.boton:hover {
+  background-color: var(--fondo-boton-activo);
+  color: var(--colot-fuente-boton-activo);
+  box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.5);
+}
+
+.boton.active {
+  background-color: var(--fondo-boton-activo);
+  color: var(--color-fuente-boton-activo);
+}
+
