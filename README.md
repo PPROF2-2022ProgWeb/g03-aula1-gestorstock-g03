@@ -4,6 +4,15 @@
 
 ## Sitio: 
 
+## Inicialziacion del proyecto: 
+
+1. Git clone --> URL del Proyecto del repositorio
+2. Abrir Visual Code
+3. Abrir una nueva terminal --> escribir npm install
+4. escribir sobre la terminal --> npm start
+
+ACLARACION: El sitio realizado en Angular se levanta en red local, por lo que se puede acceder desde cualquier dispositivo conectado a la red.
+
 ## **Miembros:**
 
 <ul>
