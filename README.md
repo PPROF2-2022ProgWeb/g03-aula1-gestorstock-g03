@@ -4,7 +4,7 @@
 
 ## Sitio: 
 
-## Inicialziacion del proyecto: 
+## Inicializacion del proyecto: 
 
 1. Git clone --> URL del Proyecto del repositorio
 2. Abrir Visual Code
