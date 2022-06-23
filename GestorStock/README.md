@@ -16,7 +16,7 @@
   <li>Ana Ochonga</li>
 
 <br>
-/RecursosDocumentacion/![SitioAngular](SitioAngular.PNG)
-<br>
-	
- 
+
+![SitioAngular](https://user-images.githubusercontent.com/78160748/175182328-3d521e6c-b4cd-4e7e-b728-5608c8a415dc.png)
+
+
