@@ -1,3 +1,26 @@
+
+## ISPC<br>
+
+## Grupo 3 del proyecto "Gestor de Stock"
+
+## Sitio: 
+
+## **Miembros:**
+
+<ul>
+  <li>Osmar Andres Debegnach</li>
+  <li>Erika Cologne</li>
+  <li>Ezequiel Dominguez</li>
+  <li>Julieta de los Ángeles Negrete</li>
+  <li>Escobar Brenda Giselle</li>
+  <li>Escobar Maximiliano Alexis</li>
+  <li>Ana Ochonga</li>
+
+<br>
+Frontend - Angular	
+<br>
+	
+
 # FrontendAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
