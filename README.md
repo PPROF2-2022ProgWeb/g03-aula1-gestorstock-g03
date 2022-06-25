@@ -190,7 +190,7 @@ El alcance del proyecto es abierto a cualquier pyme, grandes y pequeñas.
 ✅CSS: CSS (en inglés Cascading Style Sheets) es lo que se denomina lenguaje de hojas de estilo en cascada y se usa para estilizar elementos escritos en un lenguaje de marcado como HTML. <br>
 ✅HOSTING: El hosting, o alojamiento web es un servicio donde podrás alojar todos los contenidos necesarios (textos, imágenes, bases de datos, emails…) para que tu web y correo sea accesible por cualquier usuario en internet en cualquier momento. <br>
 ✅JAVASCRIPT: JavaScript es el único lenguaje de programación que funciona en los navegadores de forma nativa (lenguaje interpretado sin necesidad de compilación). Por tanto se utiliza como complemento de HTML y CSS para crear páginas webs. <br>
-
+✅ANGULAR: Angular es un framework opensource desarrollado por Google para facilitar la creación y programación de aplicaciones web de una sola página, las webs SPA (Single Page Application). <br>
 
 ***
  
@@ -266,9 +266,13 @@ Práctica Profesionalízante
 
 Especificación de requisitos de software 
 
+*********************************************************************************************
 
+	
+Sprints
 
-***
+	
+*********************************************************************************************
 
 ✏️ N° de sprint : 0 <br>
 	
@@ -279,3 +283,25 @@ Especificación de requisitos de software
 	*Creación de Diagrama de clases para POO
 	*DER y Modelo relacional de la Base de datos
 	*✨ **Comienzo de proyecto** ✨
+
+✏️ Milestones: <br>
+	
+ 	*US#01 - Base de datos del proyecto
+  	*US#02 - Diagrama de clases para POO
+  	*US#03 - Pagina principal realizada con Angular
+
+*********************************************************************************************
+
+✏️ N° de sprint : 1 (En espera) <br>
+	
+ 
+✏️ Sprint Backlog:  <br>
+
+	*
+
+✏️ Milestones: <br>
+
+	
+ 	*
+	
+*********************************************************************************************
