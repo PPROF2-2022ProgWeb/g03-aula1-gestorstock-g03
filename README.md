@@ -2,7 +2,7 @@
 
 ## Group 3 of the "Stock Manager" project
 
-## Site: 
+## Site: https://teal-panda-4f4f13.netlify.app 
 
 ## **Members:**
 
