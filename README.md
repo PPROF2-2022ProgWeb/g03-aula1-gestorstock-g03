@@ -161,21 +161,21 @@ Staff involved
  📃 1.4 Definiciones, acrónimos y abreviaturas 
 
 
-✅SQL: Structured Query Language, is a programming language designed to update, obtain, and calculate information in relational databases.
-✅HTML: HyperText Markup Language (HTML).
-✅HTTP: Hypertext Transfer Protocol, is the name of a protocol which allows us to make a request for data and resources, such as HTML documents.
-✅Bootstrap: Bootstrap is a front-end framework used to develop web applications and mobile sites.
-✅Front-End, is the part of web development that is dedicated to the visual part of a web site, to styles like colors, backgrounds, sizes until animations and effects.
-✅Back-End, is the part or branch in charge of web development of the all logic page works.Consist in joint development action to happen inside the web.
-✅Full-stack developer, is a programmer with a very complete profile technical that knows good back-end like also front-end.
-✅The Product Backlog in the project follows the methodology Scrum, consist in the task list with all initial requirements of the product that will develop.
-✅CSS (en inglés Cascading Style Sheets) is called language of cascading Style Sheets and his use is create style´s elements  written in the markup languages like HTML
-Web hosting is a service where you can store contents (like images, data, text database, emails) for that your web and emails can be accessed by any internet user at any moment.
-✅JavaScript is the unique programming language that works native in the web browsers (like interpreted language without needing to compile). Therefore this complements HTML and Javascript for creating webpages.
-✅Angular is a framework open source developed by Google for easily creating and programming web apps on one web page, known as SPA (Single Page Application).
-✅GitHub: Is a service based in the cloud that hosts a version control system (VCS) called GIt. This permits the developers to collaborate and perform changes in the shared projects, like also to maintain detailed progress.
-✅UML:The Unified Modeling Language (UML) was created to forge a common model of language, this is semantic and sentiment rich for architecture, design and the complex software system implementation, as much in structure as behavior. UML has applications beyond software development for example. In the factory process flow.   
-✅Visual Code: Visual Studio Code, is a source code editor developed for Microsoft
+✅SQL: Structured Query Language, is a programming language designed to update, obtain, and calculate information in relational databases. <br>
+✅HTML: HyperText Markup Language (HTML). <br>
+✅HTTP: Hypertext Transfer Protocol, is the name of a protocol which allows us to make a request for data and resources, such as HTML documents. <br>
+✅Bootstrap: Bootstrap is a front-end framework used to develop web applications and mobile sites. <br>
+✅Front-End, is the part of web development that is dedicated to the visual part of a web site, to styles like colors, backgrounds, sizes until animations and effects. <br>
+✅Back-End, is the part or branch in charge of web development of the all logic page works.Consist in joint development action to happen inside the web. <br>
+✅Full-stack developer, is a programmer with a very complete profile technical that knows good back-end like also front-end. <br>
+✅The Product Backlog in the project follows the methodology Scrum, consist in the task list with all initial requirements of the product that will develop. <br>
+✅CSS (en inglés Cascading Style Sheets) is called language of cascading Style Sheets and his use is create style´s elements  written in the markup languages like HTML <br>
+Web hosting is a service where you can store contents (like images, data, text database, emails) for that your web and emails can be accessed by any internet user at any moment. <br>
+✅JavaScript is the unique programming language that works native in the web browsers (like interpreted language without needing to compile). Therefore this complements HTML and Javascript for creating webpages. <br>
+✅Angular is a framework open source developed by Google for easily creating and programming web apps on one web page, known as SPA (Single Page Application). <br>
+✅GitHub: Is a service based in the cloud that hosts a version control system (VCS) called GIt. This permits the developers to collaborate and perform changes in the shared projects, like also to maintain detailed progress. <br>
+✅UML:The Unified Modeling Language (UML) was created to forge a common model of language, this is semantic and sentiment rich for architecture, design and the complex software system implementation, as much in structure as behavior. UML has applications beyond software development for example. In the factory process flow.   <br>
+✅Visual Code: Visual Studio Code, is a source code editor developed for Microsoft. <br>
 
 
 
