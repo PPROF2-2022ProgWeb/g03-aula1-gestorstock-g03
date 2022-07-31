@@ -1,10 +1,10 @@
 ## ISPC<br>
 
-## Grupo 3 del proyecto "Gestor de Stock"
+## Group 3 of the "Stock Manager" project
 
-## Sitio: 
+## Site: 
 
-## **Miembros:**
+## **Members:**
 
 <ul>
   <li>Osmar Andres Debegnach</li>
@@ -16,20 +16,20 @@
   <li>Ana Ochonga</li>
 
 <br>
-  El Gestor de Stock permite gestionar el almacenamiento de una pyme, apartir del registro tienes la posiilidad de registrar los empleados y gestionar las ventas de los productos de los empleados
+  The Stock Manager allows you to manage the storage of an SME, The Stock Manager allows you to manage the storage of an SME,
 	
 <br>
 	
-  El proyecto es un sitio/app que está siendo desarrollado por los siguientes miembros:
+  The project is a site/app that is being developed by the following members:
 Osmar Andres Debegnach, Erika Cologne, Ezequiel Dominguez, Julieta de los Ángeles Negrete, Escobar Brenda Giselle, Escobar Maximiliano Alexis y Ana Ochonga.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ***
 ***
-Especificación de requisitos de software 
+Specifying Software Requirements 
 
-Proyecto: Gestor de Stock 
+Project: Stock Manager 
 
 2021
 
@@ -38,238 +38,248 @@ Proyecto: Gestor de Stock
 
 
 
-*Verificado dep. Calidad.*
+*Verified Quality Department.*
 
 _Ficha del documento_
 
-Fecha: 2022
-Revisión: 20/06
-Autor: Osmar Andres Debegnach, Erika Cologne, Ezequiel Dominguez, Julieta de los Ángeles Negrete, Escobar Brenda Giselle, Escobar Maximiliano Alexis y Ana Ochonga.
+Date: 2022
+Revision: 20/06
+Authors: Osmar Andres Debegnach, Erika Cologne, Ezequiel Dominguez, Julieta de los Ángeles Negrete, Escobar Brenda Giselle, Escobar Maximiliano Alexis y Ana Ochonga.
 
 
 ***
 
 
-*Práctica Profesionalízante*
+*Professional Practice*
 
-_Especificación de requisitos de software_ 
+_Specifying Software Requirements_ 
 
-*Contenido*
+*Content*
 
-FICHA DEL DOCUMENTO
+DOCUMENT SHEET
 
 
-* CONTENIDO
+* CONTENT
 
-* 1 INTRODUCCIÓN
+* 1 INTRODUCTION
 
-* 1.1 Propósito
-* 1.2 Alcance
-* 1.3 Personal involucrado
-* 1.4 Definiciones, acrónimos y abreviaturas
-* 1.5 Referencias
-* 1.6 Resumen
+* 1.1 Purpose 
+* 1.2 Scope 
+* 1.3 Personnel involved 
+* 1.4 Definitions, acronyms and abbreviations 
+* 1.5 References 
+* 1.6 Summary
 
-* 2 DESCRIPCIÓN GENERAL
+* 2 OVERVIEW 
 
-* 2.1 Perspectiva del producto
-* 2.3 Características de los usuarios
-* 2.4 Restricciones 
+* 2.1 Product perspective 
+* 2.3 User characteristics 
+* 2.4 Restrictions
 
-*  REQUISITOS ESPECÍFICOS
+* SPECIFIC REQUIREMENTS 
 
-* 3.2 Product Backlog
-* 3.2.1 Product Backlog
-* 3.3 Sprints
-* 3.3.1 Sprint 1
+* 3.2 Product Backlog 
+* 3.2.1 Product Backlog 
+* 3.3 Sprints 
+* 3.3.1 Sprint 1 
 * 3.3.2 Sprint 2
 
 ***
 
-Práctica Profesionalizante 
-Especificación de requisitos de software 
+Professionalizing Practice 
+Specifying Software Requirements
 
 ***
 
- 📃 1 Introducción
+ 📃 1 Introduction 
+ 
+ This document is a Software Requirements Specification (ERS) for Digital Application for managing personal goals. This specification has been structured based on the guidelines given by the IEEE Best Practice standard for English ANSI/IEEE 830 Software Requirements Specifications, 1998.
 
-Este documento es una Especificación de Requisitos Software (ERS) para Aplicación Digital para administrar objetivos personales. Esta especificación se ha estructurado basándose en las directrices dadas por el estándar IEEE Práctica Recomendada para Especificaciones de Requisitos Software ANSI/IEEE 830, 1998.
-
-El proyecto presentado en el espacio curricular de Prácticas profesionalizantes el día 20 de Junio del año 2022, se introduce a la institución la idea de un proyecto de administración de objetivos personales.
-Se proyecta la presentación de una app/página que permita gestionar los tiempos personales del usuario y a su vez recompensar al usuario por el cumplimiento de los mismos.
-
-***
-
- 📃 1.1 Propósito 
-
-La posibilidad de brindarle al usuario un servicio de Gestionar Stock para los empleados y pymes que necesiten administrar las ventas por cada empleado.
+The project presented in the curricular space of Professionalizing Practices on June 20, 2022, the idea of a personal goal management project is introduced to the institution.
+The presentation of an app/page that allows to manage the personal times of the user is projected and in turn reward the user for the fulfillment of the same.
 
 ***
 
- 📃 1.2 Alcance 
+ 📃 1.1 Purpose
 
-El alcance del proyecto es abierto a cualquier pyme, grandes y pequeñas.
+The possibility of providing the user with a Manage Stock service for employees and SMEs that need to manage sales for each employee.
 
 ***
 
- 📃 1.3 Personal involucrado 
+ 📃 1.2 Scope 
+
+The scope of the project is open to any SME, large and small.
+
+***
+
+ 📃 1.3 
+Staff involved
 
 
-🔷Nombre: Osmar Andres Debegnach <br>
-🔷Rol: Líder Técnico <br>
-🔷Categoría Profesional: Desarrollador <br>
-🔷Responsabilidad: Desarrollador Back-End / lider <br>
-🔷Programador Front-end- Desarrolladora JavaScript <br>
-🔷Información de contacto : andresdebegnach@gmail.com <br>
+🔷Name: Osmar Andres Debegnach <br>
+🔷Role: Technical leader <br>
+🔷Professional category: Developer <br>
+🔷Responsibility: Desarrollador Back-End / leader <br>
+🔷Developer Front-end- JavaScript  Developer<br>
+🔷Contact information : andresdebegnach@gmail.com <br>
 
-🔷Nombre: Brenda Giselle Escobar <br>
-🔷Rol:  Project Manager <br>
-🔷Categoría Profesional: Desarrollador <br>
-🔷Responsabilidad: Co-Líder del proyecto <br>
-🔷Programador Back-end- Desarrolladora C# <br>
-🔷Información de contacto : brenda.giselle.escobar2014@gmail.com <br>
+🔷Name: Brenda Giselle Escobar <br>
+🔷Role:  Project Manager <br>
+🔷Professional category: Developer <br>
+🔷Responsibility: Co-Líder del proyecto <br>
+🔷Programador Back-end- C# Developer <br>
+🔷Contact information : brenda.giselle.escobar2014@gmail.com <br>
 
-🔷Nombre: Erika Cologne <br>
-🔷Rol: Desarrollador Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Front-End <br>
-🔷Responsabilidad: Asistente líder del proyecto <br>
-🔷Información de contacto : erikac.ec80@gmail.com <br>
+🔷Name: Erika Cologne <br>
+🔷Role: Full-Stack Developer <br>
+🔷Professional category: Developer Front-End <br>
+🔷Responsibility: Project Lead Assistant <br>
+🔷Contact information : erikac.ec80@gmail.com <br>
 
-🔷Nombre: Julieta de los Ángeles Negrete <br>
-🔷Rol: Desarrolladora Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Full-Stack, gestión y representación del equipo. <br>
-🔷Responsabilidad: Será la responsable de realizar tareas de relevamiento, análisis y diseño de los sistemas informáticos
-🔷Información de contacto : juliinegrete@gmail.com <br>
+🔷Name: Julieta de los Ángeles Negrete <br>
+🔷Role: Full-Stack Developer <br>
+🔷Professional category: Full-Stack Developer, gestión y representación del equipo. <br>
+🔷Contact information : juliinegrete@gmail.com <br>
 
-🔷Nombre: Escobar Maximiliano <br>
-🔷Rol: Desarrolladora Backe-end <br>
-🔷Categoría Profesional: Desarrollador Back-end, gestión y representación del equipo. <br>
-🔷Responsabilidad: Desarrollador <br>
-🔷Información de contacto : maxescobarubp@gmail.com <br>
+🔷Name: Escobar Maximiliano <br>
+🔷Role: Back-end Developer <br>
+🔷Professional category: Back-end Developer <br>
+🔷Contact information : maxescobarubp@gmail.com <br>
 
-🔷Nombre: Ezequiel Dominguez <br>
-🔷Rol: Desarrolladora Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Full-Stack, gestión y representación del equipo. <br>
-🔷Responsabilidad: Categoría Profesional Programador-Back-End <br>
-🔷Información de contacto : ezequieldominguez1@hotmail.com <br>
+🔷Name: Ezequiel Dominguez <br>
+🔷Role: Full-Stack Developer <br>
+🔷Professional category: Full-Stack Developer <br>
+🔷Contact information : ezequieldominguez1@hotmail.com <br>
 
-🔷Nombre: Ana Ochonga <br>
-🔷Rol: Desarrolladora Full-Stack <br>
-🔷Categoría Profesional: Desarrollador Full-Stack, gestión y representación del equipo. <br>
-🔷Responsabilidad: Categoría Profesional Programador-Full-Stack <br>
-🔷Información de contacto : dochongajvg@gmail.com <br>
+🔷Name: Ana Ochonga <br>
+🔷Role: Desarrolladora Full-Stack <br>
+🔷Professional category: Desarrollador Full-Stack <br>
+🔷Contact information : dochongajvg@gmail.com <br>
 
 ***
 
  📃 1.4 Definiciones, acrónimos y abreviaturas 
 
 
-✅Usuario : Persona que usará el sistema para gestionar procesos <br>
-✅SIS-I : Aplicación Digital para administrar objetivos personales <br>
-✅ERS : Especificación de Requisitos Software <br>
-✅RF : Requerimiento Funcional <br>
-✅RNF : Requerimiento No Funcional <br>
-✅FTP : Protocolo de Transferencia de Archivos <br>
-✅Moodle : Aula Virtual <br>
-✅SQL: Lenguaje de Consulta Estructurada (Structured Query Language), es un lenguaje de programación diseñado para actualizar, obtener, y calcular información en bases de datos relacionales. <br>
-✅HTML: El Lenguaje de Marcado de Hipertexto (HTML). <br>
-✅HTTP: "Hypertext Transfer Protocol", es el nombre de un protocolo el cual nos permite realizar una petición de datos y recursos, como pueden ser documentos HTML. <br>
-✅FRONT END: El frontend es la parte del desarrollo web que se dedica a la parte frontal de un sitio web, desde la estructura del sitio hasta los estilos como colores, fondos, tamaños hasta llegar a las animaciones y efectos. <br>
-✅BACK END: En otras palabras, el Back-End es la parte o rama del desarrollo web encargada de que toda la lógica de una página funcione. Consiste en el conjunto de acciones que pasan dentro de una web. <br>
-✅FULL STACK DEVELOPER: Full-stack developer, es un programador con un perfil técnico muy completo que conoce bien tanto lo referente a back-end como lo referente a front-end. <br>
-✅BACKLOG: El Product Backlog o pila de producto en un proyecto que sigue la metodología Scrum consiste en una lista con todos los requerimientos iniciales del producto que se va a desarrollar. <br>
-✅CSS: CSS (en inglés Cascading Style Sheets) es lo que se denomina lenguaje de hojas de estilo en cascada y se usa para estilizar elementos escritos en un lenguaje de marcado como HTML. <br>
-✅HOSTING: El hosting, o alojamiento web es un servicio donde podrás alojar todos los contenidos necesarios (textos, imágenes, bases de datos, emails…) para que tu web y correo sea accesible por cualquier usuario en internet en cualquier momento. <br>
-✅JAVASCRIPT: JavaScript es el único lenguaje de programación que funciona en los navegadores de forma nativa (lenguaje interpretado sin necesidad de compilación). Por tanto se utiliza como complemento de HTML y CSS para crear páginas webs. <br>
+✅SQL: Structured Query Language, is a programming language designed to update, obtain, and calculate information in relational databases.
+✅HTML: HyperText Markup Language (HTML).
+✅HTTP: Hypertext Transfer Protocol, is the name of a protocol which allows us to make a request for data and resources, such as HTML documents.
+✅Bootstrap: Bootstrap is a front-end framework used to develop web applications and mobile sites.
+✅Front-End, is the part of web development that is dedicated to the visual part of a web site, to styles like colors, backgrounds, sizes until animations and effects.
+✅Back-End, is the part or branch in charge of web development of the all logic page works.Consist in joint development action to happen inside the web.
+✅Full-stack developer, is a programmer with a very complete profile technical that knows good back-end like also front-end.
+✅The Product Backlog in the project follows the methodology Scrum, consist in the task list with all initial requirements of the product that will develop.
+✅CSS (en inglés Cascading Style Sheets) is called language of cascading Style Sheets and his use is create style´s elements  written in the markup languages like HTML
+Web hosting is a service where you can store contents (like images, data, text database, emails) for that your web and emails can be accessed by any internet user at any moment.
+✅JavaScript is the unique programming language that works native in the web browsers (like interpreted language without needing to compile). Therefore this complements HTML and Javascript for creating webpages.
+✅Angular is a framework open source developed by Google for easily creating and programming web apps on one web page, known as SPA (Single Page Application).
+✅GitHub: Is a service based in the cloud that hosts a version control system (VCS) called GIt. This permits the developers to collaborate and perform changes in the shared projects, like also to maintain detailed progress.
+✅UML:The Unified Modeling Language (UML) was created to forge a common model of language, this is semantic and sentiment rich for architecture, design and the complex software system implementation, as much in structure as behavior. UML has applications beyond software development for example. In the factory process flow.   
+✅Visual Code: Visual Studio Code, is a source code editor developed for Microsoft
+
 
 
 ***
  
- 📃 1.5 Referencias
+ 📃 1.5 References
 
-Título del Documento 
-Referencia
+Document title
+Reference
 Standard IEEE 830 - 1998 IEEE
 
 ***
 
 
-*Práctica Profesionalizante*
+*Professional Practice*
 
-_Especificación de requisitos de software_
+_Specification of software requirements_
 
 ***
 
- 📃 1.6 Resumen 
+ 📃 1.6 Summary
 
-Este documento es una Especificación de Requisitos Software (ERS) para Gestor Stock para administrar objetivos personales. Esta especificación se ha estructurado basándose en las directrices dadas por el estándar IEEE Práctica Recomendada para Especificaciones de Requisitos Software ANSI/IEEE 830, 1998.
+This document is a Software Requirements Specification (ERS) for Stock Manager to manage personal goals. This specification has been structured based on the guidelines given by the IEEE Recommended Practice for Specifications of Software Requirements ANSI/IEEE 830, 1998 standard.
 <br>
 
 ***
-
- 📃 2 Descripción general 
-
-***
-
- 📃 2.1 Perspectiva del producto 
-
-
-El Gestor de Stock permite la administracion de ventas de cada empleado.
+📃 2 Overview
 
 ***
 
- 📃 2.2 Características de los usuarios 
+ 📃 2.1 Product perspective
 
 
-Tipo de usuario : Administrador <br>
-Formación : Manejo de herramientas informáticas <br>
-Actividades : Control y manejo del sistema en general <br>
+The Stock Manager allows the administration of sales of each employee.
+
+***
+
+ 📃 2.2 User characteristics
+
+
+User type : Administrator <br>
+Training : Management of computer tools <br>
+Activities: Control and management of the system in general <br>
 
 
 
-Tipo de usuario : Visitante <br>
-Formación : Manejo de entornos web <br>
-Actividades : Observa e indaga información  <br>
+User type : Visitor <br>
+Training : Management of web environments <br>
+Activities: Observe and investigate information <br>
 
 
 ***
 
- 📃 2.3 Restricciones 
+ 📃 2.3 Restrictions
  
-Interfaz desarrollada para ser usada con internet a través de un navegador web con login y registro por cada usuario. <br>
-Lenguajes: HTML, CSS, JavaScript, SQL, Angular. <br>
-Recursos para crear el sitio: GitHub, Visual Studio Code. <br>
+Interface developed to be used with the internet through a web browser with login and registration for each user. <br>
+Languages: HTML, CSS, JavaScript, SQL, Angular. <br>
+Resources for creating the site: GitHub, Visual Studio Code. <br>
 
 
-***
-
- 📃 3. Requisitos específicos <br>
-	
-
-✏️ Product Backlog 
-
-*
-*
-*
-
-<br>
-
-***
-
- 📃 Sprints
-
-Práctica Profesionalízante 
-
-Especificación de requisitos de software 
-
-
-
-***
-
-✏️ N° de sprint : 0 <br>
-	
- 
-✏️ Sprint Backlog:  <br>
-
+📃 3. Specific requirements
 
 *https://docs.google.com/document/d/1fXyYKkt1AlqCC7e_ym8ttpuUlEp5y-aYPlNThL0zJmQ/edit
+
+***
+
+📃 Sprint
+
+Professionalizing Practice
+
+***
+
+Software Requirements Specification
+
+***
+
+sprints
+
+***
+✏️ Number of sprints: 0
+
+✏️ Sprint Backlog:
+
+*Migration of the index to SPA of Angular
+*Creation of class diagram for OOP
+*DER and Relational Model of the Database
+*✨ **Start of project** ✨
+
+***
+
+✏️ Milestones:
+
+*US#01 - Project Database
+*US#02 - Class diagram for OOP
+*US#03 - Main page made with Angular
+Retro: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+
+***
+
+✏️ N° of sprint : 1 (On hold)
+
+✏️ Sprint Backlog:
+
+*
+✏️ Milestones:
+
+*
