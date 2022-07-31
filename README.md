@@ -127,45 +127,38 @@ El alcance del proyecto es abierto a cualquier pyme, grandes y pequeñas.
 🔷Nombre: Osmar Andres Debegnach <br>
 🔷Rol: Líder Técnico <br>
 🔷Categoría Profesional: Desarrollador especializado en Front-End <br>
-🔷Responsabilidad: Desarrollador Back-End / lider <br>
 🔷Programador Front-end- Desarrollador JavaScript <br>
 🔷Información de contacto : andresdebegnach@gmail.com <br>
 
 🔷Nombre: Brenda Giselle Escobar <br>
 🔷Rol:  Project Manager <br>
 🔷Categoría Profesional: Desarrolladora back-end especializada en C# <br>
-🔷Responsabilidad: Co-Líder del proyecto <br>
 🔷Programador Back-end- Desarrolladora C# <br>
 🔷Información de contacto : brenda.giselle.escobar2014@gmail.com <br>
 
 🔷Nombre: Erika Cologne <br>
 🔷Rol: Desarrollador Full-Stack <br>
 🔷Categoría Profesional: Desarrolladora Front-End <br>
-🔷Responsabilidad: Asistente líder del proyecto <br>
 🔷Información de contacto : erikac.ec80@gmail.com <br>
 
 🔷Nombre: Julieta de los Ángeles Negrete <br>
 🔷Rol: Desarrolladora Full-Stack <br>
 🔷Categoría Profesional: Desarrolladora Full-Stack <br>
-🔷Responsabilidad: Será la responsable de realizar tareas de relevamiento, análisis y diseño de los sistemas informáticos <br>
 🔷Información de contacto : juliinegrete@gmail.com <br>
 
 🔷Nombre: Escobar Maximiliano <br>
 🔷Rol: Desarrollador Back-end <br>
 🔷Categoría Profesional: Desarrollador Back-end, especializado en Java. <br>
-🔷Responsabilidad: Desarrollador <br>
 🔷Información de contacto : maxescobarubp@gmail.com <br>
 
 🔷Nombre: Ezequiel Dominguez <br>
 🔷Rol: Desarrollador Full-Stack <br>
 🔷Categoría Profesional: Desarrollador Full-Stack y Back-End. <br>
-🔷Responsabilidad: Categoría Profesional Programador-Back-End <br>
 🔷Información de contacto : ezequieldominguez1@hotmail.com <br>
 
 🔷Nombre: Ana Ochonga <br>
 🔷Rol: Desarrolladora Full-Stack <br>
 🔷Categoría Profesional: Desarrolladora Full-Stack y manejo de Base de Datos. <br>
-🔷Responsabilidad: Categoría Profesional Programador-Full-Stack <br>
 🔷Información de contacto : dochongajvg@gmail.com <br>
 
 ***
