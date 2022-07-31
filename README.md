@@ -25,7 +25,7 @@ ACLARACION: El sitio realizado en Angular se levanta en red local, por lo que se
   <li>Ana Ochonga</li>
 
 <br>
-  El Gestor de Stock permite gestionar el almacenamiento de una pyme, apartir del registro tienes la posiilidad de registrar los empleados y gestionar las ventas de los productos de los empleados
+  El Gestor de Stock permite gestionar el almacenamiento de una pyme, apartir del registro tienes la posibilidad de registrar los empleados y gestionar las ventas de los productos de los empleados
 	
 <br>
 	
@@ -147,7 +147,7 @@ El alcance del proyecto es abierto a cualquier pyme, grandes y pequeñas.
 🔷Nombre: Julieta de los Ángeles Negrete <br>
 🔷Rol: Desarrolladora Full-Stack <br>
 🔷Categoría Profesional: Desarrolladora Full-Stack <br>
-🔷Responsabilidad: Será la responsable de realizar tareas de relevamiento, análisis y diseño de los sistemas informáticos
+🔷Responsabilidad: Será la responsable de realizar tareas de relevamiento, análisis y diseño de los sistemas informáticos <br>
 🔷Información de contacto : juliinegrete@gmail.com <br>
 
 🔷Nombre: Escobar Maximiliano <br>
@@ -291,6 +291,11 @@ Sprints
   	*US#03 - Pagina principal realizada con Angular
 
 *********************************************************************************************
+
+Retro: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+
+*********************************************************************************************
+
 
 ✏️ N° de sprint : 1 (En espera) <br>
 	
