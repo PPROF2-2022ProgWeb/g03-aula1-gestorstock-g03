@@ -270,36 +270,202 @@ Sprints
 ✏️ N° de sprint : 0 <br>
 	
  
+ Sprint 0
+	Fecha Inicio = 26/05/2022 - Fecha de Fin = 13/06/2022
+
+Se les solicitará un proyecto aplicando todos los contenidos dados en los módulos de la cursada (HTML5, CSS3, BOOTSTRAP, JAVASCRIPT), pueden recurrir a la web de W3School para extraer recursos necesarios.
+
+Al proyecto desarrollado en 2021, la “consultora ISPC”, solicita en esta oportunidad, incorporar un módulo de e-commerce para comercializar sus productos y/o servicios online
+
+
+✏️ Sprint Backlog:  <br>
+
+*Definir Scrum Master inicial (No se registró en planilla) y registrarse todos dentro del nuevo repositorio.
+	*Importar el repositorio anterior al nuevo brindado en el foro de cada grupo.
+	*Revisar documentación IEEE830 si está completa y retomar desde allí para esta nueva etapa seguir documentando los avances.
+	*Revisar la estructura web Semántica y responsive (RWD)
+
+Pasos a seguir de acuerdo a las Fases del Ciclo de Vida de un Software:
+
+ANÁLISIS
+
+	*Definir requerimientos para el nuevo módulo a desarrollar e-commerce (colocarlos en el Product Backlog del Project), a su vez revisar si han cumplimentado todos los requerimientos previos, realizando mejoras del mismo
+	*Plantear Historias de Usuarios y Tareas dependientes de las US para incorporarlas en el repositorio remoto gitHub. (Issues y Milestones) - Tener en cuenta la redacción adecuada para las US y nomenclatura, ej “#US01 Como usuario quiero ingresar al carrito para poder comprar”
+	*Definir tareas dentro de las Historias de Usuario (GITHUB) 
+
+*********************************************************************************************
+
+Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+
+*********************************************************************************************
+
+
+✏️ N° de sprint : 1  <br>
+	
+Sprint 1
+	Fecha Inicio = 27/06/2022 - Fecha de Fin = 08/08/2022*
+	se considera el receso invernal (09/07/2022 al 24/07/2022)
+
+IMPLEMENTACIÓN FRONTEND
+	
+	*Convertir los archivos .html del proyecto previo, en una SPA de Angular con módulos (Layouts y Pages por ejemplo) con sus components correspondientes. (HOME, REGISTRO, LOGIN, DASHBOARD)
+
+	*Crear módulos y componentes para la tienda virtual o ecommerce. (PRODUCTO o SERVICIOS, PRODUCTO INDIVIDUAL, COMPRA). Incorporar la navegabilidad de la aplicación mediante Routing con Angular.
+
+	*Subirla al repo grupal, con GIT , en una branch por desarrollador para que cada uno tenga una copia. Luego crear una branch feature 2 , para realizar nuestros cambios que no se encuentran aún en condiciones de incorporarse a la branch develop 3.
+
+ 
 ✏️ Sprint Backlog:  <br>
 
 	*Migración del index a SPA de Angular 
-	*Creación de Diagrama de clases para POO
+
+✏️ Milestones: <br>
+	
+  	*US#03 - Pagina principal realizada con Angular
+
+*********************************************************************************************
+
+Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+
+*********************************************************************************************
+
+
+*********************************************************************************************
+	
+✏️ N° de sprint : 2  <br>
+	
+Sprint 2
+	Fecha Inicio = 15/08/2022 - Fecha de Fin = 29/08/2022
+
+DISEÑO DE BASE DE DATOS
+
+	*Revisar la base de datos previa en MySQL si es funcional, e incorporar nuevas tablas necesarias para el funcionamiento del módulo e-commerce. (Ver el Modelo Relacional publicado en el libro Desafío E-commerce - Proyecto de trabajo Integrador
+	
+	*Crear su propio DER y Modelo relacional para documentar las tablas en la DB. Crear un Diagrama de Clases y Casos de Uso para facilitar el modelado en POO. Script sql de la base de datos actualizada con las tablas nuevas.
+
+	*Actualizar el repositorio grupal, creando una carpeta dentro de la branch
+	
+Diagrama de Entidad-Relación
+
+	*https://www.lucidchart.com/pages/es/que-es-un-diagrama-entidad-relacion
+
+Material de referencia Diagrama Caso de Uso
+
+	*https://creately.com/blog/es/diagramas/tutorial-diagrama-caso-de-uso/
+ 
+✏️ Sprint Backlog:  <br>
+
+	
 	*DER y Modelo relacional de la Base de datos
 	*✨ **Comienzo de proyecto** ✨
 
 ✏️ Milestones: <br>
 	
  	*US#01 - Base de datos del proyecto
-  	*US#02 - Diagrama de clases para POO
-  	*US#03 - Pagina principal realizada con Angular
 
 *********************************************************************************************
 
-Retro: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
 
 *********************************************************************************************
 
-
-✏️ N° de sprint : 1 (En espera) <br>
 	
+*********************************************************************************************
+	
+✏️ N° de sprint : 3  <br>
+	
+Sprint 3
+
+	Fecha Inicio = 29/08/2022 - Fecha de Fin = 19/09/2022
+
+Requerimientos en Incremento al producto:
+
+	*Definición del backend y funcionalidad en los módulos
+	*Registro de usuario
+	*Login de usuario
+
+	*Tablero de control o Dashboard con módulos planteados
+	*Los formularios deberán tener estilos semánticos que provee Bootstrap por ejemplo:
+	<span class="border border-success"></span>
+	<span class="border border-danger"></span>
+
+https://getbootstrap.com/docs/5.0/utilities/borders/
+
+	*Validaciones en TypeScript . Ejemplo: campos requeridos, formato de datos (mail, longitud cadena, numérico). Emplear los input type adecuados en cada campo (type=number, type=email, type=date, etc.
+
+https://developer.mozilla.org/es/docs/Web/HTML/Element/input
  
 ✏️ Sprint Backlog:  <br>
 
+	
 	*
 
 ✏️ Milestones: <br>
-
 	
  	*
+
+*********************************************************************************************
+
+Retro Sprint 3: https://ideaboardz.com/for/Sprint%203/4602361
+
+*********************************************************************************************
+
+*********************************************************************************************
 	
+✏️ N° de sprint : 4  <br>
+	
+Sprint 4
+	Fecha Inicio = 26/09/2022 - Fecha de Fin = 17/10/2022
+
+Requerimientos
+
+	*Incremento al producto (front + back integrado)
+	*Validaciones con Angular: servicios - inyección de dependencias.
+	*Tablero de control (Dashboard) funcional
+	*Token
+ 
+✏️ Sprint Backlog:  <br>
+
+	
+	*
+
+✏️ Milestones: <br>
+	
+ 	*
+
+*********************************************************************************************
+
+Retro Sprint 4: https://ideaboardz.com/for/Sprint%204/4602362
+
+*********************************************************************************************
+
+*********************************************************************************************
+	
+✏️ N° de sprint : 5  <br>
+	
+Sprint 5
+
+	Fecha Inicio = 24/10/2022 - Fecha de Fin = 14/11/2022
+
+Funcionalidades completas front/back
+
+	*Circuito completo de catálogo, selección, búsqueda, registro y compra (incluir todos los requerimientos solicitados al inicio)
+	*Actualizar documentación IEEE830 - tablero Kanban (project) y Wiki.
+	*Sitio publicado en Servidor Remoto
+	*Actualizado todo el proyecto en GitHub como respaldo
+	*Demo final en video con participación de todo el equipo
+ 
+✏️ Sprint Backlog:  <br>
+
+	
+	*
+
+✏️ Milestones: <br>
+	
+ 	*
+
+*********************************************************************************************
+
+Retro Sprint 5: https://ideaboardz.com/for/Sprint%205/4602364
+
 *********************************************************************************************
