@@ -321,7 +321,7 @@ IMPLEMENTACIÓN FRONTEND
 
 ✏️ Milestones: <br>
 	
-  	*US#03 - Pagina principal realizada con Angular
+  	*US#01 - Pagina principal realizada con Angular
 
 *********************************************************************************************
 
@@ -357,11 +357,12 @@ Material de referencia Diagrama Caso de Uso
 
 	
 	*DER y Modelo relacional de la Base de datos
-	*✨ **Comienzo de proyecto** ✨
+	*Creación de Diagrama de clases para POO 
 
 ✏️ Milestones: <br>
 	
- 	*US#01 - Base de datos del proyecto
+ 	*US#02 - Base de datos del proyecto
+	*US#03 - Diagrama de clases para POO
 
 *********************************************************************************************
 
