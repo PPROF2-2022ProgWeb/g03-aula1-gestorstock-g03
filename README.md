@@ -398,12 +398,11 @@ https://developer.mozilla.org/es/docs/Web/HTML/Element/input
  
 ✏️ Sprint Backlog:  <br>
 
-	
-	*
+	*Comenzar el Backend y la funcionalidad de los módulos
 
 ✏️ Milestones: <br>
 	
- 	*
+ 	*US#04- Definición del backend y funcionalidad en los módulos
 
 *********************************************************************************************
 
