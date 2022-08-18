@@ -1,0 +1,15 @@
+<div class="contenedor-dashboard">
+  <aside id="menu" class="menu">menu</aside>
+  <div id="content" class="content">
+    <header class="cabecera">
+      <button id="toggler" class="toggle" (click)="toggleMenu()">
+        <i class="gs-icon icono-menu"></i>
+      </button>
+      <h1>GestorStock</h1>
+      <span class="divisor"></span>
+    </header>
+    <main class="dashboard-body">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
