@@ -8,13 +8,14 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
-import { VentasComponent } from './components/dashboar/ventas/ventas.component';
-import { AdministracionComponent } from './components/dashboar/administracion/administracion.component';
-import { StockComponent } from './components/dashboar/stock/stock.component';
-import { CajaComponent } from './components/dashboar/caja/caja.component';
+import { VentasComponent } from './components/dashboard/ventas/ventas.component';
+import { AdministracionComponent } from './components/dashboard/administracion/administracion.component';
+import { StockComponent } from './components/dashboard/stock/stock.component';
+import { CajaComponent } from './components/dashboard/caja/caja.component';
 
 const routes: Routes = [
   {path: '', component: HomeLayoutComponent, children: [
+    {path: '', component: HomeComponent},
     {path: 'login', component: LoginComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'quienes-somos', component: QuienesSomosComponent},
