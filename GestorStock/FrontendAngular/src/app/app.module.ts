@@ -8,16 +8,16 @@ import { InputComponent } from './components/form-controls/input/input.component
 import { TextareaComponent } from './components/form-controls/textarea/textarea.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
-import { VentasComponent } from './components/dashboard/ventas/ventas.component';
-import { StockComponent } from './components/dashboard/stock/stock.component';
-import { CajaComponent } from './components/dashboard/caja/caja.component';
-import { AdministracionComponent } from './components/dashboard/administracion/administracion.component';
 import { HomeComponent } from './pages/home/home.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { TiendaComponent } from './pages/tienda/tienda.component';
 import { NoEncontradoComponent } from './pages/no-encontrado/no-encontrado.component';
+import { AdministracionComponent } from './pages/dashboard/administracion/administracion.component';
+import { CajaComponent } from './pages/dashboard/caja/caja.component';
+import { StockComponent } from './pages/dashboard/stock/stock.component';
+import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
 
 @NgModule({
   declarations: [
