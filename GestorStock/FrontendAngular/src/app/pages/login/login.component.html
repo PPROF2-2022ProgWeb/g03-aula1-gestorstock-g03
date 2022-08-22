@@ -1,1 +1,49 @@
-<p>login works!</p>
+<main class="mb-2">
+    <!-- modifique container como contenedor ("deje container como clase de bootstrap") para que se vuelva responsive-design asi no hay problema -->
+    <div class="col-lg-3 container-lg contenedor pt-3">
+        <h3 class="title">Login</h3>
+        <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
+        <form action="gestor.html" method="post" class="login-form container-fluid">
+            <span>Email</span>
+            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
+            <div class="form-group input-container">
+                <i class="icono-email"></i>
+                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap -->
+                <input class="form-control" type="email" placeholder="Ingrese su correo electrónico">
+            </div>
+
+            <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
+            <span>Contraseña</span>
+            <div class="form-group input-container">
+                <i class="icono-key"></i>
+                <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
+                <input class="form-control" type="password" placeholder="Ingrese su contraseña">
+            </div>
+
+            <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
+            <span>Rol</span>
+            <div class="form-group input-container">
+                <i class="icono-adn"></i>
+                <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
+                <select class="form-control" name="Rol" required>
+                    <option value="" selected disabled>Seleccione un rol</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Repocitor">Repositor</option>
+                    <option value="Cajero">Cajero</option>
+                </select>
+            </div>
+            <div class="link-container">
+                <button class="formlink" type="button" onclick="toggleMenu('dropReg')">¿Todavia no esta registrado?
+                    Registrese</button>
+                <div id="dropReg" class="drop-menu hidden">
+                    <a class="dropdown-item" href="registro-usuario.html">Para mí</a>
+                    <a class="dropdown-item" href="registro-empresa.html">Para empresa</a>
+                </div>
+            </div>
+            <div class="actions">
+                <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
+                <button class="btn btn-primary">INGRESAR</button>
+            </div>
+        </form>
+    </div>
+</main>
