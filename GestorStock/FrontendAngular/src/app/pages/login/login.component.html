@@ -54,7 +54,7 @@
             </div>
             <div class="actions">
                 <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
-                <button class="btn btn-primary">INGRESAR</button>
+                <button *ngIf="Mail.value && Password.value" (click)="login()" btn btn-primary>INGRESAR</button>
             </div>
         </form>
     </div>
