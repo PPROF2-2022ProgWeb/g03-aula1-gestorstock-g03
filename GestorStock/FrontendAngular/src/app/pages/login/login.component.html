@@ -3,13 +3,19 @@
     <div class="col-lg-3 container-lg contenedor pt-3">
         <h3 class="title">Login</h3>
         <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
-        <form action="gestor.html" method="post" class="login-form container-fluid">
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" action="gestor.html" method="post" class="login-form container-fluid">
             <span>Email</span>
             <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
             <div class="form-group input-container">
                 <i class="icono-email"></i>
                 <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap -->
-                <input class="form-control" type="email" placeholder="Ingrese su correo electrónico">
+                <input type="email" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid" placeholder="Ingrese su correo electrónico" id="email">
+            </div>
+            <div *ngIf="Mail?.errors && Mail?.touched">
+                <p *ngIf="Mail?.hasError('required')" class="text-danger">El mail es requerido
+                </p>
+                <p *ngIf="Mail?.hasError('email')" class="text-danger">El formato del email debe ser valido
+                </p>
             </div>
 
             <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
@@ -17,7 +23,13 @@
             <div class="form-group input-container">
                 <i class="icono-key"></i>
                 <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
-                <input class="form-control" type="password" placeholder="Ingrese su contraseña">
+                <input type="password" [formControl]="password" class="form-control" formControlName="password" [class.border-danger]="PasswordValid" placeholder="Ingrese su contraseña" id="password">
+            </div>
+            <div *ngIf="Password?.errors && Password?.touched">
+                <p *ngIf="Password?.hasError('required')" class="text-danger">El password es requerido
+                </p>
+                <p *ngIf="Password?.errors?.minlength" class="text-danger">El password debe ser de 6 o más caracteres
+                </p>
             </div>
 
             <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->

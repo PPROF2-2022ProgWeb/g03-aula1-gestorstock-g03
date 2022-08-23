@@ -18,6 +18,7 @@ import { AdministracionComponent } from './pages/dashboard/administracion/admini
 import { CajaComponent } from './pages/dashboard/caja/caja.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
