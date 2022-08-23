@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   password = new FormControl ('',[],[]);
   form: any;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder,
+              private router: Router) { 
     this.form = this.formBuilder.group({
       password:['',[Validators.required, Validators.minLength(6)]],
       mail:['',[Validators.required, Validators.email]]
@@ -44,6 +46,11 @@ export class LoginComponent implements OnInit {
     } else{
       this.form.markAllAsTouched();
     }
+  }
+
+  login(){
+    this.form.valid;
+    this.router.navigate(['dashboard']);
   }
  
 
