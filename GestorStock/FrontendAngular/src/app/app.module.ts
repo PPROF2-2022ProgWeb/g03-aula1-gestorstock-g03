@@ -18,6 +18,8 @@ import { AdministracionComponent } from './pages/dashboard/administracion/admini
 import { CajaComponent } from './pages/dashboard/caja/caja.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
+import { NavlinkComponent } from './components/navlink/navlink.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { SvgModule } from './components/svg/svg.module';
 
 @NgModule({
@@ -38,11 +40,14 @@ import { SvgModule } from './components/svg/svg.module';
     VentasComponent,
     StockComponent,
     CajaComponent,
-    AdministracionComponent
+    AdministracionComponent,
+    NavlinkComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SvgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
