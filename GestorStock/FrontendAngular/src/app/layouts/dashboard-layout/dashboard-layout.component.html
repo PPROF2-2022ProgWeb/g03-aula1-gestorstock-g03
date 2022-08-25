@@ -1,6 +1,8 @@
 <div class="contenedor-dashboard">
-  <aside id="menu" class="menu">menu</aside>
-  <div id="content" class="content">
+  <aside id="menu" class="menu" [ngClass]="{'active': isMenuActive}">
+    <app-menu></app-menu>
+  </aside>
+  <div id="content" class="content" [ngClass]="{'active': isMenuActive}">
     <header class="cabecera">
       <button id="toggler" class="toggle" (click)="toggleMenu()">
         <i class="gs-icon icono-menu"></i>

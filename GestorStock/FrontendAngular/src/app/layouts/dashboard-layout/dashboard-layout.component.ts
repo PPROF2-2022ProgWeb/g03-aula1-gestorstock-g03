@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-layout',
   templateUrl: './dashboard-layout.component.html',
-  styleUrls: ['./dashboard-layout.component.css']
+  styleUrls: ['./dashboard-layout.component.css'],
 })
 export class DashboardLayoutComponent implements OnInit {
+  public isMenuActive: boolean = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private router: Router) {
+    router.events.subscribe(() => {
+      if (window.innerWidth < 768) this.isMenuActive = false;
+    });
   }
 
+  ngOnInit(): void {}
+
   toggleMenu() {
-    let menu = document.getElementById('menu');
-    let content = document.getElementById('content');
-    let docOverflow = document.body.style.overflow;
-    if(menu && content){
-      menu.classList.toggle('active');
-      content.classList.toggle('active');
-      document.body.style.overflow = docOverflow === 'hidden' ? '' : 'hidden';
-    }
+    this.isMenuActive = !this.isMenuActive;
   }
 }
