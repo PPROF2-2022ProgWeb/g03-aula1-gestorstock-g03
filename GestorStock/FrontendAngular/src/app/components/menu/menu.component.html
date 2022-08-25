@@ -1,4 +1,4 @@
-<div>
+<div class="menu-container">
   <div class="logo-container">
     <svg-logo width="3rem"></svg-logo>
     <h4 class="titulo">Gestor de Stock</h4>
@@ -8,5 +8,21 @@
     <app-navlink to="ventas" [icono]="iconos.VENTAS">Ventas</app-navlink>
     <app-navlink to="stock" [icono]="iconos.STOCK">Stock</app-navlink>
     <app-navlink to="caja" [icono]="iconos.CAJA">Caja</app-navlink>
+    <app-navlink to="/dashboard" [icono]="iconos.ADMINISTRACION">Administración</app-navlink>
   </nav>
+  
+  <div class="action-container">
+    <div class="action">
+      <app-button>
+        <app-icon [icon]="iconos.CAMBIO"></app-icon>
+        Cambiar vendedor
+      </app-button>
+    </div>
+    <div class="action">
+      <app-button (onClick)="closeSesion();">
+        <app-icon [icon]="iconos.SALIR"></app-icon>
+        Cerrar sesion
+      </app-button>
+    </div>
+  </div>
 </div>

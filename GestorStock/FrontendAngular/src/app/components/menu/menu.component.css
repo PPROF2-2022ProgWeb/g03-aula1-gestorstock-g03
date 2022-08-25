@@ -1,4 +1,4 @@
-nav {
+nav, .action-container {
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
@@ -6,23 +6,60 @@ nav {
   gap: 10px;
 }
 
+.action-container {
+  margin-top: auto;
+}
+
 svg-logo {
   margin-right: .7rem;
+}
+
+.menu-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   padding: .5rem;
+  width: 100%;
+  overflow: hidden;
   color: var(--color-fuente-primario);
 }
 
 .logo-container h4 {
   white-space: nowrap;
+  margin-top: 10px;
+}
+
+app-button {
+  white-space: nowrap;
+}
+
+app-button app-icon {
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.action {
+  position: relative;
+}
+
+.dialogo{
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: 1000;
 }
 
 @media screen and (min-width: 768px) {
-  nav {
+  nav, .action-container {
     padding: 2rem 0 2rem .5rem;
+  }
+
+  .action-container {
+    padding-right: .5rem;
   }
 }

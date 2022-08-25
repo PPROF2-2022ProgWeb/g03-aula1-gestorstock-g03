@@ -1,0 +1,22 @@
+button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem .8rem;
+  color: var(--color-fuente-primario);
+  background: none;
+  border-radius: 3rem;
+  border: none;
+  text-decoration: none;
+  width: 100%;
+  line-height: 1;
+}
+
+button:hover {
+  color: var(--color-fuente-secundario);
+  background-color: var(--blanco);
+}
+
+button:active {
+  transform: scale(.95);
+}

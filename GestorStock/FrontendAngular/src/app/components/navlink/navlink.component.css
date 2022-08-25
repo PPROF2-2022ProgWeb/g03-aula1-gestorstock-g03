@@ -28,7 +28,7 @@ a::before {
   background-color: transparent;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: -1;
   box-shadow: .5rem -0.5rem 0 0 var(--blanco);
   transition: all 0s;
 }
@@ -42,7 +42,7 @@ a::after {
   background-color: transparent;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: -1;
   box-shadow: .5rem 0.5rem 0 0 var(--blanco);
   transition: all 0s;
 }

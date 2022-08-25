@@ -21,6 +21,8 @@ import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
 import { NavlinkComponent } from './components/navlink/navlink.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SvgModule } from './components/svg/svg.module';
+import { IconComponent } from './components/icon/icon.component';
+import { ButtonComponent } from './components/utils/button/button.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { SvgModule } from './components/svg/svg.module';
     AdministracionComponent,
     NavlinkComponent,
     MenuComponent,
+    IconComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
