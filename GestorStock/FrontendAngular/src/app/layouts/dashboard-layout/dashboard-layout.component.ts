@@ -9,14 +9,29 @@ import { Router } from '@angular/router';
 export class DashboardLayoutComponent implements OnInit {
   public isMenuActive: boolean = false;
   public scrollActive: boolean = false;
-
+  public title: string = '';
   public scrollTimeout: any;
 
   @ViewChild('main') main:ElementRef;
 
   constructor(private router: Router) {
+    if (window.innerWidth < 768) this.isMenuActive = false;
     router.events.subscribe(() => {
-      if (window.innerWidth < 768) this.isMenuActive = false;
+       let r = router.url.split('/')[2];
+       switch (r) {
+        case 'ventas':
+          this.title = 'Ventas';
+          break;
+        case 'stock':
+          this.title = 'Stock';
+          break;
+        case 'caja':
+          this.title = 'Caja';
+          break;
+        default:
+          this.title = 'Administración';
+          break;
+       }
     });
   }
 
@@ -34,7 +49,6 @@ export class DashboardLayoutComponent implements OnInit {
         this.scrollActive = false;
       }, 2000)
     });
-    // this.main.addEventListener('scroll', this.scrollActive)
   }
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive;
