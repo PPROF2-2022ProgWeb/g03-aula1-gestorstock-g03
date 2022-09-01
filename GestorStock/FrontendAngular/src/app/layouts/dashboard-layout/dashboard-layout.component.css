@@ -35,7 +35,11 @@
 }
 
 .dashboard-body {
-  margin: 8px;
+  margin: 8px 0px;
+  overflow-y: auto;
+  max-height: calc(100vh - 5rem);
+  padding: 16px;
+  margin-right: 2px;
 }
 
 .menu, .content {
@@ -75,6 +79,26 @@
   margin: 0;
 }
 
+main::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+  position: absolute;
+  left: 5px;
+}
+
+main.scroll-active {
+  padding-right: 6px;
+}
+
+main.scroll-active::-webkit-scrollbar {
+  display: block;
+}
+
+/* Handle */
+main::-webkit-scrollbar-thumb {
+  background: var(--color-primario);
+  border-radius: 10px;
+}
 
 @media screen and (min-width: 768px) {
   .menu {
@@ -95,7 +119,4 @@
     transition: width 0.6s cubic-bezier(.32,1.01,.73,1);
   }
 
-  header.cabecera h1, header.cabecera .divisor {
-    display: none;
-  }
 }
