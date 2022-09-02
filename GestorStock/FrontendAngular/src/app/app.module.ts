@@ -18,6 +18,11 @@ import { AdministracionComponent } from './pages/dashboard/administracion/admini
 import { CajaComponent } from './pages/dashboard/caja/caja.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
+import { NavlinkComponent } from './components/navlink/navlink.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { SvgModule } from './components/svg/svg.module';
+import { IconComponent } from './components/icon/icon.component';
+import { ButtonComponent } from './components/utils/button/button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './servicios/login.service';
 
@@ -39,11 +44,16 @@ import { LoginService } from './servicios/login.service';
     VentasComponent,
     StockComponent,
     CajaComponent,
-    AdministracionComponent
+    AdministracionComponent,
+    NavlinkComponent,
+    MenuComponent,
+    IconComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SvgModule,
     ReactiveFormsModule,
   ],
   providers: [LoginService],
