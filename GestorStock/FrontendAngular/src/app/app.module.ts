@@ -19,6 +19,7 @@ import { CajaComponent } from './pages/dashboard/caja/caja.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './servicios/login.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
