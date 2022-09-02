@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/servicios/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   form: any;
 
   constructor(private formBuilder: FormBuilder,
+              private loginService: LoginService,
               private router: Router) { 
     this.form = this.formBuilder.group({
       password:['',[Validators.required, Validators.minLength(6)]],
@@ -39,19 +41,26 @@ export class LoginComponent implements OnInit {
     return this.Mail?.touched && !this.Mail?.valid;
   }
 
-  onEnviar(event: Event){
-    event.preventDefault;
-    if(this.form.valid){
-      alert("Enviar al servidor");      
-    } else{
-      this.form.markAllAsTouched();
-    }
-  }
+  // onEnviar(event: Event){
+  //   event.preventDefault;
+  //   if(this.form.valid){
+  //     alert("Enviar al servidor");      
+  //   } else{
+  //     this.form.markAllAsTouched();
+  //   }
+  // }
 
   login(){
-    this.form.valid;
-    this.router.navigate(['dashboard']);
+    this.loginService.login(this.mail, this.password)
+    .then(() => {
+      this.router.navigate(['dashboard']);
+    })
+    .catch(() => {
+      alert("Debe registrarse primero")
+    });    
   }
  
 
 }
+
+
