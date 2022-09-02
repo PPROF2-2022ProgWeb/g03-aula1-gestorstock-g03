@@ -2,8 +2,10 @@
     <!-- modifique container como contenedor ("deje container como clase de bootstrap") para que se vuelva responsive-design asi no hay problema -->
     <div class="col-lg-3 container-lg contenedor pt-3">
         <h3 class="title">Login</h3>
+
+        
         <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
-        <form [formGroup]="form" (ngSubmit)="onEnviar($event)" action="gestor.html" method="post" class="login-form container-fluid">
+        <form [formGroup]="form" (ngSubmit)="login()" action="gestor.html" method="post" class="login-form container-fluid">
             <span>Email</span>
             <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
             <div class="form-group input-container">
@@ -20,30 +22,32 @@
 
             <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
             <span>Contraseña</span>
-            <div class="form-group input-container">
-                <i class="icono-key"></i>
-                <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
-                <input type="password" [formControl]="password" class="form-control" formControlName="password" [class.border-danger]="PasswordValid" placeholder="Ingrese su contraseña" id="password">
-            </div>
-            <div *ngIf="Password?.errors && Password?.touched">
-                <p *ngIf="Password?.hasError('required')" class="text-danger">El password es requerido
-                </p>
-                <p *ngIf="Password?.errors?.minlength" class="text-danger">El password debe ser de 6 o más caracteres
-                </p>
+            <div >
+                <div class="form-group input-container">
+                    <i class="icono-key"></i>
+                    <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
+                    <input type="password" [formControl]="password" class="form-control" formControlName="password" [class.border-danger]="PasswordValid" placeholder="Ingrese su contraseña" id="password">
+                </div>
+                <div *ngIf="Password?.errors && Password?.touched" class="py-1">
+                    <p *ngIf="Password?.hasError('required')" class="text-danger">El password es requerido
+                    </p>
+                    <p *ngIf="Password?.errors?.minlength" class="text-danger">El password debe ser de 6 o más caracteres
+                    </p>
+                </div>
             </div>
 
             <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
-            <span>Rol</span>
-            <div class="form-group input-container">
+            <!-- <span>Rol</span> -->
+            <!-- <div class="form-group input-container">
                 <i class="icono-adn"></i>
                 <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
-                <select class="form-control" name="Rol" required>
+                <!-- <select class="form-control" name="Rol" required>
                     <option value="" selected disabled>Seleccione un rol</option>
                     <option value="Administrador">Administrador</option>
                     <option value="Repocitor">Repositor</option>
                     <option value="Cajero">Cajero</option>
-                </select>
-            </div>
+                </select> -->
+            <!-- </div> -->
             <div class="link-container">
                 <button class="formlink" type="button" onclick="toggleMenu('dropReg')">¿Todavia no esta registrado?
                     Registrese</button>
@@ -54,7 +58,7 @@
             </div>
             <div class="actions">
                 <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
-                <button *ngIf="Mail.value && Password.value" (click)="login()" btn btn-primary>INGRESAR</button>
+                <button disabled (click)="login()" btn btn-primary>INGRESAR</button>
             </div>
         </form>
     </div>
