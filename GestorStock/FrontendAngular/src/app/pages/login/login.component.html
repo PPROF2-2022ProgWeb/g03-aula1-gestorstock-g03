@@ -6,13 +6,17 @@
         
         <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
         <form [formGroup]="form" (ngSubmit)="login()" action="gestor.html" method="post" class="login-form container-fluid">
-            <span>Email</span>
-            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-            <div class="form-group input-container">
-                <i class="icono-email"></i>
-                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap -->
-                <input type="email" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid" placeholder="Ingrese su correo electrónico" id="email">
-            </div>
+            <!-- <span>Email</span> -->
+            <!-- <div class="form-group input-container">
+                <i class="icono-email"></i>           
+                <input type="email" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid" placeholder="Ingrese su correo electrónico" id="email">                
+            </div> -->
+            <!-- <div class="form-group input-container">
+                <app-input type="text" name="mail" title="Email" icon="icono-email" placeholder="Ingrese su correo electrónico" id="mail" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid"></app-input>
+            </div> -->
+            <app-input name="mail" id="mailL" title="Email" placeholder="Ingrese su corre electrónico" type="text"
+                icon="icono-email" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid"></app-input>
+            
             <div *ngIf="Mail?.errors && Mail?.touched">
                 <p *ngIf="Mail?.hasError('required')" class="text-danger">El mail es requerido
                 </p>
