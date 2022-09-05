@@ -8,11 +8,19 @@ import { Iconos } from 'src/app/utils/iconos.enum';
 })
 export class RegistroComponent implements OnInit {
   icon = Iconos;
+  mostrar = false;
+
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
+  cargarEmpresa(){
+    this.mostrar = true;
+  }
 
 
 }
