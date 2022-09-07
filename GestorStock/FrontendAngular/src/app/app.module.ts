@@ -25,6 +25,7 @@ import { IconComponent } from './components/icon/icon.component';
 import { ButtonComponent } from './components/utils/button/button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './servicios/login.service';
+import { InputContainerComponent } from './components/input-container/input-container.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { LoginService } from './servicios/login.service';
     MenuComponent,
     IconComponent,
     ButtonComponent,
+    InputContainerComponent,
   ],
   imports: [
     BrowserModule,
