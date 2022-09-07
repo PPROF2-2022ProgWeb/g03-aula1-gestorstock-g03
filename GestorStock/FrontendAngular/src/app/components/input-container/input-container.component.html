@@ -1,0 +1,6 @@
+<label [for]="labelFor">{{ title }}</label>
+<div class="form-group input-container">
+  <i class="gs-icon {{ icon }}"></i>
+  <ng-content></ng-content>
+</div>
+<div *ngIf="showErrorMessage" class="text-danger">{{errorMessage}}</div>
