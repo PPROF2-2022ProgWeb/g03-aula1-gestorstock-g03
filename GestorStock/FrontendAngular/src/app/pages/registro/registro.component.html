@@ -1,124 +1,88 @@
 <main>
-    <!-- modifique container como contenedor ("deje container como clase de bootstrap") para que se vuelva responsive-design asi no hay problema -->
     <div class="col-xl-7 container contenedor pt-3">
         <h3 class="title">Registro</h3>
-        <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
-        <form name="formRegistro" method="post" class="login-form container-fluid">
+        <form [formGroup]="form" (ngSubmit)="registro()" name="formRegistro" method="post"
+            class="login-form container-fluid">
 
             <fieldset>
                 <div class="row">
-                    <div class="col-6">
-                        <span>Nombre</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container">
-                            <i class="icono-user"></i>
-
-                            <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" name="nombre" id="nombreR" pattern="^[^0-9]{2,40}$"
-                                title="El nombre debe contener mas 2 caracteres y no contener numeros" type="text"
-                                required placeholder="Ingrese su nombre">
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                    <div class="col-6">                        
+                        <app-input-container [icon]="iconos.USUARIO" labelFor="nombre" title="Nombre"
+                        [errorMessage]="nombreErrorMessage" [showErrorMessage]="nombreValid">
+                            <input type="text" class="form-control" formControlName="nombre" name="nombre" id="nombre"
+                                placeholder="Ingrese su nombre" required>
+                        </app-input-container>
                     </div>
 
                     <div class="col-6">
-                        <span>Apellido</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container ">
-                            <i class="icono-user"></i>
-                            <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" name="apellido" id="apellidoR" pattern="^[^0-9]{2,40}$" type="text"
-                                title="Debe contener mas de 2 caracteres" required
-                                placeholder="Ingrese su apellido">
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                        <app-input-container [icon]="iconos.USUARIO" labelFor="apellido" title="Apellido"
+                        [errorMessage]="apellidoErrorMessage" [showErrorMessage]="apellidoValid">
+                            <input type="text" class="form-control" formControlName="apellido" name="apellido"
+                                id="apellido" placeholder="Ingrese su apellido" required>
+                        </app-input-container>
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="col-6">
-                        <span>Correo</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container">
-                            <i class="icono-email"></i>
-
-                            <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" name="correo" id="correoR" pattern="^[^@]+@[^@]+$" type="email" required
-                                placeholder="Ingrese su correo electrónico" title="Debe contener @">
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                        <app-input-container [icon]="iconos.CORREO" labelFor="email" title="Correo"
+                            [errorMessage]="mailErrorMessage" [showErrorMessage]="mailValid">
+                            <input type="email" [formControl]="mail" class="form-control" formControlName="mail"
+                                name="mail" [class.border-danger]="mailValid"
+                                placeholder="Ingrese su correo electrónico" id="email">
+                        </app-input-container>
                     </div>
 
-                    <!-- cambiar icono -->
                     <div class="col-6">
-                        <span>Fecha de nacimiento</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container ">
-                            <i class="icono-calendar"></i>
-                            <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input id="fechaNacimiento" class="form-control" name="nacimiento"
-                                title="Debe contener 2 digitos para el dia, 2 para el mes y 4 para el año"
-                                type="date" required placeholder="Ingrese su correo electrónico">
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                        <app-input-container [icon]="iconos.CALENDARIO" labelFor="fechaNacimiento"
+                            title="Fecha de nacimiento">
+                            <input type="date" class="form-control" formControlName="fechaNacimiento"
+                                name="fechaNacimiento" id="fechaNacimiento"
+                                placeholder="Ingrese su fecha de nacimiento">
+                        </app-input-container>
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="col-6">
-                        <span>Pais</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container">
-                            <i class="icono-world"></i>
-                            <select name="pais" id="dropPais" class="form-control" required>
-                                <option value="" disabled selected>Seleccione un pais</option>
+                        <app-input-container [icon]="iconos.MUNDO" labelFor="pais" title="País">
+                            <select name="pais" id="dropPais" formControlName="pais" name="pais" class="form-control"
+                                placeholder="Seleccione su País" required>
+                                <option disabled selected>Seleccione un país</option>
+
                             </select>
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                        </app-input-container>
                     </div>
 
                     <div class="col-6">
-                        <span>Provincia</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container ">
-                            <i class="icono-world"></i>
-                            <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" name="provincia" pattern="^[^0-9]+$" type="text"
-                                title="Debe contener mas de 1 caracter" required placeholder="Ingrese su provincia">
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                        <app-input-container [icon]="iconos.MUNDO" labelFor="pais" title="Provincia">
+                            <input type="text" class="form-control" formControlName="provincia" name="provincia"
+                                id="provincia" placeholder="Ingrese su Provincia">
+                        </app-input-container>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
-                        <span>Contraseña</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container">
-                            <i class="icono-key"></i>
-
-                            <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input class="form-control" name="contraseña" pattern="^[0-9a-zA-Z]{4,256}$"
-                                title="Debe contener entre 4 y 256 caracteres, letras mayusculas, minusculas y numeros"
-                                type="password" required placeholder="Ingrese su contraseña">
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                        <app-input-container [icon]="iconos.LLAVE" labelFor="password" title="Contraseña"
+                            [errorMessage]="passwordErrorMessage" [showErrorMessage]="passwordValid">
+                            <input type="password" [formControl]="password" class="form-control"
+                                formControlName="password" [class.border-danger]="passwordValid"
+                                placeholder="Ingrese su contraseña" id="password">
+                        </app-input-container>
                     </div>
 
                     <div class="col-6">
-                        <span>Confirmar contraseña</span>
-                        <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                        <div class="form-group input-container ">
-                            <i class="icono-key"></i>
-                            <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                            <input name="confirmacion-contraseña" class="form-control" name="password" pattern="^[0-9a-zA-Z]{4,256}$"
-                                type="password"
-                                title="Debe contener entre 4 y 256 caracteres, letras mayusculas, minusculas y numeros"
-                                required placeholder="Ingrese su contraseña nuevamente">
-                            <div class="invalid-tooltip"></div>
-                        </div>
+                        <app-input-container [icon]="iconos.LLAVE" labelFor="confirmarContraseña"
+                            title="Confirmar Contraseña" [errorMessage]="passwordErrorMessage"
+                            [showErrorMessage]="passwordValid">
+                            <input type="password" [formControl]="password" class="form-control"
+                                formControlName="confirmarContraseña" name="confirmarContraseña"
+                                [class.border-danger]="passwordValid" placeholder="Ingrese nuevamente su contraseña"
+                                id="confirmarContraseña">
+                        </app-input-container>
                     </div>
                 </div>
 
@@ -126,37 +90,27 @@
 
             <fieldset>
                 <div class="text-center">
-                    <input type="checkbox" (click)='cargarEmpresa()' title="Soy Vendedor" name="vendedorR" value="vendedor" id="vendedorRegistro">                    
+                    <input type="checkbox" (click)='cargarEmpresa()' title="Soy Vendedor" name="vendedorR"
+                        value="vendedor" id="vendedorRegistro">
                     <label for="vendedor">Soy Vendedor</label>
                 </div>
                 <div *ngIf="mostrar">
                     <legend>Empresa</legend>
                     <div class="row">
                         <div class="col-6">
-                            <span>Nombre</span>
-                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                            <div class="form-group input-container">
-                                <i class="icono-empresa"></i>
-
-                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="empresa-nombre" pattern="^[^]+$" type="text"
-                                    title="Debe contener al menos 1 caracter" required
-                                    placeholder="Ingrese el nombre de la empresa">
-                                <div class="invalid-tooltip"></div>
-                            </div>
+                            <app-input-container [icon]="iconos.EMPRESA" labelFor="empresa" title="Empresa">
+                                <input type="text" class="form-control" name="empresa" formControlName="empresa"
+                                    id="empresa" placeholder="Ingrese el nombre de la empresa" pattern="^[^]+$"
+                                    required>
+                            </app-input-container>
                         </div>
 
                         <div class="col-6">
-                            <span>Descripcion</span>
-                            <!-- utilizamos form-group que es un grupo de formulario pero me apoyo de la caracteristica "responsive-design" de bootstrap -->
-                            <div class="form-group input-container ">
-                                <i class="icono-empresa"></i>
-                                <!-- Tomamos la caracteristica form-control para estilo completo y relleno suficiente, pertence a bootstrap borre logininput pues no lo encontre en css avisenme si hice algo mal -->
-                                <input class="form-control" name="empresa-descripcion" pattern="^[^]+$" type="text"
-                                    title="Debe contener al menos 1 caracter" required
-                                    placeholder="Ingrese la descripcion de la empresa">
-                                <div class="invalid-tooltip"></div>
-                            </div>
+                            <app-input-container [icon]="iconos.EMPRESA" labelFor="descripcion" title="Descripción">
+                                <input type="textarea" class="form-control" name="descripcion"
+                                    formControlName="descripcion" id="descripcion"
+                                    placeholder="Ingrese la descripcion de la empresa" pattern="^[^]+$" required>
+                            </app-input-container>
                         </div>
                     </div>
                 </div>
@@ -166,8 +120,7 @@
                 <a class="formlink" href="login.html">¿Ya esta registrado? Ingrese aqui</a>
             </div>
             <div class="actions">
-                <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
-                <button id="btRegistrar" class="btn btn-primary">REGISTRARSE</button>
+                <button id="btRegistrar" (click)="registro()" class="btn btn-primary">REGISTRARSE</button>
             </div>
         </form>
     </div>
