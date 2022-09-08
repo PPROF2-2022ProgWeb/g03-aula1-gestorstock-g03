@@ -26,6 +26,7 @@ import { ButtonComponent } from './components/utils/button/button.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './servicios/login.service';
 import { InputContainerComponent } from './components/input-container/input-container.component';
+import { RegistroService } from './servicios/registro.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { InputContainerComponent } from './components/input-container/input-cont
     SvgModule,
     ReactiveFormsModule,
   ],
-  providers: [LoginService],
+  providers: [LoginService, RegistroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
