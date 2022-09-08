@@ -21,7 +21,7 @@
                     Registrese</a>
             </div>
             <div class="actions">
-                <button [disabled] (click)="login()" btn btn-primary>INGRESAR</button>
+                <button [disabled]="mail.valid && password.valid" (click)="login()" class="btn btn-primary" disabled>INGRESAR</button>
                 <!--revisar disabled vinculado a pass y mail + css vista diferenta-->
             </div>
         </form>
