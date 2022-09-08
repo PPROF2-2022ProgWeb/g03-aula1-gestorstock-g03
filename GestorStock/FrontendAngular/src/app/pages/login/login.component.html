@@ -1,56 +1,28 @@
 <main class="mb-2">
-    <!-- modifique container como contenedor ("deje container como clase de bootstrap") para que se vuelva responsive-design asi no hay problema -->
     <div class="col-lg-3 container-lg contenedor pt-3">
         <h3 class="title">Login</h3>
+        <form [formGroup]="form" (ngSubmit)="login()" action="gestor.html" method="post"
+            class="login-form container-fluid">
 
-        
-        <!-- con la propiedade container-fluid de bootstrap nos aseguramos de un formulario de ancho de la ventan completa -->
-        <form [formGroup]="form" (ngSubmit)="login()" action="gestor.html" method="post" class="login-form container-fluid">
-            <!-- <span>Email</span> -->
-            <!-- <div class="form-group input-container">
-                <i class="icono-email"></i>           
-                <input type="email" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid" placeholder="Ingrese su correo electrónico" id="email">                
-            </div> -->
-            <!-- <div class="form-group input-container">
-                <app-input type="text" name="mail" title="Email" icon="icono-email" placeholder="Ingrese su correo electrónico" id="mail" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid"></app-input>
-            </div> -->
-            <app-input name="mail" id="mailL" title="Email" placeholder="Ingrese su corre electrónico" type="text"
-                icon="icono-email" [formControl]="mail" class="form-control" formControlName="mail" [class.border-danger]="MailValid"></app-input>
-            
-            <div *ngIf="Mail?.errors && Mail?.touched">
-                <p *ngIf="Mail?.hasError('required')" class="text-danger">El mail es requerido
-                </p>
-                <p *ngIf="Mail?.hasError('email')" class="text-danger">El formato del email debe ser valido
-                </p>
-            </div>
+            <app-input-container [icon]="iconos.CORREO" labelFor="email" title="Correo"
+                [errorMessage]="mailErrorMessage" [showErrorMessage]="mailValid">
+                <input type="email" [formControl]="mail" class="form-control" formControlName="mail"
+                    [class.border-danger]="mailValid" placeholder="Ingrese su correo electrónico" id="email">
+            </app-input-container>
 
-            <!-- añado el form-group propiedad de bootstrap para la implementacion del mismo y ayuda la caracteristica "responsive-design" -->
-            <span>Contraseña</span>
-            <div >
-                <div class="form-group input-container">
-                    <i class="icono-key"></i>
-                    <!-- se añade la clase Bootstrap "form-control para implementacion de los estilos de bootstrap" -->
-                    <input type="password" [formControl]="password" class="form-control" formControlName="password" [class.border-danger]="PasswordValid" placeholder="Ingrese su contraseña" id="password">
-                </div>
-                <div *ngIf="Password?.errors && Password?.touched" class="py-1">
-                    <p *ngIf="Password?.hasError('required')" class="text-danger">El password es requerido
-                    </p>
-                    <p *ngIf="Password?.errors?.minlength" class="text-danger">El password debe ser de 6 o más caracteres
-                    </p>
-                </div>
-            </div>
+            <app-input-container [icon]="iconos.LLAVE" labelFor="password" title="Contraseña" 
+                [errorMessage]="passwordErrorMessage" [showErrorMessage]="passwordValid">
+                <input type="password" [formControl]="password" class="form-control" formControlName="password"
+                [class.border-danger]="passwordValid" placeholder="Ingrese su contraseña" id="password">
+            </app-input-container>
 
             <div class="link-container">
-                <button class="formlink" type="button" onclick="toggleMenu('dropReg')">¿Todavia no esta registrado?
-                    Registrese</button>
-                <div id="dropReg" class="drop-menu hidden">
-                    <a class="dropdown-item" href="registro-usuario.html">Para mí</a>
-                    <a class="dropdown-item" href="registro-empresa.html">Para empresa</a>
-                </div>
+                <a class="formlink" routerLink="/registro">¿Todavia no esta registrado?
+                    Registrese</a>
             </div>
             <div class="actions">
-                <!-- se reescriben algunas propiedades para mantener el estilo antiguo presentes en style.css-->
-                <button disabled (click)="login()" btn btn-primary>INGRESAR</button>
+                <button [disabled] (click)="login()" btn btn-primary>INGRESAR</button>
+                <!--revisar disabled vinculado a pass y mail + css vista diferenta-->
             </div>
         </form>
     </div>

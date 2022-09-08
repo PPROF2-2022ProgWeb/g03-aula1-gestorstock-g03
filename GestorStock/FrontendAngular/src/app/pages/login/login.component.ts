@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/servicios/login.service';
+import { Iconos } from 'src/app/utils/iconos.enum';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ export class LoginComponent implements OnInit {
   password = new FormControl ('',[],[]);
   form: any;
 
+  public iconos = Iconos;
+
   constructor(private formBuilder: FormBuilder,
               private loginService: LoginService,
               private router: Router) { 
@@ -24,31 +27,27 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  } 
+
+  get passwordValid(){
+    return this.form.get('password')?.touched && !this.form.get('password')?.valid;
   }
   
-  get Password(){
-    return this.form.get('password');    
-  }
-  get Mail(){
-    return this.form.get('mail');
+  get mailValid(){
+    return this.form.get('mail')?.touched && !this.form.get('mail')?.valid;
   }
 
-  get PasswordValid(){
-    return this.Password?.touched && !this.Password?.valid;
-  }
-  
-  get MailValid(){
-    return this.Mail?.touched && !this.Mail?.valid;
+  get passwordErrorMessage(){
+    return "Debe ser de 6 o más caracteres"
   }
 
-  // onEnviar(event: Event){
-  //   event.preventDefault;
-  //   if(this.form.valid){
-  //     alert("Enviar al servidor");      
-  //   } else{
-  //     this.form.markAllAsTouched();
-  //   }
-  // }
+  get mailErrorMessage(){
+    if(this.mail.hasError('required')){
+      return "El correo es requerido"
+    }else {
+      return "Formato de correo no valido"
+    }
+  }
 
   login(){
     this.loginService.login(this.mail, this.password)
