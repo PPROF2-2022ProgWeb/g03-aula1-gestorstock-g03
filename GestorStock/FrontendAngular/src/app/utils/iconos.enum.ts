@@ -12,7 +12,7 @@ export enum Iconos {
   MENSAJE = "icono-mensaje",
   EMPRESA = "icono-empresa",
   CAMBIO = "icono-change",
-  CALENDARIO = "icono-calendario",
+  CALENDARIO = "icono-calendar",
   USUARIO = "icono-user",
   MUNDO = "icono-world",
   LOGO = "icono-logo",
