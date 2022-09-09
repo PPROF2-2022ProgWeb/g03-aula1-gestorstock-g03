@@ -30,6 +30,8 @@
   --color-fuente-primario: #fff;
   --color-fuente-secundario: #00324a;
   --link-hover-color: gray;
+
+  --color-btn-inactivo: #aaa;
 }
 
 *,
@@ -57,5 +59,10 @@
 .boton.active {
   background-color: var(--fondo-boton-activo);
   color: var(--color-fuente-boton-activo);
+}
+
+.boton:disabled {
+  background-color: var(--color-btn-inactivo);
+  border-color: #ddd;
 }
 
