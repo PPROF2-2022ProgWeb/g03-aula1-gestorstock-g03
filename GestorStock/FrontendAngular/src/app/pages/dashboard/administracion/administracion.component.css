@@ -1,0 +1,42 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-item {
+  width: 30%;
+  min-width: 250px;
+  flex-grow: 1;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.chart-container {
+  width: 100%;
+  display: flex;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .button-container {
+    max-width: 300px;
+  }
+
+  .chart-container{
+    flex-grow: 1;
+    width: auto;
+  }
+}

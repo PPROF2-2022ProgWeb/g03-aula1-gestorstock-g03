@@ -1,1 +1,17 @@
-<p>administracion works!</p>
+<div class="flex">
+  <app-data-counter class="flex-item" [icono]="icons.CARRITO" titulo="Ventas">{{ ventas }}</app-data-counter>
+  <app-data-counter class="flex-item" [icono]="icons.RECIBO" titulo="Ingresos del turno">{{ ingresosTurno | currency }}</app-data-counter>
+  <app-data-counter class="flex-item" [icono]="icons.CARRITO" titulo="Ganancias del turno">{{ gananciasTurno | currency }}</app-data-counter>
+</div>
+<div class="main-container">
+  <div class="button-container">
+    <app-button square centered bordered>Iniciar Turno</app-button>
+    <app-button square centered bordered>Extraer dinero de caja</app-button>
+    <app-button square centered bordered>Ingresar dinero en caja</app-button>
+    <app-button square centered bordered>Gestionar Empleados</app-button>
+    <app-button square centered bordered>Configuraciones</app-button>
+  </div>
+  <div class="chart-container card">
+    <app-aviso titulo="¡Proximamente!" mensaje="Graficos estadisticos para que veas como te fue en la semana o el mes"></app-aviso>
+  </div>
+</div>
