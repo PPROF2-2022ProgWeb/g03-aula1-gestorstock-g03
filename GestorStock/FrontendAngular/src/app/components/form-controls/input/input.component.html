@@ -2,10 +2,32 @@
 <div class="form-group input-container">
   <i class="gs-icon {{ icon }}"></i>
 
-  <input
+  <input *ngIf="type!=='select' && type!=='textarea'"
     class="form-control"
+    [name]="name"
+    [id]="id"
+    [title]="title"
     [type]="type"
     [required] = "required"
     [placeholder]="placeholder"
   />
+  <select *ngIf="type==='select'" 
+    class="form-control"
+    [name]="name"
+    [id]="id"
+    [title]="title"    
+    [required] = "required"
+    >
+    <option disabled selected>{{placeholder}}</option>
+    <ng-content></ng-content>
+  </select>
+  <textarea *ngIf="type==='textarea'"
+    class="form-control"
+    [name]="name"
+    [id]="id"
+    [title]="title"
+    [required] = "required"
+    [placeholder]="placeholder"     
+    cols="30"   
+    ></textarea>
 </div>

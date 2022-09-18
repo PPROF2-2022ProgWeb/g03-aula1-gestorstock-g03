@@ -1,1 +1,127 @@
-<p>registro works!</p>
+<main>
+    <div class="col-xl-7 container contenedor pt-3">
+        <h3 class="title">Registro</h3>
+        <form [formGroup]="form" (ngSubmit)="registro()" name="formRegistro" method="post"
+            class="login-form container-fluid">
+
+            <fieldset>
+                <div class="row">
+                    <div class="col-6">                        
+                        <app-input-container [icon]="iconos.USUARIO" labelFor="nombre" title="Nombre"
+                        [errorMessage]="nombreErrorMessage" [showErrorMessage]="nombreValid">
+                            <input type="text" class="form-control" formControlName="nombre" name="nombre" id="nombre"
+                                placeholder="Ingrese su nombre" required>
+                        </app-input-container>
+                    </div>
+
+                    <div class="col-6">
+                        <app-input-container [icon]="iconos.USUARIO" labelFor="apellido" title="Apellido"
+                        [errorMessage]="apellidoErrorMessage" [showErrorMessage]="apellidoValid">
+                            <input type="text" class="form-control" formControlName="apellido" name="apellido"
+                                id="apellido" placeholder="Ingrese su apellido" required>
+                        </app-input-container>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <app-input-container [icon]="iconos.CORREO" labelFor="email" title="Correo"
+                            [errorMessage]="mailErrorMessage" [showErrorMessage]="mailValid">
+                            <input type="email" [formControl]="mail" class="form-control" formControlName="mail"
+                                name="mail" [class.border-danger]="mailValid"
+                                placeholder="Ingrese su correo electrónico" id="email">
+                        </app-input-container>
+                    </div>
+
+                    <div class="col-6">
+                        <app-input-container [icon]="iconos.CALENDARIO" labelFor="fechaNacimiento"
+                            title="Fecha de nacimiento">
+                            <input type="date" class="form-control" formControlName="fechaNacimiento"
+                                name="fechaNacimiento" id="fechaNacimiento"
+                                placeholder="Ingrese su fecha de nacimiento">
+                        </app-input-container>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <app-input-container [icon]="iconos.MUNDO" labelFor="pais" title="País">
+                            <select name="pais" id="dropPais" formControlName="pais" name="pais" class="form-control"
+                                placeholder="Seleccione su País" required>
+                                <option disabled selected>Seleccione un país</option>
+
+                            </select>
+                        </app-input-container>
+                    </div>
+
+                    <div class="col-6">
+                        <app-input-container [icon]="iconos.MUNDO" labelFor="pais" title="Provincia">
+                            <input type="text" class="form-control" formControlName="provincia" name="provincia"
+                                id="provincia" placeholder="Ingrese su Provincia">
+                        </app-input-container>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <app-input-container [icon]="iconos.LLAVE" labelFor="password" title="Contraseña"
+                            [errorMessage]="passwordErrorMessage" [showErrorMessage]="passwordValid">
+                            <input type="password" [formControl]="password" class="form-control"
+                                formControlName="password" [class.border-danger]="passwordValid"
+                                placeholder="Ingrese su contraseña" id="password">
+                        </app-input-container>
+                    </div>
+
+                    <div class="col-6">
+                        <app-input-container [icon]="iconos.LLAVE" labelFor="confirmarContraseña"
+                            title="Confirmar Contraseña" [errorMessage]="passwordErrorMessage"
+                            [showErrorMessage]="passwordValid">
+                            <input type="password" [formControl]="password" class="form-control"
+                                formControlName="confirmarContraseña" name="confirmarContraseña"
+                                [class.border-danger]="passwordValid" placeholder="Ingrese nuevamente su contraseña"
+                                id="confirmarContraseña">
+                        </app-input-container>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <div class="text-center">
+                    <input type="checkbox" (click)='cargarEmpresa()' title="Soy Vendedor" name="vendedorR"
+                        value="vendedor" id="vendedorRegistro">
+                    <label for="vendedor">Soy Vendedor</label>
+                </div>
+                <div *ngIf="mostrar">
+                    <legend>Empresa</legend>
+                    <div class="row">
+                        <div class="col-6">
+                            <app-input-container [icon]="iconos.EMPRESA" labelFor="empresa" title="Empresa">
+                                <input type="text" class="form-control" name="empresa" formControlName="empresa"
+                                    id="empresa" placeholder="Ingrese el nombre de la empresa" pattern="^[^]+$"
+                                    required>
+                            </app-input-container>
+                        </div>
+
+                        <div class="col-6">
+                            <app-input-container [icon]="iconos.EMPRESA" labelFor="descripcion" title="Descripción">
+                                <input type="textarea" class="form-control" name="descripcion"
+                                    formControlName="descripcion" id="descripcion"
+                                    placeholder="Ingrese la descripcion de la empresa" pattern="^[^]+$" required>
+                            </app-input-container>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="text-center">
+                <a class="formlink" href="login.html">¿Ya esta registrado? Ingrese aqui</a>
+            </div>
+            <div class="actions">
+                <button id="btRegistrar" (click)="registro()" class="boton">REGISTRARSE</button>
+            </div>
+        </form>
+    </div>
+</main>

@@ -23,6 +23,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SvgModule } from './components/svg/svg.module';
 import { IconComponent } from './components/icon/icon.component';
 import { ButtonComponent } from './components/utils/button/button.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './servicios/login.service';
+import { InputContainerComponent } from './components/input-container/input-container.component';
+import { RegistroService } from './servicios/registro.service';
 import { DataCounterComponent } from './components/data-counter/data-counter.component';
 import { AvisoComponent } from './components/utils/aviso/aviso.component';
 
@@ -49,15 +53,17 @@ import { AvisoComponent } from './components/utils/aviso/aviso.component';
     MenuComponent,
     IconComponent,
     ButtonComponent,
+    InputContainerComponent,
     DataCounterComponent,
     AvisoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SvgModule
+    SvgModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [LoginService, RegistroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 @import url("assets/fonts/gs-icofont/style.css");
+@import url("assets/styles/styles.forms.css");
 
 @font-face {
   font-family: "Quicksand";
@@ -30,6 +31,8 @@
   --color-fuente-secundario: #00324a;
   --color-fuente-terciario: #777;
   --link-hover-color: gray;
+
+  --color-btn-inactivo: #aaa;
 }
 
 *,
@@ -57,6 +60,11 @@
 .boton.active {
   background-color: var(--fondo-boton-activo);
   color: var(--color-fuente-boton-activo);
+}
+
+.boton:disabled {
+  background-color: var(--color-btn-inactivo);
+  border-color: #ddd;
 }
 
 .card {

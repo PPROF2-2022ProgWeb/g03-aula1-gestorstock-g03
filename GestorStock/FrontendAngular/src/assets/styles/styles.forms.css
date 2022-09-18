@@ -1,3 +1,4 @@
+/* Empieza login y registro */
 
 .contenedor {
     background-color: #DCD2C5;
@@ -43,30 +44,7 @@
     margin-top: 20px;
 }
 
-.input-container {
-    position: relative;
-    display: flex;
-    background-color: #00324A;
-    align-items: center;
-    margin-bottom: 30px;
-}
 
-.input-container i {
-    color: #fff;
-    margin: 0 7px;
-    font-size: 16px;
-    flex-grow: 0.2;
-    text-align: center;
-}
-
-.input-container input,
-.input-container select {
-    font-size: 0.9rem;
-    padding: 0.3rem;
-    outline: none;
-    border-radius: 0;
-    height: 2rem;
-}
 
 .formlink {
     background: none;
@@ -85,33 +63,19 @@
     position: relative;
 }
 
-.drop-menu {
-    position: absolute;
-    top: -8px;
-    right: -60%;
-    background-color: #fff;
-    border-radius: 10px;
-    width: fit-content;
-    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.12);
-    overflow: hidden;
-}
-
-.drop-menu::after {
-    content: " ";
-    position: absolute;
-    top: 30%;
-    right: 100%;
-    /* To the left of the tooltip */
-    margin-top: -6px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent white transparent transparent;
-}
 
 .hidden {
     display: none;
 }
 
+/* Style global - plantilla formularios*/
+.form-global {
+    background-color: #DCD2C5;
+    margin: 50px auto;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.12);
+    padding: 20px 40px;
+    margin: 30px 50px 30px 30px;
+    
+}
 
 /* Termina login y registro */
-
