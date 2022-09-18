@@ -24,6 +24,7 @@ import { SvgModule } from './components/svg/svg.module';
 import { IconComponent } from './components/icon/icon.component';
 import { ButtonComponent } from './components/utils/button/button.component';
 import { DataCounterComponent } from './components/data-counter/data-counter.component';
+import { AvisoComponent } from './components/utils/aviso/aviso.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { DataCounterComponent } from './components/data-counter/data-counter.com
     IconComponent,
     ButtonComponent,
     DataCounterComponent,
+    AvisoComponent,
   ],
   imports: [
     BrowserModule,
