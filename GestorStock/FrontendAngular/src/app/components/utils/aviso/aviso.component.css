@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+  padding: 35px 15px;
+  color: var(--color-fuente-secundario);
+}
+
+h2 {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid var(--color-primario);
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: calc(50% - 6px);
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-primario);
+  border: 3px solid var(--blanco);
+}

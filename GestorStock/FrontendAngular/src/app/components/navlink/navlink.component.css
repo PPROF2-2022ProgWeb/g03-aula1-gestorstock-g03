@@ -1,0 +1,75 @@
+a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem .8rem;
+  color: var(--color-fuente-primario);
+  border-radius: 3rem;
+  border: none;
+  text-decoration: none;
+}
+
+a i {
+  font-size: 1.5rem;
+  margin-right: 1.4rem;
+}
+
+a.active, a:hover {
+  color: var(--color-fuente-secundario);
+  background-color: var(--blanco);
+}
+
+a::before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-radius: 0 1.7rem 0 0;
+  position: absolute;
+  background-color: transparent;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  box-shadow: .5rem -0.5rem 0 0 var(--blanco);
+  transition: all 0s;
+}
+
+a::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-radius: 0 0 1.7rem 0;
+  position: absolute;
+  background-color: transparent;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  box-shadow: .5rem 0.5rem 0 0 var(--blanco);
+  transition: all 0s;
+}
+
+@media screen and (min-width: 768px) {
+  a{
+    margin-right: .5rem;
+    transition: border-radius .2s 50ms, margin 50ms;
+  }
+  
+  a.active {
+    border-radius: 3rem 0 0 3rem;
+    margin-right: 0;
+  }
+
+  a.active::before, a.active::after {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  a.active::after {
+    transition: width .5s .2s, height .5s .2s, top .5s .2s;
+    top: -2rem;
+  }
+
+  a.active::before {
+    transition: width .5s .2s, height .5s .2s, bottom .5s .2s;
+    bottom: -2rem;
+  }
+}

@@ -1,0 +1,122 @@
+.contenedor-dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.menu {
+  width: 320px;
+  height: 100%;
+  background: var(--color-primario);
+  position: fixed;
+  left: -320px;
+  top: 0;
+  overflow-y: auto;
+  padding: 0;
+  border-right: 1px solid #e6e6e6;
+  z-index: 100;
+}
+
+.toggle {
+  color: var(--color-primario);
+  font-size: 1.5rem;
+  margin: .5rem 0.5rem;
+  padding: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.content {
+  position: relative;
+  left: 0;
+  width: 100%;
+}
+
+.dashboard-body {
+  margin: 8px 0px;
+  overflow-y: auto;
+  max-height: calc(100vh - 5rem);
+  padding: 16px;
+  margin-right: 2px;
+}
+
+.menu, .content {
+  transition: left 0.6s cubic-bezier(.32,1.01,.73,1);
+  border: none;
+}
+
+.menu.active {
+  left: 0
+}
+
+.content.active {
+  left: 320px;
+}
+
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  gap: 15px;
+}
+
+.divisor {
+  position: absolute;
+  bottom: -2px;
+  width: calc(100% - 16px);
+  height: 2px;
+  background: var(--color-primario);
+  margin-left: 8px;
+}
+
+.cabecera h1 {
+  font-size: 1.7rem;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+  position: absolute;
+  left: 5px;
+}
+
+main.scroll-active {
+  padding-right: 6px;
+}
+
+main.scroll-active::-webkit-scrollbar {
+  display: block;
+}
+
+/* Handle */
+main::-webkit-scrollbar-thumb {
+  background: var(--color-primario);
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    position: relative;
+    width: 70px;
+    left: 0;
+  }
+
+  .menu.active, .content.active {
+    left: 0;
+  }
+
+  .menu.active {
+    width: 320px;
+  }
+
+  .menu, .content {
+    transition: width 0.6s cubic-bezier(.32,1.01,.73,1);
+  }
+
+}

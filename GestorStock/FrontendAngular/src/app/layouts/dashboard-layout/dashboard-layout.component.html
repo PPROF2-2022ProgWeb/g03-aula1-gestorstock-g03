@@ -1,0 +1,17 @@
+<div class="contenedor-dashboard">
+  <aside id="menu" class="menu" [ngClass]="{'active': isMenuActive}">
+    <app-menu></app-menu>
+  </aside>
+  <div id="content" class="content" [ngClass]="{'active': isMenuActive}">
+    <header class="cabecera">
+      <button id="toggler" class="toggle" (click)="toggleMenu()">
+        <i class="gs-icon icono-menu"></i>
+      </button>
+      <h1>{{title}}</h1>
+      <span class="divisor"></span>
+    </header>
+    <main #main class="dashboard-body" [class.scroll-active]="scrollActive">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
