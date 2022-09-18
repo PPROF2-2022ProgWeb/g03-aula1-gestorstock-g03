@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DataCounterComponent implements OnInit {
   @Input() icono: string;
-  
+  @Input() titulo: string = "titulo";
   constructor() { }
 
   ngOnInit(): void {
