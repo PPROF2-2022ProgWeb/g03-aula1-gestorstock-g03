@@ -1,0 +1,31 @@
+.data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.data-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.data-row span {
+  color: var(--color-fuente-secundario);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.data-row app-icon {
+  color: var(--color-fuente-terciario);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.titulo {
+  color: var(--color-fuente-terciario);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}

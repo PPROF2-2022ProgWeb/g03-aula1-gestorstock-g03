@@ -23,6 +23,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SvgModule } from './components/svg/svg.module';
 import { IconComponent } from './components/icon/icon.component';
 import { ButtonComponent } from './components/utils/button/button.component';
+import { DataCounterComponent } from './components/data-counter/data-counter.component';
+import { AvisoComponent } from './components/utils/aviso/aviso.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { ButtonComponent } from './components/utils/button/button.component';
     MenuComponent,
     IconComponent,
     ButtonComponent,
+    DataCounterComponent,
+    AvisoComponent,
   ],
   imports: [
     BrowserModule,

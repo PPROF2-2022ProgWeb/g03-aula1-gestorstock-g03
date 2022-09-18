@@ -25,6 +25,6 @@ export enum Iconos {
   MENU = "icono-menu",
   RECIBO = "icono-recibo",
   STOCK = "icono-stock",
-  VENTAS = "icono-ventas",
+  CARRITO = "icono-ventas",
   ADMINISTRACION = "icono-admin"
 }
