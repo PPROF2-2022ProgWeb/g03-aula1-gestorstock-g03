@@ -1,0 +1,81 @@
+/* Empieza login y registro */
+
+.contenedor {
+    background-color: #DCD2C5;
+    margin: 50px auto;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.12);
+    padding: 50px 30px;
+}
+
+.title {
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+}
+
+.contenedor .title {
+    text-align: center;
+}
+
+.sub-title {
+    color: grey;
+    margin-bottom: 50px;
+}
+
+.login-form {
+    display: flex;
+    flex-flow: column;
+}
+
+.login-form .actions button,
+.action-button {
+    border: none;
+    color: #fff;
+    background-color: #00324A;
+    align-self: flex-end;
+    justify-self: end;
+    padding: 10px 20px;
+}
+
+.login-form .actions {
+    display: flex;
+    justify-self: end;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+
+.formlink {
+    background: none;
+    border: none;
+    color: #00324A;
+    text-align: left;
+    font-weight: bold;
+    outline: none!important;
+}
+
+.formlink:hover {
+    color: gray;
+}
+
+.link-container {
+    position: relative;
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* Style global - plantilla formularios*/
+.form-global {
+    background-color: #DCD2C5;
+    margin: 50px auto;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.12);
+    padding: 20px 40px;
+    margin: 30px 50px 30px 30px;
+    
+}
+
+/* Termina login y registro */

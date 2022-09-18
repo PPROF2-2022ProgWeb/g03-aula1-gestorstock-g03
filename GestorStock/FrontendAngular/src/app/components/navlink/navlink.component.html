@@ -1,0 +1,4 @@
+<a [routerLink]="to" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+  <i *ngIf="icono" [class]="['gs-icon', icono]"></i>
+  <ng-content></ng-content>
+</a>
