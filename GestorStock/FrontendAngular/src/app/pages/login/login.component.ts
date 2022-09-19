@@ -7,59 +7,75 @@ import { Iconos } from 'src/app/utils/iconos.enum';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  
-  mail = new FormControl ('',[],[]);
-  password = new FormControl ('',[],[]);
+  mail = new FormControl('', [], []);
+  password = new FormControl('', [], []);
   form: any;
 
   public iconos = Iconos;
 
-  constructor(private formBuilder: FormBuilder,
-              private loginService: LoginService,
-              private router: Router) { 
+  constructor(
+    private formBuilder: FormBuilder,
+    private loginService: LoginService,
+    private router: Router
+  ) {
     this.form = this.formBuilder.group({
-      password:['',[Validators.required, Validators.minLength(6)]],
-      mail:['',[Validators.required, Validators.email]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      mail: ['', [Validators.required, Validators.email]],
     });
   }
 
-  ngOnInit(): void {
-  } 
+  ngOnInit(): void {}
 
-  get passwordValid(){
-    return this.form.get('password')?.touched && !this.form.get('password')?.valid;
-  }
-  
-  get mailValid(){
-    return this.form.get('mail')?.touched && !this.form.get('mail')?.valid;
+  get passwordValid() {
+    if (this.form.get('password')?.touched) {
+      return this.form.get('password')?.valid;
+    }
+    return true;
   }
 
-  get passwordErrorMessage(){
-    return "Debe ser de 6 o más caracteres"
+  get mailValid() {
+    if (this.form.get('mail')?.touched) {
+      return this.form.get('mail')?.valid;
+    }
+    return true;
   }
 
-  get mailErrorMessage(){
-    if(this.mail.hasError('required')){
-      return "El correo es requerido"
-    }else {
-      return "Formato de correo no valido"
+  get formValid() {
+    if (this.form.get('mail')?.touched && this.form.get('password')?.touched) {
+      return this.mailValid && this.passwordValid;
+    } else {
+      return false;
     }
   }
 
-  login(){
-    this.loginService.login(this.mail, this.password)
-    .then(() => {
-      this.router.navigate(['dashboard']);
-    })
-    .catch(() => {
-      alert("Debe registrarse primero")
-    });    
+  get passwordErrorMessage() {
+    return 'Debe ser de 6 o más caracteres';
   }
- 
 
+  get mailErrorMessage() {
+    if (this.mail.hasError('required')) {
+      return 'El correo es requerido';
+    } else {
+      return 'Formato de correo no valido';
+    }
+  }
+
+  login() {
+    this.form.get('mail').touched = true;
+    this.form.get('password').touched = true;
+
+    if (this.formValid) {
+      this.loginService
+        .login(this.mail, this.password)
+        .then(() => {
+          this.router.navigate(['dashboard']);
+        })
+        .catch(() => {
+          alert('Debe registrarse primero');
+        });
+    }
+  }
 }
-
-
