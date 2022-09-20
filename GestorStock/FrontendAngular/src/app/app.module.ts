@@ -29,6 +29,9 @@ import { InputContainerComponent } from './components/input-container/input-cont
 import { RegistroService } from './servicios/registro.service';
 import { DataCounterComponent } from './components/data-counter/data-counter.component';
 import { AvisoComponent } from './components/utils/aviso/aviso.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
+import { DynamicPipe } from './pipes/dinamic.pipe';
+import { CurrencyPipe, PercentPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,8 @@ import { AvisoComponent } from './components/utils/aviso/aviso.component';
     InputContainerComponent,
     DataCounterComponent,
     AvisoComponent,
+    DataTableComponent,
+    DynamicPipe,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,7 @@ import { AvisoComponent } from './components/utils/aviso/aviso.component';
     SvgModule,
     ReactiveFormsModule,
   ],
-  providers: [LoginService, RegistroService],
+  providers: [LoginService, RegistroService, CurrencyPipe, PercentPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
