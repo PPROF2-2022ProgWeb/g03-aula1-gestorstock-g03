@@ -1,0 +1,46 @@
+.searchbar {
+  position: relative;
+  border: 1px solid var(--border-input);
+  border-radius: 12px;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.searchbar:focus-within label span{
+  top: -30%;
+  transform: scale(0.8);
+}
+
+.searchbar label input[value=''] ~ span {
+  background-color: aqua;
+}
+
+.searchbar label {
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  padding: 5px 1rem;
+}
+
+.searchbar label span {
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.searchbar input {
+  border: none;
+  flex: 1;
+}
+
+.searchbar button {
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+  padding: 5px;
+}
+
+.searchbar button:active{
+  background-color: red;
+}

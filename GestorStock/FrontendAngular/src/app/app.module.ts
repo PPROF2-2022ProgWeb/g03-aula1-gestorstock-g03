@@ -32,6 +32,7 @@ import { AvisoComponent } from './components/utils/aviso/aviso.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { CurrencyPipe, PercentPipe } from '@angular/common';
     AvisoComponent,
     DataTableComponent,
     DynamicPipe,
+    SearchbarComponent,
   ],
   imports: [
     BrowserModule,
