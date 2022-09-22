@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import {
   IDataTableColumn,
+  IDataTableEditing,
   IDataTableSelectedRow,
   IDataTableSelectionChanged,
 } from 'src/app/interfaces/dataTable';
@@ -31,7 +32,8 @@ export class DataTableComponent implements OnInit, AfterViewInit {
 
   private currentSelectedRow: IDataTableSelectedRow;
   private previousSelectedRow: IDataTableSelectedRow;
-
+  public editing: IDataTableEditing;
+  public isEditing: boolean = false;
   constructor() {}
 
   ngOnInit(): void {
@@ -61,6 +63,7 @@ export class DataTableComponent implements OnInit, AfterViewInit {
     };
 
     this.previousSelectedRow?.element.classList.remove('selected');
+
     element.classList.add('selected');
 
     if (this.currentSelectedRow.element !== this.previousSelectedRow?.element) {
@@ -68,6 +71,55 @@ export class DataTableComponent implements OnInit, AfterViewInit {
         previous: this.previousSelectedRow,
         current: this.currentSelectedRow,
       });
+
+      if (this.isEditing) {
+        this.finishEdition(this.previousSelectedRow.element);
+        this.isEditing = false;
+      }
     }
+  }
+
+  editRow(e: Event, item: any, column: IDataTableColumn) {
+    if (!column.editable) return;
+    this.isEditing = true;
+    let element = e.currentTarget as HTMLElement;
+    element.classList.add('editing');
+    let value = item[column.source];
+    this.editing = {
+      item: item,
+      prop: column.source,
+      prevValue: value,
+      newValue: value,
+    };
+  }
+
+  updateValue(e: Event): void {
+    let element = e.target as HTMLInputElement;
+    if (this.editing) this.editing.newValue = element.value;
+  }
+
+  finishEdition(row: HTMLElement, isAccepted: boolean = true) {
+    if (isAccepted) {
+      let { item, prop } = this.editing;
+      item[prop] = this.editing.newValue;
+    }
+
+    row.childNodes.forEach((x) => {
+      let child = x as HTMLElement;
+      child.classList?.remove('editing');
+    });
+  }
+
+  cancelEdit() {
+    this.finishEdition(this.currentSelectedRow.element, false);
+    console.log('cancel');
+  }
+  acceptEdit() {
+    this.finishEdition(this.currentSelectedRow.element, true);
+    console.log('accept');
+  }
+
+  test(e: Event) {
+    console.log(e);
   }
 }

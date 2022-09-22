@@ -83,3 +83,15 @@ table.alternated tr:nth-child(even) {
 table tr.selected {
   background-color: #aaa!important;
 }
+
+table tr input {
+  display: none;
+}
+
+table tr .editing input {
+  display: block;
+}
+
+table tr .editing span {
+  display: none;
+}
