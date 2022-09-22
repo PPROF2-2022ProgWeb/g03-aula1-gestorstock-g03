@@ -79,3 +79,7 @@ table.bordered tr:last-child td {
 table.alternated tr:nth-child(even) {
   background-color: #ddd;
 }
+
+table tr.selected {
+  background-color: #aaa!important;
+}

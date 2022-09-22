@@ -5,8 +5,8 @@
       <th *ngFor="let column of columns">{{ column.name }}</th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let item of source">
+  <tbody #body>
+    <tr *ngFor="let item of source" (click)="selectRow($event, item)">
       <td *ngFor="let column of columns">
         {{ item[column.source] | dynamicPipe: column.pipe:column.pipeArgs }}
       </td>
