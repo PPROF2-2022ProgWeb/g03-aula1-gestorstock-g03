@@ -29,6 +29,7 @@ import { InputContainerComponent } from './components/input-container/input-cont
 import { RegistroService } from './servicios/registro.service';
 import { DataCounterComponent } from './components/data-counter/data-counter.component';
 import { AvisoComponent } from './components/utils/aviso/aviso.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
@@ -59,6 +60,7 @@ import { CurrencyPipe, PercentPipe } from '@angular/common';
     InputContainerComponent,
     DataCounterComponent,
     AvisoComponent,
+    ModalComponent,
     DataTableComponent,
     DynamicPipe,
   ],
