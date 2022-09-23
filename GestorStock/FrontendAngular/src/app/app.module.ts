@@ -29,6 +29,7 @@ import { InputContainerComponent } from './components/input-container/input-cont
 import { RegistroService } from './servicios/registro.service';
 import { DataCounterComponent } from './components/data-counter/data-counter.component';
 import { AvisoComponent } from './components/utils/aviso/aviso.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AvisoComponent } from './components/utils/aviso/aviso.component';
     InputContainerComponent,
     DataCounterComponent,
     AvisoComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
