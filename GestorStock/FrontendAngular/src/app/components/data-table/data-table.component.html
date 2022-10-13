@@ -1,4 +1,4 @@
-<div class="tableFixHead">
+<div #contenedor class="tableFixHead">
   <table #table>
     <thead>
       <tr>
@@ -27,22 +27,3 @@
     </tbody>
   </table>
 </div>
-
-<!-- <div class="scroll-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th *ngFor="let column of columns">{{ column.name }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of source">
-        <td *ngFor="let column of columns">
-          {{ item[column.source] | dynamicPipe: column.pipe:column.pipeArgs }}
-        </td>
-      </tr>
-    </tbody>
-    <div class="gr"></div>
-  </table>
-</div>
-   -->

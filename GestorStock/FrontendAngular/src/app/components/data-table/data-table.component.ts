@@ -7,6 +7,7 @@ import {
   AfterViewInit,
   Output,
   EventEmitter,
+  AfterViewChecked,
 } from '@angular/core';
 import {
   IDataTableColumn,
@@ -20,16 +21,18 @@ import {
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css'],
 })
-export class DataTableComponent implements OnInit, AfterViewInit {
+export class DataTableComponent
+  implements OnInit, AfterViewInit, AfterViewChecked
+{
   @Input() columns: IDataTableColumn[] = [];
   @Input() source: any[];
   @Input() tableStyle: string;
-
+  @Input() maxHeight: number = -1;
   @Output() selectionChanged = new EventEmitter<IDataTableSelectionChanged>();
 
   @ViewChild('table') table: ElementRef;
   @ViewChild('body') body: ElementRef;
-
+  @ViewChild('contenedor') contenedor: ElementRef;
   private currentSelectedRow: IDataTableSelectedRow;
   private previousSelectedRow: IDataTableSelectedRow;
   public editing: IDataTableEditing;
@@ -51,6 +54,24 @@ export class DataTableComponent implements OnInit, AfterViewInit {
         this.table.nativeElement.classList.add('bordered');
       this.tableStyle.includes('alternated') &&
         this.table.nativeElement.classList.add('alternated');
+    }
+    this.adjustTableHeight(this.maxHeight);
+  }
+
+  ngAfterViewChecked(): void {
+    this.adjustTableHeight(this.maxHeight);
+  }
+
+  adjustTableHeight(maxHeight: number): void {
+    if (this.contenedor?.nativeElement) {
+      let contenedor = this.contenedor.nativeElement as HTMLElement;
+      let tabla = this.table.nativeElement as HTMLElement;
+      let altoTabla = tabla.getBoundingClientRect().height;
+      if (maxHeight > 0 && altoTabla > maxHeight) {
+        contenedor.style.height = `${maxHeight}px`;
+      } else {
+        contenedor.style.height = '100%';
+      }
     }
   }
 
@@ -117,9 +138,5 @@ export class DataTableComponent implements OnInit, AfterViewInit {
   acceptEdit() {
     this.finishEdition(this.currentSelectedRow.element, true);
     console.log('accept');
-  }
-
-  test(e: Event) {
-    console.log(e);
   }
 }
