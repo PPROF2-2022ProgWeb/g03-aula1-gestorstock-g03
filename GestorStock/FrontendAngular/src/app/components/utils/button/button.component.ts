@@ -33,7 +33,6 @@ export class ButtonComponent implements OnInit, AfterViewInit {
     if (this.centered !== undefined) {
       this.button.nativeElement.classList.add("centered")
     }
-    console.log(this.button.nativeElement.classList)
   }
   
   onClickEvent(event: Event): void {

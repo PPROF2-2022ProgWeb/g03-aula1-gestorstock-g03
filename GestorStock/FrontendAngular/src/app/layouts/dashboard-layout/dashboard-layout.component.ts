@@ -39,7 +39,6 @@ export class DashboardLayoutComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.scrollTimeout);
     this.main.nativeElement.addEventListener('scroll', () => {
       this.scrollActive = true;
       if(this.scrollTimeout){
