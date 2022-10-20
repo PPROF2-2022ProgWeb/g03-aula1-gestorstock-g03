@@ -11,6 +11,7 @@ export class ButtonComponent implements OnInit, AfterViewInit {
   @Input() inverted: string;
   @Input() square: string;
   @Input() centered: string;
+  @Input() disabled: boolean;
   
   @Output() onClick = new EventEmitter<any>();
 
