@@ -1,0 +1,25 @@
+.searchbar {
+  position: relative;
+  border: 1px solid var(--border-input);
+  border-radius: 12px;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+.searchbar label {
+  display: contents;
+}
+
+.searchbar input {
+  border: none;
+  flex: 1;
+}
+
+.searchbar button {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+}

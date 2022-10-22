@@ -33,6 +33,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { CurrencyPipe, PercentPipe } from '@angular/common';
     ModalComponent,
     DataTableComponent,
     DynamicPipe,
+    SearchbarComponent,
   ],
   imports: [
     BrowserModule,

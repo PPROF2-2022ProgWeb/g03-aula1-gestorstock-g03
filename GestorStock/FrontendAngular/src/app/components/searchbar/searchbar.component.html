@@ -1,0 +1,15 @@
+<div class="searchbar">
+  <label>
+    <input
+      #input
+      type="search"
+      id="1"
+      [name]="name"
+      [placeholder]="placeholder"
+      [autocomplete]="autocomplete"
+    />
+  </label>
+  <button #search (click)="onSearchDone">
+    <app-icon icon="icono-lupa"></app-icon>
+  </button>
+</div>

@@ -37,7 +37,7 @@
   --blanco: #fff;
 
   --fondo-boton-activo: #fff;
-  --colot-fuente-boton-activo: #00324a;
+  --color-fuente-boton-activo: #00324a;
 
   --fuente-primaria: "Quicksand";
   --color-fuente-primario: #fff;
@@ -46,6 +46,9 @@
   --link-hover-color: gray;
 
   --color-btn-inactivo: #aaa;
+
+
+  --border-input: #ccc;
 }
 
 *,
