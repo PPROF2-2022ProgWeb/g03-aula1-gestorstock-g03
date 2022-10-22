@@ -23,8 +23,10 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
   @Input() searchProperty: string;
   @Input() triggerOnInput: string;
   @Input() caseSensitive: boolean = true;
+  @Input() autocomplete: boolean = false;
 
   @Output() searchDone = new EventEmitter<SearchResult>();
+  @Output() reset = this.resetSearch
 
   @ViewChild('input') input: ElementRef;
 
@@ -61,5 +63,9 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
       value: this.input.nativeElement.value
     };
     this.searchDone.emit(res);
+  }
+
+  resetSearch(): void {
+    this.input.nativeElement.value = '';
   }
 }
