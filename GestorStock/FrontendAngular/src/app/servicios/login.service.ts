@@ -9,9 +9,8 @@ export class LoginService{
 
   login(mail: FormControl, password: FormControl): Promise<any>{
     return new Promise((resolve, reject) => {
-      this.login(mail, password)
-      .then((datos) => resolve(datos),
-          err => reject(err))        
+      resolve(true),
+      reject(false)        
     });
   }
 }

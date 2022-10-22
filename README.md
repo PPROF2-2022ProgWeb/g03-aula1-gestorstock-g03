@@ -32,6 +32,18 @@ ACLARACION: El sitio realizado en Angular se levanta en red local, por lo que se
   El proyecto es un sitio/app que está siendo desarrollado por los siguientes miembros:
 Osmar Andres Debegnach, Erika Cologne, Ezequiel Dominguez, Julieta de los Ángeles Negrete, Escobar Brenda Giselle, Escobar Maximiliano Alexis y Ana Ochonga.
 
+## Sprints
+
+ *Cada Sprint tiene registro de las ceremonias en Scrum 
+ *Planning (Realizado en Kamban desde Projects en GitHub. 
+ *Daily, (Wiki de GitHub)
+ *Review (Seguimiento dentro del mismo Kamban de Projects GitHub).
+ *Retrospective:
+	
+* Sprint 0, 1, y 2: https://ideaboardz.com/for/Sprint%200,%201,%20y%202/4694970
+* Sprint 3: https://ideaboardz.com/for/Sprint%203/4602361
+* Sprint 4: https://ideaboardz.com/for/Sprint%204/4602362
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ***
@@ -271,7 +283,7 @@ Sprints
 	
  
  Sprint 0
-	Fecha Inicio = 26/05/2022 - Fecha de Fin = 13/06/2022
+	Fecha Inicio = 26/05/2022 -  Fecha de Fin = 13/06/2022
 
 Se les solicitará un proyecto aplicando todos los contenidos dados en los módulos de la cursada (HTML5, CSS3, BOOTSTRAP, JAVASCRIPT), pueden recurrir a la web de W3School para extraer recursos necesarios.
 
@@ -295,7 +307,7 @@ ANÁLISIS
 
 *********************************************************************************************
 
-Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Sprint%200,%201,%20y%202/4694970
 
 *********************************************************************************************
 
@@ -303,8 +315,9 @@ Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/454
 ✏️ N° de sprint : 1  <br>
 	
 Sprint 1
-	Fecha Inicio = 27/06/2022 - Fecha de Fin = 08/08/2022*
+	Fecha Inicio = 27/06/2022 -  Fecha de Fin = 08/08/2022
 	se considera el receso invernal (09/07/2022 al 24/07/2022)
+
 
 IMPLEMENTACIÓN FRONTEND
 	
@@ -325,7 +338,7 @@ IMPLEMENTACIÓN FRONTEND
 
 *********************************************************************************************
 
-Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Sprint%200,%201,%20y%202/4694970
 
 *********************************************************************************************
 
@@ -335,7 +348,7 @@ Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/454
 ✏️ N° de sprint : 2  <br>
 	
 Sprint 2
-	Fecha Inicio = 15/08/2022 - Fecha de Fin = 29/08/2022
+	Fecha Inicio = 15/08/2022 -  Fecha de Fin = 29/08/2022
 
 DISEÑO DE BASE DE DATOS
 
@@ -363,10 +376,11 @@ Material de referencia Diagrama Caso de Uso
 	
  	*US#02 - Base de datos del proyecto
 	*US#03 - Diagrama de clases para POO
+	*US#01 - Sitio realizado con Angular
 
 *********************************************************************************************
 
-Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/4548316
+Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Sprint%200,%201,%20y%202/4694970
 
 *********************************************************************************************
 
@@ -377,13 +391,14 @@ Retro Sprint 0, 1 y 2: https://ideaboardz.com/for/Brenda%20Giselle%20Escobar/454
 	
 Sprint 3
 
-	Fecha Inicio = 29/08/2022 - Fecha de Fin = 19/09/2022
+	Fecha Inicio = 29/09/2022 -  Fecha de Fin = 17/10/2022
 
 Requerimientos en Incremento al producto:
 
 	*Definición del backend y funcionalidad en los módulos
 	*Registro de usuario
 	*Login de usuario
+	* OPCIONAL: Token - JWT
 
 	*Tablero de control o Dashboard con módulos planteados
 	*Los formularios deberán tener estilos semánticos que provee Bootstrap por ejemplo:
@@ -402,7 +417,9 @@ https://developer.mozilla.org/es/docs/Web/HTML/Element/input
 
 ✏️ Milestones: <br>
 	
+	*US#01 - Sitio realizado con Angular
  	*US#04- Definición del backend y funcionalidad en los módulos
+	*US#5 Remodelacion de la base de datos
 
 *********************************************************************************************
 
@@ -415,15 +432,26 @@ Retro Sprint 3: https://ideaboardz.com/for/Sprint%203/4602361
 ✏️ N° de sprint : 4  <br>
 	
 Sprint 4
-	Fecha Inicio = 26/09/2022 - Fecha de Fin = 17/10/2022
+	Fecha Inicio = 17/10/2022 -  Fecha de Fin = 16/11/2022
 
 Requerimientos
 
 	*Incremento al producto (front + back integrado)
 	*Validaciones con Angular: servicios - inyección de dependencias.
+	*Tablero de control para usuarios: 
+	*Mostrar catálogo (mínimo 2 productos o servicios o suscripción). 
+	*Seleccionar para comprar. 
+	*Simular Pago con API Mercado Pago o API similar
 	*Tablero de control (Dashboard) funcional
-	*Token
- 
+	*Tablero de control  administrador CRUD básico funcional de producto y cliente.
+	*Actualizar documentación IEEE830 - tablero Kanban (project) y Wiki.
+	*Actualizado todo el proyecto en GitHub como respaldo 
+	*Demo final en video con participación de todo el equipo describiendo todas las funcionalidades.
+	
+	OPCIONALES: modificar datos de perfil. Sitio publicado en Servidor Remoto 
+
+	Integracion: https://www.mercadopago.com.ar/developers/es/docs#online-payments 
+
 ✏️ Sprint Backlog:  <br>
 
 	
@@ -439,33 +467,3 @@ Retro Sprint 4: https://ideaboardz.com/for/Sprint%204/4602362
 
 *********************************************************************************************
 
-*********************************************************************************************
-	
-✏️ N° de sprint : 5  <br>
-	
-Sprint 5
-
-	Fecha Inicio = 24/10/2022 - Fecha de Fin = 14/11/2022
-
-Funcionalidades completas front/back
-
-	*Circuito completo de catálogo, selección, búsqueda, registro y compra (incluir todos los requerimientos solicitados al inicio)
-	*Actualizar documentación IEEE830 - tablero Kanban (project) y Wiki.
-	*Sitio publicado en Servidor Remoto
-	*Actualizado todo el proyecto en GitHub como respaldo
-	*Demo final en video con participación de todo el equipo
- 
-✏️ Sprint Backlog:  <br>
-
-	
-	*
-
-✏️ Milestones: <br>
-	
- 	*
-
-*********************************************************************************************
-
-Retro Sprint 5: https://ideaboardz.com/for/Sprint%205/4602364
-
-*********************************************************************************************
