@@ -1,29 +1,42 @@
-<div #contenedor class="tableFixHead">
-  <table #table>
-    <thead>
-      <tr>
-        <th *ngFor="let column of columns">{{ column.name }}</th>
-      </tr>
-    </thead>
-    <tbody #body>
-      <tr *ngFor="let item of source" (click)="selectRow($event, item)">
-        <td
-          *ngFor="let column of columns"
-          (dblclick)="editRow($event, item, column)"
-          (keydown.escape)="cancelEdit()"
-          (keydown.enter)="acceptEdit()"
-        >
-          <span>{{
-            item[column.source] | dynamicPipe: column.pipe:column.pipeArgs
-          }}</span>
-          <input
-            *ngIf="column.editable && isEditing"
-            [type]="column.type || 'string'"
-            [value]="item[column.source]"
-            (input)="updateValue($event)"
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div
+  #contenedor
+  class="tableFixHead"
+  (click)="focus()"
+  (keydown.ArrowUp)="moveSelection(-1, $event)"
+  (keydown.ArrowDown)="moveSelection(1, $event)"
+  (keyup.ArrowUp)="enableMove()"
+  (keyup.ArrowDown)="enableMove()"
+>
+  <input #tableEventShifter type="text" />
+  <!-- <div class="borde"></div> -->
+  <div #tableContainer class="table-container">
+    <table #table>
+      <thead>
+        <tr>
+          <th *ngFor="let column of columns">{{ column.name }}</th>
+        </tr>
+      </thead>
+      <tbody #body>
+        <tr *ngFor="let item of source" (click)="onSelectRow($event, item)">
+          <td
+            *ngFor="let column of columns"
+            (dblclick)="editRow($event, item, column)"
+            (keydown.escape)="cancelEdit()"
+            (keydown.enter)="acceptEdit()"
+          >
+            <span>{{
+              item[column.source] | dynamicPipe: column.pipe:column.pipeArgs
+            }}</span>
+            <input
+              *ngIf="column.editable && isEditing"
+              [type]="column.type || 'string'"
+              [value]="item[column.source]"
+              (input)="updateValue($event)"
+              (blur)="acceptEdit()"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

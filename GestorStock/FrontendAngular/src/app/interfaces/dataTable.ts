@@ -5,7 +5,7 @@ export interface IDataTableColumn{
   pipe?:any;
   pipeArgs?:[];
   editable?: boolean;
-  type?: string;
+  type?: 'number' | 'string';
 }
 
 export interface IDataTableSelectedRow {
@@ -14,11 +14,18 @@ export interface IDataTableSelectedRow {
 }
 
 export interface IDataTableSelectionChanged {
-  previous: IDataTableSelectedRow;
-  current: IDataTableSelectedRow;
+  previous?: IDataTableSelectedRow;
+  current?: IDataTableSelectedRow;
 }
 
 export interface IDataTableEditing {
+  item: any;
+  prop: string;
+  prevValue: any;
+  newValue: any;
+}
+export interface IDataTableEditionFinished {
+  state: 'accepted' | 'rejected';
   item: any;
   prop: string;
   prevValue: any;
