@@ -6,7 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
-import { TiendaComponent } from './pages/tienda/tienda.component';
+import { TiendaComponent } from './pages/tienda/tienda-home/tienda.component';
 import { NoEncontradoComponent } from './pages/no-encontrado/no-encontrado.component';
 import { AdministracionComponent } from './pages/dashboard/administracion/administracion.component';
 import { VentasComponent } from './pages/dashboard/ventas/ventas.component';

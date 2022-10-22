@@ -12,7 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { TiendaComponent } from './pages/tienda/tienda.component';
+import { TiendaComponent } from './pages/tienda/tienda-home/tienda.component';
 import { NoEncontradoComponent } from './pages/no-encontrado/no-encontrado.component';
 import { AdministracionComponent } from './pages/dashboard/administracion/administracion.component';
 import { CajaComponent } from './pages/dashboard/caja/caja.component';
@@ -34,6 +34,9 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { DetallesProductoComponent } from './pages/tienda/detalles-producto/detalles-producto.component';
+import { TiendaCarritoComponent } from './pages/tienda/tienda-carrito/tienda-carrito.component';
+import { CheckoutComponent } from './pages/tienda/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +68,9 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     DataTableComponent,
     DynamicPipe,
     SearchbarComponent,
+    DetallesProductoComponent,
+    TiendaCarritoComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
