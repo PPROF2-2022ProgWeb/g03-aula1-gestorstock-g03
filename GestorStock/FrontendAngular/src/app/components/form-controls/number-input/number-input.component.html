@@ -5,7 +5,7 @@
   (mousewheel)="onMouseWheel($event)"
 >
   <div class="input">
-    <button (mousedown)="onStepDown()" (mouseup)="stopStepper()" [disabled]="disabled">-</button>
+    <button type="button" (mousedown)="onStepDown($event)" (mouseup)="stopStepper()" [disabled]="disabled">-</button>
     <input
       #input
       type="number"
@@ -15,7 +15,7 @@
       [disabled]="disabled"
       [value]="value"
     />
-    <button (mousedown)="onStepUp()" (mouseup)="stopStepper()" [disabled]="disabled">+</button>
+    <button type="button" (mousedown)="onStepUp($event)" (mouseup)="stopStepper()" [disabled]="disabled">+</button>
   </div>
   <div class="outline" [class.not-empty]="value">
     <div class="leading"></div>

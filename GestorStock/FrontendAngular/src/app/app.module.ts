@@ -34,6 +34,8 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { TextInputComponent } from './components/form-controls/text-input/text-input.component';
+import { NumberInputComponent } from './components/form-controls/number-input/number-input.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     DataTableComponent,
     DynamicPipe,
     SearchbarComponent,
+    TextInputComponent,
+    NumberInputComponent
   ],
   imports: [
     BrowserModule,

@@ -55,6 +55,7 @@ export class NumberInputComponent {
     if (this.max && this.value > (this.max as number)) {
       this.value = Number(this.max);
     }
+    this.onChange(this.value);
   }
   stepDown(): void {
     if (typeof this.value === 'string') {
@@ -64,6 +65,7 @@ export class NumberInputComponent {
     if (this.min && this.value < (this.min as number)) {
       this.value = Number(this.min);
     }
+    this.onChange(this.value);
   }
 
   stepper(direction: 'up' | 'down'): void {
@@ -80,17 +82,19 @@ export class NumberInputComponent {
     this.stepDelay = 500;
   }
 
-  onStepUp(): void {
+  onStepUp(e: Event): void {
+    e.stopPropagation();
     this.stepper('up');
   }
 
-  onStepDown(): void {
+  onStepDown(e: Event): void {
+    e.stopPropagation();
     this.stepper('down');
   }
 
   onMouseWheel(e: Event): void {
     e.preventDefault();
-    if(this.disabled) return;
+    if (this.disabled) return;
     const { deltaY } = e as WheelEvent;
     if (deltaY > 0) this.stepDown();
     if (deltaY < 0) this.stepUp();
