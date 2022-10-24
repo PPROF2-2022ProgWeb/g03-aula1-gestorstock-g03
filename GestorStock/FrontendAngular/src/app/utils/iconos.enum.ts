@@ -26,5 +26,6 @@ export enum Iconos {
   RECIBO = "icono-recibo",
   STOCK = "icono-stock",
   CARRITO = "icono-ventas",
-  ADMINISTRACION = "icono-admin"
+  ADMINISTRACION = "icono-admin",
+  ADD_TO_CART = "icono-add-to-cart",
 }
