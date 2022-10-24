@@ -22,8 +22,10 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
   @Input() source: any[];
   @Input() searchProperty: string;
   @Input() triggerOnInput: string;
-  @Input() caseSensitive: boolean = true;
+  @Input() caseSensitive: boolean = false;
   @Input() autocomplete: boolean = false;
+  @Input() searchResultMode: 'firstMatch' | 'all';
+  @Input() searchMode: 'startsWith' | 'include' | 'exact' = 'include';
 
   @Output() searchDone = new EventEmitter<SearchResult>();
   @Output() reset = this.resetSearch
@@ -43,19 +45,65 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
   }
 
   search(): any[] | null {
-    let value = this.input.nativeElement.value;
+    let res;
+    let value = this.input.nativeElement.value as string;
+    if(!this.caseSensitive){
+      value = value.toLowerCase();
+    }
+    switch (this.searchMode) {
+      case 'startsWith':
+        res = this.searchStartsWith(value, this.caseSensitive);
+        break;
+
+      case 'include':
+        res = this.searchInclude(value, this.caseSensitive)
+        break;
+
+      case 'exact':
+        res = this.searchExact(value, this.caseSensitive);
+        break;
+      
+    }
+    return res || null;
+  }
+  
+  
+
+  searchInclude(value: string, caseSensitive: boolean = false): any[] {
     return this.source.filter((x) => {
-      let element = x[this.searchProperty];
-      let type = typeof element;
-      if (type !== 'string') {
+      let element = x[this.searchProperty]
+      if (typeof element !== 'string') {
         return false;
       }
-      if (this.caseSensitive) element = element.toLowerCase();
-      return element.includes(value.toLowerCase());
+      if(!caseSensitive) element = element.toLowerCase()
+      return element.includes(value);
+    });
+  }
+  
+  searchStartsWith(value: string, caseSensitive: boolean = false): any[] {
+    return this.source.filter((x) => {
+      let element = x[this.searchProperty]
+      if (typeof element !== 'string') {
+        return false;
+      }
+      if(!caseSensitive) element = element.toLowerCase()
+      return element.startsWith(value);
+    });
+  }
+
+  searchExact(value: string, caseSensitive: boolean = false): any[] {
+    return this.source.filter((x) => {
+      let element = x[this.searchProperty]
+      if (typeof element !== 'string') {
+        return false;
+      }
+      if(!caseSensitive) element = element.toLowerCase();
+      return element === value;
     });
   }
 
   onSearchDone(): void {
+    console.log('search done');
     let res = {
       source: this.source,
       searchProperty: this.searchProperty,
