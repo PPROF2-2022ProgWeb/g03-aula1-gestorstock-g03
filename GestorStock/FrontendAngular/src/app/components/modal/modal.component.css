@@ -8,10 +8,12 @@ div.modal-container{
   z-index: 999;
   backdrop-filter: blur(2px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  overflow: auto;
+  padding: 2rem;
 }
 
 .body {
-  min-width: 200px;
+  background-color: #fff;
 }
