@@ -1,0 +1,55 @@
+<div
+  class="input-container"
+  [class.disabled]="disabled"
+  [class.invalid]="invalid"
+  (mousewheel)="onMouseWheel($event)"
+>
+  <div class="input">
+    <button (mousedown)="onStepDown()" (mouseup)="stopStepper()" [disabled]="disabled">-</button>
+    <input
+      #input
+      type="number"
+      [step]="step"
+      (input)="onInput($event)"
+      (focus)="onFocus()"
+      [disabled]="disabled"
+      [value]="value"
+    />
+    <button (mousedown)="onStepUp()" (mouseup)="stopStepper()" [disabled]="disabled">+</button>
+  </div>
+  <div class="outline" [class.not-empty]="value">
+    <div class="leading"></div>
+    <div class="notch">
+      <label [style.padding]="title ? '0px 5px' : ''">
+        {{ title }}
+      </label>
+    </div>
+    <div class="trail">
+      <div class="error-icon" *ngIf="invalid">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-alert-circle"
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#000000"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            fill="var(--error-color)"
+            stroke="var(--error-color)"
+          />
+          <line x1="12" y1="8" x2="12" y2="12" stroke="#fff" />
+          <line x1="12" y1="16" x2="12.01" y2="16" stroke="#fff" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
