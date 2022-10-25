@@ -1,5 +1,5 @@
 <div *ngIf="isOpen" class="modal-container" (click)="closeModal()">
-  <div class="body card">
+  <div class="body card" (click)="$event.stopPropagation()">
     <ng-content></ng-content>
   </div>
 </div>

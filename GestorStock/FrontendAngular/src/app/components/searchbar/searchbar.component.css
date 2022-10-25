@@ -21,5 +21,6 @@
 .searchbar button {
   border: none;
   background-color: transparent;
-  padding: 5px;
+  padding: 5px 0;
+  margin-right: 10px;
 }
