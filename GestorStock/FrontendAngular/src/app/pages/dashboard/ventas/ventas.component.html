@@ -8,16 +8,18 @@
         [source]="productos"
         searchProperty="name"
         triggerOnInput
+        searchMode="include"
         placeholder="Busqueda por nombre de producto"
         (searchDone)="onSearchDone($event)"
       ></search-bar>
       <app-button
+        class="addToCart"
         square
         bordered
         [disabled]="!enableButton()"
         (onClick)="addToCart(productoStockSeleccionado)"
       >
-        <span class="icono"> OK </span>
+        <app-icon [icon]="iconos.ADD_TO_CART"></app-icon>
         <span class="text"> Agregar producto al carrito </span>
       </app-button>
     </div>
@@ -59,7 +61,14 @@
     ></app-aviso>
 
     <div class="actions" *ngIf="productosCarrito.length > 0">
-      <app-button bordered square>Cambiar cantidad</app-button>
+      <app-button
+        bordered
+        square
+        [disabled]="!cart.selectedItem"
+        (onClick)="openModal()"
+      >
+        Cambiar cantidad
+      </app-button>
       <app-button
         bordered
         square
@@ -75,3 +84,7 @@
     <app-button square bordered centered>Finalizar</app-button>
   </div>
 </div>
+
+<app-modal #modal (onClose)="formEditCartProduct.reset()">
+  <fm-editCartProduct #formEditCartProduct [productoCarrito]="cart.selectedItem" (onSubmit)="onEditCartProductSubmit($event)"></fm-editCartProduct>
+</app-modal>

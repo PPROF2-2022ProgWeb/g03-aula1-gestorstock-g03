@@ -1,12 +1,13 @@
 import { CurrencyPipe } from '@angular/common';
 import {
+  AfterViewChecked,
   Component,
   ElementRef,
   OnInit,
   ViewChild,
-  ViewChildren,
 } from '@angular/core';
 import { DataTableComponent } from 'src/app/components/data-table/data-table.component';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { SearchbarComponent } from 'src/app/components/searchbar/searchbar.component';
 import {
   IDataTableColumn,
@@ -17,12 +18,14 @@ import { SearchResult } from 'src/app/interfaces/searchResult';
 import { Producto } from 'src/app/models/Producto';
 import { ProductoCarrito } from 'src/app/models/ProductoCarrito';
 import { Productos } from 'src/app/utils/data/productos';
+import { Iconos } from 'src/app/utils/iconos.enum';
 @Component({
   selector: 'app-ventas',
   templateUrl: './ventas.component.html',
   styleUrls: ['./ventas.component.css'],
 })
-export class VentasComponent implements OnInit {
+export class VentasComponent implements OnInit, AfterViewChecked {
+  public iconos = Iconos;
   private _productosCarrito: ProductoCarrito[];
 
   public productos: Producto[] = [];
@@ -44,7 +47,7 @@ export class VentasComponent implements OnInit {
     {
       name: 'Unidades',
       source: 'cantidad',
-      editable: true
+      editable: true,
     },
     {
       name: 'Total',
@@ -66,7 +69,7 @@ export class VentasComponent implements OnInit {
   ];
 
   get totalCarrito(): number {
-    return this.productosCarrito.reduce((acc, curr) => acc + curr.total, 0)
+    return this.productosCarrito.reduce((acc, curr) => acc + curr.total, 0);
   }
 
   get productosCarrito(): ProductoCarrito[] {
@@ -91,12 +94,18 @@ export class VentasComponent implements OnInit {
 
   @ViewChild('contenedorTabla') contenedorTabla: ElementRef;
   @ViewChild('searchbar') searchBar: SearchbarComponent;
+  @ViewChild('modal') modal: ModalComponent;
+  @ViewChild('cart') cart: DataTableComponent;
 
   constructor() {
     this.productos = Productos;
   }
 
   ngOnInit(): void {}
+
+  ngAfterViewChecked(): void {
+    // this.modal.isOpen = true;
+  }
 
   onSearchDone(e: SearchResult): void {
     this.searchValue = e.value;
@@ -120,20 +129,34 @@ export class VentasComponent implements OnInit {
   stockSelectionChanged(e: IDataTableSelectionChanged): void {
     this.productoStockSeleccionado = e.current?.item;
   }
-  
+
   eliminarDelCarrito(item: ProductoCarrito): void {
-    this.productosCarrito = this.productosCarrito.filter((x: ProductoCarrito) => x !== item)
+    this.productosCarrito = this.productosCarrito.filter(
+      (x: ProductoCarrito) => x !== item
+    );
   }
 
   cartEditionFinished(e: IDataTableEditionFinished): void {
-    this.editCartProduct(e.item)
+    this.editCartProduct(e.item);
   }
 
-  editCartProduct(item: ProductoCarrito): void{
-    let index = this.productosCarrito.findIndex(p => p === item);
+  editCartProduct(item: ProductoCarrito): void {
+    let index = this.productosCarrito.findIndex((p) => p === item);
     if (index > -1) {
-      this.productosCarrito[index] = item
-      this.productosCarrito = [...this.productosCarrito]
+      this.productosCarrito[index] = item;
+      this.productosCarrito = [...this.productosCarrito];
     }
+  }
+
+  onEditCartProductSubmit(e: ProductoCarrito): void {
+    this.editCartProduct(e);
+    this.modal.isOpen = false;
+    this.cart.selectedIndex = 1;
+    // this.cart.selectedItem = null;
+    // console.log();
+  }
+
+  openModal() {
+    this.modal.isOpen = true;
   }
 }

@@ -34,6 +34,7 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { FmEdicCartProductComponent } from './components/forms/fm-usuario/fm-editCartProduct.component';
 import { TextInputComponent } from './components/form-controls/text-input/text-input.component';
 import { NumberInputComponent } from './components/form-controls/number-input/number-input.component';
 
@@ -67,6 +68,7 @@ import { NumberInputComponent } from './components/form-controls/number-input/nu
     DataTableComponent,
     DynamicPipe,
     SearchbarComponent,
+    FmEdicCartProductComponent,
     TextInputComponent,
     NumberInputComponent
   ],

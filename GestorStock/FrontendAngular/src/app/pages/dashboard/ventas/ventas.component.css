@@ -18,22 +18,28 @@
   font-size: 2rem;
 }
 
-
+.search-container app-button app-icon {
+  margin-right: 0.5rem;
+}
 
 @media screen and (min-width: 768px) {
   .search-container {
     flex-direction: row;
   }
 
-  .actions{
+  .actions {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 
-  .search-container app-button .text{
+  .search-container app-button .text {
     display: none;
+  }
+
+  .search-container app-button app-icon {
+    margin-right: 0;
   }
 
   search-bar {
@@ -44,6 +50,4 @@
     justify-content: space-between;
     align-items: center;
   }
-
-  
 }
