@@ -1,0 +1,140 @@
+.input-container {
+  --primary-color: #a6a6a6;
+  --active-color: #00324a;
+  --error-color: #ff3907;
+}
+
+.input-container {
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.input-container label {
+  position: static;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: all 0.2s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 7px 0px;
+  color: var(--primary-color);
+}
+
+.input-container .input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+}
+
+.input input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  padding: 7px 0;
+}
+
+.input input::-webkit-outer-spin-button,
+.input input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.input input[type="number"] {
+  appearance: textfield;
+}
+
+.input button {
+  border: none;
+  background-color: transparent;
+  /* font-weight: bold; */
+  padding: 0 1rem;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+}
+
+.outline {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.outline .leading {
+  width: 1rem;
+  border-style: solid;
+  border-color: var(--primary-color);
+  border-width: 1px 0px 1px 1px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.outline .trail {
+  flex: 1;
+  min-width: 1rem;
+  border-style: solid;
+  border-color: var(--primary-color);
+  border-width: 1px 1px 1px 0px;
+  border-radius: 0px 8px 8px 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.outline .notch {
+  border-style: solid;
+  border-color: var(--primary-color);
+  border-top-color: transparent;
+  border-width: 1px 0px 1px 0px;
+}
+
+.input-container:focus-within .outline .notch,
+.input-container:focus-within .outline .trail,
+.input-container:focus-within .outline .leading {
+  border-color: var(--active-color);
+}
+
+.input-container.invalid .outline .notch,
+.input-container.invalid .outline .trail,
+.input-container.invalid .outline .leading {
+  border-color: var(--error-color);
+}
+
+.outline.not-empty .notch,
+.input-container.invalid .outline .notch,
+.input-container:focus-within .outline .notch {
+  border-top-color: transparent;
+}
+
+.outline .notch label {
+  transform: translateY(-50%);
+}
+
+.input-container:focus-within .outline .notch label,
+.input-container:focus-within .input button {
+  color: var(--active-color);
+}
+
+.input-container.invalid .outline .notch label {
+  color: var(--error-color);
+}
+
+.input-container.disabled .outline .leading {
+  width: 1rem;
+  border-style: solid;
+  border-color: var(--primary-color);
+  border-width: 1px 0px 1px 1px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.input-container.disabled .outline .trail,
+.input-container.disabled .outline .notch,
+.input-container.disabled .outline .leading {
+  border-style: dashed;
+}

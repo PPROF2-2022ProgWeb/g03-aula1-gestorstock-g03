@@ -34,9 +34,6 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
-import { DetallesProductoComponent } from './pages/tienda/detalles-producto/detalles-producto.component';
-import { TiendaCarritoComponent } from './pages/tienda/tienda-carrito/tienda-carrito.component';
-import { CheckoutComponent } from './pages/tienda/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -68,9 +65,6 @@ import { CheckoutComponent } from './pages/tienda/checkout/checkout.component';
     DataTableComponent,
     DynamicPipe,
     SearchbarComponent,
-    DetallesProductoComponent,
-    TiendaCarritoComponent,
-    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
