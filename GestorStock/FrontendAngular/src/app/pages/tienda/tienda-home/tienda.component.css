@@ -1,24 +1,178 @@
+
+/* --> HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+}
+
+
 .logo {
-    /*EN h1 gestor ecommerce*/
+    color: #0CB093;
+    user-select: none;
+
 }
 .logo-pt1 {
-    /*Gestor*/
+    font-weight: 800;
 }
 .logo-pt2 {
-    /*Ecommerce*/
+    font-weight: 300;
 }
 .search-bar {
-
+    width: 65%;
+    height: 32px;
+    padding-left: 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: url(/images/Search.svg) no-repeat 98%;
+    background-size: 20px;
+    background-color: white;
 }
-/* --> CATEGORIAS GRID */
-.categorias {
-    /*nav*/
-}
-.navlink {
 
+/* Inicio estilo de barra de categorias */
+
+nav.categorias {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 80%;
+    padding: 16px 0;
+    margin: 56px auto;
+    background-color: var(--negro);
+    border-radius: 16px;
 }
 
-/* --> Combo DISNEY - HBO */
+nav.categorias.navlink {
+    text-decoration: none;
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 14px 0px;
+    border-right: solid 2px var(--blanco);
+}
+
+nav.categorias .navlink:last-child {
+    border: none;
+}
+
+nav.categorias .navlink img {
+    width: 40px;
+    transition: transform .3s ease-out;
+}
+
+nav.categorias .navlink:hover img {
+    transform: scale(1.2) translateY(-10px);
+}
+
+.button-hover {
+    background-color: var(--gris-oscuro);
+    cursor: pointer;
+}
+
+.button-hover:hover {
+    background-color: var(--verde);
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 1000px) {
+    nav.categorias {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 18px;
+    }
+
+    nav.categorias .navlink:nth-child(4n) {
+        border: none;
+    }
+}
+/* Fin estilo de barra de categorias */
+
+/* Inicio seccion de principal */
+main#seccion-principal {
+    margin: 48px 10%;
+}
+
+main#seccion-principal section#interes {
+    margin-bottom: 32px;
+}
+
+main#seccion-principal section .grid {
+    display: grid;
+    align-self: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+/* Fin seccion de principal */
+ 
+
+/* Inicio estilo de combos */
+section.hero-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--verde);
+    gap: 16px;
+    margin-top: 80px;
+    padding: 0 10%;
+    overflow: visible;
+}
+
+article.hero-product {
+    position: relative;
+    bottom: 24px;
+    display: flex;
+    align-items: flex-end;
+    height: 265px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    flex: 1 1 400px;
+    box-shadow: 0px 4px 8px 0px #00000040;
+}
+
+article.hero-product .contenido {
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    color: var(--blanco);
+    padding: 8px;
+}
+
+article.hero-product .contenido img {
+    margin-right: 16px;
+}
+
+article.hero-product .contenido h3 {
+    font-size: 1em;
+}
+
+article#combo-disney {
+    /* background-image: url("../images/fondo-combo-disney.png"); */
+}
+
+article#combo-hbo {
+    /* background-image: url("../images/fondo-combo-hbo.png"); */
+}
+/* Fin estilo de combos */
+
+
+  
 #hero-products {
     
 }
@@ -49,6 +203,63 @@
 }
 
 /* --> TE PUEDE INTERESAR */
+
+/* Inicio estilo carta de producto */
+article.card-producto {
+    background-color: var(--blanco);
+    border-radius: 16px;
+    padding: 8px;
+    min-width: 244px;
+    box-shadow: 0px 4px 8px 0px #00000040;
+    transition: all .3s ease-out;
+}
+
+article.card-producto:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 4px 15px 3px #00000040;
+}
+
+article.card-producto a {
+    text-decoration: none;
+    height: 100%;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+article.card-producto img {
+    width: 100%;
+    height: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    object-fit: cover;
+}
+
+article.card-producto .contenido {
+    display: flex;
+    font-weight: 700;
+}
+
+article.card-producto .contenido .contenedor-titulo .titulo {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+article.card-producto .contenido .contenedor-titulo {
+    border-right: solid 1px rgba(0, 0, 0, 0.251);
+    padding-right: 8px;
+    margin-right: 8px;
+    flex-grow: 1;
+}
+
+article.card-producto .contenido .contenedor-precio span {
+    font-size: 8px;
+    font-weight: 300;
+}
+
+/* Fin estilo carta de producto */
+  
 #seccion-principal {
 
 }
