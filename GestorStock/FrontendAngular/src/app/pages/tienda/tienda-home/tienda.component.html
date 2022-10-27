@@ -1,6 +1,158 @@
 <main>
-    <header>
-        <h1>Gestor Ecommerce</h1>
-        <search-bar searchProperty="name" triggerOnInput placeholder="Buscar aquí" [source]="productos"></search-bar>
+    <header role="banner">
+        <h1 class="logo">
+            <span class="logo-pt1">Gestor</span>
+            <span class="logo-pt2">Ecommerce</span>
+        </h1>
+        <search-bar class="searck-bar" searchProperty="name" triggerOnInput placeholder="Buscar aquí"
+            [source]="productos"></search-bar>
     </header>
+    <nav class="categorias">
+        <a class="navlink" href="#">
+            <img src="" alt="Icono de la categoria Alimentos">
+            <p>Alimentos</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="" alt="Icono de la categoria Lacteos">
+            <p>Lacteos</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="" alt="Icono de la categoria Bebidas">
+            <p>Bebidas</p>
+        </a>
+    </nav>
+    <section id="hero-products" class="hero-products-container">
+        <article id="combo-disney" class="hero-product">
+            <div class="contenido">
+                <img src="" alt="Imagen del combo Disney+ y Star+">
+                <div class="texto">
+                    <h3 class="hero-product-titulo">50% off en Combo Plus</h3>
+                    <p class="hero-product-descripcion">
+                        canjea puntos
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article id="combo-hbo" class="hero-product">
+            <div class="contenido">
+                <img src="" alt="Imagen del combo Disney+ y Star+">
+                <div class="texto">
+                    <h3 class="hero-product-titulo">50% off en Combo Plus</h3>
+                    <p class="hero-product-descripcion">
+                        canjea puntos
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <main id="seccion-principal">
+        <section id="interes">
+            <h2 class="titulo">Te puede interesar</h2>
+            <div class="grid">
+                <!-- esto se implementa desde el back? -->
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto2
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$180</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto3
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$320</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="mas-vendidos">
+            <h2 class="titulo">Mas vendidos</h2>
+            <div class="grid">
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
 </main>
