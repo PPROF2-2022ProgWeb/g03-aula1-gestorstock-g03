@@ -1,4 +1,4 @@
-
+@import url(../../../../styles.css);
 /* --> HEADER */
 
 header {
@@ -18,7 +18,7 @@ header {
 
 
 .logo {
-    color: #0CB093;
+    color: var(--color-primario);
     user-select: none;
 
 }
@@ -48,11 +48,11 @@ nav.categorias {
     width: 80%;
     padding: 16px 0;
     margin: 56px auto;
-    background-color: var(--negro);
+    background-color: var(--color-primario);
     border-radius: 16px;
 }
 
-nav.categorias.navlink {
+nav.categorias .navlink {
     text-decoration: none;
     color: var(--blanco);
     display: flex;
@@ -163,11 +163,11 @@ article.hero-product .contenido h3 {
 }
 
 article#combo-disney {
-    /* background-image: url("../images/fondo-combo-disney.png"); */
+    background-image: url("../../../../assets/img/img_tienda/fondo-combo-disney.png");
 }
 
 article#combo-hbo {
-    /* background-image: url("../images/fondo-combo-hbo.png"); */
+    background-image: url("../../../../assets/img/img_tienda/fondo-combo-hbo.png");
 }
 /* Fin estilo de combos */
 
