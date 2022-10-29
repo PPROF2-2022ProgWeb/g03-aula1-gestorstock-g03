@@ -4,8 +4,7 @@ import {
   EventEmitter,
   Input,
   OnInit,
-  Output,
-  ViewChild,
+  Output
 } from '@angular/core';
 import { ICheckoutStatus } from 'src/app/interfaces/checkout';
 import { IPlanFinanciacion } from 'src/app/interfaces/planFinanciacion';
