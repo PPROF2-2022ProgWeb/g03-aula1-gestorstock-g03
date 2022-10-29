@@ -1,9 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import {
-  AfterViewChecked,
   Component,
-  ElementRef,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { DataTableComponent } from 'src/app/components/data-table/data-table.component';
@@ -12,8 +9,7 @@ import { SearchbarComponent } from 'src/app/components/searchbar/searchbar.compo
 import { ICheckoutStatus } from 'src/app/interfaces/checkout';
 import {
   IDataTableColumn,
-  IDataTableEditionFinished,
-  IDataTableSelectionChanged,
+  IDataTableEditionFinished
 } from 'src/app/interfaces/dataTable';
 import { SearchResult } from 'src/app/interfaces/searchResult';
 import { Producto } from 'src/app/models/Producto';

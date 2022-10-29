@@ -47,7 +47,7 @@
           [value]="currencyPipe.transform(montoVenta) || '$0.00'"
         ></text-input>
         <number-input
-          title="Monto de pago"
+          title="Recargo (%)"
           min="0"
           [value]="recargo"
           (onChange)="updateRecargo($event)"
