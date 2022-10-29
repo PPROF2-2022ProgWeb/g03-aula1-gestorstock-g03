@@ -1,0 +1,14 @@
+<div class="container" (click)="$event.stopPropagation()">
+  <h2>Editar producto del carrito</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <text-input title="Producto" formControlName="producto"></text-input>
+    <text-input title="Precio unitario" formControlName="precioUnitario"></text-input>
+    <number-input title="Unidades" formControlName="unidades" min="1" [max]="productoCarrito ? productoCarrito.producto.stock : ''"></number-input>
+    <text-input title="Precio Total" formControlName="total"></text-input>
+
+    <app-button type="submit" square bordered>Aceptar</app-button>
+    <app-button type="reset" square inverted bordered (onClick)="onCancel()">
+      Cancelar
+    </app-button>
+  </form>
+</div>

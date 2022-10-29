@@ -33,20 +33,57 @@ export class DataTableComponent
   @Input() maxHeight: number = -1;
   @Output() selectionChanged = new EventEmitter<IDataTableSelectionChanged>();
   @Output() editionFinished = new EventEmitter<IDataTableEditionFinished>();
-  @Output() selectedItem: any;
-  @Output() selectedIndex: number;
 
-  @ViewChild('table') table: ElementRef;
-  @ViewChild('body') body: ElementRef;
-  @ViewChild('tableContainer') tableContainer: ElementRef;
-  @ViewChild('contenedor') contenedor: ElementRef;
-  @ViewChild('tableEventShifter') tableEventShifter: ElementRef;
+  @ViewChild('table') protected table: ElementRef;
+  @ViewChild('body') protected body: ElementRef;
+  @ViewChild('tableContainer') protected tableContainer: ElementRef;
+  @ViewChild('contenedor') protected contenedor: ElementRef;
+  @ViewChild('tableEventShifter') protected tableEventShifter: ElementRef;
 
   private isSelectionMoved: boolean = false;
   private currentSelectedRow?: IDataTableSelectedRow;
   private previousSelectedRow?: IDataTableSelectedRow;
+
   public editing: IDataTableEditing;
   public isEditing: boolean = false;
+  private _selectedItem: any;
+  private _selectedIndex: number;
+
+  public get selectedIndex(): any {
+    return this._selectedIndex;
+  }
+
+  public set selectedIndex(value: number) {
+    this._selectedIndex = value;
+    this._selectedItem = value;
+    if (value !== -1) {
+      let row = this.body.nativeElement.childNodes[this.selectedIndex];
+      this.selectRow(row, this.selectedIndex);
+    } else {
+      this.currentSelectedRow?.element.classList?.remove('selected');
+      this.previousSelectedRow = this.currentSelectedRow;
+      this.currentSelectedRow = undefined;
+    }
+  }
+
+  public get selectedItem(): any {
+    return this._selectedItem;
+  }
+
+  public set selectedItem(value: any) {
+    let index = this.source.findIndex((x) => x === value);
+    this._selectedItem = value;
+    this._selectedIndex = index;
+    if (index !== -1) {
+      let row = this.body.nativeElement.childNodes[this.selectedIndex];
+      this.selectRow(row, this.selectedIndex);
+    } else if (!value) {
+      this.currentSelectedRow?.element.classList?.remove('selected');
+      this.previousSelectedRow = this.currentSelectedRow;
+      this.currentSelectedRow = undefined;
+    }
+  }
+
   constructor() {}
 
   ngOnInit(): void {
@@ -59,7 +96,7 @@ export class DataTableComponent
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes['source']){
+    if (changes['source']) {
       this.deselectRow();
     }
   }
@@ -76,13 +113,13 @@ export class DataTableComponent
 
   ngAfterViewChecked(): void {
     this.adjustTableHeight(this.maxHeight);
-    if(this.editing){
+    if (this.editing) {
       let input = this.editingElement.childNodes[1] as HTMLInputElement;
       input.focus && input.focus();
     }
   }
 
-  adjustTableHeight(maxHeight: number): void {
+  protected adjustTableHeight(maxHeight: number): void {
     if (this.contenedor?.nativeElement) {
       let contenedor = this.contenedor.nativeElement as HTMLElement;
       let tabla = this.table.nativeElement as HTMLElement;
@@ -95,7 +132,7 @@ export class DataTableComponent
     }
   }
 
-  scrollToRow(row: HTMLElement): void {
+  protected scrollToRow(row: HTMLElement): void {
     let thead = (this.table.nativeElement as HTMLElement)
       .childNodes[0] as HTMLElement;
     let theadRect = thead.getBoundingClientRect();
@@ -109,32 +146,20 @@ export class DataTableComponent
         contenedor.scrollTop -
         (contenedorRect.top - rowRect.top) -
         theadRect.height;
-      console.log(`
-      contTop: ${contenedorRect.top}
-      rowTop: ${rowRect.top}
-      diff: ${diff}
-      scroll: ${contenedor.scrollTop}
-      `);
       contenedor.scroll(0, diff);
     } else if (rowRect.bottom > contenedorRect.bottom) {
       diff = contenedor.scrollTop - (contenedorRect.bottom - rowRect.bottom);
-      console.log(`
-      contTop: ${contenedorRect.top}
-      rowTop: ${rowRect.top}
-      diff: ${diff}
-      scroll: ${contenedor.scrollTop}
-      `);
       contenedor.scroll(0, diff);
     }
   }
 
-  deselectRow(){
+  protected deselectRow() {
     this.currentSelectedRow?.element.classList?.remove('selected');
     this.selectedIndex = -1;
     this.selectedItem = undefined;
   }
 
-  selectRow(row: HTMLElement, item: any): void {
+  protected selectRow(row: HTMLElement, item: any): void {
     this.previousSelectedRow = this.currentSelectedRow;
     this.currentSelectedRow = {
       element: row,
@@ -170,7 +195,7 @@ export class DataTableComponent
     this.selectRow(e.currentTarget as HTMLElement, item);
   }
 
-  private editingElement: HTMLElement;
+  protected editingElement: HTMLElement;
   editRow(e: Event, item: any, column: IDataTableColumn) {
     if (!column.editable) return;
     this.isEditing = true;
@@ -193,38 +218,40 @@ export class DataTableComponent
     if (this.editing) this.editing.newValue = element.value;
   }
 
-  finishEdition(row: HTMLElement, isAccepted: boolean = true) {
+  protected finishEdition(row: HTMLElement, isAccepted: boolean = true) {
     let { item, prop } = this.editing;
-    let state = ''
+    let state = '';
     if (isAccepted) {
       item[prop] = this.editing.newValue;
       this.editionFinished.emit({
         ...this.editing,
-        state: 'accepted'
-      })
-    }else {
-      state = 'rejected'
+        state: 'accepted',
+      });
+    } else {
+      state = 'rejected';
       item[prop] = this.editing.prevValue;
       this.editionFinished.emit({
         ...this.editing,
-        state: 'rejected'
-      })
+        state: 'rejected',
+      });
     }
 
     row.childNodes.forEach((x) => {
       let child = x as HTMLElement;
       child.classList?.remove('editing');
     });
-
-    
   }
 
   cancelEdit() {
-    this.currentSelectedRow && this.isEditing && this.finishEdition(this.currentSelectedRow.element, false);
+    this.currentSelectedRow &&
+      this.isEditing &&
+      this.finishEdition(this.currentSelectedRow.element, false);
     this.isEditing = false;
   }
   acceptEdit() {
-    this.currentSelectedRow && this.isEditing && this.finishEdition(this.currentSelectedRow.element, true);
+    this.currentSelectedRow &&
+      this.isEditing &&
+      this.finishEdition(this.currentSelectedRow.element, true);
     this.isEditing = false;
   }
 
