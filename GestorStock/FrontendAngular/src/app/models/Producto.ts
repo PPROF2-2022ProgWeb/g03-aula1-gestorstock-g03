@@ -3,5 +3,6 @@ export class Producto {
   public name: string;
   public price: number;
   public stock: number;
+  public category: string;
   public barcode?: string;
 }

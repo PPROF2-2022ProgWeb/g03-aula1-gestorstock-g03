@@ -8,21 +8,22 @@
         [source]="productos"
         searchProperty="name"
         triggerOnInput
+        searchMode="include"
         placeholder="Busqueda por nombre de producto"
         (searchDone)="onSearchDone($event)"
       ></search-bar>
       <app-button
+        class="addToCart"
         square
         bordered
-        [disabled]="!enableButton()"
-        (onClick)="addToCart(productoStockSeleccionado)"
+        [disabled]="!addToCartEnabled"
+        (onClick)="addToCart(tablaStock.selectedItem)"
       >
-        <span class="icono"> OK </span>
+        <app-icon [icon]="iconos.ADD_TO_CART"></app-icon>
         <span class="text"> Agregar producto al carrito </span>
       </app-button>
     </div>
     <div
-      #contenedorTabla
       class="table-container"
       [class.visible]="searchValue && searchResult.length > 0"
     >
@@ -33,7 +34,7 @@
         [source]="searchResult"
         [columns]="stockColumns"
         [maxHeight]="300"
-        (selectionChanged)="stockSelectionChanged($event)"
+        (selectionChanged)="enableButton()"
       ></data-table>
     </div>
     <app-aviso
@@ -59,7 +60,14 @@
     ></app-aviso>
 
     <div class="actions" *ngIf="productosCarrito.length > 0">
-      <app-button bordered square>Cambiar cantidad</app-button>
+      <app-button
+        bordered
+        square
+        [disabled]="!cart.selectedItem"
+        (onClick)="openModal()"
+      >
+        Cambiar cantidad
+      </app-button>
       <app-button
         bordered
         square
@@ -72,6 +80,14 @@
   </div>
   <div id="total" class="card actions">
     <span>Total: {{ totalCarrito | currency }}</span>
-    <app-button square bordered centered>Finalizar</app-button>
+    <app-button square bordered centered (onClick)="modalFinalizarVenta.isOpen = true" [disabled]="productosCarrito.length === 0" >Finalizar</app-button>
   </div>
 </div>
+
+<app-modal #modal (onClose)="formEditCartProduct.reset()">
+  <fm-editCartProduct #formEditCartProduct [productoCarrito]="cart.selectedItem" (onSubmit)="onEditCartProductSubmit($event)"></fm-editCartProduct>
+</app-modal>
+
+<app-modal #modalFinalizarVenta class="finalizarVenta">
+  <ventas-checkout [montoVenta]="totalCarrito" [products]="productosCarrito" (onFinish)="onCheckoutFinish($event)"></ventas-checkout>
+</app-modal>
