@@ -34,13 +34,15 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DynamicPipe } from './pipes/dynamic.pipe';
 import { CurrencyPipe, PercentPipe } from '@angular/common';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
-import { FmEdicCartProductComponent } from './components/forms/fm-usuario/fm-editCartProduct.component';
+import { FmEdicCartProductComponent } from './components/forms/fm-editCartProduct/fm-editCartProduct.component';
 import { TextInputComponent } from './components/form-controls/text-input/text-input.component';
 import { NumberInputComponent } from './components/form-controls/number-input/number-input.component';
 import { SelectionGroupComponent } from './components/selection-group/selection-group.component';
 import { SelectionItemComponent } from './components/selection-group/selection-item/selection-item.component';
 import { VentasCheckoutComponent } from './components/ventas-checkout/ventas-checkout.component';
 import { SelectInputComponent } from './components/form-controls/select-input/select-input.component';
+import { ProductosService } from './services/productos.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -80,13 +82,8 @@ import { SelectInputComponent } from './components/form-controls/select-input/se
     VentasCheckoutComponent,
     SelectInputComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SvgModule,
-    ReactiveFormsModule,
-  ],
-  providers: [LoginService, RegistroService, CurrencyPipe, PercentPipe],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule],
+  providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
