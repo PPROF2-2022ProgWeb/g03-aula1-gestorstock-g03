@@ -146,21 +146,9 @@ export class DataTableComponent
         contenedor.scrollTop -
         (contenedorRect.top - rowRect.top) -
         theadRect.height;
-      console.log(`
-      contTop: ${contenedorRect.top}
-      rowTop: ${rowRect.top}
-      diff: ${diff}
-      scroll: ${contenedor.scrollTop}
-      `);
       contenedor.scroll(0, diff);
     } else if (rowRect.bottom > contenedorRect.bottom) {
       diff = contenedor.scrollTop - (contenedorRect.bottom - rowRect.bottom);
-      console.log(`
-      contTop: ${contenedorRect.top}
-      rowTop: ${rowRect.top}
-      diff: ${diff}
-      scroll: ${contenedor.scrollTop}
-      `);
       contenedor.scroll(0, diff);
     }
   }

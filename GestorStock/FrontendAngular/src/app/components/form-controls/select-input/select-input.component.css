@@ -25,7 +25,10 @@
   color: var(--primary-color);
 }
 
-.input-container input {
+.input-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   position: absolute;
   border: none;
   background-color: transparent;
@@ -65,6 +68,28 @@
   border-style: solid;
   border-color: var(--primary-color);
   border-width: 1px 0px 1px 0px;
+}
+
+.trail app-icon {
+  display: flex;
+  align-items: center;
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+  color: var(--primary-color);
+}
+
+.trail app-icon /deep/ i {
+  color: var(--primary-color);
+}  
+
+
+
+.input-container:focus-within .trail app-icon /deep/ i {
+  color: var(--active-color);
+}
+.input-container:focus-within + .trail app-icon {
+  transform: rotate(180deg);
+  color: var(--error-color-color);
 }
 
 .input-container:focus-within .outline .notch,

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'gs-icofont';
-  src:  url('fonts/gs-icofont.eot?84ze7g');
-  src:  url('fonts/gs-icofont.eot?84ze7g#iefix') format('embedded-opentype'),
-    url('fonts/gs-icofont.ttf?84ze7g') format('truetype'),
-    url('fonts/gs-icofont.woff?84ze7g') format('woff'),
-    url('fonts/gs-icofont.svg?84ze7g#gs-icofont') format('svg');
+  src:  url('fonts/gs-icofont.eot?dxyi8l');
+  src:  url('fonts/gs-icofont.eot?dxyi8l#iefix') format('embedded-opentype'),
+    url('fonts/gs-icofont.ttf?dxyi8l') format('truetype'),
+    url('fonts/gs-icofont.woff?dxyi8l') format('woff'),
+    url('fonts/gs-icofont.svg?dxyi8l#gs-icofont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icono-chevron-down:before {
+  content: "\e921";
+}
 .icono-add-to-cart:before {
   content: "\e920";
 }

@@ -22,6 +22,9 @@
   margin-right: 0.5rem;
 }
 
+app-modal.finalizarVenta /deep/ .modal-container > .body {
+  min-width: 80%;
+}
 @media screen and (min-width: 768px) {
   .search-container {
     flex-direction: row;
@@ -50,4 +53,5 @@
     justify-content: space-between;
     align-items: center;
   }
+
 }

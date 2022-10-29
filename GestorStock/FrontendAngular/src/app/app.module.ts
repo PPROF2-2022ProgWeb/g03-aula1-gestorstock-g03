@@ -37,6 +37,10 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { FmEdicCartProductComponent } from './components/forms/fm-usuario/fm-editCartProduct.component';
 import { TextInputComponent } from './components/form-controls/text-input/text-input.component';
 import { NumberInputComponent } from './components/form-controls/number-input/number-input.component';
+import { SelectionGroupComponent } from './components/selection-group/selection-group.component';
+import { SelectionItemComponent } from './components/selection-group/selection-item/selection-item.component';
+import { VentasCheckoutComponent } from './components/ventas-checkout/ventas-checkout.component';
+import { SelectInputComponent } from './components/form-controls/select-input/select-input.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,11 @@ import { NumberInputComponent } from './components/form-controls/number-input/nu
     SearchbarComponent,
     FmEdicCartProductComponent,
     TextInputComponent,
-    NumberInputComponent
+    NumberInputComponent,
+    SelectionGroupComponent,
+    SelectionItemComponent,
+    VentasCheckoutComponent,
+    SelectInputComponent,
   ],
   imports: [
     BrowserModule,

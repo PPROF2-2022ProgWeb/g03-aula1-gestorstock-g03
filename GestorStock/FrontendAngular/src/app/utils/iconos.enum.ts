@@ -28,4 +28,5 @@ export enum Iconos {
   CARRITO = "icono-ventas",
   ADMINISTRACION = "icono-admin",
   ADD_TO_CART = "icono-add-to-cart",
+  CHEVRON_DOWN = "icono-chevron-down",
 }

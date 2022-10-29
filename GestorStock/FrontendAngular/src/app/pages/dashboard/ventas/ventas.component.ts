@@ -9,6 +9,7 @@ import {
 import { DataTableComponent } from 'src/app/components/data-table/data-table.component';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { SearchbarComponent } from 'src/app/components/searchbar/searchbar.component';
+import { ICheckoutStatus } from 'src/app/interfaces/checkout';
 import {
   IDataTableColumn,
   IDataTableEditionFinished,
@@ -17,6 +18,7 @@ import {
 import { SearchResult } from 'src/app/interfaces/searchResult';
 import { Producto } from 'src/app/models/Producto';
 import { ProductoCarrito } from 'src/app/models/ProductoCarrito';
+import { VentasService } from 'src/app/services/ventas.service';
 import { Productos } from 'src/app/utils/data/productos';
 import { Iconos } from 'src/app/utils/iconos.enum';
 @Component({
@@ -24,14 +26,15 @@ import { Iconos } from 'src/app/utils/iconos.enum';
   templateUrl: './ventas.component.html',
   styleUrls: ['./ventas.component.css'],
 })
-export class VentasComponent implements OnInit, AfterViewChecked {
+export class VentasComponent {
   public iconos = Iconos;
   private _productosCarrito: ProductoCarrito[];
 
   public productos: Producto[] = [];
   public searchResult: any[] = [];
   public searchValue: string;
-  public productoStockSeleccionado: Producto | undefined;
+  // public productoStockSeleccionado: Producto | undefined;
+  public addToCartEnabled: boolean = false;
 
   public cartColumns: IDataTableColumn[] = [
     {
@@ -92,19 +95,14 @@ export class VentasComponent implements OnInit, AfterViewChecked {
     sessionStorage.setItem('carrito', JSON.stringify(value));
   }
 
-  @ViewChild('contenedorTabla') contenedorTabla: ElementRef;
   @ViewChild('searchbar') searchBar: SearchbarComponent;
   @ViewChild('modal') modal: ModalComponent;
   @ViewChild('cart') cart: DataTableComponent;
+  @ViewChild('stock') tablaStock: DataTableComponent;
+  @ViewChild('modalFinalizarVenta') modalFinalizarVenta: ModalComponent;
 
-  constructor() {
+  constructor(private vs: VentasService) {
     this.productos = Productos;
-  }
-
-  ngOnInit(): void {}
-
-  ngAfterViewChecked(): void {
-    // this.modal.isOpen = true;
   }
 
   onSearchDone(e: SearchResult): void {
@@ -114,20 +112,23 @@ export class VentasComponent implements OnInit, AfterViewChecked {
 
   addToCart(producto: Producto | undefined): void {
     if (!producto) return;
-    let toAdd = new ProductoCarrito(producto, 1);
-    this.productosCarrito = [...this.productosCarrito, toAdd];
+    let existent = this.productosCarrito.find( p => p.producto.id === producto.id)
+    if(existent) {
+      existent.cantidad++;
+      this.editCartProduct(existent)
+    }
+    else {
+      let toAdd = new ProductoCarrito(producto, 1);
+      this.productosCarrito = [...this.productosCarrito, toAdd];
+    }
     this.searchResult = [];
     this.searchValue = '';
-    this.productoStockSeleccionado = undefined;
     this.searchBar.reset();
+    this.addToCartEnabled = false;
   }
 
-  enableButton(): boolean {
-    return this.productoStockSeleccionado ? true : false;
-  }
-
-  stockSelectionChanged(e: IDataTableSelectionChanged): void {
-    this.productoStockSeleccionado = e.current?.item;
+  enableButton(): void {
+    this.addToCartEnabled = true;
   }
 
   eliminarDelCarrito(item: ProductoCarrito): void {
@@ -158,5 +159,18 @@ export class VentasComponent implements OnInit, AfterViewChecked {
 
   openModal() {
     this.modal.isOpen = true;
+  }
+
+  onCheckoutFinish(e: ICheckoutStatus): void {
+    console.log(e);
+    this.modalFinalizarVenta.isOpen = false;
+    if(e.state === 'success') {
+      this.vs.doSell(e.products);
+      this.productosCarrito = [];
+    }
+  }
+
+  test(e: string): void {
+    console.log(e);
   }
 }

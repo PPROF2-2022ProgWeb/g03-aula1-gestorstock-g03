@@ -1,9 +1,8 @@
 import {
   Component,
+  EventEmitter,
   Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -31,6 +30,8 @@ export class NumberInputComponent {
   @Input() min: number | string;
   @Input() max: number | string;
 
+  @Output('onChange') change: EventEmitter<number> = new EventEmitter<number>();
+
   public invalid: boolean = false;
   public touched: boolean = false;
 
@@ -56,6 +57,7 @@ export class NumberInputComponent {
       this.value = Number(this.max);
     }
     this.onChange(this.value);
+    this.change.emit(this.value)
   }
   stepDown(): void {
     if (typeof this.value === 'string') {
@@ -66,6 +68,7 @@ export class NumberInputComponent {
       this.value = Number(this.min);
     }
     this.onChange(this.value);
+    this.change.emit(this.value)
   }
 
   stepper(direction: 'up' | 'down'): void {
@@ -106,6 +109,7 @@ export class NumberInputComponent {
   onInput(e: Event): void {
     this.value = (e.target as HTMLInputElement).valueAsNumber;
     this.onChange(this.value);
+    this.change.emit(this.value)
   }
 
   onFocus(): void {

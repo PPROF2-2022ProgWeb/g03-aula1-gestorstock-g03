@@ -103,7 +103,6 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
   }
 
   onSearchDone(): void {
-    console.log('search done');
     let res = {
       source: this.source,
       searchProperty: this.searchProperty,
