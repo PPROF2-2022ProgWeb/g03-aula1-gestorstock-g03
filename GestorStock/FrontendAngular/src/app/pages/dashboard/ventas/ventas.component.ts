@@ -9,7 +9,7 @@ import {
   IDataTableEditionFinished,
 } from 'src/app/interfaces/dataTable';
 import { SearchResult } from 'src/app/interfaces/searchResult';
-import { Producto } from 'src/app/models/Producto';
+import { ProductoModel } from 'src/app/models/ProductoModel';
 import { ProductoCarrito } from 'src/app/models/ProductoCarrito';
 import { ProductosService } from 'src/app/services/productos.service';
 import { VentasService } from 'src/app/services/ventas.service';
@@ -24,7 +24,7 @@ export class VentasComponent implements OnInit {
   public iconos = Iconos;
   private _productosCarrito: ProductoCarrito[];
 
-  public productos: Producto[] = [];
+  public productos: ProductoModel[] = [];
   public searchResult: any[] = [];
   public searchValue: string;
   // public productoStockSeleccionado: Producto | undefined;
@@ -109,7 +109,7 @@ export class VentasComponent implements OnInit {
     this.searchResult = e.result || [];
   }
 
-  addToCart(producto: Producto | undefined): void {
+  addToCart(producto: ProductoModel | undefined): void {
     if (!producto) return;
     let existent = this.productosCarrito.find(
       (p) => p.producto.idProducto === producto.idProducto
