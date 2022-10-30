@@ -24,7 +24,7 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
   @Input() triggerOnInput: string;
   @Input() caseSensitive: boolean = false;
   @Input() autocomplete: boolean = false;
-  @Input() searchResultMode: 'firstMatch' | 'all';
+  @Input() searchResultMode: 'firstMatch' | 'all' = 'all';
   @Input() searchMode: 'startsWith' | 'include' | 'exact' = 'include';
 
   @Output() searchDone = new EventEmitter<SearchResult>();
@@ -50,6 +50,13 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
     if(!this.caseSensitive){
       value = value.toLowerCase();
     }
+    if(this.searchResultMode === 'firstMatch'){
+      console.log('entro en first');
+      return this.searchFirstMatch(value, this.caseSensitive)
+      console.log('dentro de first despues del return');
+    }
+    console.log('despues del if');
+    
     switch (this.searchMode) {
       case 'startsWith':
         res = this.searchStartsWith(value, this.caseSensitive);
@@ -67,6 +74,26 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
     return res || null;
   }
   
+  searchFirstMatch(value: string, caseSensitive: boolean = false): any | null {
+    return this.source.find(x => {
+      let element = x[this.searchProperty]
+      if (typeof element !== 'string') {
+        return false;
+      }
+      if(!caseSensitive) element = element.toLowerCase();
+
+      switch (this.searchMode) {
+        case 'startsWith':
+          return element.startsWith(value)
+  
+        case 'include':
+          return element.includes(value)
+  
+        case 'exact':
+          return element === value;
+      }
+    })
+  }
   
 
   searchInclude(value: string, caseSensitive: boolean = false): any[] {
