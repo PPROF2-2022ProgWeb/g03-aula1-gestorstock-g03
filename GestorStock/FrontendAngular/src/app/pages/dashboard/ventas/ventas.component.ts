@@ -1,19 +1,17 @@
 import { CurrencyPipe } from '@angular/common';
-import {
-  Component,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataTableComponent } from 'src/app/components/data-table/data-table.component';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { SearchbarComponent } from 'src/app/components/searchbar/searchbar.component';
 import { ICheckoutStatus } from 'src/app/interfaces/checkout';
 import {
   IDataTableColumn,
-  IDataTableEditionFinished
+  IDataTableEditionFinished,
 } from 'src/app/interfaces/dataTable';
 import { SearchResult } from 'src/app/interfaces/searchResult';
 import { Producto } from 'src/app/models/Producto';
 import { ProductoCarrito } from 'src/app/models/ProductoCarrito';
+import { ProductosService } from 'src/app/services/productos.service';
 import { VentasService } from 'src/app/services/ventas.service';
 import { Productos } from 'src/app/utils/data/productos';
 import { Iconos } from 'src/app/utils/iconos.enum';
@@ -22,7 +20,7 @@ import { Iconos } from 'src/app/utils/iconos.enum';
   templateUrl: './ventas.component.html',
   styleUrls: ['./ventas.component.css'],
 })
-export class VentasComponent {
+export class VentasComponent implements OnInit {
   public iconos = Iconos;
   private _productosCarrito: ProductoCarrito[];
 
@@ -58,11 +56,11 @@ export class VentasComponent {
   public stockColumns: IDataTableColumn[] = [
     {
       name: 'Producto',
-      source: 'name',
+      source: 'nombreProducto',
     },
     {
       name: 'Precio',
-      source: 'price',
+      source: 'valor',
       pipe: CurrencyPipe,
     },
   ];
@@ -97,8 +95,13 @@ export class VentasComponent {
   @ViewChild('stock') tablaStock: DataTableComponent;
   @ViewChild('modalFinalizarVenta') modalFinalizarVenta: ModalComponent;
 
-  constructor(private vs: VentasService) {
-    this.productos = Productos;
+  constructor(private vs: VentasService, private ps: ProductosService) {}
+
+  ngOnInit(): void {
+    this.ps.getAllProducts().subscribe((data) => {
+      console.log(data);
+      this.productos = data;
+    });
   }
 
   onSearchDone(e: SearchResult): void {
@@ -108,12 +111,13 @@ export class VentasComponent {
 
   addToCart(producto: Producto | undefined): void {
     if (!producto) return;
-    let existent = this.productosCarrito.find( p => p.producto.id === producto.id)
-    if(existent) {
+    let existent = this.productosCarrito.find(
+      (p) => p.producto.idProducto === producto.idProducto
+    );
+    if (existent) {
       existent.cantidad++;
-      this.editCartProduct(existent)
-    }
-    else {
+      this.editCartProduct(existent);
+    } else {
       let toAdd = new ProductoCarrito(producto, 1);
       this.productosCarrito = [...this.productosCarrito, toAdd];
     }
@@ -160,7 +164,7 @@ export class VentasComponent {
   onCheckoutFinish(e: ICheckoutStatus): void {
     console.log(e);
     this.modalFinalizarVenta.isOpen = false;
-    if(e.state === 'success') {
+    if (e.state === 'success') {
       this.vs.doSell(e.products);
       this.productosCarrito = [];
     }
