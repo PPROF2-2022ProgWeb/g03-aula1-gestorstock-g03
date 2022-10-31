@@ -15,6 +15,7 @@
 
 .searchbar input {
   border: none;
+  background-color: transparent;
   flex: 1;
 }
 

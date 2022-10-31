@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegistroService } from 'src/app/servicios/registro.service';
+import { RegistroService } from 'src/app/services/registro.service';
 import { Iconos } from 'src/app/utils/iconos.enum';
 
 @Component({

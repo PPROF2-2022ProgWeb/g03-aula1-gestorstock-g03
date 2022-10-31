@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inicio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<header>
+		<nav
+			class="navbar navbar-expand-lg bg-primary navbar-dark text text-white">
+			<a class="navbar-brand" href="/index"> <img
+				th:src="@{img/logo.svg}" alt="logo" class="logo">
+			</a>
+			<div class="collapse navbar-collapse justify-content-end"
+				id="navbarNav">
+				<ul class="navbar-nav">
+					<form method="POST" th:action="@{/logout}">
+						<a href="#" onclick="this.parentNode.submit();" class="nav-link">
+							<p style="color: white;">Salir</p>
+						</a>
+					</form>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<!-- Se implementa Bootstrap 4 en el section con container-fluid de este archivo -->
+		<section class="banner container-fluid FondoFotos">
+			<div class="mascara_fondo"></div>
+			<video class="bgvideo" src="video/bgbanner.mp4" autoplay loop muted></video>
+			<div
+				class="container-fluid title-container d-flex flex-column justify-content-start">
+				<br>
+				<h1 class="title">&iquest;Qui&#233;nes Somos?</h1>
+				<br>
+				<p class="slogan">Desarrollamos tecnolog&#237;a que te conecta
+					con tus clientes.</p>
+				<p class="slogan">En un mundo cambiante y vertiginoso te
+					ayudamos a potenciar la transformaci&#243;n digital en tu empresa.</p>
+				<p class="slogan">Contamos con un set de diferentes soluciones
+					que promueven la interacci&#243;n con tus clientes y realizamos
+					desarrollos tecnol&#243;gicos a medida que se adaptan a tus
+					necesidades.</p>
+				<br> <a href="http://localhost:8080/gestor/producto" class="nav-link">
+					<h1 class="title">Comience ahora</h1>
+				</a>
+				<p class="slogan">Somos un equipo consolidado y
+					multidisciplinario, buscamos desarrollar y potenciar nuestras
+					fortalezas y que esto influya en nuestros proyectos siempre de
+					manera constructiva y colaborativa.</p>
+				<p class="slogan">Nuestra metodolog&#237;a de desarrollo se
+					basa, con el objetivo de lograr resultados de manera eficiente,
+					utilizando procesos &#225;giles para la realizaci&#243;n de los
+					proyectos en tiempo y forma.</p>
+			</div>
+		</section>
+	</main>
+
+	<h1>Bienvenido</h1>
+
+</body>
+</html>
