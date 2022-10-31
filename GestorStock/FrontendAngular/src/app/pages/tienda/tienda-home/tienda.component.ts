@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Productos } from 'src/app/utils/data/productos';
+import { SearchResult } from 'src/app/interfaces/searchResult';
+import { ProductoModel } from 'src/app/models/ProductoModel';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-tienda',
@@ -8,13 +10,19 @@ import { Productos } from 'src/app/utils/data/productos';
 })
 export class TiendaComponent implements OnInit {
 
-  public productos = Productos;
+  public productos: ProductoModel[];
 
-  constructor() { }
+  constructor(private prodServ: ProductosService) { }
 
   ngOnInit(): void {
+    this.prodServ.getAllProducts().subscribe(data => {
+      this.productos = data;
+      console.log(this.productos);
+    })
   }
 
-
+  onSearchDone(event: SearchResult){
+    console.log(event);    
+  }
 
 }

@@ -43,6 +43,7 @@ import { VentasCheckoutComponent } from './components/ventas-checkout/ventas-che
 import { SelectInputComponent } from './components/form-controls/select-input/select-input.component';
 import { ProductosService } from './services/productos.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ListadoProductosComponent } from './pages/tienda/listado-productos/listado-productos.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { HttpClientModule } from '@angular/common/http';
     SelectionItemComponent,
     VentasCheckoutComponent,
     SelectInputComponent,
+    ListadoProductosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule],
   providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe],

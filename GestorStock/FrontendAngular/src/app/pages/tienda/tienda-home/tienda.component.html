@@ -5,7 +5,7 @@
             <span class="logo-pt2">Ecommerce</span>
         </h1>
         <search-bar class="searck-bar" searchProperty="name" triggerOnInput placeholder="Buscar aquí"
-            [source]="productos"></search-bar>
+            (searchDone)="onSearchDone($event)"></search-bar>
     </header>
     <nav class="categorias">
         <a class="navlink" href="#">
