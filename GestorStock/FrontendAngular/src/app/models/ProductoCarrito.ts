@@ -1,7 +1,7 @@
-import { Producto } from './Producto';
+import { ProductoModel } from './ProductoModel';
 
 export class ProductoCarrito {
-  constructor(public producto: Producto, public cantidad: number) {}
+  constructor(public producto: ProductoModel, public cantidad: number) {}
 
   get nombre(): string {
     return this.producto.nombreProducto;
