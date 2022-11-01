@@ -14,6 +14,7 @@ import com.ar.Grupo3.data.objects.repositorio.*;
 import com.ar.Grupo3.model.*;
 import com.ar.Grupo3.util.ConvertidorFecha;
 import com.ar.Grupo3.util.MensajesObjetos;
+import com.ar.Grupo3.util.UtilsCadenas;
 import com.ar.Grupo3.viewmodel.ProductoModel;
 
 @Service
@@ -201,6 +202,57 @@ public class DaoProductoImpl implements Serializable, DaoProductoIntf {
 		} catch (Exception e) {
 			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
 					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
+		}
+		return list;
+	}
+	
+	@Override
+	public List<ProductoModel> SelectTodosPorNombre(String nombre) {
+		List<ProductoModel> list = null;
+		try {
+			List<Producto> productos = dao.findAll();
+			
+			// Si la lista no esta vacia
+			if (!productos.isEmpty()) {
+				
+				list = new LinkedList<>();
+				
+				// Recorremos la lista
+				for (Producto producto : productos) {
+					
+					//Como este es un like y de todas formas tenemos que convertir todo a producto model nos conviene esto
+					if (UtilsCadenas.containsStringIgnoreCase(producto.getNombreProducto(), nombre)) {
+						// Buscamos id por id
+						TipoProducto aux = buscarTipoProducto(producto);
+						
+						//Este es el nuevo objeto que se mostrar para la vista
+						ProductoModel nuevoObjeto = new ProductoModel();
+						
+						nuevoObjeto.setFechaIng(producto.getFechaIng());
+						nuevoObjeto.setIdProducto(producto.getIdProducto());
+						nuevoObjeto.setIdTipoProd(producto.getIdTipoProd());
+						nuevoObjeto.setCantidad(producto.getCantidad());
+						nuevoObjeto.setBarCode(producto.getBarCode());
+						nuevoObjeto.setClave(producto.getClave());
+						nuevoObjeto.setImageURL(producto.getImageURL());
+						nuevoObjeto.setCosto(producto.getCosto());
+						nuevoObjeto.setNombreProducto(producto.getNombreProducto());
+						nuevoObjeto.setValor(producto.getValor());
+						
+						// si existe le asignamos el nombre si no un nombre predeterminado
+						if (aux != null) {
+							nuevoObjeto.setTipoProd(aux.getNombreTipoProd());
+						} else {
+							nuevoObjeto.setTipoProd(MensajesObjetos.TIPO_PRODUCTO_NO_RELACIONADO);
+						}
+						list.add(nuevoObjeto);
+					}
+
+				}
+			}
+		} catch (Exception e) {
+			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+			+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
 		}
 		return list;
 	}

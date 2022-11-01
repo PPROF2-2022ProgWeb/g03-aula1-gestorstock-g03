@@ -34,6 +34,23 @@ public class WServiceProducto implements Serializable {
 		return listaProducto;
 	}
 
+	@SuppressWarnings("unchecked")
+	@GetMapping(path = "/productoByNombre/{nombre}")
+	public List<ProductoModel> mostrarProductoPorNombre(@PathVariable("nombre") String nombre) {
+		List<ProductoModel> listaProducto = null;
+		try {
+			if (nombre.isBlank()) {
+				throw new Exception("El objeto a Buscar tiene el nombre vacio");
+			}else {
+				listaProducto = listarPorNombre(nombre);
+			}
+		}catch (Exception e) {
+			return (List<ProductoModel>) new ResponseEntity<ProductoModel>(HttpStatus.NOT_FOUND);
+		}
+		
+		return listaProducto;
+	}
+	
 	@GetMapping(path = "/producto/{id}")
 	public ProductoModel buscarProducto(@PathVariable("id") Long id) {
 		return buscarPorId(id);
@@ -81,6 +98,11 @@ public class WServiceProducto implements Serializable {
 		return servicioProducto.SelectTodos();
 	}
 
+	// Buscamos todos los objetos Producto
+	public List<ProductoModel> listarPorNombre(String nombre) {
+		return servicioProducto.SelectTodosPorNombre(nombre);
+	}
+	
 	// Buscamos un objeto ProductoModel por ID
 	public ProductoModel buscarPorId(Long id) {
 		return servicioProducto.selectPorId(id);
