@@ -12,7 +12,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { TiendaComponent } from './pages/tienda/tienda-home/tienda.component';
 import { NoEncontradoComponent } from './pages/no-encontrado/no-encontrado.component';
 import { AdministracionComponent } from './pages/dashboard/administracion/administracion.component';
 import { CajaComponent } from './pages/dashboard/caja/caja.component';
@@ -44,11 +43,16 @@ import { SelectInputComponent } from './components/form-controls/select-input/se
 import { ProductosService } from './services/productos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ListadoProductosComponent } from './pages/tienda/listado-productos/listado-productos.component';
+import { TiendaCarritoComponent } from './pages/tienda/tienda-carrito/tienda-carrito.component';
+import { TiendaComponent } from './pages/tienda/tienda-home/tienda-home.component';
+import { DetallesProductoComponent } from './pages/tienda/detalles-producto/detalles-producto.component';
+import { CheckoutComponent } from './pages/tienda/checkout/checkout.component';
+import { CardDetailProductComponent } from './components/tienda/card-detail-product/card-detail-product.component';
+import { CategoriesComponent } from './components/tienda/categories/categories.component';
 import { HeaderComponent } from './components/tienda/header/header.component';
 import { HeroProductComponent } from './components/tienda/hero-product/hero-product.component';
 import { ProductCardComponent } from './components/tienda/product-card/product-card.component';
-import { CategoriesComponent } from './components/tienda/categories/categories.component';
-import { CardDetailProductComponent } from './components/tienda/card-detail-product/card-detail-product.component';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +63,6 @@ import { CardDetailProductComponent } from './components/tienda/card-detail-prod
     QuienesSomosComponent,
     LoginComponent,
     RegistroComponent,
-    TiendaComponent,
     NoEncontradoComponent,
     InputComponent,
     TextareaComponent,
@@ -87,12 +90,16 @@ import { CardDetailProductComponent } from './components/tienda/card-detail-prod
     SelectionItemComponent,
     VentasCheckoutComponent,
     SelectInputComponent,
+    TiendaComponent,
     ListadoProductosComponent,
+    TiendaCarritoComponent,
+    DetallesProductoComponent,
+    CheckoutComponent,
+    CardDetailProductComponent,
+    CategoriesComponent,
     HeaderComponent,
     HeroProductComponent,
-    ProductCardComponent,
-    CategoriesComponent,
-    CardDetailProductComponent,
+    ProductCardComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule],
   providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe],
