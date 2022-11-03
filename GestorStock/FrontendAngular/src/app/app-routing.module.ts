@@ -12,6 +12,9 @@ import { AdministracionComponent } from './pages/dashboard/administracion/admini
 import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { CajaComponent } from './pages/dashboard/caja/caja.component';
+import { DetallesProductoComponent } from './pages/tienda/detalles-producto/detalles-producto.component';
+import { TiendaCarritoComponent } from './pages/tienda/tienda-carrito/tienda-carrito.component';
+import { CheckoutComponent } from './pages/tienda/checkout/checkout.component';
 
 const routes: Routes = [
   {path: '', component: HomeLayoutComponent, children: [
@@ -20,6 +23,10 @@ const routes: Routes = [
     {path: 'registro', component: RegistroComponent},
     {path: 'quienes-somos', component: QuienesSomosComponent},
     {path: 'tienda', component: TiendaComponent},
+    {path: 'detalle-producto', component: DetallesProductoComponent},
+    {path: 'carrito', component: TiendaCarritoComponent},
+    {path: 'checkout', component: CheckoutComponent},
+    
   ]},
   {path: 'dashboard', component: DashboardLayoutComponent, children: [
     {path: '', component: AdministracionComponent},
