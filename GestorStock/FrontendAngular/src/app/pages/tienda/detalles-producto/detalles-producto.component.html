@@ -1,1 +1,146 @@
-<p>detalles-producto works!</p>
+<body class="bg-light">
+    <header role="banner">
+        <h1 class="logo">
+            <span class="logo-pt1">Gestor</span>
+            <span class="logo-pt2">Ecommerce</span>
+        </h1>
+        <!-- <search-bar class="search-bar" searchProperty="name" triggerOnInput placeholder="Buscar aquí"
+            (searchDone)="onSearchDone($event)"></search-bar> -->
+        <nav>
+            <a class="button-hover header-icon header-shopping-cart" href="#">
+                <!-- <app-icon [icon]="iconos.ADD_TO_CART"></app-icon> -->
+                <!-- <i class="fa-solid fa-cart-shopping"></i>Icon Carrito -->
+                <div class="header-shopping-cart-number"></div>
+            </a>
+            <button  class="button-hover header-icon header-user-card">
+                <img src="../../../../assets/img/img_tienda/Ellipse 1.png" alt="Foto de Usuario">
+                <span> mail@mail.com</span>
+            </button>
+        </nav>
+    </header>
+    <main id="seccion-principal" class="bodyContainer">
+        <nav class="menuNav">
+            <a class="backButton" href="/tienda">
+                <img class="flechaIzquierda" src="../../../../assets/img/img_tienda/Vector.png" alt="flecha">
+                <p>Volver al listado</p>
+            </a>
+            <img class="flechaDerecha" src="../../../../assets/img/img_tienda/Vector (1).png" alt="flecha">
+            <p>Almacén (Categoria del producto)</p>
+        </nav>
+        <section class="cardContainer">
+            <ul>
+                <li>
+                    <img src="../../../../assets/img/img_tienda/Rectangle 17.png" alt="img1">
+                </li>
+                <li>
+                    <img src="../../../../assets/img/img_tienda/Rectangle 18.png" alt="img2">
+                </li>
+                <li>
+                    <img src="../../../../assets/img/img_tienda/Rectangle 19.png" alt="img3">
+                </li>
+            </ul>
+            <img class="imagenProducto" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/alfajor70caco.jpg" alt="img Producto">
+            <div class="infoContainer">
+                <p class="nombreProducto">Título del producto</p>
+                <div class="puntajeContainer">
+                    <h3>1000</h3>
+                    <p class="puntos">PUNTOS</p>
+                </div>
+                <form action="/tiendaCarrito" method="post">
+                    <button class="agregarCarrito button-hover" disabled="">Agregar al carrito</button>
+                </form>
+                <p class="descripcionProducto">
+                    Descripcion del producto/ Caracteristicas
+                </p>
+            </div>
+        </section>
+        <section id="interes">
+            <h2 class="titulo">Te puede interesar</h2>
+            <div class="grid">
+                <!-- esto se implementa desde el back? -->
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto2
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$180</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto3
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$320</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <nav class="categorias">
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/alimentos.svg" alt="Icono de la categoria Almacén">
+            <p>Almacén</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/bebidas.svg" alt="Icono de la categoria Bebidas">
+            <p>Bebidas</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/otros.svg" alt="Icono de la categoria Fresco">
+            <p>Fresco</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/otros.svg" alt="Icono de la categoria Perfumeria">
+            <p>Perfumeria</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/otros.svg" alt="Icono de la categoria Hogar">
+            <p>Hogar</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/otros.svg" alt="Icono de la categoria Limpieza">
+            <p>Limpieza</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/otros.svg" alt="Icono de la categoria Mascotas">
+            <p>Mascotas</p>
+        </a>
+        <a class="navlink" href="#">
+            <img src="../../../../assets/img/svg/tienda/otros.svg" alt="Icono de la categoria Otros">
+            <p>Otros</p>
+        </a>
+    </nav>
+</body>
