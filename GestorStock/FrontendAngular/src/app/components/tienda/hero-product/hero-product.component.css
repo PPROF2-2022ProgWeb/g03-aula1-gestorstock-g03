@@ -1,5 +1,4 @@
-@import url(../../../styles.css);
-
+@import url(../../../../styles.css);
 /* Inicio estilo de combos */
 section.hero-products-container {
     display: flex;

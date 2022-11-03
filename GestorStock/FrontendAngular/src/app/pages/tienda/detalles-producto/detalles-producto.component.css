@@ -1,5 +1,5 @@
 @import url(../../../../styles.css);
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
+
 
 /* --> HEADER */
 
@@ -166,12 +166,12 @@ nav.categorias .navlink:hover img {
 }
 
 .button-hover {
-    background-color: var(--gris-oscuro);
+    background-color: var(--link-hover-color);
     cursor: pointer;
 }
 
 .button-hover:hover {
-    background-color: var(--verde);
+    background-color: var(--color-primario);
     transition: 0.5s;
 }
 
@@ -344,82 +344,7 @@ article.card-producto .contenido .contenedor-precio span {
 
 }
 
-.cardContainer{
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    margin:0 auto;
-    margin-bottom: 20px;
-    display: flex;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
-.cardContainer ul{
-    list-style: none;
-    margin: 8px;
-}
-.cardContainer > img {
-    width: 75%;
-    height:520px;
-    border-radius: 8px;
-    margin: 8px 0px;
-    object-fit: cover;
-}
-
-.infoContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    border: 1px solid #CCCCCC;
-    border-radius: 8px;
-    margin: 8px;
-    padding: 8px;
-}
-
-.infoContainer .nombreProducto {
-    font-size: 32px;
-    line-height: 32.69px;
-}
-
-.puntajeContainer{
-    display: flex;
-    align-items: center;
-}
-
-.infoContainer h3{
-    font-size: 42px;
-    line-height: 54.74px;
-    font-weight: bold;
-}
-
-.infoContainer .puntos{
-    font-size: 16px;
-    font-weight: 300px;
-    line-height: 16px;
-    margin-left: 10px;
-}
-
-.agregarCarrito:disabled{
-    background-color: #6c6d6d!important;
-    cursor: auto;
-}
-.agregarCarrito{
-    width: 80%;
-    height:36px;
-    border-radius: 16px;
-    background-color: #494F51;
-    color: white;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 16.34px;
-    border-style: none;
-}
-
-.descripcionProducto {
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: 400px;
-    font-style: normal;
-}
 
 .tituloDos{
     font-family: 'Open Sans';

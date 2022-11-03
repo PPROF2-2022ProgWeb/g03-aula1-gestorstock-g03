@@ -1,0 +1,62 @@
+@import url(../../../../styles.css);
+
+/* Inicio estilo de barra de categorias */
+
+nav.categorias {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 80%;
+    padding: 16px 0;
+    margin: 56px auto;
+    background-color: var(--color-primario);
+    border-radius: 16px;
+}
+
+nav.categorias .navlink {
+    text-decoration: none;
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 14px 0px;
+    border-right: solid 2px var(--blanco);
+}
+
+nav.categorias .navlink:last-child {
+    border: none;
+}
+
+nav.categorias .navlink img {
+    width: 40px;
+    transition: transform .3s ease-out;
+}
+
+nav.categorias .navlink:hover img {
+    transform: scale(1.2) translateY(-10px);
+}
+
+.button-hover {
+    background-color: var(--gris-oscuro);
+    cursor: pointer;
+}
+
+.button-hover:hover {
+    background-color: var(--verde);
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 1000px) {
+    nav.categorias {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 18px;
+    }
+
+    nav.categorias .navlink:nth-child(4n) {
+        border: none;
+    }
+}
+/* Fin estilo de barra de categorias */

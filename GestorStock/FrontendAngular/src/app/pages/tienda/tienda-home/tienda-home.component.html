@@ -1,54 +1,13 @@
-<body class="bg-light">
-    <header role="banner">
-        <h1 class="logo">
-            <span class="logo-pt1">Gestor</span>
-            <span class="logo-pt2">Ecommerce</span>
-        </h1>
-        <search-bar class="search-bar" searchProperty="name" triggerOnInput placeholder="Buscar aquí"
-            (searchDone)="onSearchDone($event)"></search-bar>
-        <nav class="header-nav">
-            <a class="button-hover header-icon header-shopping-cart" href="#">
-                <app-icon [icon]="iconos.CARRITO"></app-icon>                
-                <div class="header-shopping-cart-number">2</div>
-            </a>
-            <button  class="button-hover header-icon header-user-card">
-                <img src="../../../../assets/img/img_tienda/Ellipse 1.png" alt="Foto de Usuario">
-                <span> mail@mail.com</span>
-            </button>
-        </nav>
-    </header>
-    <main id="seccion-principal" class="bodyContainer">
-        <nav class="menuNav">
-            <a class="backButton" href="/tienda">
-                <img class="flechaIzquierda" src="../../../../assets/img/img_tienda/Vector.png" alt="flecha">
-                <p>Volver al listado</p>
-            </a>
-            <img class="flechaDerecha" src="../../../../assets/img/img_tienda/Vector (1).png" alt="flecha">
-            <p>Almacén (Categoria del producto)</p>
-        </nav>
-        <app-card-detail-product></app-card-detail-product>
+<main>
+    <app-header></app-header>
+    <app-categories></app-categories>
+    <app-hero-product></app-hero-product>
+    <main id="seccion-principal">
         <section id="interes">
             <h2 class="titulo">Te puede interesar</h2>
             <div class="grid">
-                <!-- esto se implementa desde el back? -->
                 <app-product-card></app-product-card>
                 <!-- <article class="card-producto">
-                    <a href="#">
-                        <img src="" alt="imagen del producto">
-                        <div class="contenido">
-                            <div class="contenedor-titulo">
-                                <h4 class="titulo">
-                                    Nombre del producto
-                                </h4>
-                            </div>
-                            <div class="contenedor-precio">
-                                <p class="precio">$100</p>
-                                <span>PUNTOS- rEvIsAr</span>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-                <article class="card-producto">
                     <a href="#">
                         <img src="" alt="imagen del producto">
                         <div class="contenido">
@@ -81,8 +40,61 @@
                     </a>
                 </article> -->
             </div>
+        </section>        
+
+        <section id="mas-vendidos">
+            <h2 class="titulo">Mas vendidos</h2>
+            <div class="grid">
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card-producto">
+                    <a href="#">
+                        <img src="" alt="imagen del producto">
+                        <div class="contenido">
+                            <div class="contenedor-titulo">
+                                <h4 class="titulo">
+                                    Nombre del producto
+                                </h4>
+                            </div>
+                            <div class="contenedor-precio">
+                                <p class="precio">$100</p>
+                                <span>PUNTOS- rEvIsAr</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
         </section>
     </main>
     <app-categories></app-categories>
-    
-</body>
+</main>
