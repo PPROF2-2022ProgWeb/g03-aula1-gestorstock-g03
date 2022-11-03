@@ -1,0 +1,42 @@
+@import url(../../../styles.css);
+
+
+/* --> HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+}
+
+
+.logo {
+    color: var(--color-primario);
+    user-select: none;
+
+}
+.logo-pt1 {
+    font-weight: 800;
+}
+.logo-pt2 {
+    font-weight: 300;
+}
+.search-bar {
+    width: 65%;
+    height: 32px;
+    padding-left: 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: url(/images/Search.svg) no-repeat 98%;
+    background-size: 20px;
+    background-color: white;
+}
