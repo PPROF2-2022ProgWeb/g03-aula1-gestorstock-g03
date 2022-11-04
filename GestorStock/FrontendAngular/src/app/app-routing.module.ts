@@ -15,6 +15,8 @@ import { CajaComponent } from './pages/dashboard/caja/caja.component';
 import { DetallesProductoComponent } from './pages/tienda/detalles-producto/detalles-producto.component';
 import { TiendaCarritoComponent } from './pages/tienda/tienda-carrito/tienda-carrito.component';
 import { CheckoutComponent } from './pages/tienda/checkout/checkout.component';
+import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.component';
+import { ListadoProductosComponent } from './pages/tienda/listado-productos/listado-productos.component';
 
 const routes: Routes = [
   {path: '', component: HomeLayoutComponent, children: [
@@ -22,10 +24,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'quienes-somos', component: QuienesSomosComponent},
-    {path: 'tienda', component: TiendaComponent},
-    {path: 'detalle-producto', component: DetallesProductoComponent},
-    {path: 'carrito', component: TiendaCarritoComponent},
-    {path: 'checkout', component: CheckoutComponent},
+    
     
   ]},
   {path: 'dashboard', component: DashboardLayoutComponent, children: [
@@ -33,6 +32,13 @@ const routes: Routes = [
     {path: 'ventas', component: VentasComponent},
     {path: 'stock', component: StockComponent},
     {path: 'caja', component: CajaComponent},
+  ]},
+  {path: 'tienda', component: TiendaLayoutsComponent, children: [
+    {path: '', component: TiendaComponent},
+    {path: 'producto/:id', component: DetallesProductoComponent},
+    {path: 'carrito', component: TiendaCarritoComponent},
+    {path: 'checkout', component: CheckoutComponent},
+    {path: 'listado', component: ListadoProductosComponent},
   ]},
   {path: '**', component: NoEncontradoComponent},
 ];
