@@ -6,6 +6,8 @@
 
 ### Wiki: https://github.com/PPROF2-2022ProgWeb/g03-aula1-gestorstock-g03/wiki/1.1-Gestor-Stock
 
+### Documentacion IEEE830: https://docs.google.com/document/d/17is7eWnvdNotwCc1699bcdCQ0DPQAd0oxglay2SZLj8/edit?usp=sharing 
+
 ## Inicializacion del proyecto: 
 
 1. Git clone --> URL del Proyecto del repositorio
@@ -287,25 +289,25 @@ Sprints
  Sprint 0
 	Fecha Inicio = 26/05/2022 -  Fecha de Fin = 13/06/2022
 
-Se les solicitará un proyecto aplicando todos los contenidos dados en los módulos de la cursada (HTML5, CSS3, BOOTSTRAP, JAVASCRIPT), pueden recurrir a la web de W3School para extraer recursos necesarios.
-
-Al proyecto desarrollado en 2021, la “consultora ISPC”, solicita en esta oportunidad, incorporar un módulo de e-commerce para comercializar sus productos y/o servicios online
+Se les solicitará un proyecto aplicando todos los contenidos dados en los módulos de la cursada (HTML5, CSS3, BOOTSTRAP, JAVASCRIPT),  pueden recurrir a la web de W3School para extraer recursos necesarios.
+Al proyecto desarrollado en 2021, la “consultora ISPC”, solicita  en esta oportunidad, incorporar un módulo de e-commerce para comercializar sus productos y/o servicios online.
 
 
 ✏️ Sprint Backlog:  <br>
 
 *Definir Scrum Master inicial (No se registró en planilla) y registrarse todos dentro del nuevo repositorio.
-	*Importar el repositorio anterior al nuevo brindado en el foro de cada grupo.
-	*Revisar documentación IEEE830 si está completa y retomar desde allí para esta nueva etapa seguir documentando los avances.
-	*Revisar la estructura web Semántica y responsive (RWD)
+*Importar el repositorio anterior al nuevo brindado en el foro de cada grupo.
+*Revisar documentación IEEE830 si está completa y retomar desde allí para esta nueva etapa seguir documentando los avances.
+*Revisar la estructura web Semántica y responsive (RWD)
 
 Pasos a seguir de acuerdo a las Fases del Ciclo de Vida de un Software:
 
 ANÁLISIS
 
-	*Definir requerimientos para el nuevo módulo a desarrollar e-commerce (colocarlos en el Product Backlog del Project), a su vez revisar si han cumplimentado todos los requerimientos previos, realizando mejoras del mismo
-	*Plantear Historias de Usuarios y Tareas dependientes de las US para incorporarlas en el repositorio remoto gitHub. (Issues y Milestones) - Tener en cuenta la redacción adecuada para las US y nomenclatura, ej “#US01 Como usuario quiero ingresar al carrito para poder comprar”
-	*Definir tareas dentro de las Historias de Usuario (GITHUB) 
+*Definir requerimientos para el nuevo módulo a desarrollar e-commerce (colocarlos en el Product Backlog del Project), a su vez revisar si han cumplimentado todos los requerimientos previos, realizando mejoras del mismo.
+*Plantear Historias de Usuarios y Tareas dependientes de las US para incorporarlas en el repositorio remoto gitHub. (Issues y Milestones) - Tener en cuenta la redacción adecuada para las US y nomenclatura, ej “#US01 Como usuario quiero ingresar al carrito para poder comprar”  
+*Definir tareas dentro de las Historias de Usuario (GITHUB) ej dentro de las ISSUES  #TK01 importar repositorio.
+
 
 *********************************************************************************************
 
@@ -332,7 +334,21 @@ IMPLEMENTACIÓN FRONTEND
  
 ✏️ Sprint Backlog:  <br>
 
-	*Migración del index a SPA de Angular 
+	*Migración del index a SPA de Angular
+	*TSK#1 Migrar componente Login 
+	*TSK#2 Desarrollar el layout del dashboard
+	*TSK#3 Crear componente input
+	*TSK#4 Crar componente formulario
+	*TSK#5 Eliminar campo rol de la pantalla login
+	*TSK#6 Desarrollar la pantalla de administracion dentro del dashboard
+	*TSK#7 Página de registro
+	*TSK#8 Fix componente input
+	*BUG - Icono calendario no se visualiza
+	*TSK#9 Desarrollar componente data-table para la presentación de datos de productos
+	*TSK#10 Desarrollar pagina de ventas en dashboard
+	*TSK#13 Desarrollar un componente de modal
+	*TSK#14 Modificar base de datos
+ 
 
 ✏️ Milestones: <br>
 	
@@ -415,13 +431,21 @@ https://developer.mozilla.org/es/docs/Web/HTML/Element/input
  
 ✏️ Sprint Backlog:  <br>
 
-	*Comenzar el Backend y la funcionalidad de los módulos
+	*TSK#16-Bakend - Creación e iniciación del Proyecto de Backend
+	*TSK#17 -Backend - Asignación del proyecto
+	*TSK#18 -Backend - Creación de paquetes y Models
+	*TSK#19 Backend - Creación de clases
+	*TSK#20 Backend - Creación de interfaces
+	*TSK#21 - Creación de el repositorio
+	*TSK#22 - DLL de DAO en DAO Factory
+	*TSK#23 - Webservices
+	*TSK#27 Crear componentes para campos de texto y numericos
 
 ✏️ Milestones: <br>
 	
 	*US#01 - Sitio realizado con Angular
  	*US#04- Definición del backend y funcionalidad en los módulos
-	*US#5 Remodelacion de la base de datos
+	*US#05 Remodelacion de la base de datos
 
 *********************************************************************************************
 
@@ -457,11 +481,22 @@ Requerimientos
 ✏️ Sprint Backlog:  <br>
 
 	
-	*
+	*TSK#11 Desarrollar la pagina de stock en dashboard
+	*TSK#12 Desarrollar la pagina de cajadentro de dashboard
+	*TSK#15 Migrar pagina de quienes somos a angular
+	*TSK#24 - Login y Registro.
+	*Seguimiento Scrum - Review Mensual
+	*TSK#25 Creacion de la pagina de la tienda
+	*TSK#28 Investigar lugares donde hostear el back y la base de datos
+	*TSK#29 Armar datos de prueba
+	*Seguimiento Scrum - Review Mensual
+	*TSK#29 Armar datos de prueba
+
 
 ✏️ Milestones: <br>
 	
- 	*
+ 	*US#01 - Sitio realizado con Angular
+ 	*US#04- Definición del backend y funcionalidad en los módulos
 
 *********************************************************************************************
 
