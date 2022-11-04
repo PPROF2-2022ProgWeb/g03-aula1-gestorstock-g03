@@ -32,11 +32,69 @@ header {
 }
 .search-bar {
     width: 65%;
-    height: 32px;
-    padding-left: 20px;
+    
+}
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.header-icon {
+    color: white;
+    padding: 5px;
+}
+
+.header-shopping-cart {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-shopping-cart-number {
+    font-size: 10px;
+    border-radius: 20px;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 10px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-user-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbtn {
+    padding: 7px 15px;
+    color: var(--blanco);
+    text-decoration: none;
     border-radius: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    background: url(/images/Search.svg) no-repeat 98%;
-    background-size: 20px;
-    background-color: white;
+    transition: .3s;
+}
+
+.navbtn.primary {
+    background-color: var(--verde);
+}
+
+.navbtn.primary:hover {
+    background-color: var(--gris-oscuro);
 }

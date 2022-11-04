@@ -1,22 +1,4 @@
-<body class="bg-light">
-    <header role="banner">
-        <h1 class="logo">
-            <span class="logo-pt1">Gestor</span>
-            <span class="logo-pt2">Ecommerce</span>
-        </h1>
-        <search-bar class="search-bar" searchProperty="name" triggerOnInput placeholder="Buscar aquí"
-            (searchDone)="onSearchDone($event)"></search-bar>
-        <nav class="header-nav">
-            <a class="button-hover header-icon header-shopping-cart" href="#">
-                <app-icon [icon]="iconos.CARRITO"></app-icon>                
-                <div class="header-shopping-cart-number">2</div>
-            </a>
-            <button  class="button-hover header-icon header-user-card">
-                <img src="../../../../assets/img/img_tienda/Ellipse 1.png" alt="Foto de Usuario">
-                <span> mail@mail.com</span>
-            </button>
-        </nav>
-    </header>
+<body class="bg-light">    
     <main id="seccion-principal" class="bodyContainer">
         <nav class="menuNav">
             <a class="backButton" href="/tienda">
@@ -32,6 +14,7 @@
             <div class="grid">
                 <!-- esto se implementa desde el back? -->
                 <app-product-card></app-product-card>
+                
                 <!-- <article class="card-producto">
                     <a href="#">
                         <img src="" alt="imagen del producto">

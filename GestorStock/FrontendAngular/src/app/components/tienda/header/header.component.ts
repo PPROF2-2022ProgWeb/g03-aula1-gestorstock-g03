@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchResult } from 'src/app/interfaces/searchResult';
 import { ProductoModel } from 'src/app/models/ProductoModel';
 import { ProductosService } from 'src/app/services/productos.service';
+import { Iconos } from 'src/app/utils/iconos.enum';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,8 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class HeaderComponent implements OnInit {
 
   public productos: ProductoModel[];
+  public iconos = Iconos;
+
 
   constructor(private prodServ: ProductosService) { }
 
@@ -24,6 +27,7 @@ export class HeaderComponent implements OnInit {
   onSearchDone(event: SearchResult){
     console.log(event);    
   }
+  
 
 
 }

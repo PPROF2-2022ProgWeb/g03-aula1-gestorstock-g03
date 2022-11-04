@@ -52,6 +52,7 @@ import { CategoriesComponent } from './components/tienda/categories/categories.c
 import { HeaderComponent } from './components/tienda/header/header.component';
 import { HeroProductComponent } from './components/tienda/hero-product/hero-product.component';
 import { ProductCardComponent } from './components/tienda/product-card/product-card.component';
+import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.component';
 
 
 @NgModule({
@@ -99,7 +100,8 @@ import { ProductCardComponent } from './components/tienda/product-card/product-c
     CategoriesComponent,
     HeaderComponent,
     HeroProductComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    TiendaLayoutsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule],
   providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe],

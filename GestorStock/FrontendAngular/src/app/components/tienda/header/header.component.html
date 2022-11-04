@@ -5,4 +5,17 @@
     </h1>
     <search-bar class="search-bar" searchProperty="name" triggerOnInput placeholder="Buscar aquí"
         (searchDone)="onSearchDone($event)"></search-bar>
+
+    <!-- agregar registro= si no esta log muestra reg y log y si esta log muestra
+    carrito y nombre de uss -->
+    <nav class="header-nav">
+        <a class="button-hover header-icon header-shopping-cart" href="#">
+            <app-icon [icon]="iconos.CARRITO"></app-icon>                
+            <div class="header-shopping-cart-number">2</div>
+        </a>
+        <button  class="button-hover header-icon header-user-card">
+            <img src="../../../../assets/img/img_tienda/Ellipse 1.png" alt="Foto de Usuario">
+            <span> name uss</span>
+        </button>
+    </nav>
 </header>
