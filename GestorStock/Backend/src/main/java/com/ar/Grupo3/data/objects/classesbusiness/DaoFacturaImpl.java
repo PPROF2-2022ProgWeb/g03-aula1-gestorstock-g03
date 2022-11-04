@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import com.ar.Grupo3.data.objects.interfaces.DaoFacturaIntf;
 import com.ar.Grupo3.data.objects.repositorio.*;
 import com.ar.Grupo3.model.*;
+import com.ar.Grupo3.seguridad.entity.Usuario;
+import com.ar.Grupo3.seguridad.repositorios.UsuarioRepositorio;
 import com.ar.Grupo3.util.MensajesObjetos;
 import com.ar.Grupo3.viewmodel.FacturaModel;
 

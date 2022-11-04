@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.ar.Grupo3.data.factory.FabricaDAO;
 import com.ar.Grupo3.data.objects.interfaces.DaoRolIntf;
-import com.ar.Grupo3.model.Rol;
+import com.ar.Grupo3.seguridad.entity.Rol;
 import com.ar.Grupo3.viewmodel.RolModel;
 
 @RestController

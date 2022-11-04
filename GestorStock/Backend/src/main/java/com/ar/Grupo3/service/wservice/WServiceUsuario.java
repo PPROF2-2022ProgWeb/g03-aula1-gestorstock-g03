@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.ar.Grupo3.data.factory.FabricaDAO;
 import com.ar.Grupo3.data.objects.interfaces.DaoUsuarioIntf;
-import com.ar.Grupo3.model.Usuario;
+import com.ar.Grupo3.seguridad.entity.Usuario;
 import com.ar.Grupo3.viewmodel.UsuarioModel;
 
 @RestController
