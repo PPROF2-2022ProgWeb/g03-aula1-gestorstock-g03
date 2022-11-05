@@ -43,10 +43,10 @@ article.hero-product .contenido h3 {
 }
 
 article#combo-disney {
-    background-image: url("../../../assets/img/img_tienda/fondo-combo-disney.png");
+    background-image: url("../../../../assets/img/img_tienda/fondo-combo-disney.png");
 }
 
 article#combo-hbo {
-    background-image: url("../../../assets/img/img_tienda/fondo-combo-hbo.png");
+    background-image: url("../../../../assets/img/img_tienda/fondo-combo-hbo.png");
 }
 /* Fin estilo de combos */
