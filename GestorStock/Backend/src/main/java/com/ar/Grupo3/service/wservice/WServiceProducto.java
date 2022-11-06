@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.ar.Grupo3.data.factory.FabricaDAO;
@@ -79,10 +80,10 @@ public class WServiceProducto implements Serializable {
 	public ResponseEntity<Producto> eliminarProducto(@PathVariable("id") Long id) {
 		int var = eliminar(id);
 		try {
-			if (var != 0) {
+			if (var == 0) {
 				return new ResponseEntity<Producto>(HttpStatus.OK);
 			} else {
-				throw new Exception("El identificador del abono eliminar esta vacio");
+				throw new Exception("El identificador del producto a eliminar esta vacio");
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Producto>(HttpStatus.NOT_FOUND);
