@@ -11,12 +11,12 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ar.Grupo3.Security.Entity.Rol;
+import com.ar.Grupo3.Security.Entity.Usuario;
+import com.ar.Grupo3.Security.Repository.IUsuarioRepository;
 import com.ar.Grupo3.data.objects.interfaces.DaoUsuarioIntf;
 import com.ar.Grupo3.data.objects.repositorio.*;
 import com.ar.Grupo3.model.*;
-import com.ar.Grupo3.seguridad.entity.Rol;
-import com.ar.Grupo3.seguridad.entity.Usuario;
-import com.ar.Grupo3.seguridad.repositorios.UsuarioRepositorio;
 import com.ar.Grupo3.util.EncriptarPassword;
 import com.ar.Grupo3.util.MensajesObjetos;
 import com.ar.Grupo3.util.Utilidades;
@@ -29,7 +29,7 @@ public class DaoUsuarioImpl implements Serializable, DaoUsuarioIntf {
 	private static final long serialVersionUID = -3664593050802216890L;
 
 	@Autowired
-	private UsuarioRepositorio dao;
+	private IUsuarioRepository dao;
 
 	@Autowired
 	private ProvinciaRepositorio provincia;
@@ -57,7 +57,7 @@ public class DaoUsuarioImpl implements Serializable, DaoUsuarioIntf {
 
 		Usuario usuario = null;
 		try {
-			Optional<Usuario> aux = dao.findById(id);
+			Optional<Usuario> aux = dao.findByIdUsuario(id);
 			if (aux.isEmpty()) {
 				throw new Exception("El usuario que busca NO EXISTE");
 			} else {
@@ -76,7 +76,7 @@ public class DaoUsuarioImpl implements Serializable, DaoUsuarioIntf {
 
 		UsuarioModel usuario = new UsuarioModel();
 		try {
-			Optional<Usuario> aux = dao.findById(id);
+			Optional<Usuario> aux = dao.findByIdUsuario(id);
 			if (aux.isEmpty()) {
 				throw new Exception("El usuario que busca NO EXISTE");
 			} else {

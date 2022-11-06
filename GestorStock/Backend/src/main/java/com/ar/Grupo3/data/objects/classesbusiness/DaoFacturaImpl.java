@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import com.ar.Grupo3.data.objects.interfaces.DaoFacturaIntf;
 import com.ar.Grupo3.data.objects.repositorio.*;
 import com.ar.Grupo3.model.*;
-import com.ar.Grupo3.seguridad.entity.Usuario;
-import com.ar.Grupo3.seguridad.repositorios.UsuarioRepositorio;
+import com.ar.Grupo3.Security.Entity.Usuario;
+import com.ar.Grupo3.Security.Repository.IUsuarioRepository;
 import com.ar.Grupo3.util.MensajesObjetos;
 import com.ar.Grupo3.viewmodel.FacturaModel;
 
@@ -26,7 +26,7 @@ public class DaoFacturaImpl implements Serializable, DaoFacturaIntf {
 	private FacturaRepositorio dao;
 
 	@Autowired
-	private UsuarioRepositorio usuario;
+	private IUsuarioRepository usuario;
 
 	@Autowired
 	private ProvinciaRepositorio provincia;
@@ -240,7 +240,7 @@ public class DaoFacturaImpl implements Serializable, DaoFacturaIntf {
 	public Usuario buscarUsuario(Factura objeto) {
 		Usuario a = null;
 		try {
-			Optional<Usuario> faBusqueda = usuario.findById(objeto.getIdUsuario());
+			Optional<Usuario> faBusqueda = usuario.findByIdUsuario(objeto.getIdUsuario());
 
 			if (faBusqueda.get().getIdUsuario().equals(objeto.getIdUsuario())) {
 				a = faBusqueda.get();

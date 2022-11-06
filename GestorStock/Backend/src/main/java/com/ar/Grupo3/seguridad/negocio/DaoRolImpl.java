@@ -11,12 +11,12 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ar.Grupo3.Security.Entity.Rol;
+import com.ar.Grupo3.Security.Entity.Usuario;
+import com.ar.Grupo3.Security.Enums.NombresRol;
+import com.ar.Grupo3.Security.Repository.IRolRepository;
+import com.ar.Grupo3.Security.Repository.IUsuarioRepository;
 import com.ar.Grupo3.data.objects.interfaces.DaoRolIntf;
-import com.ar.Grupo3.seguridad.Enums.NombresRol;
-import com.ar.Grupo3.seguridad.entity.Rol;
-import com.ar.Grupo3.seguridad.entity.Usuario;
-import com.ar.Grupo3.seguridad.repositorios.RolRepositorio;
-import com.ar.Grupo3.seguridad.repositorios.UsuarioRepositorio;
 import com.ar.Grupo3.util.MensajesObjetos;
 import com.ar.Grupo3.util.Utilidades;
 import com.ar.Grupo3.viewmodel.RolModel;
@@ -28,10 +28,10 @@ public class DaoRolImpl implements Serializable, DaoRolIntf {
 	private static final long serialVersionUID = 5578315861332036707L;
 
 	@Autowired
-	RolRepositorio dao;
+	IRolRepository dao;
 
 	@Autowired
-	UsuarioRepositorio usuario;
+	IUsuarioRepository usuario;
 
 	// Solo para el LOGIN
 	public Optional<Rol> obtenerNombreRol(NombresRol nombres) {
@@ -229,7 +229,7 @@ public class DaoRolImpl implements Serializable, DaoRolIntf {
 	public Usuario buscarUsuario(Rol objeto) {
 		Usuario fact = null;
 		try {
-			Optional<Usuario> faBusqueda = usuario.findById(objeto.getIdUsuario());
+			Optional<Usuario> faBusqueda = usuario.findByIdUsuario(objeto.getIdUsuario());
 
 			if (faBusqueda.get().getIdUsuario().equals(objeto.getIdUsuario())) {
 				fact = faBusqueda.get();

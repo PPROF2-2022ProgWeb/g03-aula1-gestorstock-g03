@@ -1,4 +1,4 @@
-package com.ar.Grupo3.seguridad.entity;
+package com.ar.Grupo3.Security.Entity;
 
 import java.io.Serializable;
 import java.util.*;

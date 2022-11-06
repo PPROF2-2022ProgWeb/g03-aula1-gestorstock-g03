@@ -1,11 +1,15 @@
-package com.ar.Grupo3.seguridad.entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.ar.Grupo3.Security.Entity;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.*;
 
-import com.ar.Grupo3.seguridad.Enums.NombresRol;
+import com.ar.Grupo3.Security.Enums.NombresRol;
 
 @Entity
 @Table(name = "rol")

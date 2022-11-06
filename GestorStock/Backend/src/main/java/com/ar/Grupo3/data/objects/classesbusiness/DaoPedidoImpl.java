@@ -9,11 +9,15 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ar.Grupo3.Security.Entity.Usuario;
+import com.ar.Grupo3.Security.Repository.IUsuarioRepository;
 import com.ar.Grupo3.data.objects.interfaces.DaoPedidoIntf;
-import com.ar.Grupo3.data.objects.repositorio.*;
-import com.ar.Grupo3.model.*;
-import com.ar.Grupo3.seguridad.entity.Usuario;
-import com.ar.Grupo3.seguridad.repositorios.UsuarioRepositorio;
+import com.ar.Grupo3.data.objects.repositorio.FacturaRepositorio;
+import com.ar.Grupo3.data.objects.repositorio.PedidoRepositorio;
+import com.ar.Grupo3.data.objects.repositorio.ProductoRepositorio;
+import com.ar.Grupo3.model.Factura;
+import com.ar.Grupo3.model.Pedido;
+import com.ar.Grupo3.model.Producto;
 import com.ar.Grupo3.util.MensajesObjetos;
 import com.ar.Grupo3.viewmodel.PedidoModel;
 
@@ -32,7 +36,7 @@ public class DaoPedidoImpl implements Serializable, DaoPedidoIntf {
 	private ProductoRepositorio producto;
 
 	@Autowired
-	private UsuarioRepositorio usuario;
+	private IUsuarioRepository usuario;
 
 	@Override
 	public Pedido buscar(Long id) {
@@ -301,7 +305,7 @@ public class DaoPedidoImpl implements Serializable, DaoPedidoIntf {
 	public Usuario buscarUsuario(Pedido objeto) {
 		Usuario fact = null;
 		try {
-			Optional<Usuario> faBusqueda = usuario.findById(objeto.getIdUsuario());
+			Optional<Usuario> faBusqueda = usuario.findByIdUsuario(objeto.getIdUsuario());
 			
 			if (faBusqueda.get().getIdUsuario().equals(objeto.getIdUsuario())) {
 				fact = faBusqueda.get();
