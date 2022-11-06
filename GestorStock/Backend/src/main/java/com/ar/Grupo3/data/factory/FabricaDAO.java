@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import com.ar.Grupo3.data.objects.classesbusiness.*;
 import com.ar.Grupo3.data.objects.interfaces.*;
+import com.ar.Grupo3.seguridad.negocio.DaoRolImpl;
+import com.ar.Grupo3.seguridad.negocio.DaoUsuarioImpl;
 
 public class FabricaDAO implements Serializable {
 	
