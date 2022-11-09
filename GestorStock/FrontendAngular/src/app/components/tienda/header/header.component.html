@@ -4,11 +4,16 @@
         <span class="logo-pt2">Ecommerce</span>
     </h1>
     <search-bar class="search-bar" searchProperty="name" triggerOnInput placeholder="Buscar aquí"
-        (searchDone)="onSearchDone($event)"></search-bar>
+        (searchDone)="onSearchDone($event)">
+    </search-bar>
 
     <!-- agregar registro= si no esta log muestra reg y log y si esta log muestra
     carrito y nombre de uss -->
     <nav class="header-nav">
+        <a class="navbtn primary" routerLink="/login">Iniciar Sesion</a>
+        <a class="button-hover navbtn" routerLink="/registro">Registrarse</a>
+    </nav>
+    <nav class="header-nav" *ngIf="loguin()">
         <a class="button-hover header-icon header-shopping-cart" href="#">
             <app-icon [icon]="iconos.CARRITO"></app-icon>                
             <div class="header-shopping-cart-number">2</div>

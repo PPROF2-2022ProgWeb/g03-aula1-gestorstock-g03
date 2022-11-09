@@ -27,6 +27,10 @@ export class HeaderComponent implements OnInit {
   onSearchDone(event: SearchResult){
     console.log(event);    
   }
+
+  loguin(){
+    
+  }
   
 
 

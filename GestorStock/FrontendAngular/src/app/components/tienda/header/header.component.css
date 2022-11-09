@@ -37,8 +37,8 @@ header {
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: white;
+    gap: 5px;
+    color: var(--color-primario);
 }
 
 .header-icon {
@@ -92,9 +92,14 @@ header {
 }
 
 .navbtn.primary {
-    background-color: var(--verde);
+    background-color: var(--color-fuente-boton-activo);
 }
 
 .navbtn.primary:hover {
-    background-color: var(--gris-oscuro);
+    background-color: var(--color-fuente-terciario);
+}
+
+.button-hover {
+    background-color: var(--color-fuente-terciario);
+    cursor: pointer;
 }
