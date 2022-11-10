@@ -55,7 +55,7 @@ export class DataTableComponent
 
   public set selectedIndex(value: number) {
     this._selectedIndex = value;
-    this._selectedItem = value;
+    this._selectedItem = this.source[value];
     if (value !== -1) {
       let row = this.body.nativeElement.childNodes[this.selectedIndex];
       this.selectRow(row, this.selectedIndex);
@@ -175,10 +175,10 @@ export class DataTableComponent
     row.classList?.add('selected');
 
     if (this.currentSelectedRow.element !== this.previousSelectedRow?.element) {
-      this.selectedIndex = this.source.findIndex(
+      this._selectedIndex = this.source.findIndex(
         (x) => x === this.currentSelectedRow?.item
       );
-      this.selectedItem = this.source[this.selectedIndex];
+      this._selectedItem = this.source[this._selectedIndex]
       this.selectionChanged.emit({
         previous: this.previousSelectedRow,
         current: this.currentSelectedRow,
