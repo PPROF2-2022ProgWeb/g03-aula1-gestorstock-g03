@@ -9,77 +9,79 @@ import javax.persistence.*;
 @Table(name = "provincia")
 public class Provincia implements Serializable {
 
-	private static final long serialVersionUID = 2245709417864108203L;
+    private static final long serialVersionUID = 2245709417864108203L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Basic(optional = false)
-	@Column(name = "Id_Provincia")
-	private Long idProvincia;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "Id_Provincia")
+    private Long idProvincia;
 
-	@Column(name = "Nombre_Provincia")
-	private String nombreProvincia;
+    @Column(name = "Nombre_Provincia")
+    private String nombreProvincia;
 
-	@Column(name = "Id_Depto")
-	private Long idDepto;
+    @Column(name = "Id_Depto")
+    private Long idDepto;
 
-	public Provincia() {
-		// Constructor Vacio
-	}
+    public Provincia() {
+        // Constructor Vacio
+    }
 
-	// Getters and Setters
+    // Getters and Setters
+    public Provincia(Long idProvincia) {
+        super();
+        this.idProvincia = idProvincia;
+    }
 
-	public Provincia(Long idProvincia) {
-		super();
-		this.idProvincia = idProvincia;
-	}
+    public Long getIdProvincia() {
+        return idProvincia;
+    }
 
-	public Long getIdProvincia() {
-		return idProvincia;
-	}
+    public void setIdProvincia(Long idProvincia) {
+        this.idProvincia = idProvincia;
+    }
 
-	public void setIdProvincia(Long idProvincia) {
-		this.idProvincia = idProvincia;
-	}
+    public String getNombreProvincia() {
+        return nombreProvincia;
+    }
 
-	public String getNombreProvincia() {
-		return nombreProvincia;
-	}
+    public void setNombreProvincia(String nombreProvincia) {
+        this.nombreProvincia = nombreProvincia;
+    }
 
-	public void setNombreProvincia(String nombreProvincia) {
-		this.nombreProvincia = nombreProvincia;
-	}
+    public Long getIdDepto() {
+        return idDepto;
+    }
 
-	public Long getIdDepto() {
-		return idDepto;
-	}
+    public void setIdDepto(Long idDepto) {
+        this.idDepto = idDepto;
+    }
 
-	public void setIdDepto(Long idDepto) {
-		this.idDepto = idDepto;
-	}
+    @Override
+    public int hashCode() {
+        return Objects.hash(idDepto, idProvincia, nombreProvincia);
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(idDepto, idProvincia, nombreProvincia);
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Provincia other = (Provincia) obj;
+        return Objects.equals(idDepto, other.idDepto) && Objects.equals(idProvincia, other.idProvincia)
+                && Objects.equals(nombreProvincia, other.nombreProvincia);
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Provincia other = (Provincia) obj;
-		return Objects.equals(idDepto, other.idDepto) && Objects.equals(idProvincia, other.idProvincia)
-				&& Objects.equals(nombreProvincia, other.nombreProvincia);
-	}
-
-	@Override
-	public String toString() {
-		return "Provincia [idProvincia=" + idProvincia + ", nombreProvincia=" + nombreProvincia + ", idDepto=" + idDepto
-				+ "]";
-	}
+    @Override
+    public String toString() {
+        return "Provincia [idProvincia=" + idProvincia + ", nombreProvincia=" + nombreProvincia + ", idDepto=" + idDepto
+                + "]";
+    }
 
 }

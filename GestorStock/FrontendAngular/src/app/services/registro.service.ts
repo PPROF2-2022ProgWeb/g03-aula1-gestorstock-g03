@@ -3,6 +3,7 @@ import { FormControl } from "@angular/forms";
 
 Injectable()
 export class RegistroService{
+    
 
     constructor(){}
 

@@ -20,204 +20,204 @@ import com.ar.Grupo3.model.Departamento;
 @Service
 public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
 
-	private static final long serialVersionUID = -2569349388711599788L;
+    private static final long serialVersionUID = -2569349388711599788L;
 
-	@Autowired
-	private ProvinciaRepositorio dao;
+    @Autowired
+    private ProvinciaRepositorio dao;
 
-	@Autowired
-	private DepartamentoRepositorio departamento;
+    @Autowired
+    private DepartamentoRepositorio departamento;
 
-	@Override
-	public Provincia buscar(Long id) {
+    @Override
+    public Provincia buscar(Long id) {
 
-		Provincia provincia = null;
-		try {
-			Optional<Provincia> aux = dao.findById(id);
-			if (aux.isEmpty()) {
-				throw new Exception("El provincia que busca NO EXISTE");
-			} else {
-				provincia = aux.get();
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+        Provincia provincia = null;
+        try {
+            Optional<Provincia> aux = dao.findById(id);
+            if (aux.isEmpty()) {
+                throw new Exception("El provincia que busca NO EXISTE");
+            } else {
+                provincia = aux.get();
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-		return provincia;
-	}
-	
-	@Override
-	public ProvinciaModel selectPorId(Long id) {
+        return provincia;
+    }
 
-		ProvinciaModel provincia = new ProvinciaModel();
-		try {
-			Optional<Provincia> aux = dao.findById(id);
-			if (aux.isEmpty()) {
-				throw new Exception("El provincia que busca NO EXISTE");
-			} else {
-				Provincia obj = aux.get();
+    @Override
+    public ProvinciaModel selectPorId(Long id) {
 
-				Departamento dep = buscarDepartamento(obj);
-				// Completamos el objeto que mostraremos a la vista.
-				provincia.setNombreProvincia(obj.getNombreProvincia());
-				provincia.setIdProvincia(obj.getIdProvincia());
-				provincia.setIdDepto(obj.getIdDepto());
-				provincia.setNombreDepto((dep != null)? dep.getDepto() : MensajesObjetos.DEPARTAMENTO_NO_RELACIONADO);
+        ProvinciaModel provincia = new ProvinciaModel();
+        try {
+            Optional<Provincia> aux = dao.findById(id);
+            if (aux.isEmpty()) {
+                throw new Exception("El provincia que busca NO EXISTE");
+            } else {
+                Provincia obj = aux.get();
 
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+                Departamento dep = buscarDepartamento(obj);
+                // Completamos el objeto que mostraremos a la vista.
+                provincia.setNombreProvincia(obj.getNombreProvincia());
+                provincia.setIdProvincia(obj.getIdProvincia());
+                provincia.setIdDepto(obj.getIdDepto());
+                provincia.setNombreDepto((dep != null) ? dep.getDepto() : MensajesObjetos.DEPARTAMENTO_NO_RELACIONADO);
 
-		return provincia;
-	}
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public Long contarTodos() {
-		long cantidad = 0;
+        return provincia;
+    }
 
-		try {
-			cantidad = dao.count();
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+    @Override
+    public Long contarTodos() {
+        long cantidad = 0;
 
-		return cantidad;
-	}
+        try {
+            cantidad = dao.count();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public void agregar(Provincia p) {
-		try {
-			if (p.getIdDepto() == null) {
-				throw new Exception("La Provincia que va a registrar no tiene identificador de Departamento");
-			}
-			if (p.getNombreProvincia().isEmpty()) {
-				throw new Exception("El Provincia que va a registrar no tiene Nombre");
-			}
-			// Controlamos que todo este en orden
-			if (buscarDepartamento(p) != null) {
-				dao.save(p);
-			}
+        return cantidad;
+    }
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-	}
+    @Override
+    public void agregar(Provincia p) {
+        try {
+            if (p.getIdDepto() == null) {
+                throw new Exception("La Provincia que va a registrar no tiene identificador de Departamento");
+            }
+            if (p.getNombreProvincia().isEmpty()) {
+                throw new Exception("El Provincia que va a registrar no tiene Nombre");
+            }
+            // Controlamos que todo este en orden
+            if (buscarDepartamento(p) != null) {
+                dao.save(p);
+            }
 
-	@Override
-	public void modificar(Provincia p) {
-		try {
-			if (p.getIdProvincia() == null) {
-				throw new Exception("La Provincia que va a registrar no tiene identificador de la misma");
-			}
-			if (p.getIdDepto() == null) {
-				throw new Exception("La Provincia que va a registrar no tiene identificador de Departamento");
-			}
-			if (p.getNombreProvincia().isEmpty()) {
-				throw new Exception("El Provincia que va a registrar no tiene Nombre");
-			}
-			// Controlamos que todo este en orden
-			if (buscarDepartamento(p) != null) {
-				dao.save(p);
-			}
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+    }
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+    @Override
+    public void modificar(Provincia p) {
+        try {
+            if (p.getIdProvincia() == null) {
+                throw new Exception("La Provincia que va a registrar no tiene identificador de la misma");
+            }
+            if (p.getIdDepto() == null) {
+                throw new Exception("La Provincia que va a registrar no tiene identificador de Departamento");
+            }
+            if (p.getNombreProvincia().isEmpty()) {
+                throw new Exception("El Provincia que va a registrar no tiene Nombre");
+            }
+            // Controlamos que todo este en orden
+            if (buscarDepartamento(p) != null) {
+                dao.save(p);
+            }
 
-	}
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public void borrar(Provincia p) {
-		try {
-			if (p.getIdProvincia() == null) {
-				throw new Exception("El provincia a eliminar no tiene identificador");
-			}
-			// Revisamos que El Provincia exista
-			p = buscar(p.getIdProvincia());
-			if (p != null) {
-				dao.delete(p);
-			}
+    }
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock ");
-		}
-	}
+    @Override
+    public void borrar(Provincia p) {
+        try {
+            if (p.getIdProvincia() == null) {
+                throw new Exception("El provincia a eliminar no tiene identificador");
+            }
+            // Revisamos que El Provincia exista
+            p = buscar(p.getIdProvincia());
+            if (p != null) {
+                dao.delete(p);
+            }
 
-	@Override
-	public List<ProvinciaModel> SelectTodos() {
-		List<ProvinciaModel> list = null;
-		try {
-			List<Provincia> provincias = dao.findAll();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock ");
+        }
+    }
 
-			// Si la lista no esta vacia
-			if (!provincias.isEmpty()) {
+    @Override
+    public List<ProvinciaModel> SelectTodos() {
+        List<ProvinciaModel> list = null;
+        try {
+            List<Provincia> provincias = dao.findAll();
 
-				list = new LinkedList<>();
+            // Si la lista no esta vacia
+            if (!provincias.isEmpty()) {
 
-				// Recorremos la lista
-				for (Provincia provincia : provincias) {
-					// Buscamos id por id
-					Departamento aux = buscarDepartamento(provincia);
+                list = new LinkedList<>();
 
-					//Este es el nuevo objeto que se mostrar para la vista
-					ProvinciaModel nuevoObjeto = new ProvinciaModel();
-					
-					nuevoObjeto.setIdProvincia(provincia.getIdProvincia());
-					nuevoObjeto.setIdDepto(provincia.getIdDepto());
-					nuevoObjeto.setNombreProvincia(provincia.getNombreProvincia());
+                // Recorremos la lista
+                for (Provincia provincia : provincias) {
+                    // Buscamos id por id
+                    Departamento aux = buscarDepartamento(provincia);
 
-					// si existe le asignamos el nombre si no un nombre predeterminado
-					if (aux != null) {
-						nuevoObjeto.setNombreDepto(aux.getDepto());
-					} else {
-						nuevoObjeto.setNombreDepto(MensajesObjetos.DEPARTAMENTO_NO_RELACIONADO);
-					}
+                    //Este es el nuevo objeto que se mostrar para la vista
+                    ProvinciaModel nuevoObjeto = new ProvinciaModel();
 
-					list.add(nuevoObjeto);
-				}
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-		return list;
-	}
+                    nuevoObjeto.setIdProvincia(provincia.getIdProvincia());
+                    nuevoObjeto.setIdDepto(provincia.getIdDepto());
+                    nuevoObjeto.setNombreProvincia(provincia.getNombreProvincia());
 
-	// Metodos unicos
-	public boolean existeDepartamento(Provincia objeto) {
-		boolean encontrado = false;
-		// Nos fijamos que los datos existan
-		if (objeto != null) {
-			if (buscarDepartamento(objeto) != null) {
-				encontrado = true;
-			}
-		}
-		return encontrado;
-	}
+                    // si existe le asignamos el nombre si no un nombre predeterminado
+                    if (aux != null) {
+                        nuevoObjeto.setNombreDepto(aux.getDepto());
+                    } else {
+                        nuevoObjeto.setNombreDepto(MensajesObjetos.DEPARTAMENTO_NO_RELACIONADO);
+                    }
 
-	public Departamento buscarDepartamento(Provincia objeto) {
-		Departamento fact = null;
-		try {
-			Optional<Departamento> faBusqueda = departamento.findById(objeto.getIdDepto());
+                    list.add(nuevoObjeto);
+                }
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+        return list;
+    }
 
-			if (faBusqueda.get().getIdDepto().equals(objeto.getIdDepto())) {
-				fact = faBusqueda.get();
-			} else {
-				throw new Exception("El provincia que va a registrar no tiene Departamento creada");
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+    // Metodos unicos
+    public boolean existeDepartamento(Provincia objeto) {
+        boolean encontrado = false;
+        // Nos fijamos que los datos existan
+        if (objeto != null) {
+            if (buscarDepartamento(objeto) != null) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
 
-		return fact;
-	}
+    public Departamento buscarDepartamento(Provincia objeto) {
+        Departamento fact = null;
+        try {
+            Optional<Departamento> faBusqueda = departamento.findById(objeto.getIdDepto());
+
+            if (faBusqueda.get().getIdDepto().equals(objeto.getIdDepto())) {
+                fact = faBusqueda.get();
+            } else {
+                throw new Exception("El provincia que va a registrar no tiene Departamento creada");
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+
+        return fact;
+    }
 
 }

@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ar.Grupo3.model.Servicio;
 
-public interface ServicioRepositorio extends JpaRepository<Servicio, Long> {
+public interface ServicioRepositorio extends JpaRepository< Servicio, Long> {
 
 }
