@@ -1,4 +1,3 @@
-
 package com.ar.Grupo3.Security.Service;
 
 import com.ar.Grupo3.Security.Entity.Usuario;
@@ -10,7 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDetailsImpl implements UserDetailsService{
+public class UserDetailsImpl implements UserDetailsService {
+
     @Autowired
     UsuarioService usuarioService;
 
@@ -19,5 +19,5 @@ public class UserDetailsImpl implements UserDetailsService{
         Usuario usuario = usuarioService.getByUsername(nombreUsuario).get();
         return UsuarioPrincipal.build(usuario);
     }
-    
+
 }

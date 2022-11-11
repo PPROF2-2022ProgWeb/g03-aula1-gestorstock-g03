@@ -98,7 +98,7 @@ export class VentasComponent implements OnInit {
   constructor(private vs: VentasService, private ps: ProductosService) {}
 
   ngOnInit(): void {
-    this.ps.getAllProducts().subscribe((data) => {
+    this.ps.cargarProductos().subscribe((data) => {
       console.log(data);
       this.productos = data;
     });

@@ -5,6 +5,6 @@ import com.ar.Grupo3.data.factory.interfaces.PlantillaModelView;
 import com.ar.Grupo3.Security.Entity.Rol;
 import com.ar.Grupo3.viewmodel.RolModel;
 
-public interface DaoRolIntf extends PlantillaDAO<Rol>,PlantillaModelView<RolModel> {
+public interface DaoRolIntf extends PlantillaDAO<Rol>, PlantillaModelView<RolModel> {
 
 }

@@ -1,0 +1,105 @@
+@import url(../../../../styles.css);
+
+
+/* --> HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+}
+
+
+.logo {
+    color: var(--color-primario);
+    user-select: none;
+
+}
+.logo-pt1 {
+    font-weight: 800;
+}
+.logo-pt2 {
+    font-weight: 300;
+}
+.search-bar {
+    width: 65%;
+    
+}
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-primario);
+}
+
+.header-icon {
+    color: white;
+    padding: 5px;
+}
+
+.header-shopping-cart {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-shopping-cart-number {
+    font-size: 10px;
+    border-radius: 20px;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 10px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-user-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 20px;
+    padding-right: 15px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbtn {
+    padding: 7px 15px;
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.navbtn.primary {
+    background-color: var(--color-fuente-boton-activo);
+}
+
+.navbtn.primary:hover {
+    background-color: var(--color-fuente-terciario);
+}
+
+.button-hover {
+    background-color: var(--color-fuente-terciario);
+    cursor: pointer;
+}

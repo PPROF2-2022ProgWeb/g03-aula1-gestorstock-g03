@@ -20,257 +20,257 @@ import com.ar.Grupo3.viewmodel.FacturaModel;
 @Service
 public class DaoFacturaImpl implements Serializable, DaoFacturaIntf {
 
-	private static final long serialVersionUID = 8297523269288157919L;
+    private static final long serialVersionUID = 8297523269288157919L;
 
-	@Autowired
-	private FacturaRepositorio dao;
+    @Autowired
+    private FacturaRepositorio dao;
 
-	@Autowired
-	private IUsuarioRepository usuario;
+    @Autowired
+    private IUsuarioRepository usuario;
 
-	@Autowired
-	private ProvinciaRepositorio provincia;
+    @Autowired
+    private ProvinciaRepositorio provincia;
 
-	@Override
-	public Factura buscar(Long id) {
+    @Override
+    public Factura buscar(Long id) {
 
-		Factura factura = null;
-		try {
-			Optional<Factura> aux = dao.findById(id);
-			if (aux.isEmpty()) {
-				throw new Exception("El factura que busca NO EXISTE");
-			} else {
-				factura = aux.get();
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+        Factura factura = null;
+        try {
+            Optional<Factura> aux = dao.findById(id);
+            if (aux.isEmpty()) {
+                throw new Exception("El factura que busca NO EXISTE");
+            } else {
+                factura = aux.get();
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-		return factura;
-	}
+        return factura;
+    }
 
-	@Override
-	public FacturaModel selectPorId(Long id) {
+    @Override
+    public FacturaModel selectPorId(Long id) {
 
-		FacturaModel factura = new FacturaModel();
-		try {
-			Optional<Factura> aux = dao.findById(id);
-			if (aux.isEmpty()) {
-				throw new Exception("El factura que busca NO EXISTE");
-			} else {
-				Factura obj = aux.get();
-				
-				Usuario usu = buscarUsuario(obj);
-				
-				Provincia cia = buscarProvincia(obj);
+        FacturaModel factura = new FacturaModel();
+        try {
+            Optional<Factura> aux = dao.findById(id);
+            if (aux.isEmpty()) {
+                throw new Exception("El factura que busca NO EXISTE");
+            } else {
+                Factura obj = aux.get();
 
-				// Completamos el objeto que mostraremos a la vista.
-				factura.setDirEnvio(obj.getDirEnvio());
-				factura.setIdFactura(obj.getIdFactura());
-				factura.setIdProvincia(obj.getIdProvincia());
-				factura.setIdUsuario(obj.getIdUsuario());
-				factura.setTipo(obj.getTipo());
-				factura.setTotal(obj.getTotal());
-				factura.setFechaApertura(obj.getFechaApertura());
-				factura.setFechaCierre(obj.getFechaCierre());
-				factura.setNombreFactura(obj.getNombreFactura());
+                Usuario usu = buscarUsuario(obj);
 
-				if (usu != null) {
-					factura.setNombreUsuario(usu.getUsername());
-				} else {
-					factura.setNombreFactura(MensajesObjetos.USUARIO_NO_RELACIONADO);
-				}
+                Provincia cia = buscarProvincia(obj);
 
-				if (cia != null) {
-					factura.setNombreProvincia(cia.getNombreProvincia());
-				} else {
-					factura.setNombreFactura(MensajesObjetos.PROVINCIA_NO_RELACIONADA);
-				}
-				
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+                // Completamos el objeto que mostraremos a la vista.
+                factura.setDirEnvio(obj.getDirEnvio());
+                factura.setIdFactura(obj.getIdFactura());
+                factura.setIdProvincia(obj.getIdProvincia());
+                factura.setIdUsuario(obj.getIdUsuario());
+                factura.setTipo(obj.getTipo());
+                factura.setTotal(obj.getTotal());
+                factura.setFechaApertura(obj.getFechaApertura());
+                factura.setFechaCierre(obj.getFechaCierre());
+                factura.setNombreFactura(obj.getNombreFactura());
 
-		return factura;
-	}
+                if (usu != null) {
+                    factura.setNombreUsuario(usu.getUsername());
+                } else {
+                    factura.setNombreFactura(MensajesObjetos.USUARIO_NO_RELACIONADO);
+                }
 
-	@Override
-	public Long contarTodos() {
-		long cantidad = 0;
+                if (cia != null) {
+                    factura.setNombreProvincia(cia.getNombreProvincia());
+                } else {
+                    factura.setNombreFactura(MensajesObjetos.PROVINCIA_NO_RELACIONADA);
+                }
 
-		try {
-			cantidad = dao.count();
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-		return cantidad;
-	}
+        return factura;
+    }
 
-	@Override
-	public void agregar(Factura p) {
-		try {
-			if (p.getNombreFactura().isEmpty()) {
-				throw new Exception("La Factura que va a registrar no tiene Nombre");
-			}
-			dao.save(p);
+    @Override
+    public Long contarTodos() {
+        long cantidad = 0;
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-	}
+        try {
+            cantidad = dao.count();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public void modificar(Factura p) {
-		try {
-			if (p.getIdFactura() == null) {
-				throw new Exception("La Factura que va a registrar no tiene identificador de la misma");
-			}
-			if (p.getNombreFactura().isEmpty()) {
-				throw new Exception("La Factura que va a registrar no tiene Nombre");
-			}
+        return cantidad;
+    }
 
-			dao.save(p);
+    @Override
+    public void agregar(Factura p) {
+        try {
+            if (p.getNombreFactura().isEmpty()) {
+                throw new Exception("La Factura que va a registrar no tiene Nombre");
+            }
+            dao.save(p);
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-	}
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+    }
 
-	@Override
-	public void borrar(Factura p) {
-		try {
-			if (p.getIdFactura() == null) {
-				throw new Exception("El factura que va a eliminar no tiene identificador");
-			}
-			// Revisamos que el pedido exista
-			p = buscar(p.getIdFactura());
-			if (p != null) {
-				dao.delete(p);
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock ");
-		}
+    @Override
+    public void modificar(Factura p) {
+        try {
+            if (p.getIdFactura() == null) {
+                throw new Exception("La Factura que va a registrar no tiene identificador de la misma");
+            }
+            if (p.getNombreFactura().isEmpty()) {
+                throw new Exception("La Factura que va a registrar no tiene Nombre");
+            }
 
-	}
+            dao.save(p);
 
-	@Override
-	public List<FacturaModel> SelectTodos() {
-		List<FacturaModel> list = null;
-		try {
-			List<Factura> facturas = dao.findAll();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+    }
 
-			// Si la lista no esta vacia
-			if (!facturas.isEmpty()) {
+    @Override
+    public void borrar(Factura p) {
+        try {
+            if (p.getIdFactura() == null) {
+                throw new Exception("El factura que va a eliminar no tiene identificador");
+            }
+            // Revisamos que el pedido exista
+            p = buscar(p.getIdFactura());
+            if (p != null) {
+                dao.delete(p);
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock ");
+        }
 
-				list = new LinkedList<>();
+    }
 
-				// Recorremos la lista
-				for (Factura factura : facturas) {
-					// Buscamos id por id
-					Usuario usu = buscarUsuario(factura);
-					
-					Provincia cia = buscarProvincia(factura);
+    @Override
+    public List<FacturaModel> SelectTodos() {
+        List<FacturaModel> list = null;
+        try {
+            List<Factura> facturas = dao.findAll();
 
-					// Este es el nuevo objeto que se mostrara para la vista
-					FacturaModel nuevoObjeto = new FacturaModel();
-					nuevoObjeto.setDirEnvio(factura.getDirEnvio());
-					nuevoObjeto.setIdFactura(factura.getIdFactura());
-					nuevoObjeto.setIdProvincia(factura.getIdProvincia());
-					nuevoObjeto.setIdUsuario(factura.getIdUsuario());
-					nuevoObjeto.setFechaApertura(factura.getFechaApertura());
-					nuevoObjeto.setFechaCierre(factura.getFechaCierre());
-					nuevoObjeto.setTipo(factura.getTipo());
-					nuevoObjeto.setTotal(factura.getTotal());
-					nuevoObjeto.setNombreFactura(factura.getNombreFactura());
+            // Si la lista no esta vacia
+            if (!facturas.isEmpty()) {
 
-					// si existe le asignamos el nombre si no un nombre predeterminado
-					if (usu != null) {
-						nuevoObjeto.setNombreUsuario(usu.getUsername());
-					} else {
-						nuevoObjeto.setNombreFactura(MensajesObjetos.USUARIO_NO_RELACIONADO);
-					}
+                list = new LinkedList<>();
 
-					if (cia != null) {
-						nuevoObjeto.setNombreProvincia(cia.getNombreProvincia());
-					} else {
-						nuevoObjeto.setNombreFactura(MensajesObjetos.PROVINCIA_NO_RELACIONADA);
-					}
-					
-					list.add(nuevoObjeto);
-				}
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-		return list;
-	}
+                // Recorremos la lista
+                for (Factura factura : facturas) {
+                    // Buscamos id por id
+                    Usuario usu = buscarUsuario(factura);
 
-	// Metodos unicos
-	public boolean existeUsuario(Factura objeto) {
-		boolean encontrado = false;
-		// Nos fijamos que los datos existan
-		if (objeto != null) {
-			if (buscarUsuario(objeto) != null) {
-				encontrado = true;
-			}
-		}
-		return encontrado;
-	}
+                    Provincia cia = buscarProvincia(factura);
 
-	public boolean existeProvincia(Factura objeto) {
-		boolean encontrado = false;
-		// Nos fijamos que los datos existan
-		if (objeto != null) {
-			if (buscarProvincia(objeto) != null) {
-				encontrado = true;
-			}
-		}
-		return encontrado;
-	}
+                    // Este es el nuevo objeto que se mostrara para la vista
+                    FacturaModel nuevoObjeto = new FacturaModel();
+                    nuevoObjeto.setDirEnvio(factura.getDirEnvio());
+                    nuevoObjeto.setIdFactura(factura.getIdFactura());
+                    nuevoObjeto.setIdProvincia(factura.getIdProvincia());
+                    nuevoObjeto.setIdUsuario(factura.getIdUsuario());
+                    nuevoObjeto.setFechaApertura(factura.getFechaApertura());
+                    nuevoObjeto.setFechaCierre(factura.getFechaCierre());
+                    nuevoObjeto.setTipo(factura.getTipo());
+                    nuevoObjeto.setTotal(factura.getTotal());
+                    nuevoObjeto.setNombreFactura(factura.getNombreFactura());
 
-	public Usuario buscarUsuario(Factura objeto) {
-		Usuario a = null;
-		try {
-			Optional<Usuario> faBusqueda = usuario.findByIdUsuario(objeto.getIdUsuario());
+                    // si existe le asignamos el nombre si no un nombre predeterminado
+                    if (usu != null) {
+                        nuevoObjeto.setNombreUsuario(usu.getUsername());
+                    } else {
+                        nuevoObjeto.setNombreFactura(MensajesObjetos.USUARIO_NO_RELACIONADO);
+                    }
 
-			if (faBusqueda.get().getIdUsuario().equals(objeto.getIdUsuario())) {
-				a = faBusqueda.get();
-			} else {
-				throw new Exception("El factura que va a registrar no tiene Usuario creado");
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+                    if (cia != null) {
+                        nuevoObjeto.setNombreProvincia(cia.getNombreProvincia());
+                    } else {
+                        nuevoObjeto.setNombreFactura(MensajesObjetos.PROVINCIA_NO_RELACIONADA);
+                    }
 
-		return a;
-	}
+                    list.add(nuevoObjeto);
+                }
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+        return list;
+    }
 
-	public Provincia buscarProvincia(Factura objeto) {
-		Provincia a = null;
-		try {
-			Optional<Provincia> faBusqueda = provincia.findById(objeto.getIdProvincia());
+    // Metodos unicos
+    public boolean existeUsuario(Factura objeto) {
+        boolean encontrado = false;
+        // Nos fijamos que los datos existan
+        if (objeto != null) {
+            if (buscarUsuario(objeto) != null) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
 
-			if (faBusqueda.get().getIdProvincia().equals(objeto.getIdProvincia())) {
-				a = faBusqueda.get();
-			} else {
-				throw new Exception("El factura que va a registrar no tiene Provincia creada");
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+    public boolean existeProvincia(Factura objeto) {
+        boolean encontrado = false;
+        // Nos fijamos que los datos existan
+        if (objeto != null) {
+            if (buscarProvincia(objeto) != null) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
 
-		return a;
-	}
+    public Usuario buscarUsuario(Factura objeto) {
+        Usuario a = null;
+        try {
+            Optional<Usuario> faBusqueda = usuario.findByIdUsuario(objeto.getIdUsuario());
+
+            if (faBusqueda.get().getIdUsuario().equals(objeto.getIdUsuario())) {
+                a = faBusqueda.get();
+            } else {
+                throw new Exception("El factura que va a registrar no tiene Usuario creado");
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+
+        return a;
+    }
+
+    public Provincia buscarProvincia(Factura objeto) {
+        Provincia a = null;
+        try {
+            Optional<Provincia> faBusqueda = provincia.findById(objeto.getIdProvincia());
+
+            if (faBusqueda.get().getIdProvincia().equals(objeto.getIdProvincia())) {
+                a = faBusqueda.get();
+            } else {
+                throw new Exception("El factura que va a registrar no tiene Provincia creada");
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+
+        return a;
+    }
 
 }

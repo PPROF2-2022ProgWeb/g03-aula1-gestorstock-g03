@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class MensajesObjetos implements Serializable {
 
-	private static final long serialVersionUID = -11227201391547696L;
+    private static final long serialVersionUID = -11227201391547696L;
 
 	@SuppressWarnings("unused")
 	public static final String ABONO_NO_RELACIONADO = "No hay una abono relacionado";
@@ -31,7 +31,7 @@ public class MensajesObjetos implements Serializable {
 	public static final String SERVICIO_NO_RELACIONADO = "No hay una servicio relacionado";
 	
 	@SuppressWarnings("unused")
-	public static final String TIPO_PRODUCTO_NO_RELACIONADO = "No hay una tipo de producto relacionado";
+	public static final String TIPO_PRODUCTO_NO_RELACIONADO = "Sin categoria";
 	
 	@SuppressWarnings("unused")
 	public static final String USUARIO_NO_RELACIONADO = "No hay una usuario relacionado";

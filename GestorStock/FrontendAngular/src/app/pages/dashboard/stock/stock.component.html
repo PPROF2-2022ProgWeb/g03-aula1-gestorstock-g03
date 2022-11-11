@@ -1,1 +1,40 @@
-<p>stock works!</p>
+<div class="container">
+<!-- 
+  <div class="card">
+    <fm-productos></fm-productos>
+  </div> -->
+
+  <div class="card">
+    <search-bar
+      searchMode="startsWith"
+      searchResultMode="firstMatch"
+      searchProperty="nombreProducto"
+      triggerOnInput
+      [caseSensitive]="false"
+      [source]="stock"
+      (searchDone)="onSearchDone($event)"
+    ></search-bar>
+  </div>
+
+  <div class="card">
+    <data-table
+      #tablaStock
+      [source]="stock"
+      [columns]="stockColumns"
+      tableStyle="bordered"
+      [maxHeight]="300"
+    ></data-table>
+    <div class="actions">
+      <app-button bordered square (onClick)="onAgregarProducto()">Agregar producto</app-button>
+      <app-button bordered square [disabled]="!tablaStock.selectedItem" (onClick)="openModal()">Editar producto</app-button>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="stock.length > 0 && tablaStock.selectedIndex != -1">
+    <app-detalle-producto [producto]="tablaStock.selectedItem"></app-detalle-producto>
+  </div>
+</div>
+
+<app-modal #modal [isOpen]="true">
+  <fm-productos [producto]="tablaStock.selectedItem" (onSubmit)="onModalProductoSubmit($event)"></fm-productos>
+</app-modal>

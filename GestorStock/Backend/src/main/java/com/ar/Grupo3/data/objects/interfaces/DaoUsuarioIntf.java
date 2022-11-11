@@ -5,6 +5,6 @@ import com.ar.Grupo3.data.factory.interfaces.PlantillaDAO;
 import com.ar.Grupo3.data.factory.interfaces.PlantillaModelView;
 import com.ar.Grupo3.viewmodel.UsuarioModel;
 
-public interface DaoUsuarioIntf extends PlantillaDAO<Usuario>,PlantillaModelView<UsuarioModel> {
+public interface DaoUsuarioIntf extends PlantillaDAO<Usuario>, PlantillaModelView<UsuarioModel> {
 
 }

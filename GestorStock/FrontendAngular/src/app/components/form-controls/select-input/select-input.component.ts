@@ -1,9 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'select-input',
   templateUrl: './select-input.component.html',
-  styleUrls: ['./select-input.component.css']
+  styleUrls: ['./select-input.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      multi: true,
+      useExisting: SelectInputComponent,
+    },
+  ],
 })
 export class SelectInputComponent implements OnInit {
   @ViewChild('input') input: HTMLInputElement;

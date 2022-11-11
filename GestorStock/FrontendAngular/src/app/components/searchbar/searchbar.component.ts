@@ -51,11 +51,8 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
       value = value.toLowerCase();
     }
     if(this.searchResultMode === 'firstMatch'){
-      console.log('entro en first');
       return this.searchFirstMatch(value, this.caseSensitive)
-      console.log('dentro de first despues del return');
     }
-    console.log('despues del if');
     
     switch (this.searchMode) {
       case 'startsWith':

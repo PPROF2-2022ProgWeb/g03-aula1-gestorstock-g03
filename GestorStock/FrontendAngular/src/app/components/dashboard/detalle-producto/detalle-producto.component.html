@@ -1,0 +1,37 @@
+<div class="product-detail">
+  <div class="image-container">
+    <img [src]="producto.imageURL" [alt]="'Imagen de ' + producto.nombreProducto">
+  </div>
+  <div class="info-container">
+    <div class="title">
+      <span>
+        {{ producto.nombreProducto }}
+      </span>
+    </div>
+    <div class="group">
+      <div class="price">
+        <span >
+          Precio: {{ producto.valor | currency }}
+        </span>
+      </div>
+      <div class="stock">
+        <span >
+          Stock disponible: {{ producto.cantidad }}
+        </span>
+      </div>
+      <div class="ingreso">
+        <span >
+          Fecha de ingreso: {{ producto.fechaIng | date }}
+        </span>
+      </div>
+      <div class="categoria">
+        <span >
+          Categoria: {{ producto.tipoProd }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="barcode">
+    <svg id="barcode"></svg>
+  </div>
+</div>

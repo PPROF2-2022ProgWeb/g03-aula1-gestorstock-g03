@@ -1,15 +1,15 @@
 export class ProductoModel {
   constructor(
-    public idProducto: number,
-    public nombreProducto: string,
-    public valor: number,
-    public costo: number,
-    public cantidad: number,
-    public idTipoProd: number,
-    public tipoProd: string,
-    public fechaIng: string,
-    public barCode?: string,
-    public imageUrl?: string
+    public idProducto: number | null,
+    public nombreProducto: string, //
+    public valor: number, //
+    public costo: number, // no usado
+    public cantidad: number, //
+    public idTipoProd: number, //
+    public tipoProd: string, //
+    public fechaIng: string | null, //
+    public barCode?: string, //
+    public imageURL?: string //
   ) {}
 }
 

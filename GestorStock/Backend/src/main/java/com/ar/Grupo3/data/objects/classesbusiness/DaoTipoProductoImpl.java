@@ -15,126 +15,126 @@ import com.ar.Grupo3.model.*;
 @Service
 public class DaoTipoProductoImpl implements Serializable, DaoTipoProductoIntf {
 
-	private static final long serialVersionUID = -5820558651571290560L;
-	
-	@Autowired
-	private TipoProductoRepositorio dao;
-	
-	@Override
-	public TipoProducto selectPorId(Long id) {
+    private static final long serialVersionUID = -5820558651571290560L;
 
-		TipoProducto tipoProducto = null;
-		try {
-			Optional<TipoProducto> aux = dao.findById(id);
-			if (aux.isEmpty()) {
-				throw new Exception("El tipoProducto que busca NO EXISTE");
-			} else {
-				tipoProducto = aux.get();
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+    @Autowired
+    private TipoProductoRepositorio dao;
 
-		return tipoProducto;
-	}
+    @Override
+    public TipoProducto selectPorId(Long id) {
 
-	@Override
-	public Long contarTodos() {
-		long cantidad = 0;
+        TipoProducto tipoProducto = null;
+        try {
+            Optional<TipoProducto> aux = dao.findById(id);
+            if (aux.isEmpty()) {
+                throw new Exception("El tipoProducto que busca NO EXISTE");
+            } else {
+                tipoProducto = aux.get();
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-		try {
-			cantidad = dao.count();
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+        return tipoProducto;
+    }
 
-		return cantidad;
-	}
+    @Override
+    public Long contarTodos() {
+        long cantidad = 0;
 
-	@Override
-	public void agregar(TipoProducto p) {
-		try {
-			if (p.getNombreTipoProd().isEmpty()) {
-				throw new Exception("El Tipo de Producto que va a registrar no tiene Nombre");
-			}
-			dao.save(p);
+        try {
+            cantidad = dao.count();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+        return cantidad;
+    }
 
-	}
+    @Override
+    public void agregar(TipoProducto p) {
+        try {
+            if (p.getNombreTipoProd().isEmpty()) {
+                throw new Exception("El Tipo de Producto que va a registrar no tiene Nombre");
+            }
+            dao.save(p);
 
-	@Override
-	public void modificar(TipoProducto p) {
-		try {
-			if (p.getIdTipoProducto() == null) {
-				throw new Exception("El Tipo de producto que va a registrar no tiene identificador del mismo");
-			}
-			
-			dao.save(p);
-			
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	}
+    }
 
-	@Override
-	public void borrar(TipoProducto p) {
-		try {
-			if (p.getIdTipoProducto() == null) {
-				throw new Exception("El Tipo de producto que va a eliminar no tiene identificador");
-			}
-			// Revisamos que el pedido exista
-			p = buscarTipoProducto(p);
-			if (p != null) {
-				dao.delete(p);
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock ");
-		}
-	}
+    @Override
+    public void modificar(TipoProducto p) {
+        try {
+            if (p.getIdTipoProducto() == null) {
+                throw new Exception("El Tipo de producto que va a registrar no tiene identificador del mismo");
+            }
 
-	@Override
-	public List<TipoProducto> SelectTodos() {
-		List<TipoProducto> list = null;
-		try {
-			list = dao.findAll();
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-		return list;
-	}
-	
-	//Metodos Unicos
-	public TipoProducto buscarTipoProducto(TipoProducto objeto) {
-		TipoProducto tipoProducto = null;
-		try {
-			Optional<TipoProducto> aux = dao.findById(objeto.getIdTipoProducto());
-			if (aux.isEmpty()) {
-				throw new Exception("El Tipo de Producto que busca NO EXISTE");
-			} else {
-				tipoProducto = aux.get();
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+            dao.save(p);
 
-		return tipoProducto;
-	}
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public TipoProducto buscar(Long id) {
-		// Platilla no utilizada
-		return null;
-	}
+    }
+
+    @Override
+    public void borrar(TipoProducto p) {
+        try {
+            if (p.getIdTipoProducto() == null) {
+                throw new Exception("El Tipo de producto que va a eliminar no tiene identificador");
+            }
+            // Revisamos que el pedido exista
+            p = buscarTipoProducto(p);
+            if (p != null) {
+                dao.delete(p);
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock ");
+        }
+    }
+
+    @Override
+    public List<TipoProducto> SelectTodos() {
+        List<TipoProducto> list = null;
+        try {
+            list = dao.findAll();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+        return list;
+    }
+
+    //Metodos Unicos
+    public TipoProducto buscarTipoProducto(TipoProducto objeto) {
+        TipoProducto tipoProducto = null;
+        try {
+            Optional<TipoProducto> aux = dao.findById(objeto.getIdTipoProducto());
+            if (aux.isEmpty()) {
+                throw new Exception("El Tipo de Producto que busca NO EXISTE");
+            } else {
+                tipoProducto = aux.get();
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+
+        return tipoProducto;
+    }
+
+    @Override
+    public TipoProducto buscar(Long id) {
+        // Platilla no utilizada
+        return null;
+    }
 
 }

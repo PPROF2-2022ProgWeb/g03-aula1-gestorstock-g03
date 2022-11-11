@@ -1,0 +1,52 @@
+@import url(../../../../styles.css);
+/* Inicio estilo de combos */
+section.hero-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--verde);
+    gap: 16px;
+    margin-top: 80px;
+    padding: 0 10%;
+    overflow: visible;
+}
+
+article.hero-product {
+    position: relative;
+    bottom: 24px;
+    display: flex;
+    align-items: flex-end;
+    height: 265px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    flex: 1 1 400px;
+    box-shadow: 0px 4px 8px 0px #00000040;
+}
+
+article.hero-product .contenido {
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    color: var(--blanco);
+    padding: 8px;
+}
+
+article.hero-product .contenido img {
+    margin-right: 16px;
+}
+
+article.hero-product .contenido h3 {
+    font-size: 1em;
+}
+
+article#combo-disney {
+    background-image: url("../../../../assets/img/img_tienda/fondo-combo-disney.png");
+}
+
+article#combo-hbo {
+    background-image: url("../../../../assets/img/img_tienda/fondo-combo-hbo.png");
+}
+/* Fin estilo de combos */
