@@ -17,7 +17,7 @@
 		<springframework.version>5.7.4</springframework.version>
 		<springsecurity.version>5.7.4</springsecurity.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,7 +37,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 		<!--Dependencias de seguridad-->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -47,13 +50,15 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 		</dependency>
-		
-		<!--Dependecias para Login Unico-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
 		<!--Dependencias de Spring Funcionales -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

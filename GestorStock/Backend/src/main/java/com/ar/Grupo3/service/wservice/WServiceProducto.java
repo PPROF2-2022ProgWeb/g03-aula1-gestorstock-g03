@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.ar.Grupo3.data.factory.FabricaDAO;
@@ -34,6 +35,23 @@ public class WServiceProducto implements Serializable {
 		return listaProducto;
 	}
 
+	@SuppressWarnings("unchecked")
+	@GetMapping(path = "/productoByNombre/{nombre}")
+	public List<ProductoModel> mostrarProductoPorNombre(@PathVariable("nombre") String nombre) {
+		List<ProductoModel> listaProducto = null;
+		try {
+			if (nombre.isBlank()) {
+				throw new Exception("El objeto a Buscar tiene el nombre vacio");
+			}else {
+				listaProducto = listarPorNombre(nombre);
+			}
+		}catch (Exception e) {
+			return (List<ProductoModel>) new ResponseEntity<ProductoModel>(HttpStatus.NOT_FOUND);
+		}
+		
+		return listaProducto;
+	}
+	
 	@GetMapping(path = "/producto/{id}")
 	public ProductoModel buscarProducto(@PathVariable("id") Long id) {
 		return buscarPorId(id);
@@ -62,10 +80,10 @@ public class WServiceProducto implements Serializable {
 	public ResponseEntity<Producto> eliminarProducto(@PathVariable("id") Long id) {
 		int var = eliminar(id);
 		try {
-			if (var != 0) {
+			if (var == 0) {
 				return new ResponseEntity<Producto>(HttpStatus.OK);
 			} else {
-				throw new Exception("El identificador del abono eliminar esta vacio");
+				throw new Exception("El identificador del producto a eliminar esta vacio");
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Producto>(HttpStatus.NOT_FOUND);
@@ -81,6 +99,11 @@ public class WServiceProducto implements Serializable {
 		return servicioProducto.SelectTodos();
 	}
 
+	// Buscamos todos los objetos Producto
+	public List<ProductoModel> listarPorNombre(String nombre) {
+		return servicioProducto.SelectTodosPorNombre(nombre);
+	}
+	
 	// Buscamos un objeto ProductoModel por ID
 	public ProductoModel buscarPorId(Long id) {
 		return servicioProducto.selectPorId(id);
