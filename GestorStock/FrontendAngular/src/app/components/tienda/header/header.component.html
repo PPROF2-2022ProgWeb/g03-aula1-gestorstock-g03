@@ -13,7 +13,7 @@
         <a class="navbtn primary" routerLink="/login">Iniciar Sesion</a>
         <a class="button-hover navbtn" routerLink="/registro">Registrarse</a>
     </nav>
-    <nav class="header-nav" *ngIf="loguin()">
+    <nav class="header-nav" *ngIf="isLoggedIn">
         <a class="button-hover header-icon header-shopping-cart" routerLink="#">
             <app-icon [icon]="iconos.CARRITO"></app-icon>                
             <div class="header-shopping-cart-number">2</div>

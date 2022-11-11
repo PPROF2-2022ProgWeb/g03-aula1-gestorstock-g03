@@ -24,8 +24,6 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'quienes-somos', component: QuienesSomosComponent},
-    
-    
   ]},
   {path: 'dashboard', component: DashboardLayoutComponent, children: [
     {path: '', component: AdministracionComponent},
@@ -39,6 +37,7 @@ const routes: Routes = [
     {path: 'carrito', component: TiendaCarritoComponent},
     {path: 'checkout', component: CheckoutComponent},
     {path: 'listado', component: ListadoProductosComponent},
+    {path: 'listado/:busqueda', component: ListadoProductosComponent},
   ]},
   {path: '**', component: NoEncontradoComponent},
 ];

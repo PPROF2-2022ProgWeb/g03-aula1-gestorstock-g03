@@ -11,50 +11,38 @@ import { Iconos } from 'src/app/utils/iconos.enum';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-
   public productos: ProductoModel[];
   public iconos = Iconos;
-  
+
   isLoggedIn: boolean;
   loggedInUser: string;
   permitirRegistro: boolean;
 
-  constructor(private prodServ: ProductosService,
-              private logServ: LoginService,
-              private regServ: RegistroService,
-              private router: Router) { }
+  constructor(
+    private logServ: LoginService,
+    private regServ: RegistroService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-   
+  ngOnInit(): void {}
 
-    this.prodServ.getAllProducts().subscribe(data => {
-      this.productos = data;
-      console.log(this.productos);
-    })
+  onSearchDone(event: SearchResult) {
+    console.log(event);
   }
 
-  onSearchDone(event: SearchResult){
-    console.log(event);    
-  }
-
-  loguin(){
-    this.logServ.getAuth().subscribe((auth: { email: string; }) => {
-      if(auth?.email){
+  loguin() {
+    this.logServ.getAuth().subscribe((auth: { email: string }) => {
+      if (auth?.email) {
         this.isLoggedIn = true;
         this.loggedInUser = auth.email;
         this.permitirRegistro = false;
-      }
-      else{
+      } else {
         this.isLoggedIn = false;
         this.permitirRegistro = true;
       }
     });
-    
-    
   }
-  
-
 }

@@ -1,0 +1,25 @@
+<div class="container" (click)="$event.stopPropagation()">
+  <h2>{{ titulo }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="image-row">
+      <div class="image-container">
+        <img [src]="imageUrl" alt="" fallbackSrc>
+      </div>
+      <div class="controls-container">
+        <text-input title="Nombre de producto" formControlName="nombre"></text-input>
+        <number-input title="Precio" min="0" formControlName="precio"></number-input>
+        <text-input title="URL de imagen" formControlName="imageUrl"></text-input>
+      </div>
+    </div>
+    <text-input title="Codigo de barras" formControlName="barcode"></text-input>
+    <number-input title="Unidades" min="0" formControlName="unidades"></number-input>
+    <select-input title="Categoria" formControlName="categoria">
+      <option *ngFor="let categoria of categorias" [value]="categoria.idTipoProducto"> {{ categoria.nombreTipoProd }} </option>
+    </select-input>
+
+    <app-button type="submit" [disabled]="!form.valid" square bordered>Aceptar</app-button>
+    <app-button type="reset" square inverted bordered (onClick)="onCancel()">
+      Cancelar
+    </app-button>
+  </form>
+</div>

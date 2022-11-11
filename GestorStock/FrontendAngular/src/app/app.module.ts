@@ -31,7 +31,7 @@ import { AvisoComponent } from './components/utils/aviso/aviso.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { DynamicPipe } from './pipes/dynamic.pipe';
-import { CurrencyPipe, PercentPipe } from '@angular/common';
+import { CurrencyPipe, DatePipe, PercentPipe } from '@angular/common';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { FmEdicCartProductComponent } from './components/forms/fm-editCartProduct/fm-editCartProduct.component';
 import { TextInputComponent } from './components/form-controls/text-input/text-input.component';
@@ -54,6 +54,9 @@ import { HeroProductComponent } from './components/tienda/hero-product/hero-prod
 import { ProductCardComponent } from './components/tienda/product-card/product-card.component';
 import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.component';
 
+import { DetalleProductoComponent } from './components/dashboard/detalle-producto/detalle-producto.component';
+import { FmProductosComponent } from './components/forms/fc-productos/fm-productos.component';
+import { ImageFallbackDirective } from './directives/image-fallback.directive';
 
 @NgModule({
   declarations: [
@@ -91,6 +94,9 @@ import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.
     SelectionItemComponent,
     VentasCheckoutComponent,
     SelectInputComponent,
+    DetalleProductoComponent,
+    FmProductosComponent,
+    ImageFallbackDirective,
     TiendaComponent,
     ListadoProductosComponent,
     TiendaCarritoComponent,
@@ -104,7 +110,7 @@ import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.
     TiendaLayoutsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule, FormsModule],
-  providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe],
+  providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

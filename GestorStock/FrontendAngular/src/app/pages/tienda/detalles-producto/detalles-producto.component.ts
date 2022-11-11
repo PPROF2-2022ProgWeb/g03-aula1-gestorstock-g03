@@ -17,7 +17,7 @@ export class DetallesProductoComponent implements OnInit {
   constructor(private prodServ: ProductosService) { }
 
   ngOnInit(): void {
-    this.prodServ.getAllProducts().subscribe(data => {
+    this.prodServ.cargarProductos().subscribe(data => {
       this.productos = data;
       console.log(this.productos);
     })

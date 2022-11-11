@@ -16,10 +16,8 @@ import com.ar.Grupo3.util.ConvertidorFecha;
 import com.ar.Grupo3.util.MensajesObjetos;
 import com.ar.Grupo3.util.UtilsCadenas;
 import com.ar.Grupo3.viewmodel.ProductoModel;
-import javax.transaction.Transactional;
 
 @Service
-@Transactional
 public class DaoProductoImpl implements Serializable, DaoProductoIntf {
 
     private static final long serialVersionUID = -4261968389037389395L;
