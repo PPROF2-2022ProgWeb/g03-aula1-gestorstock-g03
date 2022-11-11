@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ar.Grupo3.model.TipoProducto;
 
-public interface TipoProductoRepositorio extends JpaRepository<TipoProducto, Long> {
+public interface TipoProductoRepositorio extends JpaRepository< TipoProducto, Long> {
 
 }

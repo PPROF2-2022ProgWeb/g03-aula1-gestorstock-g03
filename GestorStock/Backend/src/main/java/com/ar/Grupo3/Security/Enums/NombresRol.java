@@ -1,4 +1,3 @@
-
 package com.ar.Grupo3.Security.Enums;
 
 public enum NombresRol {

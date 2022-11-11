@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ar.Grupo3.model.Delivery;
 
-public interface DeliveryRepositorio extends JpaRepository<Delivery, Long> {
+public interface DeliveryRepositorio extends JpaRepository< Delivery, Long> {
 
 }

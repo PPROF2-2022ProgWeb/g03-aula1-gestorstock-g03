@@ -18,252 +18,252 @@ import com.ar.Grupo3.viewmodel.VentasModel;
 @Service
 public class DaoVentasImpl implements Serializable, DaoVentasIntf {
 
-	private static final long serialVersionUID = -1781920215637427233L;
+    private static final long serialVersionUID = -1781920215637427233L;
 
-	@Autowired
-	private VentasRepositorio dao;
+    @Autowired
+    private VentasRepositorio dao;
 
-	@Autowired
-	private ProductoRepositorio producto;
+    @Autowired
+    private ProductoRepositorio producto;
 
-	@Autowired
-	private FacturaRepositorio factura;
+    @Autowired
+    private FacturaRepositorio factura;
 
-	@Override
-	public Ventas buscar(Long id) {
+    @Override
+    public Ventas buscar(Long id) {
 
-		Ventas ventas = null;
-		try {
-			Optional<Ventas> aux = dao.findById(id);
-			if (aux.isEmpty()) {
-				throw new Exception("El ventas que busca NO EXISTE");
-			} else {
-				ventas = aux.get();
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+        Ventas ventas = null;
+        try {
+            Optional<Ventas> aux = dao.findById(id);
+            if (aux.isEmpty()) {
+                throw new Exception("El ventas que busca NO EXISTE");
+            } else {
+                ventas = aux.get();
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-		return ventas;
-	}
-	
-	@Override
-	public VentasModel selectPorId(Long id) {
+        return ventas;
+    }
 
-		VentasModel ventas = new VentasModel();
-		try {
-			Optional<Ventas> aux = dao.findById(id);
-			if (aux.isEmpty()) {
-				throw new Exception("El ventas que busca NO EXISTE");
-			} else {
-				Ventas obj = aux.get();
+    @Override
+    public VentasModel selectPorId(Long id) {
 
-				Factura fac = buscarFactura(obj);
-				Producto pro = buscarProducto(obj);
-				// Completamos el objeto que mostraremos a la vista.
-				ventas.setEstado(obj.getEstado());
-				ventas.setIdVenta(obj.getIdVenta());
-				ventas.setIdFactura(obj.getIdFactura());
-				ventas.setIdProducto(obj.getIdProducto());
-				ventas.setCantidad(obj.getCantidad());
-				ventas.setDescuento(obj.getDescuento());
-				ventas.setNombreVenta(obj.getNombreVenta());
+        VentasModel ventas = new VentasModel();
+        try {
+            Optional<Ventas> aux = dao.findById(id);
+            if (aux.isEmpty()) {
+                throw new Exception("El ventas que busca NO EXISTE");
+            } else {
+                Ventas obj = aux.get();
 
-				// si existe le asignamos el nombre si no un nombre predeterminado
-				if (fac != null) {
-					ventas.setNombreFactura(fac.getNombreFactura());
-				} else {
-					ventas.setNombreFactura(MensajesObjetos.FACTURA_NO_RELACIONADA);
-				}
+                Factura fac = buscarFactura(obj);
+                Producto pro = buscarProducto(obj);
+                // Completamos el objeto que mostraremos a la vista.
+                ventas.setEstado(obj.getEstado());
+                ventas.setIdVenta(obj.getIdVenta());
+                ventas.setIdFactura(obj.getIdFactura());
+                ventas.setIdProducto(obj.getIdProducto());
+                ventas.setCantidad(obj.getCantidad());
+                ventas.setDescuento(obj.getDescuento());
+                ventas.setNombreVenta(obj.getNombreVenta());
 
-				if (pro != null) {
-					ventas.setNombreProducto(pro.getNombreProducto());
-				} else {
-					ventas.setNombreProducto(MensajesObjetos.PRODUCTO_NO_RELACIONADO);
-				}
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+                // si existe le asignamos el nombre si no un nombre predeterminado
+                if (fac != null) {
+                    ventas.setNombreFactura(fac.getNombreFactura());
+                } else {
+                    ventas.setNombreFactura(MensajesObjetos.FACTURA_NO_RELACIONADA);
+                }
 
-		return ventas;
-	}
+                if (pro != null) {
+                    ventas.setNombreProducto(pro.getNombreProducto());
+                } else {
+                    ventas.setNombreProducto(MensajesObjetos.PRODUCTO_NO_RELACIONADO);
+                }
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public Long contarTodos() {
-		long cantidad = 0;
+        return ventas;
+    }
 
-		try {
-			cantidad = dao.count();
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+    @Override
+    public Long contarTodos() {
+        long cantidad = 0;
 
-		return cantidad;
-	}
+        try {
+            cantidad = dao.count();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public void agregar(Ventas p) {
-		try {
-			if (p.getNombreVenta().isEmpty()) {
-				throw new Exception("El Objeto 'Ventas' que va a registrar no tiene nombre");
-			}
-			dao.save(p);
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-	}
+        return cantidad;
+    }
 
-	@Override
-	public void modificar(Ventas p) {
-		try {
-			if (p.getIdVenta() == null) {
-				throw new Exception("la Venta que va a registrar no tiene identificador del mismo");
-			}
-			if (p.getNombreVenta().isEmpty()) {
-				throw new Exception("El Objeto 'Ventas' que va a registrar no tiene nombre");
-			}
+    @Override
+    public void agregar(Ventas p) {
+        try {
+            if (p.getNombreVenta().isEmpty()) {
+                throw new Exception("El Objeto 'Ventas' que va a registrar no tiene nombre");
+            }
+            dao.save(p);
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+    }
 
-			dao.save(p);
+    @Override
+    public void modificar(Ventas p) {
+        try {
+            if (p.getIdVenta() == null) {
+                throw new Exception("la Venta que va a registrar no tiene identificador del mismo");
+            }
+            if (p.getNombreVenta().isEmpty()) {
+                throw new Exception("El Objeto 'Ventas' que va a registrar no tiene nombre");
+            }
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+            dao.save(p);
 
-	}
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
 
-	@Override
-	public void borrar(Ventas p) {
-		try {
-			if (p.getIdVenta() == null) {
-				throw new Exception("El ventas a eliminar no tiene identificador");
-			}
-			// Revisamos que El Ventas exista
-			p = buscar(p.getIdVenta());
-			if (p != null) {
-				dao.delete(p);
-			}
+    }
 
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock ");
-		}
-	}
+    @Override
+    public void borrar(Ventas p) {
+        try {
+            if (p.getIdVenta() == null) {
+                throw new Exception("El ventas a eliminar no tiene identificador");
+            }
+            // Revisamos que El Ventas exista
+            p = buscar(p.getIdVenta());
+            if (p != null) {
+                dao.delete(p);
+            }
 
-	@Override
-	public List<VentasModel> SelectTodos() {
-		List<VentasModel> list = null;
-		try {
-			List<Ventas> ventass = dao.findAll();
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock ");
+        }
+    }
 
-			// Si la lista no esta vacia
-			if (!ventass.isEmpty()) {
+    @Override
+    public List<VentasModel> SelectTodos() {
+        List<VentasModel> list = null;
+        try {
+            List<Ventas> ventass = dao.findAll();
 
-				list = new LinkedList<>();
+            // Si la lista no esta vacia
+            if (!ventass.isEmpty()) {
 
-				// Recorremos la lista
-				for (Ventas ventas : ventass) {
-					// Buscamos id por id
-					Factura fac = buscarFactura(ventas);
-					
-					Producto pro = buscarProducto(ventas);
+                list = new LinkedList<>();
 
-					//Este es el nuevo objeto que se mostrar para la vista
-					VentasModel nuevoObjeto = new VentasModel();
-					
-					nuevoObjeto.setEstado(ventas.getEstado());
-					nuevoObjeto.setIdVenta(ventas.getIdVenta());
-					nuevoObjeto.setIdFactura(ventas.getIdFactura());
-					nuevoObjeto.setIdProducto(ventas.getIdProducto());
-					nuevoObjeto.setCantidad(ventas.getCantidad());
-					nuevoObjeto.setDescuento(ventas.getDescuento());
-					nuevoObjeto.setNombreVenta(ventas.getNombreVenta());
+                // Recorremos la lista
+                for (Ventas ventas : ventass) {
+                    // Buscamos id por id
+                    Factura fac = buscarFactura(ventas);
 
-					// si existe le asignamos el nombre si no un nombre predeterminado
-					if (fac != null) {
-						nuevoObjeto.setNombreFactura(fac.getNombreFactura());
-					} else {
-						nuevoObjeto.setNombreFactura(MensajesObjetos.FACTURA_NO_RELACIONADA);
-					}
+                    Producto pro = buscarProducto(ventas);
 
-					if (pro != null) {
-						nuevoObjeto.setNombreProducto(pro.getNombreProducto());
-					} else {
-						nuevoObjeto.setNombreProducto(MensajesObjetos.PRODUCTO_NO_RELACIONADO);
-					}
-					
-					list.add(nuevoObjeto);
-				}
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-		return list;
-	}
+                    //Este es el nuevo objeto que se mostrar para la vista
+                    VentasModel nuevoObjeto = new VentasModel();
 
-	// Metodos unicos
-	public boolean existeProducto(Ventas objeto) {
-		boolean encontrado = false;
-		// Nos fijamos que los datos existan
-		if (objeto != null) {
-			if (buscarFactura(objeto) != null) {
-				encontrado = true;
-			}
-		}
-		return encontrado;
-	}
+                    nuevoObjeto.setEstado(ventas.getEstado());
+                    nuevoObjeto.setIdVenta(ventas.getIdVenta());
+                    nuevoObjeto.setIdFactura(ventas.getIdFactura());
+                    nuevoObjeto.setIdProducto(ventas.getIdProducto());
+                    nuevoObjeto.setCantidad(ventas.getCantidad());
+                    nuevoObjeto.setDescuento(ventas.getDescuento());
+                    nuevoObjeto.setNombreVenta(ventas.getNombreVenta());
 
-	public boolean existeFactura(Ventas objeto) {
-		boolean encontrado = false;
-		// Nos fijamos que los datos existan
-		if (objeto != null) {
-			if (buscarFactura(objeto) != null) {
-				encontrado = true;
-			}
-		}
-		return encontrado;
-	}
-	
-	public Producto buscarProducto(Ventas objeto) {
-		Producto fact = null;
-		try {
-			Optional<Producto> faBusqueda = producto.findById(objeto.getIdProducto());
+                    // si existe le asignamos el nombre si no un nombre predeterminado
+                    if (fac != null) {
+                        nuevoObjeto.setNombreFactura(fac.getNombreFactura());
+                    } else {
+                        nuevoObjeto.setNombreFactura(MensajesObjetos.FACTURA_NO_RELACIONADA);
+                    }
 
-			if (faBusqueda.get().getIdProducto().equals(objeto.getIdProducto())) {
-				fact = faBusqueda.get();
-			} else {
-				throw new Exception("El ventas que va a registrar no tiene Producto creado");
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
+                    if (pro != null) {
+                        nuevoObjeto.setNombreProducto(pro.getNombreProducto());
+                    } else {
+                        nuevoObjeto.setNombreProducto(MensajesObjetos.PRODUCTO_NO_RELACIONADO);
+                    }
 
-		return fact;
-	}
+                    list.add(nuevoObjeto);
+                }
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+        return list;
+    }
 
-	public Factura buscarFactura(Ventas objeto) {
-		Factura fact = null;
-		try {
-			Optional<Factura> faBusqueda = factura.findById(objeto.getIdFactura());
-			
-			if (faBusqueda.get().getIdFactura().equals(objeto.getIdFactura())) {
-				fact = faBusqueda.get();
-			} else {
-				throw new Exception("El ventas que va a registrar no tiene Factura creada");
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-			+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-		
-		return fact;
-	}
-	
+    // Metodos unicos
+    public boolean existeProducto(Ventas objeto) {
+        boolean encontrado = false;
+        // Nos fijamos que los datos existan
+        if (objeto != null) {
+            if (buscarFactura(objeto) != null) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
+
+    public boolean existeFactura(Ventas objeto) {
+        boolean encontrado = false;
+        // Nos fijamos que los datos existan
+        if (objeto != null) {
+            if (buscarFactura(objeto) != null) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
+
+    public Producto buscarProducto(Ventas objeto) {
+        Producto fact = null;
+        try {
+            Optional<Producto> faBusqueda = producto.findById(objeto.getIdProducto());
+
+            if (faBusqueda.get().getIdProducto().equals(objeto.getIdProducto())) {
+                fact = faBusqueda.get();
+            } else {
+                throw new Exception("El ventas que va a registrar no tiene Producto creado");
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+
+        return fact;
+    }
+
+    public Factura buscarFactura(Ventas objeto) {
+        Factura fact = null;
+        try {
+            Optional<Factura> faBusqueda = factura.findById(objeto.getIdFactura());
+
+            if (faBusqueda.get().getIdFactura().equals(objeto.getIdFactura())) {
+                fact = faBusqueda.get();
+            } else {
+                throw new Exception("El ventas que va a registrar no tiene Factura creada");
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+
+        return fact;
+    }
+
 }

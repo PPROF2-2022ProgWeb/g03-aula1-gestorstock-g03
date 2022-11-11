@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ar.Grupo3.model.Departamento;
 
-public interface DepartamentoRepositorio extends JpaRepository<Departamento, Long> {
+public interface DepartamentoRepositorio extends JpaRepository< Departamento, Long> {
 
 }

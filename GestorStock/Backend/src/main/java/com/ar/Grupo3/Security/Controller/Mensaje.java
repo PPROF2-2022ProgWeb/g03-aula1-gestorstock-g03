@@ -1,8 +1,7 @@
-
 package com.ar.Grupo3.Security.Controller;
 
-
 public class Mensaje {
+
     private String mensaje;
 
     public Mensaje() {
@@ -19,6 +18,5 @@ public class Mensaje {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    
+
 }

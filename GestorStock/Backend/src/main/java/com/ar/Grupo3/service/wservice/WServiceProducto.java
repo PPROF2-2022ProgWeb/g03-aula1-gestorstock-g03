@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.ar.Grupo3.data.factory.FabricaDAO;
@@ -16,140 +15,139 @@ import com.ar.Grupo3.model.Producto;
 import com.ar.Grupo3.viewmodel.ProductoModel;
 
 @RestController
-@RequestMapping({ "/gestor" })
+@RequestMapping({"/gestor"})
 public class WServiceProducto implements Serializable {
 
-	private static final long serialVersionUID = -7962830043869265637L;
+    private static final long serialVersionUID = -7962830043869265637L;
 
-	@Autowired
-	private DaoProductoIntf servicioProducto = FabricaDAO.obtenerProducto();
+    @Autowired
+    private DaoProductoIntf servicioProducto = FabricaDAO.obtenerProducto();
 
-	/*
+    /*
 	 * ----------------------------------------------------------------------------
 	 * Producto
 	 * ----------------------------------------------------------------------------
-	 */
-	@GetMapping(path = "/producto")
-	public List<ProductoModel> mostrarProducto() {
-		List<ProductoModel> listaProducto = listar();
-		return listaProducto;
-	}
+     */
+    @GetMapping(path = "/producto")
+    public List<ProductoModel> mostrarProducto() {
+        List<ProductoModel> listaProducto = listar();
+        return listaProducto;
+    }
 
-	@SuppressWarnings("unchecked")
-	@GetMapping(path = "/productoByNombre/{nombre}")
-	public List<ProductoModel> mostrarProductoPorNombre(@PathVariable("nombre") String nombre) {
-		List<ProductoModel> listaProducto = null;
-		try {
-			if (nombre.isBlank()) {
-				throw new Exception("El objeto a Buscar tiene el nombre vacio");
-			}else {
-				listaProducto = listarPorNombre(nombre);
-			}
-		}catch (Exception e) {
-			return (List<ProductoModel>) new ResponseEntity<ProductoModel>(HttpStatus.NOT_FOUND);
-		}
-		
-		return listaProducto;
-	}
-	
-	@GetMapping(path = "/producto/{id}")
-	public ProductoModel buscarProducto(@PathVariable("id") Long id) {
-		return buscarPorId(id);
-	}
+    @SuppressWarnings("unchecked")
+    @GetMapping(path = "/productoByNombre/{nombre}")
+    public List<ProductoModel> mostrarProductoPorNombre(@PathVariable("nombre") String nombre) {
+        List<ProductoModel> listaProducto = null;
+        try {
+            if (nombre.isBlank()) {
+                throw new Exception("El objeto a Buscar tiene el nombre vacio");
+            } else {
+                listaProducto = listarPorNombre(nombre);
+            }
+        } catch (Exception e) {
+            return (List<ProductoModel>) new ResponseEntity<ProductoModel>(HttpStatus.NOT_FOUND);
+        }
 
-	@PostMapping(path = "/producto")
-	public Producto AgregarProducto(@RequestBody Producto Producto) {
-		return agregamos(Producto);
-	}
+        return listaProducto;
+    }
 
-	@PutMapping(path = "/producto/{id}")
-	public ResponseEntity<Producto> modificarProducto(@PathVariable("id") Long id, @RequestBody Producto producto) {
-		try {
-			if (producto != null) {
-				modificamos(producto, id);
-				return new ResponseEntity<Producto>(HttpStatus.OK);
-			} else {
-				throw new Exception("El objeto a modificar esta vacio");
-			}
-		} catch (Exception e) {
-			return new ResponseEntity<Producto>(HttpStatus.NOT_FOUND);
-		}
-	}
+    @GetMapping(path = "/producto/{id}")
+    public ProductoModel buscarProducto(@PathVariable("id") Long id) {
+        return buscarPorId(id);
+    }
 
-	@DeleteMapping(path = "/producto/{id}")
-	public ResponseEntity<Producto> eliminarProducto(@PathVariable("id") Long id) {
-		int var = eliminar(id);
-		try {
-			if (var == 0) {
-				return new ResponseEntity<Producto>(HttpStatus.OK);
-			} else {
-				throw new Exception("El identificador del producto a eliminar esta vacio");
-			}
-		} catch (Exception e) {
-			return new ResponseEntity<Producto>(HttpStatus.NOT_FOUND);
-		}
-	}
+    @PostMapping(path = "/producto")
+    public Producto AgregarProducto(@RequestBody Producto Producto) {
+        return agregamos(Producto);
+    }
 
-	// __________________________________________________________________________________
-	// Logica
-	// __________________________________________________________________________________
+    @PutMapping(path = "/producto/{id}")
+    public ResponseEntity<Producto> modificarProducto(@PathVariable("id") Long id, @RequestBody Producto producto) {
+        try {
+            if (producto != null) {
+                modificamos(producto, id);
+                return new ResponseEntity<Producto>(HttpStatus.OK);
+            } else {
+                throw new Exception("El objeto a modificar esta vacio");
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<Producto>(HttpStatus.NOT_FOUND);
+        }
+    }
 
-	// Buscamos todos los objetos Producto
-	public List<ProductoModel> listar() {
-		return servicioProducto.SelectTodos();
-	}
+    @DeleteMapping(path = "/producto/{id}")
+    public ResponseEntity<Producto> eliminarProducto(@PathVariable("id") Long id) {
+        int var = eliminar(id);
+        try {
+            if (var == 0) {
+                return new ResponseEntity<Producto>(HttpStatus.OK);
+            } else {
+                throw new Exception("El identificador del producto a eliminar esta vacio");
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<Producto>(HttpStatus.NOT_FOUND);
+        }
+    }
 
-	// Buscamos todos los objetos Producto
-	public List<ProductoModel> listarPorNombre(String nombre) {
-		return servicioProducto.SelectTodosPorNombre(nombre);
-	}
-	
-	// Buscamos un objeto ProductoModel por ID
-	public ProductoModel buscarPorId(Long id) {
-		return servicioProducto.selectPorId(id);
-	}
+    // __________________________________________________________________________________
+    // Logica
+    // __________________________________________________________________________________
+    // Buscamos todos los objetos Producto
+    public List<ProductoModel> listar() {
+        return servicioProducto.SelectTodos();
+    }
 
-	// Buscamos un objeto Producto por ID
-	public Producto buscar(Long id) {
-		return servicioProducto.buscar(id);
-	}
-	
-	// Agregamos un objeto Producto por ID
-	public Producto agregamos(Producto Producto) {
-		servicioProducto.agregar(Producto);
-		return Producto;
-	}
+    // Buscamos todos los objetos Producto
+    public List<ProductoModel> listarPorNombre(String nombre) {
+        return servicioProducto.SelectTodosPorNombre(nombre);
+    }
 
-	// modificamos el objeto Producto
-	public void modificamos(Producto ProductoModificado, Long id) {
-		// Verificamos que no nos llegue nulo el id
-		if (id != null) {
-			Producto busca = servicioProducto.buscar(id);
-			// Ahora si modificamos la Producto
-			if (busca != null) {
-				servicioProducto.modificar(ProductoModificado);
-			}
-		}
-	}
+    // Buscamos un objeto ProductoModel por ID
+    public ProductoModel buscarPorId(Long id) {
+        return servicioProducto.selectPorId(id);
+    }
 
-	// Eliminamos el objeto Producto
-	public Integer eliminar(Long id) {
-		Integer aux = 1;
-		// nos fijamos que no nos llegue nulo
-		try {
-			if (id != null) {
-				Producto elimina = new Producto(id);
-				// eliminar el objeto Producto
-				if (elimina != null) {
-					servicioProducto.borrar(elimina);
-					aux = 0;
-				}
-			}
-		} catch (Exception e) {
-			LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-					+ " } fin del error preguntar al Grupo 3 ==> GestorStock");
-		}
-		return aux;
-	}
+    // Buscamos un objeto Producto por ID
+    public Producto buscar(Long id) {
+        return servicioProducto.buscar(id);
+    }
+
+    // Agregamos un objeto Producto por ID
+    public Producto agregamos(Producto Producto) {
+        servicioProducto.agregar(Producto);
+        return Producto;
+    }
+
+    // modificamos el objeto Producto
+    public void modificamos(Producto ProductoModificado, Long id) {
+        // Verificamos que no nos llegue nulo el id
+        if (id != null) {
+            Producto busca = servicioProducto.buscar(id);
+            // Ahora si modificamos la Producto
+            if (busca != null) {
+                servicioProducto.modificar(ProductoModificado);
+            }
+        }
+    }
+
+    // Eliminamos el objeto Producto
+    public Integer eliminar(Long id) {
+        Integer aux = 1;
+        // nos fijamos que no nos llegue nulo
+        try {
+            if (id != null) {
+                Producto elimina = new Producto(id);
+                // eliminar el objeto Producto
+                if (elimina != null) {
+                    servicioProducto.borrar(elimina);
+                    aux = 0;
+                }
+            }
+        } catch (Exception e) {
+            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
+                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
+        }
+        return aux;
+    }
 
 }
