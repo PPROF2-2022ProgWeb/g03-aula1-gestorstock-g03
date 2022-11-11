@@ -22,7 +22,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SvgModule } from './components/svg/svg.module';
 import { IconComponent } from './components/icon/icon.component';
 import { ButtonComponent } from './components/utils/button/button.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
 import { InputContainerComponent } from './components/input-container/input-container.component';
 import { RegistroService } from './services/registro.service';
@@ -103,7 +103,7 @@ import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.
     ProductCardComponent,
     TiendaLayoutsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule, FormsModule],
   providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe],
   bootstrap: [AppComponent],
 })
