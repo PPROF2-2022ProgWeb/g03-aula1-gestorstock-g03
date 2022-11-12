@@ -9,7 +9,7 @@ nav.categorias {
     width: 80%;
     padding: 16px 0px;
     margin: 56px auto;
-    background-color: var(--color-primario);
+    background-color: var(--fondo-dark);
     border-radius: 16px;
 }
 
@@ -36,16 +36,6 @@ nav.categorias .navlink img {
 
 nav.categorias .navlink:hover img {
     transform: scale(1.2) translateY(-10px);
-}
-
-.button-hover {
-    background-color: var(--gris-oscuro);
-    cursor: pointer;
-}
-
-.button-hover:hover {
-    background-color: var(--verde);
-    transition: 0.5s;
 }
 
 @media screen and (max-width: 1000px) {
