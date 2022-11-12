@@ -1,15 +1,16 @@
 <article class="card-producto">
-    <a routerLink="#">
-        <img src="" alt="imagen del producto">
+    <a [routerLink]="link">
+        <img [src]="product.imageURL" alt="imagen del producto">
         <div class="contenido">
             <div class="contenedor-titulo">
                 <h4 class="titulo">
-                    Nombre del producto
+                    {{ product.nombreProducto }}
                 </h4>
             </div>
             <div class="contenedor-precio">
-                <p class="precio">$100</p>
-                <span>PUNTOS- rEvIsAr</span>
+                <p class="precio">
+                    {{ product.valor | currency}}
+                </p>
             </div>
         </div>
     </a>

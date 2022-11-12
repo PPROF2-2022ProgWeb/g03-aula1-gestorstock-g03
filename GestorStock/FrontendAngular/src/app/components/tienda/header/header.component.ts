@@ -31,6 +31,7 @@ export class HeaderComponent implements OnInit {
 
   onSearchDone(event: SearchResult) {
     console.log(event);
+    this.router.navigate([`tienda/listado/${event.value}`])
   }
 
   loguin() {
