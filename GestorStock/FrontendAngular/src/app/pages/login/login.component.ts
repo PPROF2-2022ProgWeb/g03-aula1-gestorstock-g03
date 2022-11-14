@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
 import { Iconos } from 'src/app/utils/iconos.enum';
 
 @Component({
@@ -18,7 +17,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService,
     private router: Router
   ) {
     this.form = this.formBuilder.group({
@@ -68,14 +66,7 @@ export class LoginComponent implements OnInit {
     this.form.get('password').touched = true;
 
     if (this.formValid) {
-      this.loginService
-        .login(this.mail, this.password)
-        .then(() => {
-          this.router.navigate(['dashboard']);
-        })
-        .catch(() => {
-          alert('Debe registrarse primero');
-        });
+      this.router.navigate(['dashboard']);
     }
   }
 }

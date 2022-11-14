@@ -1,28 +1,60 @@
-<div class="input-container" [class.disabled]="disabled" [class.invalid]="invalid">
-  <input
-    #input
-    type="text"
-    (input)="onInput($event)"
-    (focus)="onFocus()"
-    [disabled]="disabled"
-    [value]="value"
-  />
-  <div class="outline" [class.not-empty]="value">
-    <div class="leading"></div>
-    <div class="notch">
-      <label>
-        {{ title}}
-      </label>
-    </div>
-    <div class="trail">
-      <div class="error-icon" *ngIf="invalid">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-circle" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <circle cx="12" cy="12" r="9" fill="var(--error-color)" stroke="var(--error-color)" />
-          <line x1="12" y1="8" x2="12" y2="12" stroke="#fff"/>
-          <line x1="12" y1="16" x2="12.01" y2="16" stroke="#fff"/>
-        </svg>
+<div class="control" [style.--active-color]="activeColor">
+  <div
+    class="input-container"
+    [class.disabled]="disabled"
+    [class.invalid]="!valid"
+  >
+    <input
+      #input
+      [type]="type"
+      (input)="onInput($event)"
+      (focus)="onFocus()"
+      [disabled]="disabled"
+      [value]="value"
+      [ngStyle]="{
+        'padding-left': leadingIcon ? '2.3rem' : '1rem',
+        'padding-right': trailingIcon ? '2.5rem' : '1rem'
+      }"
+    />
+    <div class="outline" [class.not-empty]="value">
+      <div class="leading">
+        <app-icon *ngIf="leadingIcon" [icon]="leadingIcon"></app-icon>
+      </div>
+      <div class="notch">
+        <label>
+          {{ title }}
+        </label>
+      </div>
+      <div class="trailing">
+        <div class="error-icon" *ngIf="!valid">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              fill="var(--error-color)"
+              stroke="var(--error-color)"
+            />
+            <line x1="12" y1="8" x2="12" y2="12" stroke="#fff" />
+            <line x1="12" y1="16" x2="12.01" y2="16" stroke="#fff" />
+          </svg>
+        </div>
+        <app-icon
+          *ngIf="trailingIcon && valid"
+          [icon]="trailingIcon"
+        ></app-icon>
       </div>
     </div>
   </div>
+  <span *ngIf="!valid" class="errorMsg">{{ errorMessage }}</span>
 </div>

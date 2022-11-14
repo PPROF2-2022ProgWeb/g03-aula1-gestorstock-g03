@@ -29,4 +29,11 @@ export enum Iconos {
   ADMINISTRACION = "icono-admin",
   ADD_TO_CART = "icono-add-to-cart",
   CHEVRON_DOWN = "icono-chevron-down",
+  QUESO = "icono-cheese",
+  DNI = "icono-id-card",
+  MASCOTA = "icono-pet",
+  PERFUME = "icono-spray",
+  LIMPIEZA = "icono-laundry",
+  HAMBURGUESA = "icono-burger",
+  BEBIDAS = "icono-wine-bottle",
 }

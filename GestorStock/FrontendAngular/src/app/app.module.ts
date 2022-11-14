@@ -23,9 +23,7 @@ import { SvgModule } from './components/svg/svg.module';
 import { IconComponent } from './components/icon/icon.component';
 import { ButtonComponent } from './components/utils/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from './services/login.service';
 import { InputContainerComponent } from './components/input-container/input-container.component';
-import { RegistroService } from './services/registro.service';
 import { DataCounterComponent } from './components/data-counter/data-counter.component';
 import { AvisoComponent } from './components/utils/aviso/aviso.component';
 import { ModalComponent } from './components/modal/modal.component';
@@ -110,7 +108,7 @@ import { ImageFallbackDirective } from './directives/image-fallback.directive';
     TiendaLayoutsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule, FormsModule],
-  providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe, DatePipe],
+  providers: [ProductosService, CurrencyPipe, PercentPipe, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

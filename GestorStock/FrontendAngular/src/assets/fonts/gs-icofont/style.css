@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'gs-icofont';
-  src:  url('fonts/gs-icofont.eot?dxyi8l');
-  src:  url('fonts/gs-icofont.eot?dxyi8l#iefix') format('embedded-opentype'),
-    url('fonts/gs-icofont.ttf?dxyi8l') format('truetype'),
-    url('fonts/gs-icofont.woff?dxyi8l') format('woff'),
-    url('fonts/gs-icofont.svg?dxyi8l#gs-icofont') format('svg');
+  src:  url('fonts/gs-icofont.eot?ngnmkt');
+  src:  url('fonts/gs-icofont.eot?ngnmkt#iefix') format('embedded-opentype'),
+    url('fonts/gs-icofont.ttf?ngnmkt') format('truetype'),
+    url('fonts/gs-icofont.woff?ngnmkt') format('woff'),
+    url('fonts/gs-icofont.svg?ngnmkt#gs-icofont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,27 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icono-wine-bottle:before {
+  content: "\e927";
+}
+.icono-burger:before {
+  content: "\e928";
+}
+.icono-spray:before {
+  content: "\e922";
+}
+.icono-laundry:before {
+  content: "\e923";
+}
+.icono-pet:before {
+  content: "\e924";
+}
+.icono-cheese:before {
+  content: "\e925";
+}
+.icono-id-card:before {
+  content: "\e926";
+}
 .icono-chevron-down:before {
   content: "\e921";
 }

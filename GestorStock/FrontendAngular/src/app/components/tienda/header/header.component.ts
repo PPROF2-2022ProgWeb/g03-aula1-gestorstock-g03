@@ -3,9 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SearchResult } from 'src/app/interfaces/searchResult';
 import { ProductoModel } from 'src/app/models/ProductoModel';
-import { LoginService } from 'src/app/services/login.service';
 import { ProductosService } from 'src/app/services/productos.service';
-import { RegistroService } from 'src/app/services/registro.service';
 import { Iconos } from 'src/app/utils/iconos.enum';
 
 @Component({
@@ -22,8 +20,6 @@ export class HeaderComponent implements OnInit {
   permitirRegistro: boolean;
 
   constructor(
-    private logServ: LoginService,
-    private regServ: RegistroService,
     private router: Router
   ) {}
 
@@ -32,18 +28,5 @@ export class HeaderComponent implements OnInit {
   onSearchDone(event: SearchResult) {
     console.log(event);
     this.router.navigate([`tienda/listado/${event.value}`])
-  }
-
-  loguin() {
-    this.logServ.getAuth().subscribe((auth: { email: string }) => {
-      if (auth?.email) {
-        this.isLoggedIn = true;
-        this.loggedInUser = auth.email;
-        this.permitirRegistro = false;
-      } else {
-        this.isLoggedIn = false;
-        this.permitirRegistro = true;
-      }
-    });
   }
 }
