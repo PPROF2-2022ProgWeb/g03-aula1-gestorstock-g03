@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  backendUrl: '/gestor',
+  backendUrl: 'https://gestorstock.herokuapp.com/gestor', // back en heroku
+  // backendUrl: 'http://localhost:8080/gestor', // Back en local
 };
 
 /*

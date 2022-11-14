@@ -16,6 +16,7 @@ import com.ar.Grupo3.viewmodel.ProvinciaModel;
 
 @RestController
 @RequestMapping({"/gestor"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://gestor-stock.netlify.app", "https://gestor-stock-desa.netlify.app"})
 public class WServiceProvincia implements Serializable {
 
     private static final long serialVersionUID = -8334956126366208648L;

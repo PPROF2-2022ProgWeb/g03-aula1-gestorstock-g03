@@ -16,6 +16,7 @@ import com.ar.Grupo3.viewmodel.VentasModel;
 
 @RestController
 @RequestMapping({"/gestor"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://gestor-stock.netlify.app", "https://gestor-stock-desa.netlify.app"})
 public class WServiceVentas implements Serializable {
 
     private static final long serialVersionUID = 368877546601868070L;

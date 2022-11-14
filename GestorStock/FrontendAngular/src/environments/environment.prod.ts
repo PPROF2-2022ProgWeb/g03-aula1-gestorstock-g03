@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: '/gestor',
+  backendUrl: 'https://gestorstock.herokuapp.com/gestor'
 };

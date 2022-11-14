@@ -20,6 +20,9 @@ public class Departamento implements Serializable {
     @Column(name = "Nombre_Depto")
     private String depto;
 
+    @Column(name = "Id_Provincia")
+    private Long idProvincia;
+
     public Departamento() {
         // Constructor vacio
     }
@@ -36,6 +39,14 @@ public class Departamento implements Serializable {
 
     public void setIdDepto(Long idDepto) {
         this.idDepto = idDepto;
+    }
+    
+    public Long getIdProvincia() {
+        return idProvincia;
+    }
+
+    public void setIdProvincia(Long idProvincia) {
+        this.idProvincia = idProvincia;
     }
 
     public String getDepto() {
@@ -63,12 +74,12 @@ public class Departamento implements Serializable {
             return false;
         }
         Departamento other = (Departamento) obj;
-        return Objects.equals(depto, other.depto) && Objects.equals(idDepto, other.idDepto);
+        return Objects.equals(depto, other.depto) && Objects.equals(idDepto, other.idDepto) && Objects.equals(idProvincia, other.idProvincia);
     }
 
     @Override
     public String toString() {
-        return "Departamento [idDepto=" + idDepto + ", depto=" + depto + "]";
+        return "Departamento [idDepto=" + idDepto + ", depto=" + depto + "idProvincia" + idProvincia + "]";
     }
 
 }
