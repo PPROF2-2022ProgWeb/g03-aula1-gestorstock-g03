@@ -20,8 +20,6 @@ public class Provincia implements Serializable {
     @Column(name = "Nombre_Provincia")
     private String nombreProvincia;
 
-    @Column(name = "Id_Depto")
-    private Long idDepto;
 
     public Provincia() {
         // Constructor Vacio
@@ -48,18 +46,9 @@ public class Provincia implements Serializable {
     public void setNombreProvincia(String nombreProvincia) {
         this.nombreProvincia = nombreProvincia;
     }
-
-    public Long getIdDepto() {
-        return idDepto;
-    }
-
-    public void setIdDepto(Long idDepto) {
-        this.idDepto = idDepto;
-    }
-
     @Override
     public int hashCode() {
-        return Objects.hash(idDepto, idProvincia, nombreProvincia);
+        return Objects.hash(idProvincia, nombreProvincia);
     }
 
     @Override
@@ -74,14 +63,13 @@ public class Provincia implements Serializable {
             return false;
         }
         Provincia other = (Provincia) obj;
-        return Objects.equals(idDepto, other.idDepto) && Objects.equals(idProvincia, other.idProvincia)
+        return Objects.equals(idProvincia, other.idProvincia)
                 && Objects.equals(nombreProvincia, other.nombreProvincia);
     }
 
     @Override
     public String toString() {
-        return "Provincia [idProvincia=" + idProvincia + ", nombreProvincia=" + nombreProvincia + ", idDepto=" + idDepto
-                + "]";
+        return "Provincia [idProvincia=" + idProvincia + ", nombreProvincia=" + nombreProvincia + "]";
     }
 
 }

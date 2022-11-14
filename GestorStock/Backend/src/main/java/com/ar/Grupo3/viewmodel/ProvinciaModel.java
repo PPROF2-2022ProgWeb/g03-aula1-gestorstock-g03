@@ -11,10 +11,6 @@ public class ProvinciaModel implements Serializable {
 
     private String nombreProvincia;
 
-    private Long idDepto;
-
-    // Not Mapped
-    private String nombreDepto;
 
     // Getters and Setters
     public Long getIdProvincia() {
@@ -33,25 +29,9 @@ public class ProvinciaModel implements Serializable {
         this.nombreProvincia = nombreProvincia;
     }
 
-    public Long getIdDepto() {
-        return idDepto;
-    }
-
-    public void setIdDepto(Long idDepto) {
-        this.idDepto = idDepto;
-    }
-
-    public String getNombreDepto() {
-        return nombreDepto;
-    }
-
-    public void setNombreDepto(String nombreDepto) {
-        this.nombreDepto = nombreDepto;
-    }
-
     @Override
     public int hashCode() {
-        return Objects.hash(idDepto, idProvincia, nombreDepto, nombreProvincia);
+        return Objects.hash(idProvincia, nombreProvincia);
     }
 
     @Override
@@ -66,15 +46,13 @@ public class ProvinciaModel implements Serializable {
             return false;
         }
         ProvinciaModel other = (ProvinciaModel) obj;
-        return Objects.equals(idDepto, other.idDepto) && Objects.equals(idProvincia, other.idProvincia)
-                && Objects.equals(nombreDepto, other.nombreDepto)
+        return Objects.equals(idProvincia, other.idProvincia)
                 && Objects.equals(nombreProvincia, other.nombreProvincia);
     }
 
     @Override
     public String toString() {
-        return "ProvinciaModel [idProvincia=" + idProvincia + ", nombreProvincia=" + nombreProvincia + ", idDepto="
-                + idDepto + ", nombreDepto=" + nombreDepto + "]";
+        return "ProvinciaModel [idProvincia=" + idProvincia + ", nombreProvincia=" + nombreProvincia + "]";
     }
 
 }

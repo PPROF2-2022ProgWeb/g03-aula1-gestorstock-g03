@@ -11,11 +11,8 @@ import org.springframework.stereotype.Service;
 
 import com.ar.Grupo3.data.objects.interfaces.DaoProvinciaIntf;
 import com.ar.Grupo3.data.objects.repositorio.ProvinciaRepositorio;
-import com.ar.Grupo3.data.objects.repositorio.DepartamentoRepositorio;
-import com.ar.Grupo3.util.MensajesObjetos;
 import com.ar.Grupo3.viewmodel.ProvinciaModel;
 import com.ar.Grupo3.model.Provincia;
-import com.ar.Grupo3.model.Departamento;
 
 @Service
 public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
@@ -24,9 +21,6 @@ public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
 
     @Autowired
     private ProvinciaRepositorio dao;
-
-    @Autowired
-    private DepartamentoRepositorio departamento;
 
     @Override
     public Provincia buscar(Long id) {
@@ -58,13 +52,9 @@ public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
             } else {
                 Provincia obj = aux.get();
 
-                Departamento dep = buscarDepartamento(obj);
                 // Completamos el objeto que mostraremos a la vista.
                 provincia.setNombreProvincia(obj.getNombreProvincia());
                 provincia.setIdProvincia(obj.getIdProvincia());
-                provincia.setIdDepto(obj.getIdDepto());
-                provincia.setNombreDepto((dep != null) ? dep.getDepto() : MensajesObjetos.DEPARTAMENTO_NO_RELACIONADO);
-
             }
         } catch (Exception e) {
             LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
@@ -91,16 +81,10 @@ public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
     @Override
     public void agregar(Provincia p) {
         try {
-            if (p.getIdDepto() == null) {
-                throw new Exception("La Provincia que va a registrar no tiene identificador de Departamento");
-            }
             if (p.getNombreProvincia().isEmpty()) {
-                throw new Exception("El Provincia que va a registrar no tiene Nombre");
+                throw new Exception("La Provincia que va a registrar no tiene Nombre");
             }
-            // Controlamos que todo este en orden
-            if (buscarDepartamento(p) != null) {
-                dao.save(p);
-            }
+            dao.save(p);
 
         } catch (Exception e) {
             LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
@@ -114,16 +98,10 @@ public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
             if (p.getIdProvincia() == null) {
                 throw new Exception("La Provincia que va a registrar no tiene identificador de la misma");
             }
-            if (p.getIdDepto() == null) {
-                throw new Exception("La Provincia que va a registrar no tiene identificador de Departamento");
-            }
             if (p.getNombreProvincia().isEmpty()) {
-                throw new Exception("El Provincia que va a registrar no tiene Nombre");
+                throw new Exception("La Provincia que va a registrar no tiene Nombre");
             }
-            // Controlamos que todo este en orden
-            if (buscarDepartamento(p) != null) {
-                dao.save(p);
-            }
+            dao.save(p);
 
         } catch (Exception e) {
             LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
@@ -164,21 +142,13 @@ public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
                 // Recorremos la lista
                 for (Provincia provincia : provincias) {
                     // Buscamos id por id
-                    Departamento aux = buscarDepartamento(provincia);
+                    // Departamento aux = buscarDepartamento(provincia);
 
                     //Este es el nuevo objeto que se mostrar para la vista
                     ProvinciaModel nuevoObjeto = new ProvinciaModel();
 
                     nuevoObjeto.setIdProvincia(provincia.getIdProvincia());
-                    nuevoObjeto.setIdDepto(provincia.getIdDepto());
                     nuevoObjeto.setNombreProvincia(provincia.getNombreProvincia());
-
-                    // si existe le asignamos el nombre si no un nombre predeterminado
-                    if (aux != null) {
-                        nuevoObjeto.setNombreDepto(aux.getDepto());
-                    } else {
-                        nuevoObjeto.setNombreDepto(MensajesObjetos.DEPARTAMENTO_NO_RELACIONADO);
-                    }
 
                     list.add(nuevoObjeto);
                 }
@@ -188,36 +158,6 @@ public class DaoProvinciaImpl implements Serializable, DaoProvinciaIntf {
                     + " } fin del error preguntar al Grupo 3 ==> GestorStock");
         }
         return list;
-    }
-
-    // Metodos unicos
-    public boolean existeDepartamento(Provincia objeto) {
-        boolean encontrado = false;
-        // Nos fijamos que los datos existan
-        if (objeto != null) {
-            if (buscarDepartamento(objeto) != null) {
-                encontrado = true;
-            }
-        }
-        return encontrado;
-    }
-
-    public Departamento buscarDepartamento(Provincia objeto) {
-        Departamento fact = null;
-        try {
-            Optional<Departamento> faBusqueda = departamento.findById(objeto.getIdDepto());
-
-            if (faBusqueda.get().getIdDepto().equals(objeto.getIdDepto())) {
-                fact = faBusqueda.get();
-            } else {
-                throw new Exception("El provincia que va a registrar no tiene Departamento creada");
-            }
-        } catch (Exception e) {
-            LogManager.getLogger("Un error ha ocurrido: -> { " + e.getMessage()
-                    + " } fin del error preguntar al Grupo 3 ==> GestorStock");
-        }
-
-        return fact;
     }
 
 }

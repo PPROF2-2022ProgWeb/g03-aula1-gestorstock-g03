@@ -16,6 +16,7 @@ import com.ar.Grupo3.viewmodel.RolModel;
 
 @RestController
 @RequestMapping({"/gestor"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://gestor-stock.netlify.app", "https://gestor-stock-desa.netlify.app"})
 public class WServiceRol implements Serializable {
 
     private static final long serialVersionUID = -2113872330758510906L;

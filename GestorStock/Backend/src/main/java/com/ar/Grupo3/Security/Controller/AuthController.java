@@ -30,7 +30,7 @@ import com.ar.Grupo3.seguridad.negocio.DaoUsuarioImpl;
 
 @RestController
 @RequestMapping("/gestor/auth")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://gestor-stock.netlify.app", "https://gestor-stock-desa.netlify.app"})
 public class AuthController {
 
     @Autowired

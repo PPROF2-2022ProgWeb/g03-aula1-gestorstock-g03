@@ -41,7 +41,7 @@ export class ProductosService {
 
   public agregar(productoModel: ProductoModel): Observable<ProductoModel> {
     return this.http.post<ProductoModel>(
-      `${this.url}create`,
+      `${this.url}`,
       productoModel,
       this.httpOptions
     );

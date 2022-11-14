@@ -16,6 +16,7 @@ import com.ar.Grupo3.viewmodel.PedidoModel;
 
 @RestController
 @RequestMapping({"/gestor"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://gestor-stock.netlify.app", "https://gestor-stock-desa.netlify.app"})
 public class WServicePedido implements Serializable {
 
     private static final long serialVersionUID = 3467511412356719130L;

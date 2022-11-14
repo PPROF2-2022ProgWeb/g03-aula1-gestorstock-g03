@@ -16,6 +16,7 @@ import com.ar.Grupo3.viewmodel.AbonoModel;
 
 @RestController
 @RequestMapping({"/gestor"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://gestor-stock.netlify.app", "https://gestor-stock-desa.netlify.app"})
 public class WServiceAbono implements Serializable {
 
     private static final long serialVersionUID = -4583253543089169364L;

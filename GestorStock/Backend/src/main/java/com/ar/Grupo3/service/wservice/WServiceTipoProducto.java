@@ -15,6 +15,7 @@ import com.ar.Grupo3.model.TipoProducto;
 
 @RestController
 @RequestMapping({"/gestor"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://gestor-stock.netlify.app", "https://gestor-stock-desa.netlify.app"})
 public class WServiceTipoProducto implements Serializable {
 
     private static final long serialVersionUID = -7496362548758074135L;
