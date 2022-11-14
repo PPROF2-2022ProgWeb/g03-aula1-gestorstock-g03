@@ -20,7 +20,7 @@
 		<java.version>11</java.version>
 		<springframework.version>5.7.4</springframework.version>
 		<springsecurity.version>5.7.4</springsecurity.version>
-	</properties>
+	</properties> 
 
 	<dependencies>
 
