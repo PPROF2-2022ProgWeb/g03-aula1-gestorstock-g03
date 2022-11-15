@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchResult } from 'src/app/interfaces/searchResult';
+import { ActivatedRoute } from '@angular/router';
 import { ProductoModel } from 'src/app/models/ProductoModel';
 import { ProductosService } from 'src/app/services/productos.service';
 import { Iconos } from 'src/app/utils/iconos.enum';
@@ -11,20 +11,40 @@ import { Iconos } from 'src/app/utils/iconos.enum';
 })
 export class DetallesProductoComponent implements OnInit {
 
-  public productos: ProductoModel[];
+  public productosInteres: ProductoModel[] = [];
   public iconos = Iconos;
+  public producto: ProductoModel;
+  public cargando: boolean = true;
 
-  constructor(private prodServ: ProductosService) { }
+  constructor(private prodServ: ProductosService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.prodServ.cargarProductos().subscribe(data => {
-      this.productos = data;
-      console.log(this.productos);
-    })
+    this.activatedRoute.params.subscribe(params => {
+      let id = params['id'];
+      this.prodServ.buscarProducto(id).subscribe(data => {
+        this.producto = data;
+        
+        this.prodServ.cargarProductos().subscribe(productos => {
+          let filtrado = productos.filter( p => p.idTipoProd === this.producto.idTipoProd && p.idProducto !== this.producto.idProducto)
+          if (filtrado.length === 0) {
+            filtrado = productos;
+          }
+          let cantidad = Math.min(5, filtrado.length)
+          for (let i = 0; i < cantidad; i++) {
+            let index = Math.floor(Math.random() * filtrado.length)
+            this.productosInteres.push(filtrado[index])        
+          }
+          this.cargando = false;
+        })
+      })
+    });    
+
+    
   }
 
-  onSearchDone(event: SearchResult){
-    console.log(event);    
-  }
+  
+
+
 
 }
