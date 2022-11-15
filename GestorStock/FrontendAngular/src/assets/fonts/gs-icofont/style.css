@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'gs-icofont';
-  src:  url('fonts/gs-icofont.eot?ngnmkt');
-  src:  url('fonts/gs-icofont.eot?ngnmkt#iefix') format('embedded-opentype'),
-    url('fonts/gs-icofont.ttf?ngnmkt') format('truetype'),
-    url('fonts/gs-icofont.woff?ngnmkt') format('woff'),
-    url('fonts/gs-icofont.svg?ngnmkt#gs-icofont') format('svg');
+  src:  url('fonts/gs-icofont.eot?h0md5h');
+  src:  url('fonts/gs-icofont.eot?h0md5h#iefix') format('embedded-opentype'),
+    url('fonts/gs-icofont.ttf?h0md5h') format('truetype'),
+    url('fonts/gs-icofont.woff?h0md5h') format('woff'),
+    url('fonts/gs-icofont.svg?h0md5h#gs-icofont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icono-tienda:before {
+  content: "\e929";
+}
 .icono-wine-bottle:before {
   content: "\e927";
 }

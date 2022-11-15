@@ -24,7 +24,7 @@ export class TextInputComponent implements OnInit {
   @Input() leadingIcon: Iconos
   @Input() trailingIcon: Iconos
   @Input() errorMessage: string = 'Campo invalido';
-  @Input() valid: boolean;
+  @Input() valid: boolean = true;
   @Input() type : 'text' | 'password' | 'number' = 'text';
   public touched: boolean = false;
 

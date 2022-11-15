@@ -12,3 +12,10 @@ export class Usuario {
   public idProvincia: number;
   public correo: string;
 }
+
+export class LoginUser {
+  token: string;
+  bearer: string;
+  nombreUsuario: string;
+  authorities: {authority: string}[]
+}

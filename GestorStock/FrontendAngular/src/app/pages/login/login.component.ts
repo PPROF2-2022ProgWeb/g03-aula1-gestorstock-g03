@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginUser } from 'src/app/models/Usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import { Iconos } from 'src/app/utils/iconos.enum';
+import { Roles } from 'src/app/utils/roles.enum';
 
 @Component({
   selector: 'app-login',
@@ -9,64 +17,57 @@ import { Iconos } from 'src/app/utils/iconos.enum';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  mail = new FormControl('', [], []);
-  password = new FormControl('', [], []);
-  form: any;
+  public form: FormGroup = new FormGroup({
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+    ]),
+  });
 
   public iconos = Iconos;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router
-  ) {
-    this.form = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      mail: ['', [Validators.required, Validators.email]],
-    });
-  }
+  constructor(private router: Router, private us: UsuarioService) {}
 
   ngOnInit(): void {}
 
-  get passwordValid() {
-    if (this.form.get('password')?.touched) {
-      return this.form.get('password')?.valid;
-    }
-    return true;
+  public fieldValid(form: FormGroup, fieldName: string): boolean {
+    let field = form.get(fieldName);
+    return field && field.touched ? field.valid : true;
   }
 
-  get mailValid() {
-    if (this.form.get('mail')?.touched) {
-      return this.form.get('mail')?.valid;
+  getErrorMessage(form: FormGroup, fieldName: string) {
+    let field = form.get(fieldName);
+    if (!field || !field.errors) return '';
+
+    if (field.hasError('minlength')) {
+      let min = field.errors['minlength'].requiredLength;
+      return `El campo ${fieldName} debe tener ${min} caracteres`;
     }
-    return true;
+    if (field.hasError('required')) {
+      return `El campo ${fieldName} es requerido`;
+    }
+    return '';
   }
 
-  get formValid() {
-    if (this.form.get('mail')?.touched && this.form.get('password')?.touched) {
-      return this.mailValid && this.passwordValid;
-    } else {
-      return false;
-    }
-  }
-
-  get passwordErrorMessage() {
-    return 'Debe ser de 6 o más caracteres';
-  }
-
-  get mailErrorMessage() {
-    if (this.mail.hasError('required')) {
-      return 'El correo es requerido';
-    } else {
-      return 'Formato de correo no valido';
-    }
-  }
-
-  login() {
-    this.form.get('mail').touched = true;
-    this.form.get('password').touched = true;
-
-    if (this.formValid) {
-      this.router.navigate(['dashboard']);
-    }
+  onLoginClick() {
+    const { username, password } = this.form.value;
+    console.log('logueando');
+    this.us.login(username, password).subscribe({
+      next: (data: LoginUser) => {
+        sessionStorage.setItem('loggedInUser', JSON.stringify(data));
+        for (const authority of data.authorities) {
+          if (authority.authority === Roles.ROLE_SELLER) {
+            this.router.navigate(['/dashboard']);
+            return;
+          }
+        }
+        this.router.navigate(['/tienda']);
+      },
+      error: (err) => console.log(err),
+    });
   }
 }

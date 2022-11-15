@@ -36,4 +36,5 @@ export enum Iconos {
   LIMPIEZA = "icono-laundry",
   HAMBURGUESA = "icono-burger",
   BEBIDAS = "icono-wine-bottle",
+  TIENDA = "icono-tienda",
 }

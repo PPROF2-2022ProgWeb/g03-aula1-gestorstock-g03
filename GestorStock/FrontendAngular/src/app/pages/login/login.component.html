@@ -1,28 +1,31 @@
 <main class="mb-2">
-    <div class="col-lg-3 container-lg contenedor pt-3">
-        <h3 class="title">Login</h3>
-        <form [formGroup]="form" (ngSubmit)="login()" action="gestor.html" method="post"
-            class="login-form container-fluid" class="mb-2">
+  <div class="card">
+    <h3 class="title">Login</h3>
+    <form
+      [formGroup]="form"
+      action="gestor.html"
+      method="post"
+      class="login-form container-fluid"
+      class="mb-2"
+    >
+      <text-input
+        formControlName="username"
+        title="Nombre de usuario"
+        [valid]="fieldValid(form, 'username')"
+        [errorMessage]="getErrorMessage(form, 'username')"
+        [leadingIcon]="iconos.USUARIO"
+      ></text-input>
+      <text-input
+        formControlName="password"
+        title="Contraseña"
+        [valid]="fieldValid(form, 'password')"
+        [errorMessage]="getErrorMessage(form, 'password')"
+        [leadingIcon]="iconos.LLAVE"
+      ></text-input>
 
-            <app-input-container [icon]="iconos.CORREO" labelFor="email" title="Correo"
-                [errorMessage]="mailErrorMessage" [showErrorMessage]="!mailValid">
-                <input type="email" [formControl]="mail" class="form-control" formControlName="mail"
-                    [class.border-danger]="!mailValid" placeholder="Ingrese su correo electrónico" id="email">
-            </app-input-container>
-
-            <app-input-container [icon]="iconos.LLAVE" labelFor="password" title="Contraseña" 
-                [errorMessage]="passwordErrorMessage" [showErrorMessage]="!passwordValid">
-                <input type="password" [formControl]="password" class="form-control" formControlName="password"
-                [class.border-danger]="!passwordValid" placeholder="Ingrese su contraseña" id="password">
-            </app-input-container>
-
-            <div class="link-container mt-3">
-                <a class="formlink" routerLink="/registro">¿Todavia no esta registrado?
-                    Registrese</a>
-            </div>
-            <div class="actions" class="mt-3 text-center">
-                <button (click)="login()" class="boton">INGRESAR</button>
-            </div>
-        </form>
-    </div>
+      <div class="actions">
+        <app-button square bordered centered (onClick)="onLoginClick()">INGRESAR</app-button>
+      </div>
+    </form>
+  </div>
 </main>

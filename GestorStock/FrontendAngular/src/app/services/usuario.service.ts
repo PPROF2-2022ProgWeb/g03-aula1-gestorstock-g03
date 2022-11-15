@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Rol } from '../models/Rol.model';
-import { Usuario } from '../models/Usuario.model';
+import { LoginUser, Usuario } from '../models/Usuario.model';
 import { Roles } from '../utils/roles.enum';
 
 @Injectable({
@@ -23,10 +23,14 @@ export class UsuarioService {
           rolObj.idRol = null;
           rolObj.idUsuario = usuario.idUsuario;
           rolObj.nombreRol = rol;
-          this.http.post(this.rolUrl, rolObj)
-        })
+          this.http.post(this.rolUrl, rolObj).subscribe((d) => {});
+        });
         return usuario;
       })
     );
+  }
+
+  public login(username: string, password: string) {
+    return this.http.post<LoginUser>(this.loginUrl, { username, password });
   }
 }
