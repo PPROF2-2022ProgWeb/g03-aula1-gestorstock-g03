@@ -18,4 +18,6 @@ form {
   margin-top: 20px;
 }
 
-/* Termina login y registro */
+.errorMsg {
+  color: #ff3907;
+}

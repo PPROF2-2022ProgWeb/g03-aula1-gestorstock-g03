@@ -8,6 +8,7 @@
       class="login-form container-fluid"
       class="mb-2"
     >
+      <span class="errorMsg" *ngIf="isLoginInError">Usuario o contraseña incorrecta</span>
       <text-input
         formControlName="username"
         title="Nombre de usuario"
@@ -17,6 +18,7 @@
       ></text-input>
       <text-input
         formControlName="password"
+        type="password"
         title="Contraseña"
         [valid]="fieldValid(form, 'password')"
         [errorMessage]="getErrorMessage(form, 'password')"
