@@ -1,0 +1,10 @@
+div.item {
+  --selected-color: rgba(116, 116, 116, 0.567);
+  padding: .3rem 1rem;
+  cursor: pointer;
+  padding: .7rem;
+}
+
+div.item.selected {
+  background-color: var(--selected-color);
+}

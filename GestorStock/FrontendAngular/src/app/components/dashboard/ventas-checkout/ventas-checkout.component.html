@@ -1,0 +1,85 @@
+<div class="checkout-container">
+  <span class="title">Finalizar venta</span>
+  <div class="main">
+    <div class="aside">
+      <selection-group [(selectedValue)]="selectedOption">
+        <selection-item
+          title="Efectivo"
+          [icon]="icons.BILLETE"
+          [value]="options.efectivo"
+        ></selection-item>
+        <selection-item
+          title="Debito"
+          [icon]="icons.TARJETA"
+          [value]="options.debito"
+        ></selection-item>
+        <selection-item
+          title="Credito"
+          [icon]="icons.TARJETA"
+          [value]="options.credito"
+        ></selection-item>
+      </selection-group>
+    </div>
+    <div class="body">
+      <div *ngIf="selectedOption === options.efectivo" id="efectivo">
+        <text-input
+          title="Total"
+          [disabled]="true"
+          [value]="currencyPipe.transform(montoVenta) || '$0.00'"
+        ></text-input>
+        <number-input
+          title="Monto de pago"
+          min="0"
+          [value]="montoPago"
+          (onChange)="updateMontoPago($event)"
+        ></number-input>
+        <text-input
+          title="Vuelto"
+          [disabled]="true"
+          [value]="currencyPipe.transform(vuelto) || '$0.00'"
+        ></text-input>
+      </div>
+
+      <div *ngIf="selectedOption === options.debito" id="debito">
+        <text-input
+          title="Subtotal"
+          [disabled]="true"
+          [value]="currencyPipe.transform(montoVenta) || '$0.00'"
+        ></text-input>
+        <number-input
+          title="Recargo (%)"
+          min="0"
+          [value]="recargo"
+          (onChange)="updateRecargo($event)"
+        ></number-input>
+        <text-input
+          title="Total"
+          [disabled]="true"
+          [value]="currencyPipe.transform(getTotal(recargo)) || '$0.00'"
+        ></text-input>
+      </div>
+
+      <div *ngIf="selectedOption === options.credito" id="credito">
+        <text-input
+          title="Subtotal"
+          [disabled]="true"
+          [value]="currencyPipe.transform(montoVenta) || '$0.00'"
+        ></text-input>
+        <select-input title="Cuotas" value="1" (onChange)="onPlanFinanciacionChanged($event)">
+          <option *ngFor="let plan of planesFinanciacion" [value]="plan.cuotas">
+            {{ plan.cuotas }} x ({{ getValorCuota(plan) | currency }})
+          </option>
+        </select-input>
+        <text-input
+          title="Total"
+          [disabled]="true"
+          [value]="currencyPipe.transform(getTotal(planSeleccionado.interes)) || '$0.00'"
+        ></text-input>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <app-button square bordered centered (onClick)="onAccept()">Finalizar</app-button>
+    <app-button square bordered centered (onClick)="onCancel()">Cancelar</app-button>
+  </div>
+</div>

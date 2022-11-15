@@ -1,0 +1,25 @@
+<main class="pt-5">
+    <!-- <%- include("../partials/header", {searchBar: true}) %> -->
+    <div class="cart">
+        <a href="/" class="back-button">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver
+        </a>
+        <h2>Productos en tu Carrito</h2>
+        <section class="cart-products">
+            <!-- <% productos.forEach(producto => { %>
+                <%- include("../partials/cartProduct", {producto}) %>
+            <% }) %> -->
+        </section>
+        <section class="cart-checkout">
+            <div class="cart-checkout-total">
+                <span>Total de puntos</span>
+                <span class="cart-bold">
+                    <!-- <%= productos.reduce((ant, item)=> {return ant+(item.puntos * item.cantidad)}, 0) %> -->
+                </span>
+            </div>
+            <a href="/checkout" class="cart-button cart-checkout-button">Ir a Pagar</a>
+        </section>
+    </div>
+    <!-- <%- include("../partials/footer") %> -->
+</main>

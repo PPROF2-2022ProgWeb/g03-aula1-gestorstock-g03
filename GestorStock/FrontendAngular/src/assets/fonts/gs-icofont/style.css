@@ -1,18 +1,19 @@
 @font-face {
   font-family: 'gs-icofont';
-  src:  url('fonts/gs-icofont.eot?83ws6d');
-  src:  url('fonts/gs-icofont.eot?83ws6d#iefix') format('embedded-opentype'),
-    url('fonts/gs-icofont.ttf?83ws6d') format('truetype'),
-    url('fonts/gs-icofont.woff?83ws6d') format('woff'),
-    url('fonts/gs-icofont.svg?83ws6d#gs-icofont') format('svg');
+  src:  url('fonts/gs-icofont.eot?h0md5h');
+  src:  url('fonts/gs-icofont.eot?h0md5h#iefix') format('embedded-opentype'),
+    url('fonts/gs-icofont.ttf?h0md5h') format('truetype'),
+    url('fonts/gs-icofont.woff?h0md5h') format('woff'),
+    url('fonts/gs-icofont.svg?h0md5h#gs-icofont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-i.gs-icon {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'gs-icofont' !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -24,84 +25,129 @@ i.gs-icon {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icono-dinero:before {
-  content: "\e919";
+.icono-tienda:before {
+  content: "\e929";
 }
-.icono-pregunta:before {
-  content: "\e91a";
+.icono-wine-bottle:before {
+  content: "\e927";
 }
-.icono-lupa:before {
-  content: "\e918";
+.icono-burger:before {
+  content: "\e928";
 }
-.icono-tarjeta:before {
-  content: "\e913";
+.icono-spray:before {
+  content: "\e922";
 }
-.icono-twitter:before {
-  content: "\e914";
+.icono-laundry:before {
+  content: "\e923";
 }
-.icono-instagram:before {
-  content: "\e915";
+.icono-pet:before {
+  content: "\e924";
 }
-.icono-billete:before {
-  content: "\e916";
+.icono-cheese:before {
+  content: "\e925";
 }
-.icono-facebook:before {
-  content: "\e917";
+.icono-id-card:before {
+  content: "\e926";
 }
-.icono-telefono:before {
-  content: "\e912";
+.icono-chevron-down:before {
+  content: "\e921";
 }
-.icono-mensaje:before {
-  content: "\e911";
+.icono-add-to-cart:before {
+  content: "\e920";
 }
-.icono-empresa:before {
-  content: "\e910";
-}
-.icono-change:before {
-  content: "\e90f";
-}
-.icono-calendar:before {
-  content: "\e90c";
-}
-.icono-user:before {
-  content: "\e90d";
-}
-.icono-world:before {
-  content: "\e90e";
-}
-.icono-logo:before {
-  content: "\e90b";
-}
-.icono-adn:before {
+.icono-libro-abierto:before {
   content: "\e900";
 }
-.icono-caja:before {
+.icono-idioma:before {
   content: "\e901";
 }
-.icono-email:before {
+.icono-editor:before {
   content: "\e902";
 }
-.icono-home:before {
+.icono-categoria:before {
   content: "\e903";
 }
-.icono-key:before {
+.icono-libro:before {
   content: "\e904";
 }
-.icono-logout:before {
+.icono-adn:before {
   content: "\e905";
 }
-.icono-menu:before {
+.icono-caja:before {
   content: "\e906";
 }
-.icono-recibo:before {
+.icono-email:before {
   content: "\e907";
 }
-.icono-stock:before {
+.icono-home:before {
   content: "\e908";
 }
-.icono-ventas:before {
+.icono-key:before {
   content: "\e909";
 }
-.icono-admin:before {
+.icono-logout:before {
   content: "\e90a";
+}
+.icono-menu:before {
+  content: "\e90b";
+}
+.icono-recibo:before {
+  content: "\e90c";
+}
+.icono-stock:before {
+  content: "\e90d";
+}
+.icono-ventas:before {
+  content: "\e90e";
+}
+.icono-admin:before {
+  content: "\e90f";
+}
+.icono-logo:before {
+  content: "\e910";
+}
+.icono-calendar:before {
+  content: "\e911";
+}
+.icono-user:before {
+  content: "\e912";
+}
+.icono-world:before {
+  content: "\e913";
+}
+.icono-change:before {
+  content: "\e914";
+}
+.icono-empresa:before {
+  content: "\e915";
+}
+.icono-mensaje:before {
+  content: "\e916";
+}
+.icono-telefono:before {
+  content: "\e917";
+}
+.icono-tarjeta:before {
+  content: "\e918";
+}
+.icono-twitter:before {
+  content: "\e919";
+}
+.icono-instagram:before {
+  content: "\e91a";
+}
+.icono-billete:before {
+  content: "\e91b";
+}
+.icono-facebook:before {
+  content: "\e91c";
+}
+.icono-lupa:before {
+  content: "\e91d";
+}
+.icono-dinero:before {
+  content: "\e91e";
+}
+.icono-pregunta:before {
+  content: "\e91f";
 }

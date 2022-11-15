@@ -1,0 +1,19 @@
+div.modal-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333333cc;
+  z-index: 999;
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+  padding: 2rem;
+}
+
+.body {
+  background-color: #fff;
+}

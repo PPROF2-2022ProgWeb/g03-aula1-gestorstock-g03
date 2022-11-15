@@ -1,1 +1,93 @@
-<p>ventas works!</p>
+<div class="container">
+  <div id="stock" class="card">
+    <div class="search-container">
+      <search-bar
+        #searchbar
+        id="searchStock"
+        name="search"
+        [source]="productos"
+        searchProperty="nombreProducto"
+        triggerOnInput
+        searchMode="include"
+        placeholder="Busqueda por nombre de producto"
+        (searchDone)="onSearchDone($event)"
+      ></search-bar>
+      <app-button
+        class="addToCart"
+        square
+        bordered
+        [disabled]="!addToCartEnabled"
+        (onClick)="addToCart(tablaStock.selectedItem)"
+      >
+        <app-icon [icon]="iconos.ADD_TO_CART"></app-icon>
+        <span class="text"> Agregar producto al carrito </span>
+      </app-button>
+    </div>
+    <div
+      class="table-container"
+      [class.visible]="searchValue && searchResult.length > 0"
+    >
+      <data-table
+        *ngIf="searchValue && searchResult.length > 0"
+        #stock
+        tableStyle="alternated bordered"
+        [source]="searchResult"
+        [columns]="stockColumns"
+        [maxHeight]="300"
+        (selectionChanged)="enableButton()"
+      ></data-table>
+    </div>
+    <app-aviso
+      *ngIf="searchValue && searchResult.length === 0"
+      titulo="No se encontraron productos"
+      mensaje="El productos que buscas no fue encontrado"
+    ></app-aviso>
+  </div>
+  <div id="cart" class="card">
+    <data-table
+      #cart
+      [source]="productosCarrito"
+      [columns]="cartColumns"
+      tableStyle="bordered"
+      [maxHeight]="600"
+      (editionFinished)="cartEditionFinished($event)"
+    ></data-table>
+
+    <app-aviso
+      *ngIf="productosCarrito.length === 0"
+      titulo="Carrito vacio"
+      mensaje="Agregue productos al carrito"
+    ></app-aviso>
+
+    <div class="actions" *ngIf="productosCarrito.length > 0">
+      <app-button
+        bordered
+        square
+        [disabled]="!cart.selectedItem"
+        (onClick)="openModal()"
+      >
+        Cambiar cantidad
+      </app-button>
+      <app-button
+        bordered
+        square
+        [disabled]="!cart.selectedItem"
+        (onClick)="eliminarDelCarrito(cart.selectedItem)"
+      >
+        Eliminar del carrito
+      </app-button>
+    </div>
+  </div>
+  <div id="total" class="card actions">
+    <span>Total: {{ totalCarrito | currency }}</span>
+    <app-button square bordered centered (onClick)="modalFinalizarVenta.isOpen = true" [disabled]="productosCarrito.length === 0" >Finalizar</app-button>
+  </div>
+</div>
+
+<app-modal #modal (onClose)="formEditCartProduct.reset()">
+  <fm-editCartProduct #formEditCartProduct [productoCarrito]="cart.selectedItem" (onSubmit)="onEditCartProductSubmit($event)"></fm-editCartProduct>
+</app-modal>
+
+<app-modal #modalFinalizarVenta class="finalizarVenta">
+  <ventas-checkout [montoVenta]="totalCarrito" [products]="productosCarrito" (onFinish)="onCheckoutFinish($event)"></ventas-checkout>
+</app-modal>

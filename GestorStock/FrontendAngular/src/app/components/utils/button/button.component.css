@@ -12,20 +12,20 @@ button {
   line-height: 1;
 }
 
-button:hover {
-  color: var(--color-fuente-secundario);
-  background-color: var(--blanco);
+button:disabled {
+  background-color: rgb(103, 103, 103);
 }
 
-button:active {
-  transform: scale(.95);
+button:not(:disabled):hover {
+  color: var(--color-fuente-secundario);
+  background-color: var(--blanco);
 }
 
 .bordered {
   border: 1px solid var(--blanco);
 }
 
-.bordered:hover {
+.bordered:not(:disabled):hover {
   border: 1px solid var(--color-primario);
 }
 
@@ -34,7 +34,7 @@ button:active {
   background-color: var(--blanco);
 }
 
-.inverted:hover{
+.inverted:not(:disabled):hover{
   color: var(--color-fuente-primario);
   background-color: var(--color-primario);
 }

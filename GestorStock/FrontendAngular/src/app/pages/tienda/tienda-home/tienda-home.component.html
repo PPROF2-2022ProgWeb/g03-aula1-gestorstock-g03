@@ -1,0 +1,13 @@
+<main class="pt-5">
+  <app-categories></app-categories>
+  <app-hero-product></app-hero-product>
+  <main id="seccion-principal">
+    <section id="interes">
+      <h2 class="titulo">Te puede interesar</h2>
+      <div class="grid">
+        <app-product-card *ngFor="let prod of productos" [product]="prod"></app-product-card>
+      </div>
+    </section>
+  </main>
+  <app-categories></app-categories>
+</main>

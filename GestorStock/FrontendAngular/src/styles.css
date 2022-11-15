@@ -17,6 +17,19 @@
   font-family: 'VarelaRound';
 }
 
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-primario);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-corner {
+  display: none;
+}
 
 :root {
   --color-primario: #00324a;
@@ -24,7 +37,9 @@
   --blanco: #fff;
 
   --fondo-boton-activo: #fff;
-  --colot-fuente-boton-activo: #00324a;
+  --color-fuente-boton-activo: #00324a;
+  
+  --fondo-dark: #333;
 
   --fuente-primaria: "Quicksand";
   --color-fuente-primario: #fff;
@@ -33,6 +48,10 @@
   --link-hover-color: gray;
 
   --color-btn-inactivo: #aaa;
+
+  --verde: #0cb093;
+
+  --border-input: #ccc;
 }
 
 *,

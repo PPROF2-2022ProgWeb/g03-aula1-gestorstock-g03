@@ -1,127 +1,134 @@
 <main>
-    <div class="col-xl-7 container contenedor pt-3">
-        <h3 class="title">Registro</h3>
-        <form [formGroup]="form" (ngSubmit)="registro()" name="formRegistro" method="post"
-            class="login-form container-fluid">
-
-            <fieldset>
-                <div class="row">
-                    <div class="col-6">                        
-                        <app-input-container [icon]="iconos.USUARIO" labelFor="nombre" title="Nombre"
-                        [errorMessage]="nombreErrorMessage" [showErrorMessage]="nombreValid">
-                            <input type="text" class="form-control" formControlName="nombre" name="nombre" id="nombre"
-                                placeholder="Ingrese su nombre" required>
-                        </app-input-container>
-                    </div>
-
-                    <div class="col-6">
-                        <app-input-container [icon]="iconos.USUARIO" labelFor="apellido" title="Apellido"
-                        [errorMessage]="apellidoErrorMessage" [showErrorMessage]="apellidoValid">
-                            <input type="text" class="form-control" formControlName="apellido" name="apellido"
-                                id="apellido" placeholder="Ingrese su apellido" required>
-                        </app-input-container>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-6">
-                        <app-input-container [icon]="iconos.CORREO" labelFor="email" title="Correo"
-                            [errorMessage]="mailErrorMessage" [showErrorMessage]="mailValid">
-                            <input type="email" [formControl]="mail" class="form-control" formControlName="mail"
-                                name="mail" [class.border-danger]="mailValid"
-                                placeholder="Ingrese su correo electrónico" id="email">
-                        </app-input-container>
-                    </div>
-
-                    <div class="col-6">
-                        <app-input-container [icon]="iconos.CALENDARIO" labelFor="fechaNacimiento"
-                            title="Fecha de nacimiento">
-                            <input type="date" class="form-control" formControlName="fechaNacimiento"
-                                name="fechaNacimiento" id="fechaNacimiento"
-                                placeholder="Ingrese su fecha de nacimiento">
-                        </app-input-container>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-6">
-                        <app-input-container [icon]="iconos.MUNDO" labelFor="pais" title="País">
-                            <select name="pais" id="dropPais" formControlName="pais" name="pais" class="form-control"
-                                placeholder="Seleccione su País" required>
-                                <option disabled selected>Seleccione un país</option>
-
-                            </select>
-                        </app-input-container>
-                    </div>
-
-                    <div class="col-6">
-                        <app-input-container [icon]="iconos.MUNDO" labelFor="pais" title="Provincia">
-                            <input type="text" class="form-control" formControlName="provincia" name="provincia"
-                                id="provincia" placeholder="Ingrese su Provincia">
-                        </app-input-container>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <app-input-container [icon]="iconos.LLAVE" labelFor="password" title="Contraseña"
-                            [errorMessage]="passwordErrorMessage" [showErrorMessage]="passwordValid">
-                            <input type="password" [formControl]="password" class="form-control"
-                                formControlName="password" [class.border-danger]="passwordValid"
-                                placeholder="Ingrese su contraseña" id="password">
-                        </app-input-container>
-                    </div>
-
-                    <div class="col-6">
-                        <app-input-container [icon]="iconos.LLAVE" labelFor="confirmarContraseña"
-                            title="Confirmar Contraseña" [errorMessage]="passwordErrorMessage"
-                            [showErrorMessage]="passwordValid">
-                            <input type="password" [formControl]="password" class="form-control"
-                                formControlName="confirmarContraseña" name="confirmarContraseña"
-                                [class.border-danger]="passwordValid" placeholder="Ingrese nuevamente su contraseña"
-                                id="confirmarContraseña">
-                        </app-input-container>
-                    </div>
-                </div>
-
-            </fieldset>
-
-            <fieldset>
-                <div class="text-center">
-                    <input type="checkbox" (click)='cargarEmpresa()' title="Soy Vendedor" name="vendedorR"
-                        value="vendedor" id="vendedorRegistro">
-                    <label for="vendedor">Soy Vendedor</label>
-                </div>
-                <div *ngIf="mostrar">
-                    <legend>Empresa</legend>
-                    <div class="row">
-                        <div class="col-6">
-                            <app-input-container [icon]="iconos.EMPRESA" labelFor="empresa" title="Empresa">
-                                <input type="text" class="form-control" name="empresa" formControlName="empresa"
-                                    id="empresa" placeholder="Ingrese el nombre de la empresa" pattern="^[^]+$"
-                                    required>
-                            </app-input-container>
-                        </div>
-
-                        <div class="col-6">
-                            <app-input-container [icon]="iconos.EMPRESA" labelFor="descripcion" title="Descripción">
-                                <input type="textarea" class="form-control" name="descripcion"
-                                    formControlName="descripcion" id="descripcion"
-                                    placeholder="Ingrese la descripcion de la empresa" pattern="^[^]+$" required>
-                            </app-input-container>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-
-            <div class="text-center">
-                <a class="formlink" href="login.html">¿Ya esta registrado? Ingrese aqui</a>
-            </div>
-            <div class="actions">
-                <button id="btRegistrar" (click)="registro()" class="boton">REGISTRARSE</button>
-            </div>
+  <div class="container card">
+    <h3 class="title">Registro</h3>
+    <div class="steps-container" [ngSwitch]="currentStep">
+      <div *ngSwitchCase="Steps.CREACION_USUARIO">
+        <form [formGroup]="formUsuario">
+          <span class="errorMsg" *ngIf="usernameExist">El nombre de usuario ya existe</span>
+          <text-input
+            title="Correo"
+            [leadingIcon]="iconos.CORREO"
+            [valid]="fieldValid(formUsuario, 'correo')"
+            [errorMessage]="getErrorMessage(formUsuario, 'correo')"
+            formControlName="correo"
+          >
+          </text-input>
+          <text-input
+            title="Usuario"
+            [leadingIcon]="iconos.USUARIO"
+            [valid]="fieldValid(formUsuario, 'usuario')"
+            [errorMessage]="getErrorMessage(formUsuario, 'usuario')"   
+            formControlName="usuario" 
+            (ngModelChange)="onFieldUsuarioChange()"
+          >
+          </text-input>
+          <text-input
+            title="Contraseña"
+            [leadingIcon]="iconos.LLAVE"
+            type="password"
+            [valid]="fieldValid(formUsuario, 'contraseña')"
+            [errorMessage]="getErrorMessage(formUsuario, 'contraseña')"
+            formControlName="contraseña"
+          >
+          </text-input>
+          <text-input
+            title="Confirmar contraseña"
+            [leadingIcon]="iconos.LLAVE"
+            type="password"
+            [valid]="fieldValid(formUsuario, 'confirmarContraseña')"
+            [errorMessage]="getErrorMessage(formUsuario, 'confirmarContraseña')"
+            formControlName="confirmarContraseña"
+          >
+          </text-input>
+          <label class="checkbox">
+            <input type="checkbox" formControlName="vendedor" (change)="onCheckVendedorChange($event)" />
+            Soy vendedor
+          </label>
         </form>
+      </div>
+      <div *ngSwitchCase="Steps.DATOS_PERSONALES">
+        <form [formGroup]="formDatosPersonales">
+          <text-input
+            title="Nombre"
+            [leadingIcon]="iconos.USUARIO"
+            [valid]="fieldValid(formDatosPersonales, 'nombre')"
+            [errorMessage]="getErrorMessage(formDatosPersonales, 'nombre')"
+            formControlName="nombre"
+          >
+          </text-input>
+          <text-input
+            title="Apellido"
+            [leadingIcon]="iconos.USUARIO"
+            [valid]="fieldValid(formDatosPersonales, 'apellido')"
+            [errorMessage]="getErrorMessage(formDatosPersonales, 'apellido')"
+            formControlName="apellido"
+          >
+          </text-input>
+          <text-input
+            title="DNI"
+            type="number"
+            [leadingIcon]="iconos.DNI"
+            [valid]="fieldValid(formDatosPersonales, 'dni')"
+            [errorMessage]="getErrorMessage(formDatosPersonales, 'dni')"
+            formControlName="dni"
+          >
+          </text-input>
+          <text-input
+            title="Telefono"
+            [leadingIcon]="iconos.TELEFONO"
+            [valid]="fieldValid(formDatosPersonales, 'celular')"
+            [errorMessage]="getErrorMessage(formDatosPersonales, 'celular')"
+            formControlName="celular"
+          >
+          </text-input>
+          <text-input
+            title="Domicilio"
+            [leadingIcon]="iconos.CASA"
+            [valid]="fieldValid(formDatosPersonales, 'direccion')"
+            [errorMessage]="getErrorMessage(formDatosPersonales, 'direccion')"
+            formControlName="direccion"
+          >
+          </text-input>
+          <select-input title="Provincia" formControlName="provincia">
+            <option *ngFor="let prov of provincias" [value]="prov.idProvincia">
+              {{ prov.nombreProvincia }}
+            </option>
+          </select-input>
+        </form>
+      </div>
     </div>
+    <div class="actions">
+      <app-button
+        *ngIf="currentStep !== Steps.CREACION_USUARIO"
+        #prev
+        square
+        inverted
+        bordered
+        (onClick)="onPrevClick()"
+      >
+        Volver
+      </app-button>
+      <app-button
+        *ngIf="
+          !isVendedor || currentStep === Steps.DATOS_PERSONALES;
+          else sigTemplate
+        "
+        (onClick)="onFinalizarClick()"
+        square
+        bordered
+        centered
+      >
+        Finalizar
+      </app-button>
+      <ng-template #sigTemplate>
+        <app-button (onClick)="onNextClick()" square bordered centered>
+          Siguiente
+        </app-button>
+      </ng-template>
+    </div>
+  </div>
 </main>
+<!-- 
+<app-modal #modalError>
+    <app-aviso titulo="Error" mensaje="El nombre de usuario ya existe"></app-aviso>
+</app-modal> -->
