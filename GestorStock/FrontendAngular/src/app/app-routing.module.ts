@@ -17,6 +17,7 @@ import { TiendaCarritoComponent } from './pages/tienda/tienda-carrito/tienda-car
 import { CheckoutComponent } from './pages/tienda/checkout/checkout.component';
 import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.component';
 import { ListadoProductosComponent } from './pages/tienda/listado-productos/listado-productos.component';
+import { SellerGuard } from './guards/seller.guard';
 
 const routes: Routes = [
   {path: '', component: HomeLayoutComponent, children: [
@@ -25,7 +26,7 @@ const routes: Routes = [
     {path: 'registro', component: RegistroComponent},
     {path: 'quienes-somos', component: QuienesSomosComponent},
   ]},
-  {path: 'dashboard', component: DashboardLayoutComponent, children: [
+  {path: 'dashboard', canActivate: [SellerGuard], component: DashboardLayoutComponent, children: [
     {path: '', component: AdministracionComponent},
     {path: 'ventas', component: VentasComponent},
     {path: 'stock', component: StockComponent},

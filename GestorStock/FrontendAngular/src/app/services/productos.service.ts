@@ -20,23 +20,24 @@ export class ProductosService {
   constructor(private http: HttpClient) {}
 
   public cargarProductos(): Observable<ProductoModel[]> {
-    return this.http.get<ProductoModel[]>(`${this.url}`);
+    return this.http.get<ProductoModel[]>(`${this.url}`, this.httpOptions);
   }
 
   public cargarCategorias(): Observable<TipoProducto[]> {
-    return this.http.get<TipoProducto[]>(`${this.backendUrl}/tipoProducto`);
+    return this.http.get<TipoProducto[]>(`${this.backendUrl}/tipoProducto`, this.httpOptions);
   }
 
   public cargarPorNombreProducto(
     nombreProducto: string
   ): Observable<ProductoModel[]> {
     return this.http.get<ProductoModel[]>(
-      `${this.url}/${nombreProducto}`
+      `${this.url}/${nombreProducto}`,
+      this.httpOptions
     );
   }
 
   public buscarProducto(id: number): Observable<ProductoModel> {
-    return this.http.get<ProductoModel>(`${this.url}/${id}`);
+    return this.http.get<ProductoModel>(`${this.url}/${id}`, this.httpOptions);
   }
 
   public agregar(productoModel: ProductoModel): Observable<ProductoModel> {
@@ -56,7 +57,7 @@ export class ProductosService {
   }
 
   public eliminar(id: number): Observable<ProductoModel> {
-    return this.http.delete<ProductoModel>(`${this.url}/${id}`);
+    return this.http.delete<ProductoModel>(`${this.url}/${id}`, this.httpOptions);
   }
 
 }

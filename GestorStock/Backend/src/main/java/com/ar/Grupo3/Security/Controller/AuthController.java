@@ -64,7 +64,7 @@ public class AuthController {
         nuevoUsuario.setRoles(roles);
         usuarioService.agregar(nuevoUsuario);
 
-        return new ResponseEntity<Object>(new Mensaje("Usuario ha sido guardado asdsdasdasdasdas"), HttpStatus.CREATED);
+        return new ResponseEntity<Object>(new Mensaje("Usuario ha sido guardado"), HttpStatus.CREATED);
     }
 
     @PostMapping("/login")

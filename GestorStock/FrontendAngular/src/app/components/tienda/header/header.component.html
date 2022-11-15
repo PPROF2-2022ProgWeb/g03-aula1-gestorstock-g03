@@ -1,26 +1,47 @@
 <header role="banner">
-    <h1 class="logo">
-        <span class="logo-pt1">Gestor</span>
-        <span class="logo-pt2">Ecommerce</span>
-    </h1>
-    <search-bar class="search-bar" placeholder="Buscar aquí"
-        (searchDone)="onSearchDone($event)">
-    </search-bar>
+  <a routerLink="/tienda" class="logo-container">
+    <app-icon class="logo" [icon]="iconos.LOGO"></app-icon>
+    <div class="text">
+      <span class="logo-pt1">Gestor</span>
+      <span class="logo-pt2">Ecommerce</span>
+    </div>
+  </a>
+  <search-bar
+    class="search-bar"
+    placeholder="Buscar aquí"
+    (searchDone)="onSearchDone($event)"
+  >
+  </search-bar>
 
-    <!-- agregar registro= si no esta log muestra reg y log y si esta log muestra
+  <!-- agregar registro= si no esta log muestra reg y log y si esta log muestra
     carrito y nombre de uss -->
-    <nav class="header-nav" *ngIf="!isLoggedIn && permitirRegistro">
-        <a class="navbtn primary" routerLink="/login">Iniciar Sesion</a>
-        <a class="button-hover navbtn" routerLink="/registro">Registrarse</a>
-    </nav>
-    <nav class="header-nav" *ngIf="isLoggedIn">
-        <a class="button-hover header-icon header-shopping-cart" routerLink="#">
-            <app-icon [icon]="iconos.CARRITO"></app-icon>                
-            <div class="header-shopping-cart-number">2</div>
-        </a>
-        <button  class="button-hover header-icon header-user-card">
-            <img src="../../../../assets/img/img_tienda/Ellipse 1.png" alt="Foto de Usuario">
-            <span>{{loggedInUser}}</span>
-        </button>
-    </nav>
+  <div class="header-nav" *ngIf="!isLoggedIn">
+    <app-button centered bordered>Ingresar</app-button>
+    <app-button centered inverted bordered>Registrarse</app-button>
+  </div>
+  <div class="header-nav" *ngIf="isLoggedIn">
+    <a
+      class="button-hover header-icon header-shopping-cart"
+      routerLink="carrito"
+    >
+      <app-icon [icon]="iconos.CARRITO"></app-icon>
+      <div class="header-shopping-cart-number">2</div>
+    </a>
+    <button class="button-hover header-icon header-user-card" (click)="openMenu($event)">
+      <img
+        src="../../../../assets/img/img_tienda/Ellipse 1.png"
+        alt="Foto de Usuario"
+      />
+      <span>{{usuario.nombreUsuario}}</span>
+    </button>
+  </div>
 </header>
+
+<div class="menu-container" *ngIf="isMenuOpen" (click)="onMenuContainerClick()">
+    <div class="menu card" (click)="$event.stopPropagation()" [ngStyle]="menuPosition">
+        <div class="menu-item" (click)="cerrarSesion()">
+            <app-icon [icon]="iconos.SALIR"></app-icon>
+            <span>Cerrar sesion</span>
+        </div>
+    </div>
+</div>

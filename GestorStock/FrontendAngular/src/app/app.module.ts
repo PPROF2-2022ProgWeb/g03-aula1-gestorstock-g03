@@ -18,15 +18,13 @@ import { CajaComponent } from './pages/dashboard/caja/caja.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { VentasComponent } from './pages/dashboard/ventas/ventas.component';
 import { NavlinkComponent } from './components/navlink/navlink.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { MenuComponent } from './components/dashboard/menu/menu.component';
 import { SvgModule } from './components/svg/svg.module';
 import { IconComponent } from './components/icon/icon.component';
 import { ButtonComponent } from './components/utils/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from './services/login.service';
 import { InputContainerComponent } from './components/input-container/input-container.component';
-import { RegistroService } from './services/registro.service';
-import { DataCounterComponent } from './components/data-counter/data-counter.component';
+import { DataCounterComponent } from './components/dashboard/data-counter/data-counter.component';
 import { AvisoComponent } from './components/utils/aviso/aviso.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
@@ -38,7 +36,7 @@ import { TextInputComponent } from './components/form-controls/text-input/text-i
 import { NumberInputComponent } from './components/form-controls/number-input/number-input.component';
 import { SelectionGroupComponent } from './components/selection-group/selection-group.component';
 import { SelectionItemComponent } from './components/selection-group/selection-item/selection-item.component';
-import { VentasCheckoutComponent } from './components/ventas-checkout/ventas-checkout.component';
+import { VentasCheckoutComponent } from './components/dashboard/ventas-checkout/ventas-checkout.component';
 import { SelectInputComponent } from './components/form-controls/select-input/select-input.component';
 import { ProductosService } from './services/productos.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -110,7 +108,7 @@ import { ImageFallbackDirective } from './directives/image-fallback.directive';
     TiendaLayoutsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule, FormsModule],
-  providers: [LoginService, RegistroService, ProductosService, CurrencyPipe, PercentPipe, DatePipe],
+  providers: [ProductosService, CurrencyPipe, PercentPipe, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

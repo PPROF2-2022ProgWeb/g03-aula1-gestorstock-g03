@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { AbstractControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors } from '@angular/forms';
+import { Iconos } from 'src/app/utils/iconos.enum';
 
 @Component({
   selector: 'text-input',
@@ -10,7 +11,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
       provide: NG_VALUE_ACCESSOR,
       multi: true,
       useExisting: TextInputComponent,
-    },
+    }
   ],
 })
 export class TextInputComponent implements OnInit {
@@ -19,9 +20,12 @@ export class TextInputComponent implements OnInit {
   @Input() title: string = 'Title';
   @Input() disabled: boolean = false;
   @Input() value: string = '';
-  @Input() color: string = '#00324a';
-
-  public invalid: boolean = false;
+  @Input() activeColor: string;
+  @Input() leadingIcon: Iconos
+  @Input() trailingIcon: Iconos
+  @Input() errorMessage: string = 'Campo invalido';
+  @Input() valid: boolean = true;
+  @Input() type : 'text' | 'password' | 'number' = 'text';
   public touched: boolean = false;
 
   constructor() {}

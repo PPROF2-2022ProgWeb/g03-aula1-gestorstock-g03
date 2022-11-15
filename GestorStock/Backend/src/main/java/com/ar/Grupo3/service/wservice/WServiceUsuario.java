@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import com.ar.Grupo3.Security.Entity.Usuario;
 import com.ar.Grupo3.data.factory.FabricaDAO;
 import com.ar.Grupo3.data.objects.interfaces.DaoUsuarioIntf;
+import com.ar.Grupo3.seguridad.negocio.DaoUsuarioImpl;
 import com.ar.Grupo3.viewmodel.UsuarioModel;
 
 @RestController
@@ -23,7 +24,9 @@ public class WServiceUsuario implements Serializable {
 
     @Autowired
     private DaoUsuarioIntf servicioUsuario = FabricaDAO.obtenerUsuario();
-
+    
+    @Autowired
+    DaoUsuarioImpl usuarioService;
     /*
 	 * ----------------------------------------------------------------------------
 	 * Usuario
@@ -41,8 +44,12 @@ public class WServiceUsuario implements Serializable {
     }
 
     @PostMapping(path = "/usuario")
-    public Usuario AgregarUsuario(@RequestBody Usuario Usuario) {
-        return agregamos(Usuario);
+    public ResponseEntity<Usuario> AgregarUsuario(@RequestBody Usuario Usuario) {
+        if (usuarioService.existeNombreUsuario(Usuario.getUsername())) {
+            return new ResponseEntity<Usuario>(HttpStatus.BAD_REQUEST);
+        }
+        agregamos(Usuario);
+        return new ResponseEntity<Usuario>(Usuario, HttpStatus.OK);
     }
 
     @PutMapping(path = "/usuario/{id}")

@@ -13,9 +13,9 @@
   
   <div class="action-container">
     <div class="action">
-      <app-button>
-        <app-icon [icon]="iconos.CAMBIO"></app-icon>
-        Cambiar vendedor
+      <app-button (onClick)="goToStore()">
+        <app-icon [icon]="iconos.TIENDA"></app-icon>
+        Ir a la tienda
       </app-button>
     </div>
     <div class="action">
