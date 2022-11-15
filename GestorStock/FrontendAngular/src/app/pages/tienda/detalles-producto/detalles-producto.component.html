@@ -1,71 +1,21 @@
-<body class="bg-light">    
-    <main id="seccion-principal" class="bodyContainer">
+<div class="bg-light pt-5">    
+    <main id="seccion-principal" class="bodyContainer" *ngIf="!cargando">
         <nav class="menuNav">
             <a class="backButton" routerLink="/tienda">
                 <img class="flechaIzquierda" src="../../../../assets/img/img_tienda/Vector.png" alt="flecha">
                 <p>Volver al listado</p>
             </a>
             <img class="flechaDerecha" src="../../../../assets/img/img_tienda/Vector (1).png" alt="flecha">
-            <p>Almacén (Categoria del producto)</p>
+            <p>{{producto.tipoProd}}</p>
         </nav>
-        <app-card-detail-product></app-card-detail-product>
+        <app-card-detail-product [producto]="producto"></app-card-detail-product>
         <section id="interes">
             <h2 class="titulo">Te puede interesar</h2>
             <div class="grid">
-                <!-- esto se implementa desde el back? -->
-                <app-product-card></app-product-card>
-                
-                <!-- <article class="card-producto">
-                    <a href="#">
-                        <img src="" alt="imagen del producto">
-                        <div class="contenido">
-                            <div class="contenedor-titulo">
-                                <h4 class="titulo">
-                                    Nombre del producto
-                                </h4>
-                            </div>
-                            <div class="contenedor-precio">
-                                <p class="precio">$100</p>
-                                <span>PUNTOS- rEvIsAr</span>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-                <article class="card-producto">
-                    <a href="#">
-                        <img src="" alt="imagen del producto">
-                        <div class="contenido">
-                            <div class="contenedor-titulo">
-                                <h4 class="titulo">
-                                    Nombre del producto2
-                                </h4>
-                            </div>
-                            <div class="contenedor-precio">
-                                <p class="precio">$180</p>
-                                <span>PUNTOS- rEvIsAr</span>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-                <article class="card-producto">
-                    <a href="#">
-                        <img src="" alt="imagen del producto">
-                        <div class="contenido">
-                            <div class="contenedor-titulo">
-                                <h4 class="titulo">
-                                    Nombre del producto3
-                                </h4>
-                            </div>
-                            <div class="contenedor-precio">
-                                <p class="precio">$320</p>
-                                <span>PUNTOS- rEvIsAr</span>
-                            </div>
-                        </div>
-                    </a>
-                </article> -->
+                <app-product-card *ngFor="let prod of productosInteres" [product]="prod"></app-product-card>                
             </div>
         </section>
     </main>
     <app-categories></app-categories>
     
-</body>
+</div>

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ProductoModel } from 'src/app/models/ProductoModel';
+import { NumberInputComponent } from '../../form-controls/number-input/number-input.component';
+
 
 @Component({
   selector: 'app-card-detail-product',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-detail-product.component.css']
 })
 export class CardDetailProductComponent implements OnInit {
+  @Input() producto: ProductoModel;
+  @ViewChild("cantidad") inputCantidad: NumberInputComponent;
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  onClick(): void {
+    console.log(this.inputCantidad.value);
+    
+
   }
 
 }

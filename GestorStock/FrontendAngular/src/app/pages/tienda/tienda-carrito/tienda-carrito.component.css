@@ -20,6 +20,11 @@ h2 {
     color: black;
 }
 
+.flechaIzquierda{
+    width: 15.84px;
+    height: 15.84px;
+}
+
 .cart-products {
     display: flex;
     flex-direction: column;
