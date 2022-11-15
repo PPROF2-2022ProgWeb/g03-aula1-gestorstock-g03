@@ -16,6 +16,11 @@ export class MenuComponent implements OnInit {
   }
 
   closeSesion(): void {
+    sessionStorage.removeItem('loggedInUser')
     this.router.navigate(['/'])
+  }
+
+  goToStore(): void {
+    this.router.navigate(['/tienda'])
   }
 }

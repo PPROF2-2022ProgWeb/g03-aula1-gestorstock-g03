@@ -12,13 +12,15 @@ export class DashboardLayoutComponent implements OnInit {
   public title: string = '';
   public scrollTimeout: any;
 
-  @ViewChild('main') main:ElementRef;
+  @ViewChild('main') main: ElementRef;
 
   constructor(private router: Router) {
-    if (window.innerWidth < 768) this.isMenuActive = false;
     router.events.subscribe(() => {
-       let r = router.url.split('/')[2];
-       switch (r) {
+      if (window.innerWidth < 768) {
+        this.isMenuActive = false;
+      }
+      let r = router.url.split('/')[2];
+      switch (r) {
         case 'ventas':
           this.title = 'Ventas';
           break;
@@ -31,22 +33,21 @@ export class DashboardLayoutComponent implements OnInit {
         default:
           this.title = 'Administración';
           break;
-       }
+      }
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.main.nativeElement.addEventListener('scroll', () => {
       this.scrollActive = true;
-      if(this.scrollTimeout){
+      if (this.scrollTimeout) {
         clearTimeout(this.scrollTimeout);
       }
-      this.scrollTimeout = setTimeout(()=>{
+      this.scrollTimeout = setTimeout(() => {
         this.scrollActive = false;
-      }, 2000)
+      }, 2000);
     });
   }
   toggleMenu() {
