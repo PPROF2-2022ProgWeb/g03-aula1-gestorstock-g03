@@ -13,11 +13,9 @@
   >
   </search-bar>
 
-  <!-- agregar registro= si no esta log muestra reg y log y si esta log muestra
-    carrito y nombre de uss -->
   <div class="header-nav" *ngIf="!isLoggedIn">
-    <app-button centered bordered>Ingresar</app-button>
-    <app-button centered inverted bordered>Registrarse</app-button>
+    <app-button centered bordered routerLink="/login">Ingresar</app-button>
+    <app-button centered inverted bordered routerLink="/registro">Registrarse</app-button>
   </div>
   <div class="header-nav" *ngIf="isLoggedIn">
     <a
@@ -25,7 +23,7 @@
       routerLink="carrito"
     >
       <app-icon [icon]="iconos.CARRITO"></app-icon>
-      <div class="header-shopping-cart-number">2</div>
+      <div class="header-shopping-cart-number">1</div>
     </a>
     <button class="button-hover header-icon header-user-card" (click)="openMenu($event)">
       <img
