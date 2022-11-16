@@ -1,9 +1,4 @@
 <div class="container">
-<!-- 
-  <div class="card">
-    <fm-productos></fm-productos>
-  </div> -->
-
   <div class="card">
     <search-bar
       searchMode="startsWith"
@@ -25,8 +20,9 @@
       [maxHeight]="300"
     ></data-table>
     <div class="actions">
-      <app-button bordered square (onClick)="onAgregarProducto()">Agregar producto</app-button>
-      <app-button bordered square [disabled]="!tablaStock.selectedItem" (onClick)="openModal()">Editar producto</app-button>
+      <app-button bordered square (onClick)="onAgregarProducto()">Agregar</app-button>
+      <app-button bordered square [disabled]="!tablaStock.selectedItem" (onClick)="openModal()">Editar</app-button>
+      <app-button bordered square [disabled]="!tablaStock.selectedItem" (onClick)="modalEliminar.isOpen = true">Eliminar</app-button>
     </div>
   </div>
 
@@ -34,6 +30,14 @@
     <app-detalle-producto [producto]="tablaStock.selectedItem"></app-detalle-producto>
   </div>
 </div>
+
+<app-modal #modalEliminar>
+  <h5>¿Esta seguro de eliminar el producto?</h5>
+  <div class="confirmation">
+    <app-button square bordered centered (onClick)="eliminarProducto()">Si</app-button>
+    <app-button square bordered centered inverted (onClick)="modalEliminar.closeModal()">No</app-button>
+  </div>
+</app-modal>
 
 <app-modal #modal>
   <fm-productos [producto]="tablaStock.selectedItem" (onSubmit)="onModalProductoSubmit($event)"></fm-productos>
