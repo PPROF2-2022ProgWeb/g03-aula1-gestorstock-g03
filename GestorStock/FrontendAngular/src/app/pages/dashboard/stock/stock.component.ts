@@ -41,6 +41,7 @@ export class StockComponent implements OnInit {
   ];
 
   @ViewChild('tablaStock') tablaStock: DataTableComponent;
+  @ViewChild('modalEliminar') modalEliminar: ModalComponent;
   @ViewChild('modal') modal: ModalComponent;
 
   constructor(private ps: ProductosService) {}
@@ -91,6 +92,20 @@ export class StockComponent implements OnInit {
   onAgregarProducto(): void {
     this.tablaStock.selectedIndex = -1;
     this.openModal();
+  }
+
+  eliminarProducto(): void {
+    let producto = this.stock[this.tablaStock.selectedIndex];
+    console.log(producto);
+    if (producto && producto.idProducto) {
+      this.ps.eliminar(producto.idProducto).subscribe({
+        next: (data) => {
+          console.log(data);
+          this.modalEliminar.closeModal();
+          this.cargarProductos();
+        } 
+      });
+    }
   }
 
   onModalProductoSubmit(producto: ProductoModel): void {
