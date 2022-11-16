@@ -21,6 +21,7 @@ export class DetallesProductoComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
+      this.productosInteres = []
       let id = params['id'];
       this.prodServ.buscarProducto(id).subscribe(data => {
         this.producto = data;

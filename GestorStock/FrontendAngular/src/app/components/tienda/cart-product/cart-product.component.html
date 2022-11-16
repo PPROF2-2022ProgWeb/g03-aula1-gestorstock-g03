@@ -1,0 +1,12 @@
+<article class="cart-product">
+  <div class="cart-product-info-left">
+    <img class="cart-product-img" [src]="producto.producto.imageURL" alt="" />
+    <p>{{ producto.producto.nombreProducto }}</p>
+  </div>
+  <div class="cart-product-info-right">
+    <app-button centered bordered inverted (onClick)="onQuitarClick()" >Quitar</app-button>
+    <number-input class="cart-product-number" type="number" [value]="producto.cantidad" min="1" (onChange)="updateCantidad($event)" ></number-input>
+
+    <p class="cart-bold">{{ total | currency }}</p>
+  </div>
+</article>

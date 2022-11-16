@@ -23,7 +23,7 @@
       routerLink="carrito"
     >
       <app-icon [icon]="iconos.CARRITO"></app-icon>
-      <div class="header-shopping-cart-number">1</div>
+      <div class="header-shopping-cart-number" *ngIf="itemsInCart > 0">{{ itemsInCart}}</div>
     </a>
     <button class="button-hover header-icon header-user-card" (click)="openMenu($event)">
       <img
