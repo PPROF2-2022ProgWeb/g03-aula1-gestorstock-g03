@@ -38,9 +38,6 @@
   border: none;
   background-color: transparent;
   padding: 7px 0;
-  width: 100%;
-  min-width: 20px;
-  text-align: center;
 }
 
 .input input::-webkit-outer-spin-button,

@@ -31,7 +31,7 @@ export class ProductosService {
     nombreProducto: string
   ): Observable<ProductoModel[]> {
     return this.http.get<ProductoModel[]>(
-      `${this.url}ByNombre/${nombreProducto}`,
+      `${this.url}/${nombreProducto}`,
       this.httpOptions
     );
   }

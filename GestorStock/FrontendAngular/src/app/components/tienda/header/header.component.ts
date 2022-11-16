@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { SearchResult } from 'src/app/interfaces/searchResult';
 import { ProductoModel } from 'src/app/models/ProductoModel';
 import { LoginUser } from 'src/app/models/Usuario.model';
-import { CarritoService } from 'src/app/services/carrito.service';
 import { Iconos } from 'src/app/utils/iconos.enum';
 
 @Component({
@@ -18,7 +17,6 @@ export class HeaderComponent implements OnInit {
   public usuario: LoginUser;
   public isMenuOpen = false;
   public isLoggedIn: boolean;
-  public itemsInCart: number = 0;
   public menuPosition = {
     top: '0',
     right: '0',
@@ -31,15 +29,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.usuario = JSON.parse(sessionStorage.getItem('loggedInUser') || 'null');
     if (this.usuario) this.isLoggedIn = true;
-    this.itemsInCart = CarritoService.carrito.length
-    CarritoService.change.subscribe(() => this.itemsInCart = CarritoService.carrito.length)
-
-    // setInterval(
-    //   () => {
-    //     let carrito:any[] = JSON.parse(sessionStorage.getItem('carritoTienda') || '[]')
-    //     this.itemsInCart = carrito.length
-    //   }, 10000
-    // )
   }
 
   onSearchDone(event: SearchResult) {

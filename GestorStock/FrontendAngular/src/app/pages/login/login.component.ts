@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
@@ -16,7 +17,6 @@ import { Roles } from 'src/app/utils/roles.enum';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  public isLoginInError: boolean = false;
   public form: FormGroup = new FormGroup({
     username: new FormControl('', [
       Validators.required,
@@ -67,9 +67,7 @@ export class LoginComponent implements OnInit {
         }
         this.router.navigate(['/tienda']);
       },
-      error: (err) => {
-        this.isLoginInError = true;
-      },
+      error: (err) => console.log(err),
     });
   }
 }

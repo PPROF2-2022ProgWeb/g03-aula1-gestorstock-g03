@@ -1,3 +1,5 @@
+@import url(../../../../styles.css);
+
 .cardContainer{
     background-color: #FFFFFF;
     border-radius: 16px;
@@ -15,7 +17,7 @@
     width: 75%;
     height:520px;
     border-radius: 8px;
-    margin: 2rem;
+    margin: 8px 0px;
     object-fit: cover;
 }
 
@@ -27,7 +29,6 @@
     border-radius: 8px;
     margin: 8px;
     padding: 8px;
-    max-width: 20rem;
 }
 
 .infoContainer .nombreProducto {
@@ -40,9 +41,17 @@
     align-items: center;
 }
 
-.infoContainer .precio{
-    font-size: 2.5rem;
+.infoContainer h3{
+    font-size: 42px;
+    line-height: 54.74px;
     font-weight: bold;
+}
+
+.infoContainer .puntos{
+    font-size: 16px;
+    font-weight: 300px;
+    line-height: 16px;
+    margin-left: 10px;
 }
 
 .agregarCarrito:disabled{
@@ -50,7 +59,7 @@
     cursor: auto;
 }
 .agregarCarrito{
-    width: 100%;
+    width: 80%;
     height:36px;
     border-radius: 16px;
     background-color: #494F51;
@@ -66,14 +75,4 @@
     font-size: 14px;
     font-weight: 400px;
     font-style: normal;
-}
-
-.inputCantidad {
-    width: 100%;
-}
-
-.action {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }

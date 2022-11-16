@@ -16,8 +16,8 @@ export class TiendaComponent implements OnInit {
     this.prodService.cargarProductos().subscribe(data => {
       let cantidad = Math.min(10, data.length)
       for (let i = 0; i < cantidad; i++) {
-        let index = Math.floor(Math.random() * this.productos.length)
-        this.productos.push(data.splice(index, 1)[0])
+        let index = Math.floor(Math.random() * cantidad)
+        this.productos.push(data[index])
       }
     })
   }
