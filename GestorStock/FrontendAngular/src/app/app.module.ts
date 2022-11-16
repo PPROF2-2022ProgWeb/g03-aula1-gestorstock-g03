@@ -55,6 +55,7 @@ import { TiendaLayoutsComponent } from './layouts/tienda-layouts/tienda-layouts.
 import { DetalleProductoComponent } from './components/dashboard/detalle-producto/detalle-producto.component';
 import { FmProductosComponent } from './components/forms/fc-productos/fm-productos.component';
 import { ImageFallbackDirective } from './directives/image-fallback.directive';
+import { CartProductComponent } from './components/tienda/cart-product/cart-product.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { ImageFallbackDirective } from './directives/image-fallback.directive';
     HeaderComponent,
     HeroProductComponent,
     ProductCardComponent,
-    TiendaLayoutsComponent
+    TiendaLayoutsComponent,
+    CartProductComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SvgModule, ReactiveFormsModule, HttpClientModule, FormsModule],
   providers: [ProductosService, CurrencyPipe, PercentPipe, DatePipe],

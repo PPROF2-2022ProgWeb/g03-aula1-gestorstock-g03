@@ -10,7 +10,7 @@ export class ProductCardComponent implements OnInit {
   @Input() product: ProductoModel | Producto;
   
   public get link(): string { 
-    return `producto/${this.product.idProducto}`
+    return `/tienda/producto/${this.product.idProducto}`
   }
   constructor() { }
 

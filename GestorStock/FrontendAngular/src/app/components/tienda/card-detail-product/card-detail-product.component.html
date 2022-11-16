@@ -1,27 +1,19 @@
 <section class="cardContainer">
-    <ul>
-        <li>
-            <img src="../../../../assets/img/img_tienda/Rectangle 17.png" alt="img1">
-        </li>
-        <li>
-            <img src="../../../../assets/img/img_tienda/Rectangle 18.png" alt="img2">
-        </li>
-        <li>
-            <img src="../../../../assets/img/img_tienda/Rectangle 19.png" alt="img3">
-        </li>
-    </ul>
-    <img class="imagenProducto" src="https://tienda.havanna.com.ar/wp-content/uploads/2020/10/alfajor70caco.jpg" alt="img Producto">
+
+    <img class="imagenProducto" [src]="producto.imageURL" alt="img Producto">
+
+
     <div class="infoContainer">
-        <p class="nombreProducto">Alfajores 70% Cacao Puro x 9 uds</p>
+        <p class="nombreProducto">{{producto.nombreProducto}}</p>
         <div class="puntajeContainer">
-            <h3>1000</h3>
-            <p class="puntos">PUNTOS</p>
+            <p class="precio">{{producto.valor | currency}}</p>
         </div>
-        <form action="/tiendaCarrito" method="post">
-            <button class="agregarCarrito button-hover" disabled="">Agregar al carrito</button>
-        </form>
+        <div class="action">
+            <number-input #cantidad class="inputCantidad" [value]="1" min="1" [max]="producto.cantidad"></number-input>
+            <app-button centered bordered (onClick)="onAddToCartClick()" routerLink="/tienda/carrito">Agregar al carrito</app-button>
+        </div>
         <p class="descripcionProducto">
-            Alfajores rellenos con dulce de leche con cobertura de chocolate 70% Cacao Puro x 9 unidades 
+            Stock disponible: {{producto.cantidad}}
         </p>
     </div>
 </section>

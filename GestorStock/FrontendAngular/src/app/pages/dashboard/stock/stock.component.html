@@ -35,6 +35,6 @@
   </div>
 </div>
 
-<app-modal #modal [isOpen]="true">
+<app-modal #modal>
   <fm-productos [producto]="tablaStock.selectedItem" (onSubmit)="onModalProductoSubmit($event)"></fm-productos>
 </app-modal>

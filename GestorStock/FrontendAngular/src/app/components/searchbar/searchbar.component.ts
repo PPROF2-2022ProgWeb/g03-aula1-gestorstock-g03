@@ -136,6 +136,12 @@ export class SearchbarComponent implements OnInit, AfterViewInit {
     this.searchDone.emit(res);
   }
 
+  onKeyPress(e: KeyboardEvent) {
+    if(e.key === 'Enter'){
+      this.onSearchDone();
+    }
+  }
+
   resetSearch(): void {
     this.input.nativeElement.value = '';
   }
