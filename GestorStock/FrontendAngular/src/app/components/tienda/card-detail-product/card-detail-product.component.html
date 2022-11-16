@@ -10,7 +10,7 @@
         </div>
         <div class="action">
             <number-input #cantidad class="inputCantidad" [value]="1" min="1" [max]="producto.cantidad"></number-input>
-            <app-button centered bordered (onClick)="onClick()" routerLink="/tienda/carrito">Agregar al carrito</app-button>
+            <app-button centered bordered (onClick)="onAddToCartClick()" routerLink="/tienda/carrito">Agregar al carrito</app-button>
         </div>
         <p class="descripcionProducto">
             Stock disponible: {{producto.cantidad}}

@@ -6,6 +6,7 @@
         </a>
         <h2>Productos en tu Carrito</h2>
         <section class="cart-products">
+            <cart-product *ngFor="let prod of productos" [producto]="prod"></cart-product>
             <!-- <% productos.forEach(producto => { %>
                 <%- include("../partials/cartProduct", {producto}) %>
             <% }) %> -->
@@ -14,10 +15,11 @@
             <div class="cart-checkout-total">
                 <span>Total a pagar</span>
                 <span class="cart-bold">
+                    {{ total | currency }}
                     <!-- {{producto.valor}} -->
                 </span>
             </div>
-            <a href="/checkout" class="cart-button cart-checkout-button">Ir a Pagar</a>
+            <app-button bordered centered>Ir a Pagar</app-button>
         </section>
     </div>
 </main>

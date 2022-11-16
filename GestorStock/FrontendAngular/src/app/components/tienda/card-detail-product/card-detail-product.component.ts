@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ProductoCarrito } from 'src/app/models/ProductoCarrito';
 import { ProductoModel } from 'src/app/models/ProductoModel';
+import { CarritoService } from 'src/app/services/carrito.service';
 import { NumberInputComponent } from '../../form-controls/number-input/number-input.component';
 
 
@@ -18,10 +20,8 @@ export class CardDetailProductComponent implements OnInit {
 
   }
 
-  onClick(): void {
-    console.log(this.inputCantidad.value);
-    
-
+  onAddToCartClick(): void {
+    CarritoService.agregar(new ProductoCarrito(this.producto, this.inputCantidad.value))
   }
 
 }
