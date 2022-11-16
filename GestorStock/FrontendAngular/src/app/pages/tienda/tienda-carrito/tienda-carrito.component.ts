@@ -14,6 +14,7 @@ export class TiendaCarritoComponent implements OnInit {
 
   ngOnInit(): void {
     this.productos = CarritoService.carrito;
+    this.total = CarritoService.getTotal();
 
     CarritoService.change.subscribe((data) => {
       this.productos = data
