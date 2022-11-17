@@ -65,7 +65,7 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
           actions.order.capture().then((detalles: any) => {
             console.log(detalles)
             CarritoService.vaciar();
-            // window.location.href='/tienda'
+            window.location.href='/tienda'
           });
         },
         onCancel: function (data: any) {
