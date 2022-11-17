@@ -2,7 +2,9 @@
 
 ## Grupo 3 del proyecto "Gestor de Stock"
 
-### Sitio: 
+### Sitio: https://gestor-stock.netlify.app 
+
+### Video: https://youtu.be/v6g-SfVlc4I 
 
 ### Wiki: https://github.com/PPROF2-2022ProgWeb/g03-aula1-gestorstock-g03/wiki/1.1-Gestor-Stock
 
