@@ -1,4 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 declare var paypal: any;
 @Component({
@@ -6,44 +9,74 @@ declare var paypal: any;
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent implements OnInit {
-  
-  @ViewChild('paypal', { static: true }) paypalElement : ElementRef;
+export class CheckoutComponent implements OnInit, AfterViewInit {
 
-  producto = {
-    descripcion: 'producto en venta',
-    precio : 10.99,
-    img : 'img producto'
+  constructor(private router: Router) { }
+
+  @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
+  @ViewChild('modal') modal: ModalComponent;
+
+  public total: number = 0;
+  public static dataAmount = {
+    amount: {
+      currency_code: 'USD',
+      value: 0
+    }
   }
-  title = 'angular-paypal-payment';
+  public static modalOpen = false;
 
+
+  ngAfterViewInit(): void {
+    this.modal.onClose.subscribe(() => {
+      this.router.navigate(['/tienda'])
+    })
+  }
   ngOnInit(): void {
-    paypal
-    .Buttons({
-      createOrder: (data: any, actions: any) =>{
-        return actions.order.create({
-          purchase_units:[
-            {
-              description: this.producto.descripcion,
-              amount : {
-                currency_code: 'USD',
-                value : this.producto.precio
-              }
-            }
-          ]
-        })
-      },
-      onApprove: async (data: any, actions: any) => {
-        const order = await actions.order.capture();
-        console.log(order);
-      },
-      onError: (err: any) => {
-        console.log(err);
+    this.total = CarritoService.getTotal();
+    CheckoutComponent.dataAmount = {
+      amount: {
+        currency_code: 'USD',
+        value: CarritoService.getTotal()
+      }
+    }
+    CarritoService.change.subscribe(() => {
+      this.total = CarritoService.getTotal();
+      CheckoutComponent.dataAmount = {
+        amount: {
+          currency_code: 'USD',
+          value: CarritoService.getTotal()
+        }
       }
     })
-    .render(this.paypalElement.nativeElement);
+
+    paypal.Buttons(
+      {
+        style: {
+          color: 'blue',
+          shape: 'pill',
+          label: 'pay'
+        },
+        createOrder: function (data: any, actions: any) {
+          return actions.order.create({
+            purchase_units: [CheckoutComponent.dataAmount]
+          })
+        },
+        onApprove: function (data: any, actions: any) {
+          actions.order.capture().then((detalles: any) => {
+            console.log(detalles)
+            CarritoService.vaciar();
+            // window.location.href='/tienda'
+          });
+        },
+        onCancel: function (data: any) {
+          alert("Pago cancelado")
+          console.log(data)
+        }
+      }).render('#paypal-button-container')
+
+
   }
 
-  
-    
+
+
 }
