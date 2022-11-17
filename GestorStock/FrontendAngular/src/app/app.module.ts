@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, platformBrowser } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -56,6 +56,7 @@ import { DetalleProductoComponent } from './components/dashboard/detalle-product
 import { FmProductosComponent } from './components/forms/fc-productos/fm-productos.component';
 import { ImageFallbackDirective } from './directives/image-fallback.directive';
 import { CartProductComponent } from './components/tienda/cart-product/cart-product.component';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -114,3 +115,4 @@ import { CartProductComponent } from './components/tienda/cart-product/cart-prod
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
