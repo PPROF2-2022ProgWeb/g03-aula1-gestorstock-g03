@@ -494,7 +494,7 @@ Requerimientos
 	*TSK#28 Investigar lugares donde hostear el back y la base de datos
 	*TSK#29 Armar datos de prueba
 	*Seguimiento Scrum - Review Mensual
-	*TSK#29 Armar datos de prueba
+	*TSK#29 Armar datos de prueba y Error number input no respeta minimo y maximo
 
 
 ✏️ Milestones: <br>
