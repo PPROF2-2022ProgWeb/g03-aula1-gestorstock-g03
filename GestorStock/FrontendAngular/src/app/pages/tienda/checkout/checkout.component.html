@@ -1,1 +1,16 @@
-<p>checkout works!</p>
+<div class="pt-5">    
+    <div class="paypal pt-5">
+        <h2>Ingresa aquí para pagar tu compra:</h2>
+        <h1>{{total | currency }}</h1>      
+
+        <div id="paypal-button-container"></div>
+
+    </div>
+</div>
+
+<app-modal #modal>
+    <h2>Gracias por su compra!</h2>
+    <app-button (onClick)="modal.closeModal()">Volver a la Tienda</app-button>
+</app-modal>
+
+
