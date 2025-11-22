@@ -4,10 +4,6 @@
 
 ### Sitio: https://gestor-stock.netlify.app 
 
-### Video: https://youtu.be/v6g-SfVlc4I 
-
-### Video, enlace a Mega: https://mega.nz/file/SjIBGDpT#QSevn9q3d9xIsfGhKBIS7IGb54xPOM_R7x78YXFC9Kc
-
 ### Wiki: https://github.com/PPROF2-2022ProgWeb/g03-aula1-gestorstock-g03/wiki/1.1-Gestor-Stock
 
 ### Documentacion IEEE830: https://docs.google.com/document/d/17is7eWnvdNotwCc1699bcdCQ0DPQAd0oxglay2SZLj8/edit?usp=sharing 
